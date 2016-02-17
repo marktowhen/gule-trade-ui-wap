@@ -30,6 +30,11 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/cart', {
+        templateUrl: 'views/cart.html',
+        controller: '',
+        controllerAs: ''
+      })
       .otherwise({
         redirectTo: '/'
       });
