@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-angular
+var  jingyunetradewapApp = angular
   .module('etradewapApp', [
     'ngAnimate',
     'ngCookies',
@@ -18,24 +18,24 @@ angular
     'ngTouch',
     'ui.router'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
+  .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
+    $httpProvider.defaults.withCredentials = true;
+    $urlRouterProvider.otherwise("/");
+    $stateProvider
+    .state('index', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
-        controllerAs: 'main'
+        url:"/"
       })
-      .when('/about', {
+    
+      .state('about', {
         templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+        url:'/about',
+        controller: 'AboutCtrl'
       })
-      .when('/cart', {
+      .state('cart', {
         templateUrl: 'views/cart.html',
         controller: '',
-        controllerAs: ''
-      })
-      .otherwise({
-        redirectTo: '/'
+        url:'/cart'
       });
   });
