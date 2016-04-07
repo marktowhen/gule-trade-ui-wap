@@ -50,7 +50,7 @@ angular
       })
     .state('no-payment', {
         templateUrl: 'views/no-payment/no-payment.html',
-        controller: 'MainCtrl',
+        controller: '',
         url:"/"
       })
   });
