@@ -34,19 +34,19 @@ angular
         controller: 'AboutCtrl'
       })
     .state('index_app', {
-        templateUrl: 'views/index_app.html',
-        controller: 'MainCtrl',
-        url:"/"
+        templateUrl: 'views/index/index_app.html',
+        controller: '',
+        url:"/index_app.html"
       })
     .state('products', {
-        templateUrl: 'views/products.html',
-        controller: 'MainCtrl',
-        url:"/"
+        templateUrl: 'views/products/products.html',
+        controller: '',
+        url:"/products.html"
       })
     .state('shoppingcart', {
-        templateUrl: 'views/shoppingcart.html',
-        controller: 'MainCtrl',
-        url:"/"
+        templateUrl: 'views/shoppingcart/shoppingcart.html',
+        controller: '',
+        url:"/shoppingcart.html"
       })
     .state('no-payment', {
         templateUrl: 'views/no-payment/no-payment.html',
