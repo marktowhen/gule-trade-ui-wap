@@ -11,27 +11,26 @@
 angular
   .module('etradewapApp', [
     'ngAnimate',
-    'ngAria',
     'ngCookies',
     'ngMessages',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.router'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
+  .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
+    $httpProvider.defaults.withCredentials = true;
+    $urlRouterProvider.otherwise("/");
+    $stateProvider
+    .state('index', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
-        controllerAs: 'main'
+        url:"/"
       })
-      .when('/about', {
+    .state('about', {
         templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
+        url:'/about',
+        controller: 'AboutCtrl'
       });
   });
