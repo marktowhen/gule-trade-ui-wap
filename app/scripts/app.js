@@ -51,6 +51,6 @@ angular
     .state('no-payment', {
         templateUrl: 'views/no-payment/no-payment.html',
         controller: '',
-        url:"/"
+        url:"/no-payment.html"
       })
   });
