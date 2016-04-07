@@ -1,0 +1,236 @@
+
+.no-payment{
+	width: 100%;
+	overflow: hidden;
+	background-color:#F3F3F3;
+}
+.pay-address{
+	width: 100%;
+	overflow: hidden;
+	min-height: 222px;
+	padding-left:5%;
+	padding-right:3%;
+	background-color: #fff;
+}
+.pd-box1{
+	width: 100%;
+	height: 130px;
+	border-bottom: 1px solid #F7F7F7;
+	padding-top: 25px;
+	padding-bottom: 20px;
+	padding-left:7%;
+	position: relative;
+}	
+.pd-box1 p:nth-child(1){
+	width: 30%;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+}	
+.pd-box1 p:nth-child(1)::before{
+	content: "";
+	position: absolute;
+	top:32px;
+	left:1%;
+	width:14px;
+	height:14px;
+	background: url(../images/icon.png) no-repeat -6px -250px;  
+}	
+.change-but{
+	width: 22%;
+	height: 30px;
+	border: 1px solid #FF3333;
+	line-height: 30px;
+	text-align: center;
+	color:#FF3333; 
+	cursor: pointer;
+	border-radius: 5px;
+}
+.consignee-info1{
+	padding-right: 10%;
+	overflow: hidden;
+}
+.consignee-info1 p{
+	height: 30px;
+	line-height: 30px;
+} 
+.consignee-info1 p:nth-child(1){
+	float: left;
+	width: 55%;
+} 
+.consignee-info1 p:nth-child(2){
+	float: right; 
+	width: 45%;
+} 
+.pd-box2{
+	padding-left: 5%;
+}
+.consignee-info2{
+	padding-top: 10px;
+	padding-right:11%;
+}
+.pay-info{
+	background-color: #fff;
+	padding-left:5%;
+	padding-right:3%;
+	padding-top: 27px;
+	overflow: hidden;
+}
+.pi-box1{
+	overflow: hidden;
+}
+.pi1-hd{
+	height: 22px;
+	line-height: 22px;
+}
+.pi1-bd{
+	widows: 100%;
+	height: 207px;
+	overflow: hidden;
+	border-top: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+	padding-top: 23px;
+	padding-bottom: 32px;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+.pi1-pic{
+	width: 40%;
+	height: 150px;
+	margin-right: 6%;
+}
+.pi1-pic>img{
+	width: 150px;
+	height: 150px;
+}
+.pi1-info{
+	width: 54%;
+}
+.pi1-text{
+	height: 90px;
+	overflow: hidden;
+}
+.pi1-price{
+	height: 33px;
+	line-height: 33px;
+}
+span.s1{
+	color: #FD8842;
+}
+.pi1-price p:nth-child(2){
+	float: right;
+}
+.pi1-freight{
+	height: 90px;
+	line-height: 90px;
+}
+.pi1-freight p:nth-child(1){
+	float: left;
+}
+.pi1-freight p:nth-child(2){
+	float: right;
+}
+.pi1-message{
+	height: 105px;
+	overflow: hidden;
+	border-top: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+	padding-top: 26px;
+	padding-bottom: 27px;
+}
+.pi1-message p:nth-child(1){
+	width: 19%;
+	float: left;
+	margin-right: 1%;
+	height: 50px;
+	line-height: 50px;
+}
+input.pim{
+	float: left;
+	height: 50px;
+	width: 80%;
+	padding-left: 1%;
+	border-radius: 4px;
+	outline: none;
+	border: none;
+	border: 1px solid #CCCCCC;
+	font-size: 11px;
+}
+.pi1-total{
+	height: 95px;
+	overflow: hidden;
+	padding-top: 25px;
+}
+span.s2{
+	color: #FD8842;
+}
+.pi1-total p:nth-child(1){
+	float: right;
+	margin-left: 2%;
+}
+.pi1-total p:nth-child(2){
+	float: right;
+}
+.pay-discount{
+	background-color: #fff;
+	height: 73px;
+	overflow: hidden;
+	line-height: 73px;
+	width: 100%;
+	padding-left:5%;
+	padding-right: 8%;
+	position: relative;
+}
+.pay-discount p:nth-child(1){
+	float: left;
+}
+.pay-discount p:nth-child(2){
+	float: right;
+	cursor: pointer;
+}
+.pay-discount p:nth-child(2)::after{
+	content: "";
+	position: absolute;
+	top:29px;
+	right:3%;
+	width:7px;
+	height:15px;
+	background: url(../images/icon.png) no-repeat -101px -177px;
+}
+.pay-price{
+	height: 130px;
+	overflow: hidden;
+	width: 100%;
+	text-align: center;
+	padding-top: 34px;
+	padding-bottom: 16px;
+	background-color: #fff;
+}
+.pay-price p:nth-child(2){
+	color: #FD8842;
+}
+.payment-method{
+	overflow: hidden;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.pm-box1{
+	height: 83px;
+	width: 98%;
+	text-align: center;
+	line-height: 83px;
+	color: #fff;
+	background-color:#40D071;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.pm-box2{
+	height: 77px;
+	width: 98%;
+	text-align: center;
+	line-height: 77px;
+	color:#F88840;
+	background-color:#fff;
+	border-radius: 4px;
+	cursor: pointer;
+}

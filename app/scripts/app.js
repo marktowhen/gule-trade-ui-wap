@@ -48,4 +48,9 @@ angular
         controller: 'MainCtrl',
         url:"/"
       })
+    .state('no-payment', {
+        templateUrl: 'views/no-payment/no-payment.html',
+        controller: 'MainCtrl',
+        url:"/"
+      })
   });
