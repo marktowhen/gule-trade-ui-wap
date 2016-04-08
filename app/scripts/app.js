@@ -53,4 +53,10 @@ angular
         controller: '',
         url:"/no-payment.html"
       })
+    .state('user', {
+        templateUrl: 'views/user/user.html',
+        controller: '',
+        url:"/user.html"
+      })
+
   });
