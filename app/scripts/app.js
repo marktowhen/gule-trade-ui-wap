@@ -53,10 +53,15 @@ angular
         controller: '',
         url:"/no-payment.html"
       })
-    .state('user', {
+     .state('user', {
         templateUrl: 'views/user/user.html',
         controller: '',
         url:"/user.html"
+      })
+    .state('product-details', {
+        templateUrl: 'views/product-details/product-details.html',
+        controller: '',
+        url:"/product-details.html"
       })
 
   });
