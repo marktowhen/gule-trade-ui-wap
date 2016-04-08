@@ -1,3 +1,4 @@
+'use strict';
 $(function(){
     var windowheight=$(window).height();
     $(window).scroll(function(){

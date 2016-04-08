@@ -2,21 +2,55 @@
 .wrap{color: #3e3e3e}
 i{display: inline-block}
 
-.products{padding-top: 5px;background: #f3f3f3}
-.products ul li{background: #fff;margin-top: 3px}
-.products ul li .choose{text-align: center;position: relative}
-.products ul li .choose i{width:20px;height: 20px;border-radius: 10px;border: 1px solid #bbb;box-sizing: border-box;position: absolute;left: 55%;top:50%;margin-top: -10px;margin-left: -10px }
-.products ul li .product_pic img{width: 100%;padding:12px 0}
+.products{padding:5px 0 98px 0;background: #f3f3f3}
+.products ul li{background: #fff;margin-top: 3px;overflow: hidden}
+.products ul li .choose{text-align: center;position: relative;width: 13%}
+.products ul li .choose i,.settle .check_all i{width:22px;height: 22px;border-radius: 11px;border: 1px solid #bbb;box-sizing: border-box;position: absolute;left: 55%;top:50%;margin-top: -11px;margin-left: -11px }
+.products ul li .choose i.active,.settle .check_all i.active{border: none;background:#fd8841 url(../../images/icon.png) -41px -249px}
+.products ul li .product_pic{width: 30%;text-align: center;vertical-align: middle}
+.products ul li .product_content{position: relative;width: 55%;margin-right: 2%}
+@media screen and (min-width:400px){
+    .products ul li .product_pic{width: 25%}
+    .products ul li .product_content{width: 60%}
+}
+.products ul li .product_pic img{width: 95px;padding:12px 0}
 .products ul li .p_c_body{padding: 12px 7px}
-.products ul li .product_name>div{width: 100%; height: 32px;position: relative;overflow: hidden;display: block}
+.products ul li .product_name,.products ul li .product_info{width: 100%; height: 32px;position: relative;overflow: hidden;display: block;color: #40404c}
+.products ul li .product_info{color: #bebebe;margin-top: 5px}
+.products ul li .price{position: absolute;bottom: 12px;right: 0;width: 100%}
+.products ul li .price .price_body{padding: 0 7px}
+.products ul li .price .currentprice{font-size: 14px;color: #fd8841}
+.products ul li .price .originalprice{text-decoration: line-through;color: #52525c}
+.products ul li .price .num{width: 75px;height:20px;box-sizing: border-box;border: 1px solid #999;position: relative;top: -3px;display: inline-block;text-align: center;border-radius: 2px}
+.products ul li .price .num i{width: 19px;height:100%;}
+.products ul li .price .num i.reduce{border-right: 1px solid #999;background: url(../../images/icon.png) -197px -84px;}
+.products ul li .price .num i.add{border-left: 1px solid #999;background: url(../../images/icon.png) -163px -84px;}
+.products ul li .price .num .number{width: 33px;height:100%;text-align: center}
+.products ul li .product_delete{height: 123px}
+.products .product_body{overflow: hidden;width: 120%;}
+.products .product_body_main{overflow: hidden;width:83.333333%;}
+.products .product_delete{overflow: hidden;width:16.66667%;background: #fd8841;line-height: 123px;color: #fff;font-size: 16px;text-align: center}
+
+/*结算*/
+.settle{width: 100%;height: 45px;position: fixed;bottom: 53px;z-index: 2;background: #f3f3f3;color: #52525c}
+.settle .check_all{height: 45px;color:#52525c;width: 13%;position: relative}
+.settle .check_all_word{line-height: 45px;font-size: 14px}
+.settle .settle_info{line-height: 45px;font-size: 14px;height: 100%}
+.settle .settle_info>div{height: 22px;line-height: 22px;text-align: right;margin-right: 5%}
+.settle .settle_info .total{line-height: 30px}
+.settle .settle_info .total span{color: #fd8841}
+.settle .settle_info .carriage{font-size: 12px}
+.settle .settle_btn{width: 32%;font-size: 14px;text-align: center;line-height: 45px;background: #fd8841;color: #fff}
 
 /*底部导航*/
 .nav{width: 100%;height: 52px;position: fixed;bottom: 0;z-index: 2;background: #fff;border-top: 1px solid #fd8841}
 .nav>a{width: 25%;text-align: center;height: 50px;display:block;float: left}
 .nav>a i{width:22px;height: 19px;margin:8px auto 0}
 .nav .nav_name{height: 20px;color:#3e3e3e}
-.nav .index i{background: url(../../images/icon.png) -2px -32px}
-.nav .index .nav_name{color: #fd8841}
-.nav .shoppingcart i{background: url(../../images/icon.png) -47px -79px}
-.nav .allproducts i{background: url(../../images/icon.png) -46px -130px}
-.nav .myinfo i{background: url(../../images/icon.png) -45px -178px}
+.nav .index i{background: url(../../images/icon.png) -46px -37px}
+.nav .shoppingcart .nav_name{color: #fd8841}
+.nav .shoppingcart i{background: url(../../images/icon.png) -1px -85px}
+.nav .allproducts i{background: url(../../images/icon.png) -46px -134px}
+.nav .myinfo i{background: url(../../images/icon.png) -45px -183px}
+
+
