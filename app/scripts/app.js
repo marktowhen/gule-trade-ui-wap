@@ -68,6 +68,11 @@ angular
         controller: '',
         url:"/eceipt-address.html"
       })
+     .state('add-cart-dialog', {
+        templateUrl: 'views/dialog/add-cart-dialog.html',
+        controller: '',
+        url:"/add-cart-dialog.html"
+      })
     .state('product-details', {
         templateUrl: 'views/product-details/product-details.html',
         controller: '',
