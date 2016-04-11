@@ -15,3 +15,31 @@ function tab2() {
 			}
 		);
 }
+
+function tab3() {
+	$(".cd2-select").click(
+		function(){
+			if($(this).hasClass("cur")){
+				$(this).removeClass("cur");
+			}else{
+				$(this).addClass("cur"); 
+			}
+		}
+	);
+}
+
+function tab4() {
+	$(".eceipt-address ul li .eceipt-address-set").click(
+		function(){
+			$(this).addClass("cur").parent().parent().siblings().children().children(".eceipt-address-set").removeClass("cur"); 
+		}
+	);
+}
+
+function tab5() {
+	$(".user-set-mans").click(
+		function(){
+			$(this).addClass("cur").siblings().removeClass("cur"); 
+		}
+	);
+}
