@@ -1,0 +1,76 @@
+.add-address{
+	overflow: hidden;
+	padding-left: 5%;
+	padding-right: 5%;
+	font-size: 14px;
+}
+.add-address-infos{
+	overflow: hidden;
+}
+.add-address-infos>ul>li{
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #BEBEBE;
+	padding-left: 8%;
+}
+.add-address-infos>ul>li:nth-child(3),.add-address-infos>ul>li:nth-child(4),.add-address-infos>ul>li:nth-child(5){
+	position: relative;
+	cursor: pointer;
+}
+.add-address-icons{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 5px;
+	height: 5px;
+	background: url(../../images/icon.png) no-repeat -227px -226px;
+}	
+.add-address-infos>ul>li p{
+	float: left;
+}
+.add-address-infos>ul>li input{
+	padding-left: 5%;
+	border: none;
+	height:48px;
+}
+.add-address-confirm{
+	height: 40px;
+	background-color:#FD8842;
+	color: #fff;
+	border-radius: 4px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 14px;
+	cursor: pointer;
+}
+.add-address-sel2{
+	display: none;
+	width: 80%;
+	overflow: hidden;
+}
+.add-address-sel2 option{
+	border-bottom: 1px solid #ccc;
+	height: 40px;
+	line-height: 40px;
+}
+.add-address-set{
+	position: relative;
+	width: 6%;
+}
+.add-address-icon{
+	position: absolute;
+	top: 17px;
+	right: 0;
+	width: 15px;
+	height: 15px;
+	background: url(../../images/icon.png) no-repeat -252px -125px;
+}
+.add-set{
+	cursor: pointer;
+}
+.add-set.cur .add-address-icon{
+	background-position: -224px -125px;
+}
+li.add-select.cur select.add-address-sel2{
+	display: block;
+}

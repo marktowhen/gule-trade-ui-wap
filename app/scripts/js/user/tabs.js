@@ -43,3 +43,23 @@ function tab5() {
 		}
 	);
 }
+
+function tab6() {
+	$(".add-set").click(
+		function(){
+			if($(this).hasClass("cur")){
+				$(this).removeClass("cur");
+			}else{
+				$(this).addClass("cur"); 
+			}
+		}
+	);
+}
+
+function tab7() {
+	$("li.add-select").click(
+		function(){
+			$(this).addClass("cur");
+		}
+	);	
+}
