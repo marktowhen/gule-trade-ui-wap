@@ -83,5 +83,10 @@ angular
         controller: '',
         url:"/product-details.html"
       })
+    .state('mycollection', {
+        templateUrl: 'views/products/mycollection.html',
+        controller: '',
+        url:"/mycollection.html"
+      })
 
   });
