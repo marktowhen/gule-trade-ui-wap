@@ -1,5 +1,5 @@
 "use strict";
-
+//product-details.js
 function tab1() {
 	$(".pd4-hd ul li").click(
 			function(){
@@ -7,15 +7,15 @@ function tab1() {
 			}
 		);
 }
-
+// user.js
 function tab2() {
-	$(".user-box3 ul li").click(
+	$(".user-box3 ul a li").click(
 			function(){
-				$(this).addClass("cur").siblings().removeClass("cur");
+				$(this).addClass("cur").parent().siblings().children().removeClass("cur");
 			}
 		);
 }
-
+//add-cart-dialog.js
 function tab3() {
 	$(".cd2-select").click(
 		function(){
@@ -27,7 +27,7 @@ function tab3() {
 		}
 	);
 }
-
+//eceipt-address.js
 function tab4() {
 	$(".eceipt-address ul li .eceipt-address-set").click(
 		function(){
@@ -35,7 +35,7 @@ function tab4() {
 		}
 	);
 }
-
+//user-set.js
 function tab5() {
 	$(".user-set-mans").click(
 		function(){

@@ -79,7 +79,7 @@ angular
         url:"/user-set-dialog.html"
       })
     .state('product-details', {
-        templateUrl: 'views/product-details/product-details.html',
+        templateUrl: 'views/products/product-details.html',
         controller: '',
         url:"/product-details.html"
       })

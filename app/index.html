@@ -49,7 +49,7 @@
             <i></i>
             <div class="nav_name">所有商品</div>
         </a>
-        <a href="#/product-details.html" class="myinfo">
+        <a href="#/user.html" class="myinfo">
             <i></i>
             <div class="nav_name">我</div>
         </a>
@@ -89,21 +89,23 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script type="text/javascript" src="scripts/js/user/tabs.js"></script>
-        <script type="text/javascript" src="scripts/js/product-details/swipe2.js"></script>
+        <script type="text/javascript" src="scripts/js/products/swipe2.js"></script>
         <script type="text/javascript" src="scripts/js/swiper.min.js"></script>
-        <script type="text/javascript" src="scripts/js/product-details/slide.js"></script>
+        <script type="text/javascript" src="scripts/js/products/slide.js"></script>
+        <script type="text/javascript" src="scripts/js/dialog/add-cart-dialog.js"></script>
         <script src="scripts/js/index/index.js"></script>
         <script src="scripts/js/products/products.js"></script>
         <script src="scripts/js/velocity.js"></script>
         <script src="scripts\js\shoppingcart\shoppingcart.js"></script>
         <script type="text/javascript">
             window.onload = function(){
-                tab1();
-                tab2();
-                tab3();
-                tab4();
-                tab5();
-                slide();
+                tab1();//product-details.js
+                tab2();// user.js
+                tab3();//add-cart-dialog.js
+                tab4();//eceipt-address.js
+                tab5();//user-set.js
+                slide();//product-details.js
+                operate();//add-cart-dialog.js
                 index_onload();
                 shoppingcart_onload();
                 allproducts_onload();
