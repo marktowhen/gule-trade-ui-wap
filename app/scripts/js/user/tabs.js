@@ -35,9 +35,9 @@ function tab4() {
 		}
 	);
 }
-//user-set.js
+//user-info.js
 function tab5() {
-	$(".user-set-mans").click(
+	$(".user-info-mans").click(
 		function(){
 			$(this).addClass("cur").siblings().removeClass("cur"); 
 		}

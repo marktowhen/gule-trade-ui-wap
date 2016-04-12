@@ -58,10 +58,10 @@ angular
         controller: '',
         url:"/user.html"
       })
-     .state('user-set', {
-        templateUrl: 'views/user/user-set.html',
+     .state('user-info', {
+        templateUrl: 'views/user/user-info.html',
         controller: '',
-        url:"/user-set.html"
+        url:"/user-info.html"
       })
      .state('eceipt-address', {
         templateUrl: 'views/user/eceipt-address.html',
