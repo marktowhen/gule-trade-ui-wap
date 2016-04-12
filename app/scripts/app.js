@@ -73,10 +73,10 @@ angular
         controller: '',
         url:"/add-cart-dialog.html"
       })
-     .state('user-set-dialog', {
-        templateUrl: 'views/dialog/user-set-dialog.html',
+     .state('modify-avatar-dialog', {
+        templateUrl: 'views/dialog/modify-avatar-dialog.html',
         controller: '',
-        url:"/user-set-dialog.html"
+        url:"/modify-avatar-dialog.html"
       })
     .state('product-details', {
         templateUrl: 'views/products/product-details.html',
