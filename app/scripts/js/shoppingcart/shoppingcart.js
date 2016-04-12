@@ -36,7 +36,7 @@ function shoppingcart_onload(){
             $(this).next().text(num)
         }
     });
-    $('i.add').click(function(){
+    $('i.add').click(function(){ 
         var num=parseInt($(this).prev().text());
         num++;
         $(this).prev().text(num)
@@ -46,8 +46,10 @@ function shoppingcart_onload(){
     $('.check_all i').click(function(){
         if($(this).hasClass('active')){
             $(this).removeClass('active');
+            $('.choose i').removeClass('active')
         }else{
             $(this).addClass('active');
+            $('.choose i').addClass('active')
         }
     });
 }

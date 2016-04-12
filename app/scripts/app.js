@@ -93,5 +93,10 @@ angular
         controller: '',
         url:"/mycollection.html"
       })
+    .state('order', {
+        templateUrl: 'views/products/order.html',
+        controller: '',
+        url:"/order.html"
+      })
 
   });
