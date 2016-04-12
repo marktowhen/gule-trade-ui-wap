@@ -63,3 +63,20 @@ function tab7() {
 		}
 	);	
 }
+
+// 购物车弹出框的增减商品
+function tab8() {
+	//增减商品数量
+    $('.cd2-left').click(function(){
+        var num=parseInt($(this).next().text());
+        if(num != 1){
+            num--;
+            $(this).next().text(num)
+        }
+    });
+    $('.cd2-right').click(function(){
+        var num=parseInt($(this).prev().text());
+        num++;
+        $(this).prev().text(num)
+    });
+}
