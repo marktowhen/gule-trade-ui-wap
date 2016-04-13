@@ -10,8 +10,12 @@ i{display: inline-block}
 /*主要服务*/
 .services{padding:10px 15px;border-bottom: 1px solid #efefef;background: #fff}
 .services .service_list{width:25%;text-align: center;}
-.services .service_list .service_pic{width: 30px;height: 30px;background: #ff89d1;border-radius: 12px;margin: auto}
-.services .service_list .service_title{margin-top:4px;font-size: 14px} 
+.services .service_list .service_pic{width: 30px;height: 30px;border-radius: 12px;margin: auto}
+.services .service_list .service_title{margin-top:4px;font-size: 14px;color: #5a5a5a} 
+.index_makemoney .service_pic{background:#ff89d1 url(../../../images/icon.png) 2px -284px!important} 
+.index_order .service_pic{background: #b79ff7 url(../../../images/icon.png) -35px -283px!important} 
+.index_groupbuy .service_pic{background: #3de5ff url(../../../images/icon.png) -74px -283px!important} 
+.index_oneyuanbuy .service_pic{background: #ffc06b url(../../../images/icon.png) -103px -283px!important}
 
 /*站内公告*/
 .notice{padding: 7px 0 5px 0;background: #fff}
@@ -22,9 +26,22 @@ i{display: inline-block}
 .notice .content .content_words{width: 88%;font-size: 12px;line-height: 15px;margin-top: -2px}
 .notice .content .content_words span{color: #fd8841}
 
-/*热销商品*/
+/*活动*/
+.index_activity{background: #f0f0f0;margin-top: 7px}
+.index_activity .index_groupbuy_body{width: 57.5%;margin-right: 2.5%;background: #fff;position: relative} 
+.index_activity .index_hotsale{width:40%;}
+.index_activity .index_groupbuy_title{height: 30px;line-height: 15px;overflow: hidden;margin-left: 3px} 
+@media screen and (min-width:360px){
+    .index_activity .index_groupbuy_title{height: 36px;line-height: 18px;}
+}
+.index_activity .groupbuy_info{position: absolute;bottom: 0;width: 100%;height: 20px;background: #909090;line-height: 20px;color: #fff}
+.index_activity .index_people_num i{width: 14px;height: 10px;background: url(../../../images/icon.png) -145px -293px;margin-left: 3px}
+.index_activity .index_groupbuy_body img,.index_activity .index_hotsale img{width: 100%} 
+.index_groupstart{text-align: center;background: #fd8841}  
+
+/*热销商品*/  
 .index_products{background: #f0f0f0}
-.index_products .title{line-height: 25px;}
+.index_products .title{line-height: 28px;}
 .index_products .title b{margin-left: 3%}
 .index_products .title a{color: #3e3e3e;margin-right: 3%}
 .index_products ul li{width: 49.8%;min-height: 202px;margin-bottom: 2%;float: left;background: #fff;padding-bottom: 5px}

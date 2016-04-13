@@ -98,5 +98,9 @@ angular
         controller: '',
         url:"/order.html"
       })
-    
+    .state('group-buying', {
+        templateUrl: 'views/index/group-buying.html',
+        controller: '',
+        url:"/group-buying.html"
+      })
   });
