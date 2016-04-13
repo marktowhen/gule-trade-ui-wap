@@ -14,17 +14,11 @@ function order_onload(){
             $(nopay_html).appendTo($('.order_body ul'));
             $('.order_wrap .merge_pay').removeClass('hide')
         };
-        $('.checkorder i').on('click',function(){
-            if($(this).hasClass('active')){
-                $(this).removeClass('active')
-            }else{
-                $(this).addClass('active')
-            }
-        })
     });
     
     //头部导航点击样式改变
-    $('.order_wrap .order_nav>div').click(function(){
+    $('.order_wrap .order_nav>div').click(function(e){
+        e.stopPropagation();
         if(!$(this).hasClass('active')){
             $('.order_wrap .order_nav>div').removeClass('active');
             $(this).addClass('active');
@@ -32,7 +26,8 @@ function order_onload(){
     });
     
     //选中订单勾选对号事件 
-    $('.checkorder i').on('click',function(){
+    $('.checkorder i').on('click',function(e){
+        e.stopPropagation();
         if($(this).hasClass('active')){
             $(this).removeClass('active')
         }else{

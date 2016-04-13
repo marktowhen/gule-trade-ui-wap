@@ -98,5 +98,5 @@ angular
         controller: '',
         url:"/order.html"
       })
-
+    
   });
