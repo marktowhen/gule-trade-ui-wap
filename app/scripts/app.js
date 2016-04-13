@@ -88,6 +88,11 @@ angular
         controller: '',
         url:"/product-details.html"
       })
+    .state('group-purchase-details', {
+        templateUrl: 'views/products/group-purchase-details.html',
+        controller: '',
+        url:"/group-purchase-details.html"
+      })
     .state('mycollection', {
         templateUrl: 'views/user/mycollection.html',
         controller: '',
