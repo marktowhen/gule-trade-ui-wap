@@ -89,12 +89,12 @@ angular
         url:"/product-details.html"
       })
     .state('mycollection', {
-        templateUrl: 'views/products/mycollection.html',
+        templateUrl: 'views/user/mycollection.html',
         controller: '',
         url:"/mycollection.html"
       })
     .state('order', {
-        templateUrl: 'views/products/order.html',
+        templateUrl: 'views/user/order.html',
         controller: '',
         url:"/order.html"
       })
