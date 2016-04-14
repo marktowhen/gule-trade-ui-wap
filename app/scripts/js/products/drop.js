@@ -1,3 +1,4 @@
+"use strict";
 function drop() {
 
 	$(document).on('click','.gd-select',function(){

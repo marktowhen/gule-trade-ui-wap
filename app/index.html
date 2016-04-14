@@ -86,6 +86,11 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script type="text/javascript" src="scripts/js/user/tabs.js"></script>
+        <script type="text/javascript" src="scripts/js/user/user.js"></script>
+        <script type="text/javascript" src="scripts/js/user/add-address.js"></script>
+        <script type="text/javascript" src="scripts/js/user/user-info.js"></script>
+        <script type="text/javascript" src="scripts/js/user/eceipt-address.js"></script>
+        <script type="text/javascript" src="scripts/js/products/product-details.js"></script>
         <script type="text/javascript" src="scripts/js/products/swipe2.js"></script>
         <script type="text/javascript" src="scripts/js/swiper.min.js"></script>
         <script type="text/javascript" src="scripts/js/products/slide.js"></script>
@@ -100,15 +105,15 @@
         <script src="scripts\js\index\group-buying.js"></script>
         <script type="text/javascript">
             window.onload = function(){
-                tab1();//product-details/产品图文切换
-                tab2();// user/订单、收藏、、切换
-                tab3();//eceipt-address/设置默认收货地址
-                tab4();//user-info/性别切换
-                tab5();// add-address/添加新地址页面
-                tab6();// 购物车弹出框
-                slide();//product-details.js
-                operate();//add-cart-dialog.js
-                 drop();//group-purchase-details
+                product_details();
+                user();
+                eceipt_address();
+                user_info();
+                add_address();
+                cart_dialog();
+                slide();
+                operate();
+                 drop();
                 index_onload();
                 shoppingcart_onload();
                 allproducts_onload();
