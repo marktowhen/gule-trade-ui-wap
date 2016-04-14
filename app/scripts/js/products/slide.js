@@ -17,10 +17,7 @@ function slide(){
 			}
 		);
 
-
-		$(".dot ul li").click(
-			function(){
-				mySwipe.slide($(this).index(),1000);
-			}
-		);
+		$(document).on('click','.dot ul li',function(){
+			mySwipe.slide($(this).index(),1000);
+	});
 }

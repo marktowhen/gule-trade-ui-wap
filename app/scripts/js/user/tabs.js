@@ -1,82 +1,66 @@
 "use strict";
-//product-details.js
-function tab1() {
-	$(".pd4-hd ul li").click(
-			function(){
-				$(this).addClass("cur").siblings().removeClass("cur").parent().parent().siblings(".pd4-bd").children().children("li").eq($(this).index()).addClass("cur").siblings().removeClass("cur");
-			}
-		);
+
+//product-details/产品图文切换
+function tab1(){
+	$(document).on('click','.pd4-hd ul li',function(){
+		$(this).addClass("cur").siblings().removeClass("cur").parent().parent().siblings(".pd4-bd").children().children("li").eq($(this).index()).addClass("cur").siblings().removeClass("cur");
+	});
 }
-// user.js
+// user/订单、收藏、、切换
 function tab2() {
-	$(".user-box3 ul a li").click(
-			function(){
-				$(this).addClass("cur").parent().siblings().children().removeClass("cur");
-			}
-		);
+	$(document).on('click','.user-box3 ul a li',function(){
+		$(this).addClass("cur").parent().siblings().children().removeClass("cur");
+	});
 }
-//add-cart-dialog.js
+
+//eceipt-address/设置默认收货地址
 function tab3() {
-	$(".cd2-select").click(
-		function(){
-			if($(this).hasClass("cur")){
-				$(this).removeClass("cur");
-			}else{
-				$(this).addClass("cur"); 
-			}
-		}
-	);
+	$(document).on('click','.eceipt-address ul li .eceipt-address-set',function(){
+		$(this).addClass("cur").parent().parent().siblings().children().children(".eceipt-address-set").removeClass("cur"); 
+	});
 }
-//eceipt-address.js
+//user-info/性别切换
 function tab4() {
-	$(".eceipt-address ul li .eceipt-address-set").click(
-		function(){
-			$(this).addClass("cur").parent().parent().siblings().children().children(".eceipt-address-set").removeClass("cur"); 
-		}
-	);
+	$(document).on('click','.user-info-mans',function(){
+		$(this).addClass("cur").siblings().removeClass("cur"); 
+	});
 }
-//user-info.js
+// add-address/添加新地址页面
 function tab5() {
-	$(".user-info-mans").click(
-		function(){
-			$(this).addClass("cur").siblings().removeClass("cur"); 
+	$(document).on('click','.add-set',function(){
+		if($(this).hasClass("cur")){
+			$(this).removeClass("cur");
+		}else{
+			$(this).addClass("cur"); 
 		}
-	);
+	});
+
+	$(document).on('click','li.add-select',function(){
+		$(this).addClass("cur"); 
+	});
 }
 
+// 购物车弹出框
 function tab6() {
-	$(".add-set").click(
-		function(){
-			if($(this).hasClass("cur")){
-				$(this).removeClass("cur");
-			}else{
-				$(this).addClass("cur"); 
-			}
-		}
-	);
-}
-
-function tab7() {
-	$("li.add-select").click(
-		function(){
-			$(this).addClass("cur");
-		}
-	);	
-}
-
-// 购物车弹出框的增减商品
-function tab8() {
-	//增减商品数量
-    $('.cd2-left').click(function(){
-        var num=parseInt($(this).next().text());
+    $(document).on('click','.cd2-left',function(){
+		var num=parseInt($(this).next().text());
         if(num != 1){
             num--;
             $(this).next().text(num)
-        }
-    });
-    $('.cd2-right').click(function(){
-        var num=parseInt($(this).prev().text());
+        } 
+	});	
+
+    $(document).on('click','.cd2-right',function(){
+		var num=parseInt($(this).prev().text());
         num++;
         $(this).prev().text(num)
-    });
+	});
+
+	$(document).on('click','.cd2-select',function(){
+		if($(this).hasClass("cur")){
+			$(this).removeClass("cur");
+		}else{
+			$(this).addClass("cur"); 
+		}
+	}); 
 }
