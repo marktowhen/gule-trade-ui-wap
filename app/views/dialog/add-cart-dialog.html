@@ -1,13 +1,11 @@
-<div style="display: block;" class="modal in" id="add-cart-dialog" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+<div style="display: none;top: inherit;" class="modal in" id="add-cart-dialog" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
   <div class="modal-dialog add-cart-dialog" role="document">
     <div class="modal-content ">
       <div class="modal-header">
-       <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-        </button> -->
         <div class="cart-dialog-box1">
             <div class="cd1-left fl">
-              <img src="../../images/product-details/m1.png" alt=""></div>
+              <img src="../../images/product-details/m1.png" alt="">
+            </div>
             <div class="cd1-mid fl">
               <p class="text-abb" style="width: 95%;">
                 <a href="">移动pos机刷卡器26封顶 0.38...</a>
@@ -15,9 +13,11 @@
               <span class="cd1-mid-price">￥548.00</span>
             </div>
             <div class="cd1-right fl">
-              <div class="cd1-right-icon"></div>
+                <button type="button" class="close" style="margin-top: 10px;" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="cd1-right-icon"></span>
+                </button>
             </div>
-          </div>
+        </div>
       </div>
       <div class="modal-body">
          <div class="cart-dialog"> 
@@ -55,8 +55,8 @@
             </ul>
           </div>
           <div class="cl h10"></div>
-          <div class="cart-dialog-box3">
-            <a href="#no-payment.html">下一步</a>
+          <div class="cart-dialog-box3" data-dismiss="modal" ui-sref="no-payment">
+           下一步
           </div>
         </div>
       </div>

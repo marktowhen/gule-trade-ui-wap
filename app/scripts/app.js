@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-angular
+var wapApp = angular
   .module('etradewapApp', [
     'ngAnimate',
     'ngCookies',
