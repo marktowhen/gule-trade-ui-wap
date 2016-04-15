@@ -1,15 +1,5 @@
 'use strict';
-function index_onload(){
-    //banner滑动
-    var swiper = new Swiper('#index_swiper_container', {
-        slidesPerView: 1,
-        slidesPerColumn: 1,
-        autoplay:5000,
-        loop:true,
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev'
-    });
-    
+function index_onload(){  
     //无限加载热销产品
     var windowheight=$(window).height();
     $(window).scroll(function(){
