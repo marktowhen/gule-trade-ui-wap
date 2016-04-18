@@ -38,17 +38,23 @@
 		<div class="pd1-group-price">
 			<span class="p2 fl">拼团价：</span>
 			<div class="gd-dropdown fl">
-				<input class="gd-select" type="text" value="100人以上 ￥200.00"/>
 				<ul>
 					<li>
-						<a href="javascript:;" rel="5" title="当前价格">100人以上 ￥200.00</a>
+						<a href="javascript:;">100人以上 <span class="nn">￥200.00</span></a>
+					</li>
+					<li class="cur">
+						<a href="javascript:;">200人以上 <span class="nn">￥180.00</span></a>
 					</li>
 					<li>
-						<a href="javascript:;" rel="3">200人以上 ￥180.00</a>
+						<a href="javascript:;" >300人以上 <span class="nn">￥150.00</span></a>
 					</li>
-					<li>
-						<a href="javascript:;" rel="4">300人以上 ￥150.00</a>
-					</li>
+				</ul>
+			</div>
+			<div class="gd-right1 fl">
+				<ul>
+					<li>当前价格</li>
+					<li class="cur">当前价格</li>
+					<li>当前价格</li>
 				</ul>
 			</div>
 		</div>
@@ -110,17 +116,16 @@
 				</li>
 			</ul>
 		</div>
-		<div class="pd5-info2 fl">
-			<a href="#add-cart-dialog.html">加入购物车</a>
+		<div class="pd5-info2 fl" data-target="#add-cart-dialog" data-toggle="modal">
+			<p>加入购物车</p>
 		</div>
-		<div class="pd5-info3 fr">
-			<a href="#no-payment.html">
-				<p>￥180.00</p>
-				<p>立即参团</p>
-			</a>
+		<div class="pd5-info3 fr" data-target="#add-cart-dialog" data-toggle="modal">
+			<p>￥180.00</p>
+			<p>立即参团</p>
 		</div>
 	</div>
 </div>
+<add-cart-dialog id='add-cart-dialog'></add-cart-dialog>
 
 <script type="text/javascript">
 $(document).ready(function slide() {
