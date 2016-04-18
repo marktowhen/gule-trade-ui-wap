@@ -24,14 +24,9 @@ var wapApp = angular
     $urlRouterProvider.otherwise("/");
     $stateProvider
     .state('index', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/index/index_app.html',
         controller: 'MainCtrl',
         url:"/"
-      })
-    .state('about', {
-        templateUrl: 'views/about.html',
-        url:'/about',
-        controller: 'AboutCtrl'
       })
     .state('index_app', {
         templateUrl: 'views/index/index_app.html',
@@ -89,9 +84,9 @@ var wapApp = angular
         url:"/product-details.html"
       })
     .state('group-purchase-details', {
-        templateUrl: 'views/products/group-purchase-details.html',
+        templateUrl: 'views/marketing/group/detail.html',
         controller: '',
-        url:"/group-purchase-details.html"
+        url:"/marketing/group/details.html"
       })
     .state('mycollection', {
         templateUrl: 'views/user/mycollection.html',
@@ -104,8 +99,8 @@ var wapApp = angular
         url:"/order.html"
       })
     .state('group-buying', {
-        templateUrl: 'views/index/group-buying.html',
+        templateUrl: 'views/marketing/group/list.html',
         controller: '',
-        url:"/group-buying.html"
+        url:"/marketing/group/list.html"
       })
   });

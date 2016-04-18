@@ -1,5 +1,5 @@
 
-    <div class="groupbuy_wrap clearfix">
+    <div class="groupbuy_wrap clearfix" ng-controller="GroupListController">
         <header>
             <div class="sort"><span>默认排序</span><i></i>
                 <div class="sort_content hide">
@@ -10,7 +10,7 @@
         </header>
         <section class="products clearfix">    
             <ul>
-                <li class="fs12">
+                <li class="fs12" ng-repeat="g in ggoods">
                     <div class="product_pic col-40 fl">
                         <a href="#/product-details.html">
                             <img src="../images/index/product1.png" alt="">
@@ -23,7 +23,7 @@
                         <div class="groupbuy_sold">已售 <span class="fs14">15856</span> 件</div>
                         <div class="startgroupbuy fs12">
                             <div class="groupprice col-60 fl">￥200.00</div>
-                            <div class="groupgo col-35 fl"><a href="#/group-purchase-details.html">去开团 ＞</a></div>
+                            <div class="groupgo col-35 fl"><a href="#/marketing/group/details.html">去开团 ＞</a></div>
                         </div>
                     </div>
                 </li>
@@ -40,7 +40,7 @@
                         <div class="groupbuy_sold">已售 <span class="fs14">15856</span> 件</div>
                         <div class="startgroupbuy fs12">
                             <div class="groupprice col-60 fl">￥200.00</div>
-                            <div class="groupgo col-35 fl"><a href="#/group-purchase-details.html">去开团 ＞</a></div>
+                            <div class="groupgo col-35 fl"><a href="#/marketing/group/details.html">去开团 ＞</a></div>
                         </div>
                     </div>
                 </li>
@@ -57,7 +57,7 @@
                         <div class="groupbuy_sold">已售 <span class="fs14">15856</span> 件</div>
                         <div class="startgroupbuy fs12">
                             <div class="groupprice col-60 fl">￥200.00</div>
-                            <div class="groupgo col-35 fl"><a href="#/group-purchase-details.html">去开团 ＞</a></div>
+                            <div class="groupgo col-35 fl"><a href="#/marketing/group/details.html">去开团 ＞</a></div>
                         </div>
                     </div>
                 </li>
@@ -74,7 +74,7 @@
                         <div class="groupbuy_sold">已售 <span class="fs14">15856</span> 件</div>
                         <div class="startgroupbuy fs12">
                             <div class="groupprice col-60 fl">￥200.00</div>
-                            <div class="groupgo col-35 fl"><a href="#/group-purchase-details.html">去开团 ＞</a></div>
+                            <div class="groupgo col-35 fl"><a href="#/marketing/group/details.html">去开团 ＞</a></div>
                         </div>
                     </div>
                 </li>
