@@ -122,4 +122,5 @@ var wapApp = angular
         templateUrl: 'views/index/auction-details.html',
         controller: '',
         url:"/auction-details.html"
+      })
   });
