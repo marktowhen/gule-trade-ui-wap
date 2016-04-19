@@ -103,4 +103,9 @@ var wapApp = angular
         controller: '',
         url:"/marketing/group/list.html"
       })
+    .state('auction', {
+        templateUrl: 'views/index/auction.html',
+        controller: '',
+        url:"/index/auction.html"
+      })
   });
