@@ -1,5 +1,5 @@
 'use strict';
-function auction_onload(){
+function myintegral_onload(){
     
     //无限加载商品
     $(window).scroll(function(){
@@ -8,11 +8,5 @@ function auction_onload(){
         }
     });
     
-    //排序功能
-    $(document).on('click','.auction_wrap .sort',function(){
-        if($('.auction_wrap .sort_content').hasClass('hide')){
-            $('.auction_wrap .sort_content').removeClass('hide')
-        }else{$('.auction_wrap .sort_content').addClass('hide')} 
-    });  
 }
   

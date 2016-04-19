@@ -108,9 +108,18 @@ var wapApp = angular
         controller: '',
         url:"/index/auction.html"
       })
+    .state('myintegral', {
+        templateUrl: 'views/user/myintegral.html',
+        controller: '',
+        url:"/user/myintegral.html"
+      })
+    .state('coupons', {
+        templateUrl: 'views/user/coupons.html',
+        controller: '',
+        url:"/user/coupons.html"
+      })
     .state('auction-details', {
         templateUrl: 'views/index/auction-details.html',
         controller: '',
         url:"/auction-details.html"
-      })
   });
