@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-shopApp.service('PayService', function ($http, $location, ApiService) {
+wapApp.service('PayService', function ($http, $location, ApiService) {
     this.init = function(oids){
         return $http.get(ApiService.api.pay.list, 
                     {'params':{'oid': oids}});

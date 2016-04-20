@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-shopApp.controller('CartController', function ($scope, CartService, $cookies, $state, ConstantService, Dialog) {
+wapApp.controller('CartController', function ($scope, CartService, $cookies, $state, ConstantService, Dialog) {
     
     var loginuid = $cookies.get(ConstantService.LOGIN_ID_KEY);
 

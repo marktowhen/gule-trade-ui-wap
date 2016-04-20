@@ -7,8 +7,9 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-shopApp.controller('OrderController', 
-    function ($scope, Dialog, $cookies, ConstantService, OrderService, $state, MyReceiveAddressService, CashCouponService, DiscountCouponService, CouponService, PostageService) {
+wapApp.controller('OrderConfirmController', 
+    function ($scope, Dialog, $cookies, ConstantService, OrderService, $state, 
+        MyReceiveAddressService, CashCouponService, DiscountCouponService, CouponService, PostageService) {
     var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
 
 
@@ -24,33 +25,6 @@ shopApp.controller('OrderController',
                     ]}
                 ]};
 
-    ////发票信息////////////////////////////////////////
-    $scope.invoiceTypes = ['个人','企业'];
-    $scope.invoice = {'required':'false', 'type':'', 'title':''};
-
-    $scope.saveInvoice = function(){
-        if($scope.invoice.type && $scope.invoice.title){
-            $scope.purchaseVo.invoiceType = $scope.invoice.type;
-            $scope.purchaseVo.invoiceTitle = $scope.invoice.title;
-            $("#invoice-info-dialog").modal("hide");
-        }else if($scope.invoice.type){
-            $scope.invoiceTitleError = true;
-        }else if($scope.invoice.title){
-            $scope.invoiceTypeError = true;
-        }else{
-            $scope.invoiceTitleError = true;
-            $scope.invoiceTypeError = true;
-        }
-    };
-
-    $scope.cancelInvoice = function(){
-        $scope.invoice.type = $scope.purchaseVo.invoiceType;
-        $scope.invoice.title = $scope.purchaseVo.invoiceTitle;
-        $scope.invoiceTypeError = false;
-        $scope.invoiceTitleError = false;
-    }
-
-    ////////发票信息结束////////////////////////////////
 
     OrderService.listOrders2Clearing().success(function(data){
         $scope.transaction = data.body;

@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-shopApp.service('OrderService', function ($http, $location, ApiService, PayService, $state) {
+wapApp.service('OrderService', function ($http, $location, ApiService, PayService, $state) {
     
     this.listOrders2Clearing = function(){
         return $http.get(ApiService.api.order.listClearing);
