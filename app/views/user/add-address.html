@@ -1,0 +1,66 @@
+<div class="add-address center-view">
+	<div class="add-address-infos">
+		<ul>
+			<li>
+				<p>姓名</p>
+				<input type="text" class="name1"></li>
+			<li>
+				<p>电话</p>
+				<input type="text" class="tel1"></li>
+			<li class="add-select">
+				<p>省份</p>
+				<select class="add-address-sel2 fr" name="" id="">
+					<option value="">请选择省份</option>
+					<option value="">上海</option>
+					<option value="">广州</option>
+					<option value="">哈尔滨</option>
+					<option value="">青岛</option>
+				</select>
+				<div class="add-address-icons"></div>
+			</li>
+			<li class="add-select">
+				<p>城市</p>
+				<select class="add-address-sel2 fr" name="" id="">
+					<option value="">请选择城市</option>
+					<option value="">上海</option>
+					<option value="">广州</option>
+					<option value="">哈尔滨</option>
+					<option value="">青岛</option>
+				</select>
+				<div class="add-address-icons"></div>
+			</li>
+			<li class="add-select">
+				<p>区县</p>
+				<select class="add-address-sel2 fr" name="" id="">
+					<option value="">请选择区县</option>
+					<option value="">上海</option>
+					<option value="">广州</option>
+					<option value="">哈尔滨</option>
+					<option value="">青岛</option>
+				</select>
+				<div class="add-address-icons"></div>
+			</li>
+			<li>
+				<p>详细地址</p>
+				<input type="text" class="address1"></li>
+			<li>
+				<p>邮政编码</p>
+				<input type="text" class="post1"></li>
+			<li class="add-set cur">
+				<p>设置默认</p>
+				<div class="add-address-set fr">
+					<div class="add-address-icon"></div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="cl h20"></div>
+	<div class="add-address-confirm">确定</div>
+</div>
+
+<nav></nav>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".add-address").height($(window).height());
+	});
+</script>

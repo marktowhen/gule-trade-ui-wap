@@ -1,0 +1,3 @@
+function mycollection_onload(){
+
+}

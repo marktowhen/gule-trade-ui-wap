@@ -1,0 +1,151 @@
+<div class="group-purchase-details center-view" ng-controller="GroupDetailController">
+	<div id="slide" class="swipe">
+		<div class='swipe-wrap'>
+			<div>
+				<img src="images/product-details/p1.png" />
+			</div>
+			<div>
+				<img src="images/product-details/p1.png" />
+			</div>
+			<div>
+				<img src="images/product-details/p1.png" />
+			</div>
+			<div>
+				<img src="images/product-details/p1.png" />
+			</div>
+			<div>
+				<img src="images/product-details/p1.png" />
+			</div>
+		</div>
+		<div class="dot">
+			<ul>
+				<li class="cur"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+	<div class="pd-box1">
+		<div class="pd1-top">
+			<div >【团购】拉卡拉 移动POS机秒到刷卡器信用卡刷卡机0.38积分26封顶一清机</div>
+		</div>
+		<div class="cl"></div>
+		<div class="pd1-price">
+			<span class="p2">原价：￥256.00</span>
+		</div>
+		<div class="pd1-group-price">
+			<span class="p2 fl">拼团价：</span>
+			<div class="gd-dropdown fl">
+				<ul>
+					<li>
+						<a href="javascript:;">100人以上 <span class="nn">￥200.00</span></a>
+					</li>
+					<li class="cur">
+						<a href="javascript:;">200人以上 <span class="nn">￥180.00</span></a>
+					</li>
+					<li>
+						<a href="javascript:;" >300人以上 <span class="nn">￥150.00</span></a>
+					</li>
+				</ul>
+			</div>
+			<div class="gd-right1 fl">
+				<ul>
+					<li>当前价格</li>
+					<li class="cur">当前价格</li>
+					<li>当前价格</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="cl h10"></div>
+	<div class="gd-progress">
+		<dl class="gd-barbox">
+			<dd class="gd-barline fl">
+				<div class="gd-charts"></div>
+			</dd>
+		</dl>
+		<p>
+			<a href="#">187人</a>
+			已参团
+		</p>
+	</div>
+	<div class="cl h10"></div>
+	<div class="gd-info">
+		<div class="gd-text">
+			<p>
+				机秒到刷卡器信用卡刷机秒到刷秒到刷卡器信用卡刷机秒到刷卡器信用卡刷机秒到刷卡器信用卡刷机秒到刷卡器信用卡刷机秒到刷卡器信用卡刷机秒到刷卡器信用卡刷机秒到刷卡器信用卡刷POSPOS。[右上角转发并邀请好友]
+			</p>
+		</div>
+		<div class="pd-serve">
+			<ul>
+				<li>100%正品保证</li>
+				<li>7天退换货</li>
+				<li>7X12在线客服</li>
+			</ul>
+		</div>
+	</div>
+	<div class="cl h10"></div>
+	<div class="pd-box4">
+		<div class="pd4-hd">
+			<ul>
+				<li>
+					<a href="javascript:;">商品详情</a>
+				</li>
+			</ul>
+		</div>
+		<div class="pd4-bd">
+			<ul>
+				<li class="cur">
+					<img src="images/product-details/pic3.png" alt=""></li>
+			</ul>
+		</div>
+	</div>
+	<div class="cl"></div>
+	<div class="pd-box5">
+		<div class="pd5-info3 fr" data-target="#add-cart-dialog" data-toggle="modal">
+			<p>￥180.00</p>
+			<p>立即参团</p>
+		</div>
+		<div class="pd5-info2 fr" data-target="#add-cart-dialog" data-toggle="modal">
+			<p>加入购物车</p>
+		</div>
+		<div class="pd5-info1 fr">
+			<ul>
+				<li>
+					<div class="pd5-icon"></div>
+					<p>客服</p>
+				</li>
+				<li>
+					<div class="pd5-icon"></div>
+					<p>店铺</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<add-cart-dialog id='add-cart-dialog'></add-cart-dialog>
+
+<script type="text/javascript">
+$(document).ready(function slide() {
+	var haha = document.getElementById('slide');
+		window.mySwipe = Swipe(
+			haha, 
+			{	
+				startSlide: 0,		
+				auto: 3000,         
+				continuous: true,   
+				disableScroll: true,  
+				stopPropagation: true,   
+				callback: function(index, element) {
+					$(".dot ul li").eq(index).addClass("cur").siblings().removeClass("cur");
+				}
+			}
+		);
+
+		$(document).on('click','.dot ul li',function(){
+			mySwipe.slide($(this).index(),1000);
+	});
+});
+</script>

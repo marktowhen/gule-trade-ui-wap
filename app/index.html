@@ -28,10 +28,36 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    
+    <!-- <div class="header">
+        <div class="search_wrap mt5 fl col-75">
+            <input type="text" placeholder="移动POS机无线" class="col-90">
+            <a href="" class="search_btn col-10 fr"></a>
+        </div>
+        <a href="#" class="login col-15">登录</a>
+    </div> -->
 
+    <div class="container">
+        <div ui-view=""></div>
+    </div>
 
-    <div ui-view=""></div>
+   <!--  <section class="nav">
+        <a href="#/index_app.html" class="index">
+            <i></i>
+            <div class="nav_name">首页</div>
+        </a>
+        <a href="#/shoppingcart.html" class="shoppingcart">
+            <i></i>
+            <div class="nav_name">购物车</div>
+        </a>
+        <a href="#/products.html" class="allproducts">
+            <i></i>
+            <div class="nav_name">所有商品</div>
+        </a>
+        <a href="#/user.html" class="myinfo">
+            <i></i>
+            <div class="nav_name">我</div>
+        </a>
+    </section> -->
 
     
 
@@ -65,8 +91,71 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/api.js"></script>
+        <script src="scripts/constants.js"></script>
+        <script src="scripts/controllers/marketing/group/group.list.js"></script>
+        <script src="scripts/controllers/marketing/group/group.detail.js"></script>
+        <script src="scripts/services/marketing/group/group.js"></script>
+        <!-- 订单 -->
+        <script src="scripts/controllers/orders/order.confirm.js"></script>
+        <script src="scripts/services/orders/order.js"></script>
+        <script src="scripts/services/orders/pay.js"></script>
+        <!-- 订单结束-->
+        <!-- 会员 -->
+        <script src="scripts/services/vip/coupon/cash.coupon.js"></script>
+        <script src="scripts/services/vip/coupon/coupon.js"></script>
+        <script src="scripts/services/vip/coupon/discount.coupon.js"></script>
+        <script src="scripts/services/vip/point/point.js"></script>
+        <!-- 会员结束-->
+        <!-- 地址 -->
+        <script src="scripts/services/users/receive.address.js"></script>
+        <!-- 地址结束-->
+        <!-- 邮费 -->
+        <script src="scripts/services/logistic/postage.js"></script>
+        <!-- 邮费结束-->
+        <script src="scripts/directive/dialog.js"></script>
+        <script src="scripts/directive/headertop.js"></script>
+        <script src="scripts/directive/nav.js"></script>
+        <script type="text/javascript" src="scripts/js/user/user.js"></script>
+        <script type="text/javascript" src="scripts/js/user/add-address.js"></script>
+        <script type="text/javascript" src="scripts/js/user/user-info.js"></script>
+        <script type="text/javascript" src="scripts/js/user/eceipt-address.js"></script>
+        <script type="text/javascript" src="scripts/js/products/product-details.js"></script>
+        <script type="text/javascript" src="scripts/js/products/swipe2.js"></script>
+        <script type="text/javascript" src="scripts/js/swiper.min.js"></script>
+        <script type="text/javascript" src="scripts/js/products/slide.js"></script>
+        <script type="text/javascript" src="scripts/js/dialog/add-cart-dialog.js"></script>
+        <script src="scripts/js/index/index.js"></script>
+        <script src="scripts/js/products/products.js"></script>
+        <script src="scripts/js/velocity.js"></script>
+        <script src="scripts\js\shoppingcart\shoppingcart.js"></script>
+        <script src="scripts\js\products\mycollection.js"></script>
+        <script src="scripts\js\products\order.js"></script>
+        <script src="scripts\js\index\group-buying.js"></script>
+        <script src="scripts\js\index\auction.js"></script>
+        <script src="scripts\js\user\myintegral.js"></script>
+        <script src="scripts\js\user\coupons.js"></script>
+        <script src="scripts/js/index/auction-details.js"></script>
+        <script type="text/javascript">
+            window.onload = function(){
+                product_details();
+                user();
+                eceipt_address();
+                user_info();
+                add_address();
+                cart_dialog();
+                // slide();
+                index_onload();
+                shoppingcart_onload();
+                allproducts_onload();
+                order_onload();
+                groupbuy_onload();
+                auction_onload();
+                auction_details();
+                myintegral_onload();
+                coupons_onload();
+            }
+        </script>
         <!-- endbuild -->
 </body>
 </html>
