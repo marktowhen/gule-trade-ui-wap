@@ -7,7 +7,7 @@
 			<li>
 				<p>电话</p>
 				<input type="text" class="tel1"></li>
-			<li class="add-select cur">
+			<li class="add-select">
 				<p>省份</p>
 				<select class="add-address-sel2 fr" name="" id="">
 					<option value="">请选择省份</option>
@@ -59,3 +59,8 @@
 </div>
 
 <nav></nav>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".add-address").height($(window).height());
+	});
+</script>

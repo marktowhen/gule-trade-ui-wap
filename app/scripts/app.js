@@ -8,11 +8,11 @@
  *
  * Main module of the application.
  */
+
 var wapApp = angular
   .module('etradewapApp', [
     'ngAnimate',
     'ngCookies',
-    'ngMessages',
     'ngResource',
     'ngRoute',
     'ngSanitize',
@@ -38,14 +38,14 @@ var wapApp = angular
         url:"/products.html"
       })
     .state('shoppingcart', {
-        templateUrl: 'views/shoppingcart/shoppingcart.html',
+        templateUrl: 'views/orders/shoppingcart.html',
         controller: '',
         url:"/shoppingcart.html"
       })
-    .state('no-payment', {
-        templateUrl: 'views/no-payment/no-payment.html',
+    .state('order-confirmation', {
+        templateUrl: 'views/orders/confirm.html',
         controller: '',
-        url:"/no-payment.html"
+        url:"/orders/confirmation.html"
       })
      .state('user', {
         templateUrl: 'views/user/user.html',
