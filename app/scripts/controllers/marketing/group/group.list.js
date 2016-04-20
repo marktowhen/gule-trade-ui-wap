@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-etradewapApp.controller('GroupListController', 
+wapApp.controller('GroupListController', 
 	['$scope', 'GroupBuyService', function ($scope, GroupBuyService) {
 	
 		GroupBuyService.listWithCondition(0, 20)

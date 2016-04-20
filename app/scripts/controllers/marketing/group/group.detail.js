@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-etradewapApp.controller('GroupDetailController', 
+wapApp.controller('GroupDetailController', 
 	['$scope', 'GroupBuyService', '$stateParams',
 		 function ($scope, GroupBuyService, $stateParams) {
 	

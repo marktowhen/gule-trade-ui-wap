@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-etradewapApp.service('GroupBuyService', ['$scope', '$http', function($scope, $http){
+wapApp.service('GroupBuyService', ['$http', 'ApiService', function($http, ApiService){
 	
 	this.listWithCondition  = function (from, size){
         return  $http.get(ApiService.api.marketing.group.listWithCondition,
