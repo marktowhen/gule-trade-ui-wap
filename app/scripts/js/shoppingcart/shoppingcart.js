@@ -10,9 +10,9 @@ function shoppingcart_onload(){
     $(document).on('touchmove','.shoppingcart_products ul li',function(e){
         stop_x = e.originalEvent.touches[0].clientX;
         move_x=stop_x-start_x;
-        if(move_x<-5){
+        if(move_x<-20){
             $(this).find('.product_body').velocity({translateX:'-16.666667%'},{duration: 100});         
-        }else if(move_x>5){
+        }else if(move_x>20){
             $(this).find('.product_body').velocity({translateX:'0'},{duration: 100});
         }
     });

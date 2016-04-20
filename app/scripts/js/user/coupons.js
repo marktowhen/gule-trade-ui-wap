@@ -7,8 +7,8 @@ function coupons_onload(){
             $(this).addClass('active')
         }
     });
-    var voucher_ul='<li><div class="coupon_left col-70 fl"><div class="coupon_name">抵用券</div><div class="coupon_usetime fs12">使用时间：<span>2016.02.05-2016.03.04</span></div></div><div class="coupon_right col-30 fl"><div class="sum">50<span class="fs12">&nbsp;元</span></div><div class="limit fs12">满299元可用</div><i></i></div></li>';
-    var p_cash_ul='<li class="p-cash"><div class="coupon_left col-70 fl"><div class="coupon_name">购物金</div><div class="coupon_usetime fs12">使用时间：<span>2016.02.05-2016.03.04</span></div></div><div class="coupon_right col-30 fl"><div class="sum">20<span class="fs12">&nbsp;元</span></div><div class="limit fs12">满299元可用</div><i></i></div></li>';
+    var voucher_ul='<li class="voucher_li"><div class="coupon_left col-70 fl"><div class="coupon_name">抵用券</div><div class="coupon_usetime fs12">使用时间：<span>2016.02.05-2016.03.04</span></div></div><div class="coupon_right col-30 fl"><div class="sum">50<span class="fs12">&nbsp;元</span></div><div class="limit fs12">满299元可用</div><i></i></div></li>';
+    var p_cash_ul='<li class="p-cash_li"><div class="coupon_left col-70 fl"><div class="coupon_name">购物金</div><div class="coupon_usetime fs12">使用时间：<span>2016.02.05-2016.03.04</span></div></div><div class="coupon_right col-30 fl"><div class="sum">20<span class="fs12">&nbsp;元</span></div><div class="limit fs12">满299元可用</div><i></i></div></li>';
     $(document).on('click','.coupons_wrap .voucher',function(){
        $('.coupons_list ul').html('');
        $('.coupons_wrap .addpcash').text('新增抵用券');
