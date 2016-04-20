@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-etradewapApp.service('ApiService', function () {
+wapApp.service('ApiService', function () {
     this.api = {
         
         'order':{
