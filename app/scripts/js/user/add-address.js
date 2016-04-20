@@ -12,6 +12,4 @@ function add_address() {
 	$(document).on('click','li.add-select',function(){
 		$(this).addClass("cur"); 
 	});
-
-	$(".add-address").height($(window).height());
 }
