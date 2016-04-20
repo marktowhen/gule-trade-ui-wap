@@ -25,7 +25,7 @@ var wapApp = angular
     $stateProvider
     .state('index', {
         templateUrl: 'views/index/index_app.html',
-        controller: 'MainCtrl',
+        controller: '',
         url:"/"
       })
     .state('index_app', {
