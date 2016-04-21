@@ -61,7 +61,7 @@ input[type="radio"],input[type="checkbox"]{margin-left:5px;position: relative;to
 .dropdown{width:14%;text-align: center;}
 .search_wrap{line-height:30px;background: #fff;margin-left: 10%}
 .search_wrap input{line-height: 30px;text-indent: 0.7em;color: #333}  
-.search_wrap .search_btn{height:30px;background: url(../../images/icon.png) -55px 1px}
+.search_wrap .search_btn{height:30px;background: url(../../images/icon.png) -55px 2px}
 .login{line-height: 40px;text-align: center;display: inline-block}
 
 /*底部导航*/
@@ -74,6 +74,22 @@ input[type="radio"],input[type="checkbox"]{margin-left:5px;position: relative;to
 .nav .allproducts i{background: url(../../images/icon.png) -46px -134px}
 .nav .myinfo i{background: url(../../images/icon.png) -45px -183px}
 
+/*底部导航激活样式*/
+.nav_index_active i{background: url(../../images/icon.png) -1px -37px!important}
+.nav_index_active .nav_name{color: #fd8841}
+.nav_shoppingcart_active i{background: url(../../images/icon.png) -1px -84px!important}
+.nav_shoppingcart_active .nav_name{color: #fd8841}
+.nav_allproducts_active i{background: url(../../images/icon.png) -1px -133px!important}
+.nav_allproducts_active .nav_name{color: #fd8841}
+.nav_myinfo_active i{background: url(../../images/icon.png) -3px -182px!important}
+.nav_myinfo_active .nav_name{color: #fd8841}
+
+/*4.12下午邓甲添加*/
+i{display: inline-block}
+.fs12{font-size: 12px}
+.fs14{font-size: 14px}
+
+.over{overflow: hidden}
 
 
 /*rl*/
@@ -84,13 +100,8 @@ input[type="radio"],input[type="checkbox"]{margin-left:5px;position: relative;to
 	text-decoration: none;
 	box-sizing:border-box;
 }
-body {font-size:16px; color: #000; font-style: normal; font-family:'Microsoft Yahei','微软雅黑','Simsun','宋体','Arial', sans-serif;}
-.fl{
-	float: left;
-}
-.fr{
-	float: right;
-}
+body {font-size:16px;  }
+
 .cl{
 	clear: both;
 	overflow: hidden;
@@ -131,10 +142,6 @@ body {font-size:16px; color: #000; font-style: normal; font-family:'Microsoft Ya
 .h200{
 	height: 200px;
 }
-.center-view{
-	width: 100%;
-	overflow: hidden;
-}
 .text-abb{
 	width:100px; 
 	overflow:hidden; 
@@ -143,9 +150,6 @@ body {font-size:16px; color: #000; font-style: normal; font-family:'Microsoft Ya
 }
 a{outline: none;}
 
-/*4.12下午邓甲添加*/
-i{display: inline-block}
-.fs12{font-size: 12px}
-.fs14{font-size: 14px}
+@center-view-width:100%;
+@txt-color:#000;//正文字体颜色
 
-.over{overflow: hidden}
