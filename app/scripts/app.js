@@ -48,6 +48,11 @@ var wapApp = angular
         controller: '',
         url:"/orders/confirmation.html"
       })
+    .state('order-address-list', {
+        templateUrl: 'views/orders/address.list.html',
+        controller: '',
+        url:"/orders/address/list.html"
+      })
      .state('user', {
         templateUrl: 'views/user/user.html',
         controller: '',

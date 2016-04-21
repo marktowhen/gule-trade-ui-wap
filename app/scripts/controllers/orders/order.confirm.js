@@ -8,12 +8,12 @@
  * Controller of the jingyunshopApp
  */
 wapApp.controller('OrderConfirmController', 
-    function ($scope, Dialog, $cookies, ConstantService, OrderService, $state, 
+    function ($scope, $cookies, ConstantService, OrderService, $state, 
         MyReceiveAddressService, CashCouponService, DiscountCouponService, CouponService, PostageService) {
     var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
 
 
-    $scope.purchaseVo = {'addressid':'', 'province':'', 'address':'', 'receiver':'', 'mobile':'', 'zipcode':'',
+    $scope.purchaseVo = {'addressid':'', 'city':'', 'address':'', 'receiver':'', 'mobile':'', 'zipcode':'',
                 'couponID':'', 'couponType':'', 'invoiceType':'', 'invoiceTitle':'',
                 'paytypeCode':'ONLINE', 'paytypeName':'线上支付', 
                 'orders':[
@@ -42,7 +42,7 @@ wapApp.controller('OrderConfirmController',
                 };
             }
         }else{
-            Dialog.alert($scope, "订单信息不正确。");
+            alert("订单信息不正确。");
             $state.go("cart");//should be go to illegal order page.
             return;
         }
@@ -105,7 +105,7 @@ wapApp.controller('OrderConfirmController',
                         $scope.finalmoney = data.body + $scope.originpostage;
                     }else{
                         $scope.finalmoney = $scope.pureOriginMoney + $scope.originpostage;
-                        Dialog.alert($scope, data.message);
+                        alert(data.message);
                     }
                 });
         }else{
@@ -159,12 +159,12 @@ wapApp.controller('OrderConfirmController',
     $scope.submit = function(){
         if($scope.invoice.required == 'true'){
             if(!$scope.invoice.type || !$scope.invoice.title){
-                Dialog.alert($scope, "请完善发票信息");
+                alert("请完善发票信息");
                 return;
             }
         }
         if(!$scope.transaction || !$scope.transaction.orders){
-            Dialog.alert($scope, "订单信息有误，请检查后重新提交");
+            alert("订单信息有误，请检查后重新提交");
             return;
         }
         
@@ -201,16 +201,16 @@ wapApp.controller('OrderConfirmController',
                 }else if(data.code == 400){
                     $("#login-dialog").modal("show");
                 }else{
-                    Dialog.alert($scope, data.message);
+                    alert(data.message);
                 }
             }).error(function(data){
-                Dialog.alert($scope, "订单信息有误，请检查后重新提交");
+                alert("订单信息有误，请检查后重新提交");
             });
     };
 
     $scope.selectAddress = function(address){
         $scope.purchaseVo.addressid = address.id;
-        $scope.purchaseVo.province = address.province;
+        $scope.purchaseVo.city = address.city;
         $scope.purchaseVo.address = address.countryName+'-'+address.provinceName+'-'+address.cityName+'-'+address.address;
         $scope.purchaseVo.receiver = address.receiver;
         $scope.purchaseVo.mobile = address.mobile;
@@ -229,7 +229,7 @@ wapApp.controller('OrderConfirmController',
             var o = $scope.transaction.orders[i];
             pquery.mid = o.mid;
             pquery.price = o.price-o.postage;
-            pquery.province = address.province;
+            pquery.city = address.city;
             postagequery.push(pquery);
         };
         PostageService.calculate(postagequery).success(function(data){
@@ -252,10 +252,10 @@ wapApp.controller('OrderConfirmController',
                 };
                 $scope.originpostage = newpostage;
             }else{
-                Dialog.alert($scope, data.message);
+                alert(data.message);
             }
         }).error(function(data){
-            Dialog.alert($scope, "网络异常，请稍后重试。");
+            alert("网络异常，请稍后重试。");
         });
     };
     $scope.selectPaytype = function(paytype){
@@ -307,13 +307,13 @@ wapApp.controller('OrderConfirmController',
     $scope.removeAddress = function(address){
         MyReceiveAddressService.remove(address.id).success(function(data){
                 if(data.ok){
-                    Dialog.success($scope, '删除成功');
+                    alert('删除成功');
                     if(address.id == $scope.purchaseVo.addressid){
                         $scope.selectAddress({});
                     }
                     listAddress();
                 }else{
-                    Dialog.alert($scope, data.message);
+                    alert(data.message);
                 }
             })
     }
