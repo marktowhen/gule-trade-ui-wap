@@ -34,52 +34,53 @@
 .eceipt-address-bottom{
 	height: 30px;
 	line-height: 30px;
-	padding-left: 12%;
+	padding-left: 4%;
 	padding-right: 4%;
 	font-size: 12px;
+}
+.eceipt-address-bottom i{
+	font-size: 14px;
 }
 .eceipt-address-set{
 	position: relative;
 	cursor: pointer;
+	width: 35%;
+	cursor: pointer;
 }
-.eceipt-address-set p::before{
-	content: "";
-	position: absolute;
-	top:7px;
-	left:-50%;
-	width: 15px;
-	height: 15px;
-	background: url(../../images/icon.png) no-repeat -252px -125px;
+span.address-circle{
+	width: 17px;
+	height: 17px;
+	line-height: 17px;
+	border-radius: 10px;
+	border: 1px solid #C0C0C0;
+	margin-top:6px;
+	margin-right: 7%;
+	text-align: center;
 }
-.eceipt-address-set.cur p::before{
-	background-position:  -224px -125px;
+.eceipt-address-set i.icon-right{
+	display: none;
+	color: #fff;
+	font-size:12px;
+	margin-top: 3px;
+}
+.eceipt-address-set.cur span.address-circle{
+	border: none;
+	background-color:#FD8842;
+}
+.eceipt-address-set.cur i.icon-right{
+	display: block;
+}
+.eceipt-address-set  p:nth-child(2){
+	float: left;
 }
 .eceipt-address-edit{
 	position: relative;
 	margin-left: 15%;
 	cursor: pointer; 
 }
-.eceipt-address-edit::before{
-	content: "";
-	position: absolute;
-	top:7px;
-	left:-70%;
-	width: 14px;
-	height: 15px;
-	background: url(../../images/icon.png) no-repeat -254px -85px;
-}
 .eceipt-address-del{
 	cursor: pointer;
 	position: relative;
-}
-.eceipt-address-del::before{
-	content: "";
-	position: absolute;
-	top:7px;
-	left:-70%;
-	width: 13px;
-	height: 14px;
-	background: url(../../images/icon.png) no-repeat -226px -86px;
 }
 .eceipt-address-add{
 	height: 40px;
