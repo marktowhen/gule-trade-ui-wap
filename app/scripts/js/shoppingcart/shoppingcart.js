@@ -19,10 +19,10 @@ function shoppingcart_onload(){
     
     //点击选中或取消商品
     $(document).on('click','.choose i',function(){
-        if($(this).hasClass('active')){
-            $(this).removeClass('active');
+        if($(this).hasClass('icon-right')){
+            $(this).removeClass('icon-right');
         }else{
-            $(this).addClass('active');
+            $(this).addClass('icon-right');
         }
     });
     
@@ -42,12 +42,12 @@ function shoppingcart_onload(){
     
     //全选
     $(document).on('click','.check_all i',function(){
-        if($(this).hasClass('active')){
-            $(this).removeClass('active');
-            $('.choose i').removeClass('active')
+        if($(this).hasClass('icon-right')){
+            $(this).removeClass('icon-right');
+            $('.choose i').removeClass('icon-right')
         }else{
-            $(this).addClass('active');
-            $('.choose i').addClass('active')
+            $(this).addClass('icon-right');
+            $('.choose i').addClass('icon-right')
         }
     });
 }
