@@ -7,10 +7,11 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-wapApp.controller('OrderConfirmController', 
+wapApp.controller('OrderAddressParentController', 
     function ($scope, $cookies, ConstantService, OrderService, $state, 
         MyReceiveAddressService, CashCouponService, DiscountCouponService, CouponService, PostageService) {
     var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
 
 
+    
 });

@@ -1,0 +1,250 @@
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name jingyunshopApp.controller:AboutCtrl
+ * @description
+ * # AboutCtrl
+ * Controller of the jingyunshopApp
+ */
+wapApp.controller('OrderConfirmationParantController', 
+    function ($scope, $cookies, ConstantService, OrderService, $state, 
+        MyReceiveAddressService, CashCouponService, DiscountCouponService, CouponService, PostageService) {
+    var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
+
+
+    $scope.purchaseVo = {'addressid':'', 'city':'', 'address':'', 'receiver':'', 'mobile':'', 'zipcode':'',
+                'couponID':'', 'couponType':'', 'invoiceType':'', 'invoiceTitle':'',
+                'paytypeCode':'ONLINE', 'paytypeName':'线上支付', 
+                'orders':[
+                    {'MID':'', 'mname':'', 'deliveryTypeCode':'D002', 
+                    'deliveryTypeName':'普通快递', 'postage':'', 'price':'',
+                    'goods':[
+                        {'GID':'', 'gname':'', 'price':'', 'count':''},
+                        {'GID':'', 'gname':'', 'price':'', 'count':''}
+                    ]}
+                ]};
+
+
+    OrderService.listOrders2Clearing().success(function(data){
+        $scope.transaction = {'addressid':''};//data.body;
+        var price = 0;
+        if($scope.transaction && $scope.transaction.orders){
+            $scope.finalmoney = $scope.transaction.totalPrice;
+            $scope.pureOriginMoney = $scope.transaction.totalPriceWithoutPostage;
+            $scope.originpostage = $scope.finalmoney - $scope.pureOriginMoney;
+        }else{
+            //alert("订单信息不正确。");
+            //$state.go("cart");//should be go to illegal order page.
+            return;
+        }
+        
+    });
+    
+    $scope.$watch('$viewContentLoaded', function() {  
+       listCashCoupon();
+       listDiscountCoupon();
+    }); 
+
+    $scope.$on("activeCashCoupon",
+          function (event, msg) {
+            listCashCoupon();
+            $("#recharge-voucher-dialog").modal("hide");
+            $("#recharge-shopping-gold-dialog").modal("hide");
+          }
+    );
+    $scope.$on("activeDiscountCoupon",
+          function (event, msg) {
+            listDiscountCoupon();
+            $("#recharge-voucher-dialog").modal("hide");
+            $("#recharge-shopping-gold-dialog").modal("hide");
+          }
+    );
+
+    var listCashCoupon = function(){
+        CashCouponService.getUnusedCoupon(uid).success(function(data){
+            $scope.cashcoupons = data.body;
+        });
+    };
+    
+    var listDiscountCoupon = function(){
+         DiscountCouponService.getUnusedCoupon(uid).success(function(data){
+            $scope.discountcoupons = data.body;
+        });
+    };
+   
+    ///////////卡券 开始//////////////////
+
+    ///1，校验所选卡券是否有效。
+    ///2，计算卡券应用后的订单价格
+    $scope.pureOriginMoney = 0;//没有邮费的订单价格
+    $scope.originpostage = 0;//总邮费
+    $scope.finalmoney = 0;//包含邮费的订单总价
+    $scope.finalpoint = 0;
+    $scope.$watch("finalmoney", function(oldv, newv){
+        $scope.finalpoint = Math.floor($scope.finalmoney / 100);
+    });
+    $scope.$watch("originpostage", function(oldv, newv){
+        $scope.finalmoney = $scope.pureOriginMoney + $scope.originpostage;
+    });
+    $scope.changeCouponSelection = function(){
+        var cid = $scope.purchaseVo.couponID;
+        var type = $scope.purchaseVo.couponType;
+        if(uid && cid && type && $scope.pureOriginMoney){
+            CouponService.calculate(uid, cid, type, $scope.pureOriginMoney)
+                .success(function(data){
+                    if(data.ok){
+                        $scope.finalmoney = data.body + $scope.originpostage;
+                    }else{
+                        $scope.finalmoney = $scope.pureOriginMoney + $scope.originpostage;
+                        alert(data.message);
+                    }
+                });
+        }else{
+            $scope.finalmoney = $scope.pureOriginMoney + $scope.originpostage;
+        }
+        console.log($scope.purchaseVo);
+    };
+
+    $scope.useDiscountCoupon = false;
+    $scope.useCashCoupon = false;
+    $scope.purchaseVo.couponType = (!$scope.useCashCoupon && !$scope.useDiscountCoupon) ? '' 
+                        : ($scope.useCashCoupon? 'CASHCOUPON': 'DISCOUNTCOUPON');
+
+    $scope.checkCashCoupn = function(){
+        if($scope.useCashCoupon){
+            $scope.useDiscountCoupon = false;
+            $scope.purchaseVo.couponType = "CASHCOUPON";
+            $scope.purchaseVo.couponID = '';
+        }else{
+            $scope.purchaseVo.couponType = '';
+            $scope.purchaseVo.couponID = '';
+        }
+        $scope.changeCouponSelection();
+    };
+
+    $scope.checkDiscountCoupon = function(){
+        if($scope.useDiscountCoupon){
+            $scope.useCashCoupon = false;
+            $scope.purchaseVo.couponType = "DISCOUNTCOUPON";
+            $scope.purchaseVo.couponID = '';
+        }else{
+            $scope.purchaseVo.couponType = '';
+            $scope.purchaseVo.couponID = '';
+        }
+        
+        $scope.changeCouponSelection();
+    };
+
+    ///////////卡券 结束//////////////////
+    
+    
+    OrderService.listPaytype().success(function(data){
+        $scope.paytypes = data.body;
+    });
+    
+    $scope.submit = function(){
+        
+        if(!$scope.transaction || !$scope.transaction.orders){
+            alert("订单信息有误，请检查后重新提交");
+            return;
+        }
+        
+        if($scope.purchaseVo.couponID && $scope.transaction.orders.length > 1){
+            $("#confirm-dialog").modal("show");
+            return;
+        }
+        $scope.confirmSubmit();
+        
+    };
+
+    $scope.confirmSubmit = function(){
+        $scope.purchaseVo.orders = $scope.transaction.orders;
+        angular.forEach($scope.purchaseVo.orders, function(order, index){
+            order.deliveryTypeCode = 'EXPRES';
+            order.deliveryTypeName = '普通快递';
+        });
+        OrderService.submit($scope.purchaseVo)
+            .success(function(data){
+                if(data.ok){
+                    var purchaseVo = data.body;
+                    var orders = purchaseVo.orders;
+                    var oids = [];
+                    for(var i = 0; i < orders.length; i++){
+                        oids.push(orders[i].id);
+                    }
+                    if($scope.finalmoney == 0){
+                        $state.go("payment-success");
+                        return;
+                    }else{
+                        $state.go("order-success.detail", {"oids": oids.join("&")});
+                        return;
+                    }
+                }else if(data.code == 400){
+                    $("#login-dialog").modal("show");
+                }else{
+                    alert(data.message);
+                }
+            }).error(function(data){
+                alert("订单信息有误，请检查后重新提交");
+            });
+    };
+
+    $scope.selectAddress = function(address){
+        $scope.purchaseVo.addressid = address.id;
+        $scope.purchaseVo.city = address.city;
+        $scope.purchaseVo.address = address.countryName+'-'+address.provinceName+'-'+address.cityName+'-'+address.address;
+        $scope.purchaseVo.receiver = address.receiver;
+        $scope.purchaseVo.mobile = address.mobile;
+        $scope.purchaseVo.zipcode = address.zipcode;
+        $scope.useDiscountCoupon = false;
+        $scope.useCashCoupon = false;
+        $scope.purchaseVo.couponType = '';
+        $scope.purchaseVo.couponID = '';
+
+        var postagequery = [];
+        if(!$scope.transaction || !$scope.transaction.orders){
+            return;
+        }
+        for (var i = 0; i < $scope.transaction.orders.length; i++) {
+            var pquery = {};
+            var o = $scope.transaction.orders[i];
+            pquery.mid = o.mid;
+            pquery.price = o.price-o.postage;
+            pquery.city = address.city;
+            postagequery.push(pquery);
+        };
+        PostageService.calculate(postagequery).success(function(data){
+            if(data.ok){
+                var postageresponse = data.body;
+                if(!postageresponse) return;
+                var olen = $scope.transaction.orders.length;
+                var newpostage = 0;
+                for (var i = 0; i < postageresponse.length; i++) {
+                    var p = postageresponse[i];
+                    for (var j = 0; j < olen; j++) {
+                        if($scope.transaction.orders[j].mid === p.mid){
+                            var oldpostage = $scope.transaction.orders[j].postage;
+                            var oldprice = $scope.transaction.orders[j].price;
+                            $scope.transaction.orders[j].postage = p.postage;
+                            $scope.transaction.orders[j].price = (oldprice - oldpostage) + p.postage;
+                            newpostage += ($scope.transaction.orders[j].postage);
+                        }
+                    };
+                };
+                $scope.originpostage = newpostage;
+            }else{
+                alert(data.message);
+            }
+        }).error(function(data){
+            alert("网络异常，请稍后重试。");
+        });
+    };
+    $scope.selectPaytype = function(paytype){
+        $scope.purchaseVo.paytypeCode = paytype.code;
+        $scope.purchaseVo.paytypeName = paytype.name;
+    };
+    $scope.gobackCart = function(){
+        $state.go("cart");
+    };
+});

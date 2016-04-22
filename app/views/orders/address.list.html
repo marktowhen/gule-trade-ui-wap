@@ -1,41 +1,25 @@
-<div class="eceipt-address center-view">
+<div class="eceipt-address center-view" ng-controller="OrderAddressListController">
 	<ul>
-		<li>
-			<div class="eceipt-address-top">
-				<div class="eceipt-address-user fl">麻婷婷</div>
-				<div class="eceipt-address-tel fr">18954195152</div>
+		<li ng-repeat="address in addresses">
+			<div class="eceipt-address-top" ng-click="select(address);">
+				<div class="eceipt-address-user fl">{{address.receiver}}</div>
+				<div class="eceipt-address-tel fr">{{address.mobile}}</div>
 				<div class="cl"></div>
-				<div class="eceipt-address-info fl">山东省济南市历下区泉城路街道世贸国际广场A座1010室</div>
+				<div class="eceipt-address-info fl">{{address.provinceName}}{{address.cityName}}{{address.address}}</div>
 			</div>
 			<div class="eceipt-address-bottom">
-				<div class="eceipt-address-set cur fl">
+				<div class="eceipt-address-set fl" ng-class="{'cur':address.defaulted}" ng-click="defaulted(address);">
 					<p>设置默认</p>
 				</div>
-				<div class="eceipt-address-edit fr">编辑</div>
-				<div class="eceipt-address-del fr">删除</div>
+				<div class="eceipt-address-edit fr"><a href="#/orders/address/edit.html?id={{address.id}}">编辑</a></div>
+				<div class="eceipt-address-del fr" ng-click="deleteaddr(address);">删除</div>
 			</div>
 		</li>
-		<div class="cl h10"></div>
-		<li>
-			<div class="eceipt-address-top">
-				<div class="eceipt-address-user fl">麻婷婷</div>
-				<div class="eceipt-address-tel fr">11111111111</div>
-				<div class="cl"></div>
-				<div class="eceipt-address-info fl">山东省济南市历下区泉城路街道世贸国际广场A座1010室</div>
-			</div>
-			<div class="eceipt-address-bottom">
-				<div class="eceipt-address-set fl">
-					<p>设置默认</p>
-				</div>
-				<div class="eceipt-address-edit fr">编辑</div>
-				<div class="eceipt-address-del fr">删除</div>
-			</div>
-		</li>
-		<div class="cl h10"></div>
+		
 	</ul>
 	<div class="cl h200"></div>
 	<div class="eceipt-address-add">
-		<a href="#add-address.html">
+		<a href="#/orders/address/edit.html">
 			添加新地址
 		</a>
 	</div>

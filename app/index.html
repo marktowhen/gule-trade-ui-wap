@@ -96,9 +96,14 @@
         <script src="scripts/controllers/marketing/group/group.detail.js"></script>
         <script src="scripts/services/marketing/group/group.js"></script>
         <!-- 订单 -->
+        <script src="scripts/controllers/orders/order.confirm.parent.js"></script>
         <script src="scripts/controllers/orders/order.confirm.js"></script>
+        <script src="scripts/controllers/orders/address.parent.js"></script>
+        <script src="scripts/controllers/orders/address.list.js"></script>
+        <script src="scripts/controllers/orders/address.edit.js"></script>
         <script src="scripts/services/orders/order.js"></script>
         <script src="scripts/services/orders/pay.js"></script>
+        <script src="scripts/router/orders/order.js"></script>
         <!-- 订单结束-->
         <!-- 会员 -->
         <script src="scripts/services/vip/coupon/cash.coupon.js"></script>
@@ -112,13 +117,14 @@
         <!-- 邮费 -->
         <script src="scripts/services/logistic/postage.js"></script>
         <!-- 邮费结束-->
+        <!-- 基础数据 -->
+        <script src="scripts/services/statics/area/area.js"></script>
+        <!-- 邮费结束-->
         <script src="scripts/directive/dialog.js"></script>
         <script src="scripts/directive/headertop.js"></script>
         <script src="scripts/directive/nav.js"></script>
         <script type="text/javascript" src="scripts/js/user/user.js"></script>
-        <script type="text/javascript" src="scripts/js/user/add-address.js"></script>
         <script type="text/javascript" src="scripts/js/user/user-info.js"></script>
-        <script type="text/javascript" src="scripts/js/user/eceipt-address.js"></script>
         <script type="text/javascript" src="scripts/js/products/product-details.js"></script>
         <script type="text/javascript" src="scripts/js/products/swipe2.js"></script>
         <script type="text/javascript" src="scripts/js/products/slide.js"></script>
@@ -137,9 +143,7 @@
             window.onload = function(){
                 product_details();
                 user();
-                eceipt_address();
                 user_info();
-                add_address();
                 cart_dialog();
                 // slide();
                 index_onload();

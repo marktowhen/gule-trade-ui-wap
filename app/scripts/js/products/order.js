@@ -1,3 +1,4 @@
+'use strict'
 function order_onload(){
     //暂时定义一些html代码
     var all_html=$('ul').html();

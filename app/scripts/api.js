@@ -19,7 +19,13 @@ wapApp.service('ApiService', function () {
             'logistic':'http://localhost:8080/api/orders/:oid/logistic',
             'listOrderStatus':'http://localhost:8080/api/order/status/visible',
             'cancel':'http://localhost:8080/api/orders/cancellation',
-            'count':'http://localhost:8080/api/orders/seller/count'
+            'count':'http://localhost:8080/api/orders/seller/count',
+            'listClearing':'http://localhost:8080/api/cart/clearing/list'
+        },
+        'pay':{
+            'list':'http://localhost:8080/api/payments',
+            'platforminfo':'http://localhost:8080/api/payments/info',
+            'typelist':'http://localhost:8080/api/pay/type/list'
         },
         'refund':{
             'listWithCondition': 'http://localhost:8080/api/refund/seller/list',
@@ -55,6 +61,14 @@ wapApp.service('ApiService', function () {
             'current' :'http://localhost:8080/api/manager/current'
         },
 
+        'area' : {
+            'listCountry' : 'http://localhost:8080/api/statics/area/country/list',
+            //根据国家查省 /{countryID}
+            'listProvince' : 'http://localhost:8080/api/statics/area/province/list',
+            //根据省查市 /{provinceID}
+            'listCity' : 'http://localhost:8080/api/statics/area/city/list'
+        },
+
         'helpCenter':{
             'category' : {
             	'list' : 'http://localhost:8080/api/statics/help/center/category/list',
@@ -72,6 +86,60 @@ wapApp.service('ApiService', function () {
             }
         },
 
+        // 收貨地址    
+        'myReceieveAddress':{
+            //用戶地址
+            'list' : 'http://localhost:8080/api/address/list/:uid/:offset/:size',
+            //all
+            'listAll':'http://localhost:8080/api/address/all',
+            //详情
+            'single' : 'http://localhost:8080/api/address/:id',
+            //add
+            'add' : 'http://localhost:8080/api/address',
+            //refresh
+            'refresh' : 'http://localhost:8080/api/address/:id',
+            //用戶地址
+            'remove' : 'http://localhost:8080/api/address/:id',
+            //设置默认地址
+            'setDefault' : 'http://localhost:8080/api/address/default/:id'
+        },
+        'cashCoupon' :{
+            //未消费的
+            'unusedCouponAmount' : 'http://localhost:8080/api/vip/coupon/cashcoupon/user/unused/amount/:uid',
+            'unusedCoupon' : 'http://localhost:8080/api/vip/coupon/cashcoupon/user/unused/:uid',
+            //已消费的
+            'consumedCouponAmount' : 'http://localhost:8080/api/vip/coupon/cashcoupon/user/consumed/amount/:uid',
+            'consumedCoupon' : 'http://localhost:8080/api/vip/coupon/cashcoupon/user/consumed/:uid',
+            //过期的
+            'overdueCouponAmount' : 'http://localhost:8080/api/vip/coupon/cashcoupon/user/overdue/amount/:uid',
+            'overdueCoupon' : 'http://localhost:8080/api/vip/coupon/cashcoupon/user/overdue/:uid',
+            //可使用的
+            'useableCouponAmount' : 'http://localhost:8080/api/vip/coupon/cashcoupon/user/useable/amount/:uid',
+            'useableCoupon' : 'http://localhost:8080/api/vip/coupon/cashcoupon/user/useable/:uid',
+            //是否可激活
+            'canActive' : 'http://localhost:8080/api/vip/coupon/cashcoupon/can/active/:code',
+            //激活券
+            'activeCashCoupon' : 'http://localhost:8080/api/vip/coupon/cashcoupon/user/:code'
+
+        },
+        'discountCoupon' :{
+            //未消费的
+            'unusedCouponAmount' : 'http://localhost:8080/api/vip/coupon/discountcoupon/user/unused/amount/:uid',
+            'unusedCoupon' : 'http://localhost:8080/api/vip/coupon/discountcoupon/user/unused/:uid',
+            //已消费的
+            'consumedCouponAmount' : 'http://localhost:8080/api/vip/coupon/discountcoupon/user/consumed/amount/:uid',
+            'consumedCoupon' : 'http://localhost:8080/api/vip/coupon/discountcoupon/user/consumed/:uid',
+            //过期的
+            'overdueCouponAmount' : 'http://localhost:8080/api/vip/coupon/discountcoupon/user/overdue/amount/:uid',
+            'overdueCoupon' : 'http://localhost:8080/api/vip/coupon/discountcoupon/user/overdue/:uid',
+            //可使用的
+            'useableCouponAmount' : 'http://localhost:8080/api/vip/coupon/discountcoupon/user/useable/amount/:uid',
+            'useableCoupon' : 'http://localhost:8080/api/vip/coupon/discountcoupon/user/useable/:uid',
+            //是否可激活
+            'canActive' : 'http://localhost:8080/api/vip/coupon/discountcoupon/can/active/:code',
+            'activeDiscountCoupon' : 'http://localhost:8080/api/vip/coupon/discountcoupon/user/:code'
+
+        },
         'counpon':{
             'cashcounpon' : {
                 'list' : 'http://localhost:8080/api/vip/coupon/cashcoupon/list/:from/:size',

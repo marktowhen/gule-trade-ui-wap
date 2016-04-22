@@ -37,21 +37,6 @@ var wapApp = angular
         controller: '',
         url:"/products.html"
       })
-    .state('shoppingcart', {
-        templateUrl: 'views/orders/shoppingcart.html',
-        controller: '',
-        url:"/shoppingcart.html"
-      })
-    .state('order-confirmation', {
-        templateUrl: 'views/orders/confirm.html',
-        controller: '',
-        url:"/orders/confirmation.html"
-      })
-    .state('order-address-list', {
-        templateUrl: 'views/orders/address.list.html',
-        controller: '',
-        url:"/orders/address/list.html"
-      })
      .state('user', {
         templateUrl: 'views/user/user.html',
         controller: '',
@@ -61,16 +46,6 @@ var wapApp = angular
         templateUrl: 'views/user/user-info.html',
         controller: '',
         url:"/user-info.html"
-      })
-     .state('eceipt-address', {
-        templateUrl: 'views/user/eceipt-address.html',
-        controller: '',
-        url:"/eceipt-address.html"
-      })
-     .state('add-address', {
-        templateUrl: 'views/user/add-address.html',
-        controller: '',
-        url:"/add-address.html"
       })
      .state('add-cart-dialog', {
         templateUrl: 'views/dialog/add-cart-dialog.html',
