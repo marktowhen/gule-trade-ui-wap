@@ -21,7 +21,7 @@ wapApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider){
       })
     .state('orderconfirm.address', {
       abstract: true,
-        templateUrl: 'views/orders/address.parent.html',
+        template: '<ui-view/>',
         controller: '',
         url:"/address"
       })
