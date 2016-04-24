@@ -9,10 +9,19 @@
 			</div>
 			<div class="eceipt-address-bottom">
 				<div class="eceipt-address-set fl" ng-class="{'cur':address.defaulted}" ng-click="defaulted(address);">
+					<span class="address-circle fl">
+						<i class="icon-right"></i>
+					</span>
 					<p>设置默认</p>
 				</div>
-				<div class="eceipt-address-edit fr"><a href="#/orders/address/edit.html?id={{address.id}}">编辑</a></div>
-				<div class="eceipt-address-del fr" ng-click="deleteaddr(address);">删除</div>
+				<div class="eceipt-address-edit fr">
+					<a href="#/orders/address/edit.html?id={{address.id}}">
+					<i class="icon-bianji"></i>编辑
+					</a>
+				</div>
+				<div class="eceipt-address-del fr" ng-click="deleteaddr(address);">
+					<i class="icon-laji"></i>删除
+				</div>
 			</div>
 		</li>
 		

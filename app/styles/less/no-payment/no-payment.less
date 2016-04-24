@@ -22,14 +22,13 @@
 	padding-left: 7%;
 	position: relative;
 }	
-.pad-box1 p:nth-child(1){
+.pad-box1 p:nth-child(2){
 	width: 30%;
 	height: 30px;
 	line-height: 30px;
 	float: left;
 }	
-.pad-box1 p:nth-child(1)::before{
-	content: "";
+.pad-box1 .icon-dizhi{
 	position: absolute;
 	top: 26px;
 	left: 1%;
@@ -38,6 +37,11 @@
 	background: url(../../images/icon.png) no-repeat -6px -255px;
 }	
 .change-but > a{
+    top: 23px;
+    left: 0%;
+    font-size: 16px;
+}
+.change-but{
 	width: 20%;
 	height: 25px;
 	border: 1px solid #FF3333;
@@ -46,6 +50,9 @@
 	color:#FF3333; 
 	cursor: pointer;
 	border-radius: 5px;
+}
+.change-but a{
+	color:#FF3333;
 }
 .consignee-info1{
 	padding-right: 10%;
@@ -189,18 +196,16 @@ span.s2{
 .pay-discount p:nth-child(1){
 	float: left;
 }
-.pay-discount p:nth-child(2){
+.pay-discount p:nth-child(3){
 	float: right;
 	cursor: pointer;
 }
-.pay-discount p:nth-child(2)::after{
-	content: "";
+.pay-discount .icon-arrow{
 	position: absolute;
-	top:19px;
-	right:3%;
-	width:7px;
-	height:15px;
-	background: url(../../images/icon.png) no-repeat -101px -182px;
+    top: 17px;
+    right: 2%;
+    font-weight: bold;
+    font-size: 18px;
 }
 .pay-price{
 	height: 80px;
