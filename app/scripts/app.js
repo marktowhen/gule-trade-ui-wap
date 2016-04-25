@@ -112,4 +112,9 @@ var wapApp = angular
         controller: '',
         url:"/auction-details.html"
       })
+    .state('erweima', {
+        templateUrl: 'views/user/erweima.html',
+        controller: '',
+        url:"/erweima.html"
+      })
   });
