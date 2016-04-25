@@ -26,3 +26,15 @@ wapApp.directive('modifyAvatarDialog', ['$http' ,function ($http){
         };
     }
 ]);
+
+wapApp.directive('addCartSuccessDialog', ['$http' ,function ($http){
+        return {
+            restrict: 'E',
+            replace: true,
+            scope:{
+                gid:'@'
+            },
+            templateUrl:'/views/dialog/add-cart-success-dialog.html'
+        };
+    }
+]);

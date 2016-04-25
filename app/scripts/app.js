@@ -112,4 +112,14 @@ var wapApp = angular
         controller: '',
         url:"/auction-details.html"
       })
+    .state('shareproduct', {
+        templateUrl: 'views/user/shareproduct.html',
+        controller: '',
+        url:"/shareproduct.html"
+      })
+    .state('partner-help', {
+        templateUrl: 'views/user/partner-help.html',
+        controller: '',
+        url:"/partner-help.html"
+      })
   });
