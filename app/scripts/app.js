@@ -122,4 +122,9 @@ var wapApp = angular
         controller: '',
         url:"/partner-help.html"
       })
+    .state('erweima', {
+        templateUrl: 'views/user/erweima.html',
+        controller: '',
+        url:"/erweima.html"
+      })
   });

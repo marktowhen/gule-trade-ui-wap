@@ -65,19 +65,15 @@ span.ag{
 .adm-right{
 	width: 20%;
 	text-align: center;
-	line-height: 64px;
 	height: 64px;
 	padding-top: 10px;
 	position: relative;
 	cursor: pointer;
+	font-size: 13px;
 }
-.adm-right-icon{
-	position: absolute;
-	top:10px;
-	left:37%;
-	width: 14px;
-	height: 14px;
-	background: url(../../images/icon.png) no-repeat -224px -173px;
+.adm-right i.icon-share{
+	color: #33CC66;
+	font-size: 20px;
 }
 .ad1-mid2>ul>li{
 	float: left;
@@ -105,14 +101,10 @@ span.ag{
 	cursor: pointer;
 	position: relative;
 }
-.ad1-bottom p::after{
-	content:"";
+.ad1-bottom i.icon-arrow{
 	position: absolute;
-	top:16px;
-	right:36%;
-	width:5px;
-	height:10px;
-	background: url(../../images/icon.png) no-repeat -188px -292px;
+	top: 13px;
+    right: 34%;
 }
 .ad-offer-hd{
 	height: 40px;
@@ -121,17 +113,23 @@ span.ag{
 	padding-left: 2%;
 	position: relative;
 }
-.ad-offer-hd p::after{
-	content:"";
-	position: absolute;
-	top:15px; 
-	left:23%;
-	width:15px;
-	height:8px;
-	background: url(../../images/icon.png) no-repeat -148px -255px;
+.ad-offer-hd p{
+	float: left;
 }
-.ad-offer-hd.cur p::after{
-	background: url(../../images/icon.png) no-repeat -195px -255px;
+.ad-offer-hd i.icon-UP{
+	margin-top: 10px;
+	color: #fff;
+}
+.ad-offer-hd i.icon-xiangxia{
+	margin-top: 10px;
+	color: #fff;
+	display: none;
+}
+.ad-offer-hd.cur i.icon-UP{
+	display: none;
+}
+.ad-offer-hd.cur i.icon-xiangxia{
+	display: block;
 }
 .ad-offer-hd1{
 	overflow: hidden;

@@ -15,21 +15,27 @@
 				<select class="add-address-sel2 fr" ng-model="address.country"
 				ng-options="c.countryID as c.countryName for c in countries" ng-change="getProvince();" required>
 				</select>
-				<div class="add-address-icons"></div>
+				<div class="add-address-icons">
+					<i class="icon-xiala"></i>
+				</div>
 			</li>
 			<li class="add-select">
 				<p>省份</p>
 				<select class="add-address-sel2 fr" ng-model="address.province" 
 				ng-options="p.provinceID as p.provinceName for p in provinces" ng-change="getCity();" required>
 				</select>
-				<div class="add-address-icons"></div>
+				<div class="add-address-icons">
+					<i class="icon-xiala"></i>
+				</div>
 			</li>
 			<li class="add-select">
 				<p>城市</p>
 				<select class="add-address-sel2 fr" ng-model="address.city"
 				ng-options="c.cityID as c.cityName for c in cities" required>
 				</select>
-				<div class="add-address-icons"></div>
+				<div class="add-address-icons">
+					<i class="icon-xiala"></i>
+				</div>
 			</li>
 			<li>
 				<p>详细地址</p>
@@ -41,9 +47,9 @@
 			</li>
 			<li class="add-set" ng-class="{'cur': address.defaulted}" ng-click="setdefault();">
 				<p>设置默认</p>
-				<div class="add-address-set fr">
-					<div class="add-address-icon"></div>
-				</div>
+				<span class="address-circle fr">
+					<i class="icon-right"></i>
+				</span>
 			</li>
 		</ul>
 		

@@ -19,14 +19,6 @@
 	position: relative;
 	cursor: pointer;
 }
-.add-address-icons{
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	width: 5px;
-	height: 5px;
-	background: url(../../images/icon.png) no-repeat -227px -226px;
-}	
 .add-address-infos>ul>li p{
 	float: left;
 }
@@ -61,19 +53,20 @@
 	position: relative;
 	width: 6%;
 }
-.add-address-icon{
-	position: absolute;
-	top: 17px;
-	right: 0;
-	width: 15px;
-	height: 15px;
-	background: url(../../images/icon.png) no-repeat -252px -125px;
+li.add-set span.address-circle{
+	margin-top: 15px !important;
 }
-.add-set{
+li.add-set span.address-circle i.icon-right{  
+	display: none;
+	color: #fff;
+}
+li.add-set.cur span.address-circle {
+	background-color:#FD8842;
+	border: none;
 	cursor: pointer;
 }
-.add-set.cur .add-address-icon{
-	background-position: -224px -125px;
+li.add-set.cur span.address-circle i.icon-right{
+	display: block;
 }
 li.add-select.cur select.add-address-sel2{
 	display: block;
