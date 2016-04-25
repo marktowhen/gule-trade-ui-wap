@@ -235,6 +235,10 @@ wapApp.service('ApiService', function () {
         'logistic':{
             'logisticlist':'http://localhost:8080/api/logistic/express/list',
             'expressinfo':'http://localhost:8080/api/logistic/express/info/:oid/:code/:codeid'
+        },
+        'wapGoods':{
+            'list':'http://localhost:8080//api/wap/goods/list',
+            'detail':'http://localhost:8080//api/wap/goods/detail/:gid'
         }
     }
 });

@@ -11,6 +11,6 @@ wapApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider){
       }).state('product-details', {
         templateUrl: 'views/products/product.details.html',
         controller: '',
-        url:"/product/details.html"
+        url:"/product/details?gid"
       });
 });

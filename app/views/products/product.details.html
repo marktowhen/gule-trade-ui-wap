@@ -1,24 +1,12 @@
-<div class="product-details center-view">
+<div class="product-details center-view" ng-controller="GoodsDetailsController">
 	<div class="pd-share">
 		<p>可得佣金：6.25</p>
 		<p>立即发送给朋友或分享到朋友圈</p>
 	</div>
 	<div id="slide" class="swipe">
 		<div class='swipe-wrap'>
-			<div>
-				<img src="../../images/product-details/p1.png" />
-			</div>
-			<div>
-				<img src="../../images/product-details/p1.png" />
-			</div>
-			<div>
-				<img src="../../images/product-details/p1.png" />
-			</div>
-			<div>
-				<img src="../../images/product-details/p1.png" />
-			</div>
-			<div>
-				<img src="../../images/product-details/p1.png" />
+			<div ng-repeat="img in goods.imgList">
+				<img src="{{img.path}}" />
 			</div>
 		</div>
 		<div class="dot">
@@ -33,23 +21,24 @@
 	</div>
 	<div class="pd-box1">
 		<div class="pd1-top">
-			<div class="pd1-left fl">拉卡拉 移动POS机秒到刷卡器信用卡刷卡机0.38积分26封顶一清机</div>
+			<div class="pd1-left fl">{{goods.name}}</div>
 			<div class="pd1-right fl">
 				<div class="pd1-right-icon"></div>
 			</div>
 		</div>
 		<div class="cl"></div>
-		<div class="pd1-price">
-			<span class="p1">￥168</span>
-			<span class="p2">
-				价格： <del>256.00</del>
+		<div class="pd1-price" >
+			<span class="p1" ng-show="goods.sale">￥{{goods.salePrice}}</span>
+			<span class="p1" ng-show="!goods.sale">￥{{goods.price}}</span>
+			<span class="p2" ng-show="goods.sale">
+				价格： <del>{{goods.price}}</del>
 			</span>
 		</div>
 		<div class="pd1-info">
 			<ul>
 				<li>快递：0.00</li>
-				<li>评价：2541条</li>
-				<li>月成交额：451</li>
+				<li>评价：{{goods.comment}}条</li>
+				<li>成交额：{{goods.volume}}</li>
 			</ul>
 		</div>
 	</div>
@@ -63,7 +52,7 @@
 	<div class="cl h10"></div>
 	<div class="pd-box2">
 		<div class="pd2-left fl">
-			<p>乐谷微商城</p>
+			<p>{{goods.mName}}</p>
 		</div>
 		<div class="pd2-right fr">
 			<p>进入店铺</p>
@@ -75,14 +64,14 @@
 			<div class="pd3-evaluate fl">
 				<p>
 					宝贝评价（
-					<a href="#">4545</a>
+					<a href="#">{{goods.comment}}</a>
 					）
 				</p>
 			</div>
 			<div class="pd3-evaluates fr">
 				<p>
 					共累计：
-					<a href="#">4545</a>
+					<a href="#">{{goods.comment}}</a>
 					条评价
 				</p>
 			</div>
@@ -102,23 +91,24 @@
 	<div class="pd-box4">
 		<div class="pd4-hd">
 			<ul>
-				<li>
+				<li class="cur">
 					<a href="javascript:;">图文详情</a>
 				</li>
 				<li>
 					<a href="javascript:;">产品参数</a>
 				</li>
-				<li class="cur">
+				<li >
 					<a href="javascript:;">商品推荐</a>
 				</li>
 			</ul>
 		</div>
 		<div class="pd4-bd">
 			<ul>
-				<li>1</li>
+				<li class="cur">1</li>
 				<li>2</li>
-				<li class="cur">
-					<img src="../../images/product-details/pic3.png" alt=""></li>
+				<li >
+					<img src="../../images/product-details/pic3.png" alt="">
+				</li>
 			</ul>
 		</div>
 	</div>
