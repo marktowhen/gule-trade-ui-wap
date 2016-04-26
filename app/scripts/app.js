@@ -132,4 +132,9 @@ var wapApp = angular
         controller: '',
         url:"/erweima.html"
       })
+    .state('login', {
+        templateUrl: 'views/user/login.html',
+        controller: '',
+        url:"/login.html"
+      })
   });
