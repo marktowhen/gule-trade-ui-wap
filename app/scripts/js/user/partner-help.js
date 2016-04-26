@@ -1,5 +1,5 @@
 function partner_help_onload(){
-    $(document).on('click','i.icon-arrow,.help_title',function(){
+    $(document).on('click','.partner-help_wrap i.icon-arrow,.help_title',function(){
         if($(this).siblings('.help_content').hasClass('hide')){
             $(this).siblings('.help_content').removeClass('hide');
             $(this).parent('.help_list_body').addClass('active');
