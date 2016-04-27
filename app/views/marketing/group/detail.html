@@ -1,21 +1,10 @@
 <div class="group-purchase-details center-view" ng-controller="GroupDetailController">
 	<div id="slide" class="swipe">
 		<div class='swipe-wrap'>
-			<div>
-				<img src="images/product-details/p1.png" />
+			<div ng-repeat="img in goods.imgList">
+				<img src="{{img.path}}" alt="{{goods.name}}" />
 			</div>
-			<div>
-				<img src="images/product-details/p1.png" />
-			</div>
-			<div>
-				<img src="images/product-details/p1.png" />
-			</div>
-			<div>
-				<img src="images/product-details/p1.png" />
-			</div>
-			<div>
-				<img src="images/product-details/p1.png" />
-			</div>
+			
 		</div>
 		<div class="dot">
 			<ul>
@@ -29,38 +18,38 @@
 	</div>
 	<div class="pd-box1">
 		<div class="pd1-top">
-			<div >【团购】拉卡拉 移动POS机秒到刷卡器信用卡刷卡机0.38积分26封顶一清机</div>
+			<div >{{goods.name}}</div>
 		</div>
 		<div class="cl"></div>
 		<div class="pd1-price">
-			<span class="p2">原价：￥256.00</span>
+			<span class="p2">原价：￥{{goods.price}}</span>
 		</div>
 		<div class="pd1-group-price">
 			<span class="p2 fl">拼团价：</span>
 			<div class="gd-dropdown fl">
 				<ul>
-					<li>
+					<!-- <li>
 						<a href="javascript:;">100人以上 <span class="nn">￥200.00</span></a>
-					</li>
+					</li> -->
 					<li class="cur">
 						<a href="javascript:;">200人以上 <span class="nn">￥180.00</span></a>
 					</li>
-					<li>
+					<!-- <li>
 						<a href="javascript:;" >300人以上 <span class="nn">￥150.00</span></a>
-					</li>
+					</li> -->
 				</ul>
 			</div>
 			<div class="gd-right1 fl">
 				<ul>
+					<li  class="cur">当前价格</li>
 					<li>当前价格</li>
-					<li class="cur">当前价格</li>
 					<li>当前价格</li>
 				</ul>
 			</div>
 		</div>
 	</div>
 	<div class="cl h10"></div>
-	<div class="gd-progress">
+	<!-- <div class="gd-progress">
 		<dl class="gd-barbox">
 			<dd class="gd-barline fl">
 				<div class="gd-charts"></div>
@@ -70,7 +59,7 @@
 			<a href="#">187人</a>
 			已参团
 		</p>
-	</div>
+	</div> -->
 	<div class="cl h10"></div>
 	<div class="gd-info">
 		<div class="gd-text">
@@ -124,7 +113,7 @@
 			<p>立即参团</p>
 		</div>
 		<div class="pd5-info2 fr" data-target="#add-cart-dialog" data-toggle="modal">
-			<p>加入购物车</p>
+			<p>建团</p>
 		</div>
 		<div class="pd5-info1 fr">
 			<ul>
@@ -132,7 +121,7 @@
 					<i class="icon-QQ"></i>
 					<p>客服</p>
 				</li>
-				<li>
+				<li ng-click="toMerchant(goods.mid)">
 					<i class="icon-sp-1"></i>
 					<p>店铺</p>
 				</li>
@@ -140,7 +129,7 @@
 		</div>
 	</div>
 </div>
-<add-cart-dialog id='add-cart-dialog'></add-cart-dialog>
+<!-- <add-cart-dialog id='add-cart-dialog'></add-cart-dialog> -->
 
 <script type="text/javascript">
 $(document).ready(function slide() {

@@ -55,7 +55,7 @@ var wapApp = angular
     .state('group-purchase-details', {
         templateUrl: 'views/marketing/group/detail.html',
         controller: '',
-        url:"/marketing/group/details.html"
+        url:"/marketing/group/details.html?ggid&gid&group_id"
       })
     .state('mycollection', {
         templateUrl: 'views/user/mycollection.html',
