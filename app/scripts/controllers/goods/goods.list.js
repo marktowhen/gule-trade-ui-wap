@@ -8,44 +8,82 @@
  * Controller of the jingyunshopApp
  */
 wapApp.controller('GoodsListController', 
-    function ($scope, $cookies, ConstantService,GoodsListService) {
+    function ($scope, $cookies, $stateParams,ConstantService,GoodsListService) {
 
-        var mid=''; //商家id
-        var tid=''; //类型id
-        var order='0'; //排序
-         var name= ''; //商品名
-         var pagefrom = 0;
-         var  pagesize = 5;
+        //滚动条标志位
+        var flag = false;
 
-        var querGoods = function(mid,tid,order,name,pagefrom,pagesize){
-        		 GoodsListService.allGoodsList(mid,tid,order,name,pagefrom,pagesize)
-				      .success(function(data){
-				      	 $scope.goodsList  = data.body;
-				      	// console.log($scope.goodsList);
-				      });
-        };
 
-        querGoods(mid,tid,order,name,pagefrom,pagesize);
+      /////声明查询用的变量
+         $scope.mid=''; //商家id
+         $scope.tid=''; //类型id
+         $scope.order='0'; //排序
+         $scope.name= ''; //商品名
+         $scope.pagefrom = 0;
+         $scope.pagesize = 10;
 
-       //////////默认查询所有商品
+         
+
+         ///接受传入的MID
+         var letMid  = $stateParams.mid;
+          if(letMid!=null ){
+              $scope.mid = letMid;
+          }
+
+
+         //声明商品集合
+         $scope.goodsList =[];
+
+        /////所有商品查询
+    		 GoodsListService.allGoodsList($scope.mid,$scope.tid,$scope.order,$scope.name,$scope.pagefrom,$scope.pagesize)
+		      .success(function(data){
+             for (var i = 0; i <data.body.length; i++) {
+                $scope.goodsList.push(data.body[i]);
+              }     
+             flag=false;
+		      });
+
      
 
       ////瀑布流追加方法
       var pushContent = function (){
-	         pagesize = pagesize + 5;
-			 querGoods(mid,tid,order,name,pagefrom,pagesize);
+			        GoodsListService.allGoodsList($scope.mid,$scope.tid,$scope.order,$scope.name,$scope.goodsList.length,$scope.pagesize)
+                .success(function(data){
+                   for (var i = 0; i <data.body.length; i++) {
+                      $scope.goodsList.push(data.body[i]);
+                    }     
+                   flag=false;
+                });
+
       };
-		////瀑布流追加
+
+		  ////瀑布流追加
        $(window).scroll(function(){
-         if($(window).scrollTop()>=$(document).height()-$(window).height()-80){  //滚动条距离底部不足80px时触发
-          //pushContent();
-        }
-    });
+          if($scope.goodsList.length < $scope.pagesize){
+
+          }else{
+           if (($(window).scrollTop() >= $(document).height()-$(window).height()-80) && !flag ){  //滚动条距离底部不足80px时触发
+                pushContent();
+                flag = true;
+              }
+          }
+       });
 
 
-       $scope.byOrder = function (o){
-       	      order = o;
-       	     querGoods(mid,tid,order,name,pagefrom,pagesize);
-       }
+    $scope.byOrder = function (o){  
+       	      $scope.order = o;
+       	  GoodsListService.allGoodsList($scope.mid,$scope.tid,$scope.order,$scope.name,$scope.pagefrom,$scope.pagesize)
+          .success(function(data){
+            $scope.goodsList=[];
+             for (var i = 0; i <data.body.length; i++) {
+                $scope.goodsList.push(data.body[i]);
+              }     
+             flag=false;
+          });
+       };
+
+
+  
+
 });
 

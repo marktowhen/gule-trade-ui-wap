@@ -7,7 +7,7 @@ wapApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider){
     .state('products', {
         templateUrl: 'views/products/products.html',
         controller: '',
-        url:"/products.html"
+        url:"/products?mid"
       }).state('product-details', {
         templateUrl: 'views/products/product.details.html',
         controller: '',

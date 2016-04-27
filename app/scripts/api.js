@@ -238,7 +238,12 @@ wapApp.service('ApiService', function () {
         },
         'wapGoods':{
             'list':'http://localhost:8080//api/wap/goods/list',
-            'detail':'http://localhost:8080//api/wap/goods/detail/:gid'
+            'detail':'http://localhost:8080//api/wap/goods/detail/:gid',
+            'info':'http://localhost:8080//api/wap/goods/info/:gid',
+            'favorite':'http://localhost:8080//api/wap/goods/favorite/save/:gid',
+            'getFavorites':'http://localhost:8080//api/wap/goods/favorite/list',
+            'condition':'http://localhost:8080//api/wap/goods/condition/:gid',
+            'sku':'http://localhost:8080//api/wap/goods/single/:gid/:condition'
         }
     }
 });

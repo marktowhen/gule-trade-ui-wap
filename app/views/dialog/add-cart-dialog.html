@@ -1,16 +1,22 @@
-<div style="display: none;top: inherit;" class="modal in" id="add-cart-dialog" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
-  <div class="modal-dialog add-cart-dialog" role="document">
+
+<div style="display: none;top: inherit;"  class="modal in" id="add-cart-dialog"   tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" >
+  <div class="modal-dialog add-cart-dialog" role="document" ng-controller="BuyController">
     <div class="modal-content ">
       <div class="modal-header">
         <div class="cart-dialog-box1">
             <div class="cd1-left fl">
-              <img src="../../images/product-details/m1.png" alt="">
+              <img src="{{condition.path}}" alt="">
             </div>
             <div class="cd1-mid fl">
               <p class="text-abb" style="width: 95%;">
-                <a href="">移动pos机刷卡器26封顶 0.38...</a>
+                <a href="">{{condition.name}}</a>
               </p>
-              <span class="cd1-mid-price">￥548.00</span>
+              <span class="cd1-mid-price" ng-show="condition.sale">
+                ￥{{condition.salePrice}} &nbsp;&nbsp;&nbsp;￥{{condition.price}} 
+              </span>
+              <span class="cd1-mid-price" ng-show="!condition.sale">
+                ￥{{condition.price}} 
+              </span>
             </div>
             <div class="cd1-right fl">
                 <button type="button" class="close" style="margin-top: 10px;" data-dismiss="modal" aria-label="Close">
@@ -22,38 +28,38 @@
       <div class="modal-body">
          <div class="cart-dialog"> 
           <div class="cart-dialog-box2">
+          <!--属性li-->
             <ul>
-              <li>
-                规格：
+              <li ng-repeat="attr in condition.attrList">
+                {{attr.name}}：
                 <br/>
-                <div class="cd2-select cur">
-                  50*50cm
+                <b class="cd2-select" ng-repeat="v in attr.valueList" ng-click="toCondition(v.id)">
+                  {{v.value}}
                   <div class="cd2-select-icon"></div>
-                </div>
+                </b>
+               <!--  <div class="cd2-select cur" ></div> -->
               </li>
-              <li>
-                颜色：
-                <br/>
-                <div class="cd2-select">
-                  黑白
-                  <div class="cd2-select-icon"></div>
-                </div>
-              </li>
-              <li>
-                数量：
-                <br/>
-                <div class="cd2-count fr">
-                  <span class="cd2-left fl">
-                    <div class="cd2-count-icon1"></div>
-                  </span>
-                  <div class="cd2-mid fl">1</div>
-                  <span class="cd2-right fl">
-                    <div class="cd2-count-icon2"></div>
-                  </span>
-                </div>
-              </li>
+             
+   
             </ul>
+            <!--数量li-->
+               <ul>
+                    <li>
+                      数量：
+                      <br/>
+                      <div class="cd2-count fr">
+                        <span class="cd2-left fl">
+                          <div class="cd2-count-icon1"></div>
+                        </span>
+                        <div class="cd2-mid fl">1</div>
+                        <span class="cd2-right fl">
+                          <div class="cd2-count-icon2"></div>
+                        </span>
+                      </div>
+                    </li>
+               </ul>
           </div>
+          <input type="hidden" id="skuid"></input>
           <div class="cl h10"></div>
           <div class="cart-dialog-box3" data-dismiss="modal" ui-sref="orderconfirm.page">
            下一步

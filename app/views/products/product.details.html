@@ -23,7 +23,9 @@
 		<div class="pd1-top">
 			<div class="pd1-left fl">{{goods.name}}</div>
 			<div class="pd1-right fl">
-				<div class="pd1-right-icon"></div>
+				<div class="pd1-right-icon">
+					<p ng-click="fav(goods.gid)">s</p>
+				</div>
 			</div>
 		</div>
 		<div class="cl"></div>
@@ -54,8 +56,8 @@
 		<div class="pd2-left fl">
 			<p>{{goods.mName}}</p>
 		</div>
-		<div class="pd2-right fr">
-			<p>进入店铺</p>
+		<div class="pd2-right fr" >
+			<p ng-click="toMerchant(goods.mid)">进入店铺</p>
 		</div>
 	</div>
 	<div class="cl h10"></div>
@@ -95,7 +97,7 @@
 					<a href="javascript:;">图文详情</a>
 				</li>
 				<li>
-					<a href="javascript:;">产品参数</a>
+					<a href="javascript:;" ng-click="getInfo(goods.gid)">产品参数</a>
 				</li>
 				<li >
 					<a href="javascript:;">商品推荐</a>
@@ -104,8 +106,21 @@
 		</div>
 		<div class="pd4-bd">
 			<ul>
-				<li class="cur">1</li>
-				<li>2</li>
+				<li class="cur"><div ng-bind-html="goods.content"></div></li>
+				<li>
+					
+							<table width="100%" border="1" >
+								<tr>
+									<td>参数</td>
+									<td>内容</td>
+								</tr>
+								<tr ng-repeat="info in infos">
+									<td>{{info.key}}</td>
+									<td>{{info.value}}</td>
+								</tr>
+							</table>
+	
+				</li>
 				<li >
 					<img src="../../images/product-details/pic3.png" alt="">
 				</li>
@@ -114,10 +129,12 @@
 	</div>
 	<div class="cl"></div>
 	<div class="pd-box5">
-		<div class="pd5-info3 fr" data-target="#add-cart-dialog" data-toggle="modal">
+		<div class="pd5-info3 fr" data-target="#add-cart-dialog" data-toggle="modal" 
+		ng-click="toBuy(goods.gid)">
 			<p>立即购买</p>			
 		</div>
-		<div class="pd5-info2 fr" data-target="#add-cart-dialog" data-toggle="modal">
+		<div class="pd5-info2 fr" data-target="#add-cart-dialog" data-toggle="modal" 
+		ng-click="toCart(goods.gid)">
 			<p>加入购物车</p>
 		</div>
 		<div class="pd5-info1 fr">
