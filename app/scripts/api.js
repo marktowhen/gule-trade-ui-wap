@@ -244,7 +244,7 @@ wapApp.service('ApiService', function () {
             'favorite':'http://localhost:8080//api/wap/goods/favorite/save/:gid',
             'getFavorites':'http://localhost:8080//api/wap/goods/favorite/list',
             'condition':'http://localhost:8080//api/wap/goods/condition/:gid',
-            'sku':'http://localhost:8080//api/wap/goods/single/:gid/:condition'
+            'sku':'http://localhost:8080//api/wap/goods/single/:gid'
         }
     }
 });
