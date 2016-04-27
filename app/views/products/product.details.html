@@ -25,6 +25,8 @@
 			<div class="pd1-right fl">
 				<div class="pd1-right-icon">
 					<p ng-click="fav(goods.gid)">s</p>
+					<i class="icon-shouchang-1"></i>
+					<i class="icon-shouchang"></i>
 				</div>
 			</div>
 		</div>
@@ -41,14 +43,31 @@
 				<li>快递：0.00</li>
 				<li>评价：{{goods.comment}}条</li>
 				<li>成交额：{{goods.volume}}</li>
+				<li>评价：2541条</li>				
+				<li>月成交额：451</li>
 			</ul>
 		</div>
 	</div>
 	<div class="pd-serve">
 		<ul>
-			<li>100%正品保证</li>
-			<li>7天退换货</li>
-			<li>7X12在线客服</li>
+			<li>
+				<div class="pd1-info-icon fl">
+					<i class="icon-right"></i>
+				</div>
+				<p>&nbsp;100%正品保证</p>
+			</li>
+			<li>
+				<div class="pd1-info-icon fl">
+					<i class="icon-right"></i>
+				</div>
+				<p>&nbsp;7天退换货</p>
+			</li>
+			<li>
+				<div class="pd1-info-icon fl">
+					<i class="icon-right"></i>
+				</div>
+				<p>&nbsp;7X12在线客服</p>
+			</li>
 		</ul>
 	</div>
 	<div class="cl h10"></div>
@@ -57,7 +76,10 @@
 			<p>{{goods.mName}}</p>
 		</div>
 		<div class="pd2-right fr" >
+			<i class="icon-arrow fr"></i>
 			<p ng-click="toMerchant(goods.mid)">进入店铺</p>
+			<i class="icon-sp fl"></i>	
+			<p>&nbsp;乐谷微商城</p>
 		</div>
 	</div>
 	<div class="cl h10"></div>
@@ -71,6 +93,7 @@
 				</p>
 			</div>
 			<div class="pd3-evaluates fr">
+				<i class="icon-arrow fr"></i>
 				<p>
 					共累计：
 					<a href="#">{{goods.comment}}</a>
@@ -140,11 +163,11 @@
 		<div class="pd5-info1 fr">
 			<ul>
 				<li>
-					<div class="pd5-icon"></div>
+					<i class="icon-QQ"></i>
 					<p>客服</p>
 				</li>
 				<li>
-					<div class="pd5-icon"></div>
+					<i class="icon-sp-1"></i>
 					<p>店铺</p>
 				</li>
 			</ul>

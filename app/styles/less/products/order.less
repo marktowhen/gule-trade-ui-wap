@@ -3,9 +3,9 @@ html,body{background: #f0f0f0}
 
 /*头部导航*/
 .order_nav{position: fixed;top: 0;width: 100%;z-index: 3;background: #fff}
-.order_nav>div{width: 20%;text-align: center;float: left;line-height:40px;position: relative}
-.order_nav>div.active {color: #fd8841}
-.order_nav>div.active i{width: 80%;height: 2px;background: #fd8841;position: absolute;bottom: 0;left: 10%}
+.order_nav>a{width: 20%;text-align: center;float: left;line-height:40px;position: relative;color: #333}  
+.order_nav>a.active {color: #fd8841}
+.order_nav>a.active i{width: 80%;height: 2px;background: #fd8841;position: absolute;bottom: 0;left: 10%}
 
 /*订单列表*/
 .order_wrap .order_body ul{margin:0 0 60px 0;}
@@ -18,9 +18,10 @@ html,body{background: #f0f0f0}
 .order_wrap ul li .order_price{color: #fd8841;margin-top: 15px}
 .order_wrap ul li .order_num{text-align: right;margin:6px 5% 0 0}
 .order_wrap ul li .order_btn{width: 96%;height: 25px;margin:0 2%;border-top: 1px solid #bebebe;padding: 7px 0}
-.order_wrap ul li .order_cancel,.order_wrap ul li .order_pay,.order_wrap ul li .order_payagain,.order_wrap ul li .order_evaluate,.order_wrap ul li .order_logistics{height: 25px;box-sizing: border-box;border-radius: 3px;text-align: center;}
+.order_wrap ul li .order_cancel,.order_wrap ul li .order_pay,.order_wrap ul li .order_payagain,.order_wrap ul li .order_evaluate,.order_wrap ul li .order_logistics,.order_wrap ul li .order_confirm{height: 25px;box-sizing: border-box;border-radius: 3px;text-align: center;}
 .order_wrap ul li .order_cancel{width: 65px;border: 1px solid #bebebe;background: #fff;color: #3f3f3f;margin-right: 10px}
 .order_wrap ul li .order_pay{width: 50px;background: #fd8842;color: #fff;line-height: 25px;margin-right:4%}
+.order_wrap ul li .order_confirm{width: 65px;border: 1px solid #fd8842;background: #fd8842;color: #fff;margin-right: 10px;line-height: 23px}
 .order_wrap ul li .order_evaluate{width: 50px;background: #fff;color: #3f3f3f;line-height: 23px;margin-right:10px;border: 1px solid #bebebe;}
 .order_wrap ul li .order_payagain{width: 65px;background: #fd8842;color: #fff;line-height: 25px;margin-right:4%;}
 .order_wrap ul li .order_logistics{width: 65px;border: 1px solid #bebebe;background: #fff;color: #3f3f3f;margin-right: 10px;line-height: 23px}

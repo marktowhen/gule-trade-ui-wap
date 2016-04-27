@@ -18,58 +18,60 @@
 		</div>
 	</div>
 	<div class="cl h10"></div>
-	<div class="pay-info">
+	<div class="pay-info" ng-repeat="order in transaction.orders">
 		<div class="pi-box1">
-			<div class="pi1-hd">店铺： 中华阿胶网自营</div>
+			<div class="pi1-hd">店铺： {{order.mname}}</div>
 			<div class="cl h10"></div>
-			<div class="pi1-bd">
+			<div class="pi1-bd" ng-repeat="goods in order.goods">
 				<div class="pi1-pic fl">
-					<img src="images/no-payment/p1.png" alt=""></div>
+					<img src="images/no-payment/p1.png" alt="">
+				</div>
 				<div class="pi1-info fl">
-					<div class="pi1-text">POS机刷卡器 0.38移动pos机 26封顶 无线刷卡机 信用卡收款机 一清</div>
+					<div class="pi1-text">{{goods.gname}}</div>
 					<div class="pi1-price">
 						<p>
-							<span class="s1 fl">￥168</span>
+							<span class="s1 fl">￥{{goods.price}}</span>
 						</p>
-						<p>x 1</p>
+						<p>x {{goods.count}}</p>
 					</div>
 				</div>
 			</div>
 			<div class="cl"></div>
 			<div class="pi1-freight">
 				<p>运费</p>
-				<p>0.00元</p>
+				<p>{{(order.postage && order.postage > 0)? (order.postage|currency:"￥") : "包邮"}}</p>
 			</div>
 			<div class="cl"></div>
 			<div class="pi1-message">
 				<p>留言信息</p>
-				<input type="text" class="pim" placeholder="请勿填写有关支付、发票、物流配送等信息。谢谢！"></div>
-			<div class="cl"></div>
+				<input type="text" class="pim" placeholder="请勿填写有关支付、发票、物流配送等信息。谢谢！">
+			</div>
+			<!-- <div class="cl"></div>
 			<div class="pi1-total">
 				<p>
 					合计：
 					<span class="s2">￥168.00</span>
 				</p>
 				<p>共计1件商品</p>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	<div class="cl h10"></div>
-	<div class="pay-discount">
+	<!-- <div class="pay-discount">
 		<p>优惠</p>
 		<i class="icon-arrow fr"></i>
 		<p>使用优惠</p>
 	</div>
-	<div class="cl h10"></div>
+	<div class="cl h10"></div> -->
 	<div class="pay-price">
-		<p>￥168.00+￥0.00运费</p>
-		<p>需付： ￥168.00</p>
+		<p></p>
+		<p>需付： ￥{{finalmoney|number:2}}</p>
 	</div>
 	<div class="cl h20"></div>
 	<div class="payment-method">
-		<div class="pm-box1">微信安全支付</div>
-		<div class="cl h13"></div>
-		<div class="pm-box2">其他支付方式</div>
+		<div class="pm-box1" ng-click="submit()">微信安全支付</div>
+		<!-- <div class="cl h13"></div>
+		<div class="pm-box2">其他支付方式</div> -->
 	</div>
 	<div class="cl h70"></div>
 </div>

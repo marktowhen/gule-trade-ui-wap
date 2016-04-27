@@ -2,12 +2,12 @@
 html {font-size: 62.5%;}
 body,div,p,ul,ol,dl,dt,dd,li,form,input,table,th,td,img,h1,h2,h3,h4,h5,h6{ margin: 0;padding: 0;}
 
-body { background: #FFF; color: #000; font-style: normal; font-family:'Microsoft Yahei','微软雅黑','Simsun','宋体','Arial', sans-serif;}
+body {background: #FFF; color: #000; font-style: normal; font-family:'Microsoft Yahei','微软雅黑','Simsun','宋体','Arial', sans-serif;-webkit-overflow-scrolling : touch;}
 em, b, i { font-style:normal;}
 li { list-style:none;}
 img { border:none;}
 a { text-decoration:none; color:#fff;}
-a:hover { text-decoration:none; color:#f50;}
+a:hover { text-decoration:none;}
 table { border-spacing:0; border-collapse:collapse;}
 span{display: inline-block}
 input{border: none;font-size:14px;}
@@ -41,6 +41,7 @@ input[type="radio"],input[type="checkbox"]{margin-left:5px;position: relative;to
 .col-80{width:80%}
 .col-85{width:85%}
 .col-90{width:90%}
+.col-95{width:95%}
 .col-100{width:100%}
 
 .hide {display: none;}
@@ -59,7 +60,11 @@ input[type="radio"],input[type="checkbox"]{margin-left:5px;position: relative;to
 /*头部*/
 .header{width: 100%;line-height:40px;background: #fd8842;color: #fff;font-size: 13px;position: fixed;top: 0;z-index: 2}
 .dropdown{width:14%;text-align: center;}
-.search_wrap{line-height:30px;background: #fff;margin-left: 10%}
+.search_wrap{line-height:30px;background: #fff}
+.header .icon-xiaoxi-home,.header .news_title{font-size: 15px;line-height:15px;text-align: center}
+.header .icon-xiaoxi-home{margin-top: 7px;position: relative}
+.header .icon-xiaoxi-home .newsnum{position: absolute;left:50%;top: 0;width:14px;height: 9px;line-height: 10px;font-size: 9px;background: #fff;color:#fd8841;border-radius: 4px;text-align: center;margin-left:5px}
+.header .news_title{line-height:15px;font-size: 10px!important}
 .search_wrap input{line-height: 30px;text-indent: 0.7em;color: #333}  
 .search_wrap .search_btn{height:30px;font-size: 15px;color: #bebebe;line-height: 30px}
 .login{line-height: 40px;text-align: center;display: inline-block}
@@ -74,12 +79,12 @@ section.nav>a i{width:22px;height: 19px;margin:8px auto 2px;;display: block;font
 .nav_index_active .icon-home-1::before {content: "\e908"!important;}
 .nav_shoppingcart_active .icon-shopping-2::before {content: "\e91a"!important;}
 .nav_allproducts_active .icon-sp::before {content: "\e91f"!important;}
-.nav_myinfo_active .icon-meme-1::before {content: "\e90f"!important;}
-.nav_shoppingcart_active .icon-shopping-2,.nav_index_active .icon-home-1,.nav_allproducts_active .icon-sp,.nav_myinfo_active .icon-meme-1{color: #fd8842!important}
+.nav_myinfo_active .icon-me-1::before {content: "\e90f"!important;}
+.nav_shoppingcart_active .icon-shopping-2,.nav_index_active .icon-home-1,.nav_allproducts_active .icon-sp,.nav_myinfo_active .icon-me-1{color: #fd8842!important}
 .nav_index_active .nav_name,.nav_shoppingcart_active .nav_name,.nav_allproducts_active .nav_name,.nav_myinfo_active .nav_name{color: #fd8841}
 
-/*4.12下午邓甲添加*/
 i{display: inline-block}
+.fs10{font-size: 10px}
 .fs12{font-size: 12px}
 .fs14{font-size: 14px}
 
@@ -143,6 +148,7 @@ body {font-size:16px;  }
 	text-overflow:ellipsis
 }
 a{outline: none;}
+a:hover{color: #fff}
 
 @center-view-width:100%;
 @txt-color:#000;//正文字体颜色

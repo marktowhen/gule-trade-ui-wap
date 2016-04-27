@@ -72,13 +72,25 @@
 	width: 10%;
 	position: relative;
 }
+.pd1-right.cur i.icon-shouchang-1{
+	display: none;
+}
+.pd1-right.cur i.icon-shouchang{
+	display: block;
+}
 .pd1-right-icon{
 	position: absolute;
 	top:10px;
 	right: 0;
-	width:21px;
-	height:20px;
-	background: url(../../images/icon.png) no-repeat -142px -1px;
+}
+.pd1-right-icon i.icon-shouchang-1{
+	font-size: 25px;
+	color:#FE8842;
+}
+.pd1-right-icon i.icon-shouchang{
+	font-size: 25px;
+	color:#FE8842;
+	display: none;
 }
 .pd1-price{
 	height: 35px;
@@ -108,6 +120,9 @@ del{
 	font-size: 12px;
 	line-height: 30px;
 }
+.pd1-info>ul>li p{
+	float: left;
+}
 .pd-serve{
 	overflow: hidden;
 	height: 40px;
@@ -122,7 +137,20 @@ del{
 	line-height: 40px;
 	font-size: 12px;
 	position: relative;
-	padding-left:5%;
+}
+.pd-serve>ul>li i.icon-right{
+	color: #fff;
+	font-size: 12px;
+}
+.pd1-info-icon{
+	width: 14px;
+	height: 14px;
+	border-radius: 10px;
+	background-color: #66CB65;
+	margin-top: 13px;
+	text-align: center;
+    line-height: 17px;
+    font-size: 12px;
 }
 .pd-serve>ul>li:nth-child(1){
 	float: left;
@@ -131,19 +159,9 @@ del{
 	line-height: 40px;
 	font-size: 12px;
 	position: relative;
-	padding-left:5%;
 }
 .pd-serve>ul>li:nth-child(2){
 	width: 28%;
-}
-.pd-serve>ul>li::before{
-	content: "";
-	position: absolute;
-	top:14px;
-	left: 0;
-	width:13px;
-	height: 13px;
-	background: url(../../images/icon.png) no-repeat -222px -5px;
 }
 .pd-box2{
 	background-color: #fff;
@@ -155,8 +173,11 @@ del{
 	padding-left: 5%;
 }
 .pd2-left{
-	width: 30%;
-	padding-left: 5%;
+	padding-left: 1%;
+}
+.pd2-left i.icon-sp{
+	margin-top: 10px;
+	font-size: 20px;
 }
 .pd2-right{
 	width: 30%;
@@ -164,23 +185,15 @@ del{
 	color: #ccc;
 	cursor: pointer;
 }
-.pd2-left p::before{
-	content: "";
-	position: absolute;
-	top:12px;
-	left:2%;
-	width:19px;
-	height: 17px;
-	background: url(../../images/icon.png) no-repeat -252px -5px;
+.pd2-right i.icon-arrow{
+	margin-top: 10px;
+	font-size: 20px;
 }
-.pd2-right p::after{
-	content: "";
-	position: absolute;
-	top:12px;
-	right:5%;
-	width:7px;
-	height: 15px;
-	background: url(../../images/icon.png) no-repeat -101px -182px;
+.pd2-left p{
+	float: left;
+}
+.pd2-right p{
+	float: right;
 }
 .pd-box3{
 	overflow: hidden;
@@ -207,6 +220,13 @@ del{
 }
 .pd3-evaluates{
 	font-size: 12px;
+}
+.pd3-evaluates i.icon-arrow{
+	margin-top: 15px;
+	font-weight: bold;
+}
+.pd3-evaluates p{
+	float: right;
 }
 .pd3-info1{
 	width: 80%;
@@ -237,11 +257,14 @@ del{
 }
 .pd4-hd>ul>li{
 	float: left;
-	width: 30%;
+	width: 32%;
 	border-right: 1px solid #ccc;
 	height: 20px;
 	line-height: 20px;
 	text-align: center;
+}
+.pd4-hd>ul>li:last-child{
+	border-right: none;
 }
 .pd4-hd>ul>li a{
 	color: #343434;
@@ -280,17 +303,26 @@ del{
 	padding-top:3px;
 	text-align: center;
 	cursor: pointer;
+	font-size: 14px;
 }
-.pd5-icon{
+.pd5-info1>ul>li i.icon-QQ{
+	color: #FD8842;
+	font-size: 20px;
+}
+.pd5-info1>ul>li i.icon-sp-1{
+	color: #CCCCCC;
+	font-size: 20px;
+}
+/*.pd5-icon{
 	width: 14px;
 	height: 14px;
 	background: url(../../images/icon.png) no-repeat -184px -40px;
 	display: inline-block;
-}
-.pd5-info1>ul>li:nth-child(2) .pd5-icon{
+}*/
+/*.pd5-info1>ul>li:nth-child(2) .pd5-icon{
 	display: inline-block;
 	background: url(../../images/icon.png) no-repeat -222px -40px;
-}
+}*/
 .pd5-info2{
 	width: 33%;
 	background-color: #A0A0A0;

@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -150,6 +149,8 @@
         <script src="scripts\js\user\myintegral.js"></script>
         <script src="scripts\js\user\coupons.js"></script>
         <script src="scripts/js/index/auction-details.js"></script>
+        <script src="scripts/js/user/partner-help.js"></script>
+        <script src="scripts/js/user/partner.js"></script>
         <script type="text/javascript">
             window.onload = function(){
                 product_details();
@@ -166,6 +167,8 @@
                 auction_details();
                 myintegral_onload();
                 coupons_onload();
+                partner_help_onload();
+                partner();
             }
         </script>
         <!-- endbuild -->

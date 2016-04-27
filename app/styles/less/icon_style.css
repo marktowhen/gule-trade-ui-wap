@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('fonts/icomoon.eot?82gtun');
-    src:    url('fonts/icomoon.eot?82gtun#iefix') format('embedded-opentype'),
-        url('fonts/icomoon.ttf?82gtun') format('truetype'),
-        url('fonts/icomoon.woff?82gtun') format('woff'),
-        url('fonts/icomoon.svg?82gtun#icomoon') format('svg');
+    src:    url('fonts/icomoon.eot?dchex0');
+    src:    url('fonts/icomoon.eot?dchex0#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?dchex0') format('truetype'),
+        url('fonts/icomoon.woff?dchex0') format('woff'),
+        url('fonts/icomoon.svg?dchex0#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,8 +24,35 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-wenhao:before {
+    content: "\e921";
+}
+.icon-home-1:before {
+    content: "\e909";
+}
+.icon-home:before {
+    content: "\e908";
+}
+.icon-r:before {
+    content: "\e936";
+}
+.icon-arrow-12:before {
+    content: "\e938";
+}
+.icon-arrow2:before {
+    content: "\e933";
+}
+.icon-zb:before {
+    content: "\e926";
+}
+.icon-me:before {
+    content: "\e927";
+}
 .icon-arrow:before {
     content: "\e900";
+}
+.icon-UP:before {
+    content: "\e928";
 }
 .icon-bianji:before {
     content: "\e901";
@@ -33,14 +60,29 @@
 .icon-camera:before {
     content: "\e902";
 }
+.icon-card-ME:before {
+    content: "\e5546";
+}
 .icon-close:before {
     content: "\e903";
+}
+.icon-ME:before {
+    content: "\e92a";
 }
 .icon-dizhi:before {
     content: "\e904";
 }
+.icon-erweima-ME:before {
+    content: "\e92b";
+}
 .icon-exchange:before {
     content: "\e905";
+}
+.icon-fenlei:before {
+    content: "\e92c";
+}
+.icon-fenlei-1:before {
+    content: "\e92d";
 }
 .icon-flag:before {
     content: "\e906";
@@ -48,20 +90,29 @@
 .icon-FLOWER:before {
     content: "\e907";
 }
-.icon-home:before {
-    content: "\e908";
-}
-.icon-home-1:before {
-    content: "\e909";
-}
 .icon-huaban:before {
     content: "\e90a";
+}
+.icon-huifenxiang:before {
+    content: "\e92e";
 }
 .icon-jia:before {
     content: "\e90b";
 }
+.icon-jianhao:before {
+    content: "\e92f";
+}
 .icon-jiaobiao:before {
     content: "\e90c";
+}
+.icon-jifenduihuan-ME:before {
+    content: "\e930";
+}
+.icon-jingpai:before {
+    content: "\e931";
+}
+.icon-jingpai-me:before {
+    content: "\e934";
 }
 .icon-laji:before {
     content: "\e90d";
@@ -69,11 +120,11 @@
 .icon-logistics:before {
     content: "\e90e";
 }
+.icon-me-1:before {
+    content: "\e910";
+}
 .icon-meme:before {
     content: "\e90f";
-}
-.icon-meme-1:before {
-    content: "\e910";
 }
 .icon-men:before {
     content: "\e911";
@@ -108,6 +159,9 @@
 .icon-shopping-2:before {
     content: "\e91b";
 }
+.icon-shoucangjia-1:before {
+    content: "\e929";
+}
 .icon-shouchang:before {
     content: "\e91c";
 }
@@ -123,8 +177,8 @@
 .icon-tuan:before {
     content: "\e920";
 }
-.icon-wenhao:before {
-    content: "\e921";
+.icon-tuangou-ME:before {
+    content: "\e9343";
 }
 .icon-women:before {
     content: "\e922";
@@ -138,7 +192,10 @@
 .icon-xiaoxi:before {
     content: "\e925";
 }
-.icon-zb:before {
-    content: "\e926";
+.icon-xiaoxi-home:before {
+    content: "\e935";
+}
+.icon-youhuiquan-ME:before {
+    content: "\e937";
 }
 

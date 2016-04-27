@@ -1,11 +1,11 @@
 
     <div class="order_wrap">
         <div class="order_nav over">
-            <div class="all active">全部<i></i></div>
-            <div class="non-payment">待支付<i></i></div>
-            <div class="unfilled">待发货<i></i></div>
-            <div class="delivered">已发货<i></i></div>
-            <div class="Received">已收货<i></i></div>
+            <a ui-sref="order" class="all active">全部<i></i></a>
+            <a ui-sref="order_nopay" class="non-payment">待支付<i></i></a>
+            <a ui-sref="order_nodeliver" class="unfilled">待发货<i></i></a>
+            <a ui-sref="order_delivered" class="delivered">已发货<i></i></a>
+            <a ui-sref="order_received" class="Received">已收货<i></i></a>
         </div>
         <section class="order_body">
             <ul>

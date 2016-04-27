@@ -67,6 +67,26 @@ var wapApp = angular
         controller: '',
         url:"/order.html"
       })
+    .state('order_nopay', {
+        templateUrl: 'views/user/order_nopay.html',
+        controller: '',
+        url:"/order_nopay.html"
+      })
+    .state('order_nodeliver', {
+        templateUrl: 'views/user/order_nodeliver.html',
+        controller: '',
+        url:"/order_nodeliver.html"
+      })
+    .state('order_delivered', {
+        templateUrl: 'views/user/order_delivered.html',
+        controller: '',
+        url:"/order_delivered.html"
+      })
+    .state('order_received', {
+        templateUrl: 'views/user/order_received.html',
+        controller: '',
+        url:"/order_received.html"
+      })
     .state('group-buying', {
         templateUrl: 'views/marketing/group/list.html',
         controller: '',
@@ -91,5 +111,30 @@ var wapApp = angular
         templateUrl: 'views/index/auction-details.html',
         controller: '',
         url:"/auction-details.html"
+      })
+    .state('shareproduct', {
+        templateUrl: 'views/user/shareproduct.html',
+        controller: '',
+        url:"/shareproduct.html"
+      })
+    .state('partner-help', {
+        templateUrl: 'views/user/partner-help.html',
+        controller: '',
+        url:"/partner-help.html"
+      })
+    .state('partner', {
+        templateUrl: 'views/user/partner.html',
+        controller: '',
+        url:"/partner.html"
+      })
+    .state('erweima', {
+        templateUrl: 'views/user/erweima.html',
+        controller: '',
+        url:"/erweima.html"
+      })
+    .state('login', {
+        templateUrl: 'views/user/login.html',
+        controller: '',
+        url:"/login.html"
       })
   });
