@@ -234,7 +234,8 @@ wapApp.service('ApiService', function () {
         },
         'logistic':{
             'logisticlist':'http://localhost:8080/api/logistic/express/list',
-            'expressinfo':'http://localhost:8080/api/logistic/express/info/:oid/:code/:codeid'
+            'expressinfo':'http://localhost:8080/api/logistic/express/info/:oid/:code/:codeid',
+            'postage':'http://localhost:8080/api/logistic/postage/calculation/goods'
         },
         'wapGoods':{
             'list':'http://localhost:8080//api/wap/goods/list',
@@ -244,8 +245,6 @@ wapApp.service('ApiService', function () {
             'getFavorites':'http://localhost:8080//api/wap/goods/favorite/list',
             'condition':'http://localhost:8080//api/wap/goods/condition/:gid',
             'sku':'http://localhost:8080//api/wap/goods/single/:gid/:condition'
-            'expressinfo':'http://localhost:8080/api/logistic/express/info/:oid/:code/:codeid',
-            'postage':'http://localhost:8080/api/logistic/postage/calculation/goods'
         }
     }
 });
