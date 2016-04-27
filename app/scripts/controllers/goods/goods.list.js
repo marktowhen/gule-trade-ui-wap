@@ -34,8 +34,7 @@ wapApp.controller('GoodsListController',
               $scope.name = goodsname;
           }
 
-alert("alert($scope.mid)"+$scope.mid)
-alert("alert( $scope.name)"+ $scope.name)
+
 
          //声明商品集合
          $scope.goodsList =[];
