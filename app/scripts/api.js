@@ -9,7 +9,15 @@
  */
 wapApp.service('ApiService', function () {
     this.api = {
-        
+        'cart':{
+            'list':'http://localhost:8080/api/cart/goods/list/:uid',
+            'submit':'http://localhost:8080/api/cart/clearing',
+            'delete':'http://localhost:8080/api/cart/goods',
+            'clear': 'http://localhost:8080/api/cart/goods/:uid',//清空用户购物车
+            'countupdate':'http://localhost:8080/api/cart/goods/:id',
+            'addtocart':'http://localhost:8080/api/cart',
+            'count':'http://localhost:8080/api/cart/goods/count/:uid'
+        },
         'order':{
             'listWithCondition': 'http://localhost:8080/api/orders/seller/list',
             'accept':'http://localhost:8080/api/orders/acception',
