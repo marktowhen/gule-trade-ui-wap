@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-shopApp.service('CartService', function ($http, ApiService, $cookies, ConstantService) {
+wapApp.service('CartService', function ($http, ApiService, $cookies, ConstantService) {
     this.listCarts = function(uid){
         return $http.get(ApiService.api.cart.list.replace(':uid', uid));
     };

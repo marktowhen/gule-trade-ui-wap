@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-shopApp.service('RefundStatusService', function () {
+wapApp.service('RefundStatusService', function () {
     
     this.REQUEST_CODE             = "RREQUEST";
     this.CANCEL_CODE              = "RCANCEL";

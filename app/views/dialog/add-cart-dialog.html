@@ -35,54 +35,25 @@
                 <br/>
                 <b class="cd2-select" ng-repeat="v in attr.valueList" ng-click="toCondition(v.id)">
                   {{v.value}}
-                  <div class="cd2-select-icon"></div>
+                  <div class="cd2-select-icon"><i class="icon-jiaobiao"></i></div>
                 </b>
-               <!--  <div class="cd2-select cur" ></div> -->
-                <div class="cd2-select cur">
-                  50*50cm
-                  <div class="cd2-select-icon">
-                    <i class="icon-jiaobiao"></i>
-                  </div>
-                </div>
               </li>
-              <li>
-                颜色：
-                <br/>
-                <div class="cd2-select">
-                  黑白
-                  <div class="cd2-select-icon">
-                     <i class="icon-jiaobiao"></i>
-                  </div>
-                </div>
-              </li>
-              <li>
-                数量：
-                <br/>
-                <div class="cd2-count fr">
-                  <span class="cd2-left fl">
-                    <i class="icon-jianhao"></i>
-                  </span>
-                  <div class="cd2-mid fl">1</div>
-                  <span class="cd2-right fl">
-                    <i class="icon-jia"></i>
-                  </span>
-                </div>
-              </li>
-             
+              
    
             </ul>
             <!--数量li-->
-               <ul>
+               <ul ng-show="numFlag">
                     <li>
                       数量：
                       <br/>
+                      (库存: {{condition.stock}})
                       <div class="cd2-count fr">
-                        <span class="cd2-left fl">
-                          <div class="cd2-count-icon1"></div>
+                      <span class="cd2-left fl" ng-click="downNum()">
+                          <div class="cd2-count-icon1" ></div>
                         </span>
-                        <div class="cd2-mid fl">1</div>
-                        <span class="cd2-right fl">
-                          <div class="cd2-count-icon2"></div>
+                        <div class="cd2-mid fl">{{num}}</div>
+                        <span class="cd2-right fl" ng-click="upNum()">
+                          <div class="cd2-count-icon2" ></div>
                         </span>
                       </div>
                     </li>
@@ -90,7 +61,7 @@
           </div>
           <input type="hidden" id="skuid"></input>
           <div class="cl h10"></div>
-          <div class="cart-dialog-box3" data-dismiss="modal" ui-sref="orderconfirm.page">
+          <div class="cart-dialog-box3" data-dismiss="modal" ng-click="buynow()">
            下一步
           </div>
         </div>

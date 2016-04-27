@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-shopApp.controller('OrderDetailController', function ($scope, OrderService, $state, $stateParams, OrderStatusService) {
+wapApp.controller('OrderDetailController', function ($scope, OrderService, $state, $stateParams, OrderStatusService) {
     var oid = $stateParams.oid;
     OrderService.singleOrder(oid)
         .success(function(data){

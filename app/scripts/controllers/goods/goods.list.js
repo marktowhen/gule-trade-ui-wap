@@ -26,9 +26,14 @@ wapApp.controller('GoodsListController',
 
          ///接受传入的MID
          var letMid  = $stateParams.mid;
+         var goodsname = $stateParams.goodsname;
           if(letMid!=null ){
               $scope.mid = letMid;
           }
+            if(goodsname!=null ){
+              $scope.name = goodsname;
+          }
+
 
 
          //声明商品集合
