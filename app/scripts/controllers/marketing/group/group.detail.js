@@ -8,8 +8,8 @@
  * Controller of the jingyunshopApp
  */
 wapApp.controller('GroupDetailController', 
-	['$scope', 'GroupBuyService', '$stateParams',
-		 function ($scope, GroupBuyService, $stateParams,GoodsDetailsService) {
+	
+		 function ($scope, $state,GroupBuyService, $stateParams,GoodsDetailsService) {
 	
 
 		GroupBuyService.detail($stateParams.ggid)
@@ -21,10 +21,10 @@ wapApp.controller('GroupDetailController',
 
 			});
 		
-		// GoodsDetailsService.detail($stateParams.gid).success(function(data2){
-		// 				$scope.goods = data2.body;
-		// 				//console.log($scope.goods);
-		// 			});
+		GoodsDetailsService.detail($stateParams.gid).success(function(data2){
+						$scope.goods = data2.body;
+						//console.log($scope.goods);
+					});
 
 		$scope.getInfo = function(id){
 			GoodsDetailsService.info(gid).success(function(data){
@@ -45,4 +45,4 @@ wapApp.controller('GroupDetailController',
 		$scope.toCart  = function(gid){
 			$state.go('product-details',{cart:1});
 		}
-}]);
+});
