@@ -47,6 +47,7 @@ wapApp.controller('OrderAddressListController',
             $scope.transaction.countryName = address.countryName;
             $scope.transaction.provinceName = address.provinceName;
             $scope.transaction.cityName = address.cityName;
+            $scope.selectAddress(address);
             $state.go("orderconfirm.page");
         }
     };

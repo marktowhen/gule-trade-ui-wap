@@ -12,7 +12,7 @@ wapApp.service('PayService', function ($http, $location, ApiService) {
         return $http.get(ApiService.api.pay.list, 
                     {'params':{'oid': oids}});
     };
-    this.getPayInfo = function(payrequestvo){
-        return $http.put(ApiService.api.pay.platforminfo, payrequestvo, {'headers':{'Content-Type':'application/json;charset=UTF-8'}});
+    this.prepay = function(payrequestvo){
+        return $http.put(ApiService.api.pay.prepay, payrequestvo, {'headers':{'Content-Type':'application/json;charset=UTF-8'}});
     };
 });

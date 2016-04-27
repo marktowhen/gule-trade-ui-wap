@@ -20,11 +20,12 @@ wapApp.service('ApiService', function () {
             'listOrderStatus':'http://localhost:8080/api/order/status/visible',
             'cancel':'http://localhost:8080/api/orders/cancellation',
             'count':'http://localhost:8080/api/orders/seller/count',
-            'listClearing':'http://localhost:8080/api/cart/clearing/list'
+            'listClearing':'http://localhost:8080/api/cart/clearing/list',
+            'submit':'http://localhost:8080/api/order'
         },
         'pay':{
             'list':'http://localhost:8080/api/payments',
-            'platforminfo':'http://localhost:8080/api/payments/info',
+            'prepay':'http://localhost:8080/api/payments/prepay',
             'typelist':'http://localhost:8080/api/pay/type/list'
         },
         'refund':{
@@ -60,7 +61,6 @@ wapApp.service('ApiService', function () {
         'manager':{
             'current' :'http://localhost:8080/api/manager/current'
         },
-
         'area' : {
             'listCountry' : 'http://localhost:8080/api/statics/area/country/list',
             //根据国家查省 /{countryID}
@@ -234,7 +234,8 @@ wapApp.service('ApiService', function () {
         },
         'logistic':{
             'logisticlist':'http://localhost:8080/api/logistic/express/list',
-            'expressinfo':'http://localhost:8080/api/logistic/express/info/:oid/:code/:codeid'
+            'expressinfo':'http://localhost:8080/api/logistic/express/info/:oid/:code/:codeid',
+            'postage':'http://localhost:8080/api/logistic/postage/calculation/goods'
         }
     }
 });

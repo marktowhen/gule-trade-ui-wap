@@ -8,7 +8,7 @@
  * Controller of the jingyunshopApp
  */
 wapApp.controller('OrderConfirmationParantController', 
-    function ($scope, $cookies, ConstantService, OrderService, $state, 
+    function ($scope, $cookies, ConstantService, OrderService, $state, PayService,
         MyReceiveAddressService, CashCouponService, DiscountCouponService, CouponService, PostageService) {
     var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
 
@@ -27,14 +27,14 @@ wapApp.controller('OrderConfirmationParantController',
 
 
     OrderService.listOrders2Clearing().success(function(data){
-        $scope.transaction = {'addressid':''};//data.body;
+        $scope.transaction = data.body;
         var price = 0;
         if($scope.transaction && $scope.transaction.orders){
             $scope.finalmoney = $scope.transaction.totalPrice;
             $scope.pureOriginMoney = $scope.transaction.totalPriceWithoutPostage;
             $scope.originpostage = $scope.finalmoney - $scope.pureOriginMoney;
         }else{
-            //alert("订单信息不正确。");
+            alert("订单信息不正确。");
             //$state.go("cart");//should be go to illegal order page.
             return;
         }
@@ -73,10 +73,7 @@ wapApp.controller('OrderConfirmationParantController',
         });
     };
    
-    ///////////卡券 开始//////////////////
 
-    ///1，校验所选卡券是否有效。
-    ///2，计算卡券应用后的订单价格
     $scope.pureOriginMoney = 0;//没有邮费的订单价格
     $scope.originpostage = 0;//总邮费
     $scope.finalmoney = 0;//包含邮费的订单总价
@@ -87,56 +84,6 @@ wapApp.controller('OrderConfirmationParantController',
     $scope.$watch("originpostage", function(oldv, newv){
         $scope.finalmoney = $scope.pureOriginMoney + $scope.originpostage;
     });
-    $scope.changeCouponSelection = function(){
-        var cid = $scope.purchaseVo.couponID;
-        var type = $scope.purchaseVo.couponType;
-        if(uid && cid && type && $scope.pureOriginMoney){
-            CouponService.calculate(uid, cid, type, $scope.pureOriginMoney)
-                .success(function(data){
-                    if(data.ok){
-                        $scope.finalmoney = data.body + $scope.originpostage;
-                    }else{
-                        $scope.finalmoney = $scope.pureOriginMoney + $scope.originpostage;
-                        alert(data.message);
-                    }
-                });
-        }else{
-            $scope.finalmoney = $scope.pureOriginMoney + $scope.originpostage;
-        }
-        console.log($scope.purchaseVo);
-    };
-
-    $scope.useDiscountCoupon = false;
-    $scope.useCashCoupon = false;
-    $scope.purchaseVo.couponType = (!$scope.useCashCoupon && !$scope.useDiscountCoupon) ? '' 
-                        : ($scope.useCashCoupon? 'CASHCOUPON': 'DISCOUNTCOUPON');
-
-    $scope.checkCashCoupn = function(){
-        if($scope.useCashCoupon){
-            $scope.useDiscountCoupon = false;
-            $scope.purchaseVo.couponType = "CASHCOUPON";
-            $scope.purchaseVo.couponID = '';
-        }else{
-            $scope.purchaseVo.couponType = '';
-            $scope.purchaseVo.couponID = '';
-        }
-        $scope.changeCouponSelection();
-    };
-
-    $scope.checkDiscountCoupon = function(){
-        if($scope.useDiscountCoupon){
-            $scope.useCashCoupon = false;
-            $scope.purchaseVo.couponType = "DISCOUNTCOUPON";
-            $scope.purchaseVo.couponID = '';
-        }else{
-            $scope.purchaseVo.couponType = '';
-            $scope.purchaseVo.couponID = '';
-        }
-        
-        $scope.changeCouponSelection();
-    };
-
-    ///////////卡券 结束//////////////////
     
     
     OrderService.listPaytype().success(function(data){
@@ -161,7 +108,7 @@ wapApp.controller('OrderConfirmationParantController',
     $scope.confirmSubmit = function(){
         $scope.purchaseVo.orders = $scope.transaction.orders;
         angular.forEach($scope.purchaseVo.orders, function(order, index){
-            order.deliveryTypeCode = 'EXPRES';
+            order.deliveryTypeCode = 'EXPRESS';
             order.deliveryTypeName = '普通快递';
         });
         OrderService.submit($scope.purchaseVo)
@@ -177,7 +124,26 @@ wapApp.controller('OrderConfirmationParantController',
                         $state.go("payment-success");
                         return;
                     }else{
-                        $state.go("order-success.detail", {"oids": oids.join("&")});
+                        //$state.go("order-success.detail", {"oids": oids.join("&")});
+                        PayService.prepay({
+                            'pipelineCode':'WXJSAPIPAY',
+                            'pipelineName':'JSAPIPAY',
+                            'bankCode':'NONE',
+                            'orderids':oids
+                        }).success(function(data){
+                            WeixinJSBridge.invoke(
+                               'getBrandWCPayRequest', data.body,
+                               function(res){     
+                                   if(res.err_msg == "get_brand_wcpay_request：ok" ) {
+                                        alert("ok");
+                                   }
+                                   // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。 
+                                   console.log(res);
+                               }
+                           ); 
+                        }).error(function(data){
+                            alert("网络异常，请稍后重试。");
+                        });
                         return;
                     }
                 }else if(data.code == 400){
@@ -202,17 +168,21 @@ wapApp.controller('OrderConfirmationParantController',
         $scope.purchaseVo.couponType = '';
         $scope.purchaseVo.couponID = '';
 
-        var postagequery = [];
+        var postagequery = {};
+        postagequery.params = [];
         if(!$scope.transaction || !$scope.transaction.orders){
             return;
         }
         for (var i = 0; i < $scope.transaction.orders.length; i++) {
             var pquery = {};
             var o = $scope.transaction.orders[i];
-            pquery.mid = o.mid;
-            pquery.price = o.price-o.postage;
-            pquery.city = address.city;
-            postagequery.push(pquery);
+            for(var j = 0; j < o.goods.length; j++){
+                pquery.gid = o.goods[j].gid;
+                pquery.transportType = 'EXPRESS';
+                pquery.city = address.city;
+                postagequery.params.push(pquery);
+            }
+            
         };
         PostageService.calculate(postagequery).success(function(data){
             if(data.ok){
