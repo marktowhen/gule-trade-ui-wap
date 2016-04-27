@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('fonts/icomoon.eot?dchex0');
-    src:    url('fonts/icomoon.eot?dchex0#iefix') format('embedded-opentype'),
-        url('fonts/icomoon.ttf?dchex0') format('truetype'),
-        url('fonts/icomoon.woff?dchex0') format('woff'),
-        url('fonts/icomoon.svg?dchex0#icomoon') format('svg');
+    src:    url('fonts/icomoon.eot?709vo3');
+    src:    url('fonts/icomoon.eot?709vo3#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?709vo3') format('truetype'),
+        url('fonts/icomoon.woff?709vo3') format('woff'),
+        url('fonts/icomoon.svg?709vo3#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,6 +24,36 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-jia-fenxiang:before {
+    content: "\e932";
+}
+.icon-ling-xiaoxi:before {
+    content: "\e939";
+}
+.icon-pengyouquan-fenxiang:before {
+    content: "\e93a";
+}
+.icon-QQ-denglu:before {
+    content: "\e93b";
+}
+.icon-QQ-feixiang:before {
+    content: "\e93c";
+}
+.icon-shouji-fenglu:before {
+    content: "\e93d";
+}
+.icon-weibo-denglu:before {
+    content: "\e93e";
+}
+.icon-weibo-fenxiang:before {
+    content: "\e93f";
+}
+.icon-weixin-denglu:before {
+    content: "\e940";
+}
+.icon-weixin-fenxiang:before {
+    content: "\e941";
+}
 .icon-wenhao:before {
     content: "\e921";
 }
