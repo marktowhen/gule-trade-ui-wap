@@ -1,6 +1,6 @@
 'use strict';
 
-shopApp.controller('PayController', function ($scope, Dialog, $state, $element, $window, $timeout, $stateParams, $sce, PayService, $cookies, ConstantService) {
+wapApp.controller('PayController', function ($scope, Dialog, $state, $element, $window, $timeout, $stateParams, $sce, PayService, $cookies, ConstantService) {
     $scope.type = 'thirdparty';
     $scope.bankcode = 'ALIPAY';
     $scope.bankname = '支付宝';

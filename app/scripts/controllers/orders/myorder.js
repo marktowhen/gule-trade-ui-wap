@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-shopApp.controller('MyOrderController', function ($scope, Dialog, ConstantService, OrderService, RefundStatusService, OrderStatusService, $state, $cookies, CartService, $q) {
+wapApp.controller('MyOrderController', function ($scope, Dialog, ConstantService, OrderService, RefundStatusService, OrderStatusService, $state, $cookies, CartService, $q) {
     var loginuid = $cookies.get(ConstantService.LOGIN_ID_KEY);
     if(!loginuid){
         Dialog.alert($scope, "请先登录");

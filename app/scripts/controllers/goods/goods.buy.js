@@ -11,6 +11,7 @@ wapApp.controller('BuyController',
     function ($scope, $cookies,$state, ConstantService,$stateParams,GoodsBuyService, CartService) {
     	var gid=$stateParams.gid;
 
+
         $scope.num =1;
     	GoodsBuyService.condition(gid).success(function(data){
     		$scope.condition = data.body;

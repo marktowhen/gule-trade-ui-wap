@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-shopApp.service('OrderStatusService', function () {
+wapApp.service('OrderStatusService', function () {
     
     this.NEW_CODE                 = "NEW";
     this.PAYING_CODE              = "PAYING";

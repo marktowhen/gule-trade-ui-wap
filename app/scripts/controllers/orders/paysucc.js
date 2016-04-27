@@ -1,6 +1,6 @@
 'use strict';
 
-shopApp.controller('PaySuccController', function ($scope, $state) {
+wapApp.controller('PaySuccController', function ($scope, $state) {
 
     var count = 10;
     var interval = setInterval(function(){
