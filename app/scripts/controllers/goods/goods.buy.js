@@ -8,7 +8,7 @@
  * Controller of the jingyunshopApp
  */
 wapApp.controller('BuyController', 
-    function ($scope, $cookies,$state, ConstantService,$stateParams,GoodsBuyService) {
+    function ($scope, $cookies,$state, ConstantService,$stateParams,GoodsBuyService, CartService) {
     	var gid=$stateParams.gid;
 
         $scope.num =1;
@@ -64,6 +64,22 @@ wapApp.controller('BuyController',
     		}
     		return -1;
     	}
+
+
+        $scope.buynow = function(goods){
+            CartService.submit()
+            .success(function(data){
+                if(data.ok){
+                    $state.go("orderconfirm.page");
+                    return;
+                }else{
+                    alert(data.message);
+                }
+            })
+            .error(function(){
+                alert("订单信息有误，请检查后重新提交");
+            });
+        };
 
         ///减少数量
         $scope.downNum = function(){
