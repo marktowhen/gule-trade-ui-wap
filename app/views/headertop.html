@@ -1,11 +1,11 @@
-<div class="header">
+<div class="header" ng-controller="HeaderController">
     <a href="" class="col-15 fs10 fl">
         <div class="icon-xiaoxi-home"><span class="newsnum">9+</span></div>
         <div class="news_title">消息</div>
     </a>
 	<div class="search_wrap mt5 fl col-70">
-		<input type="text" placeholder="移动POS机无线" class="col-85">
-		<a href="" class="search_btn col-10 icon-search fr"></a>
+		<input type="text" placeholder="移动POS机无线" class="col-85" ng-model="goodsname">
+		<a  href="" class="search_btn col-10 icon-search fr" ng-click="toSearch()"></a>
 	</div>
 	<a href="#/login.html" class="login fs14 col-15">登录</a>
 </div>

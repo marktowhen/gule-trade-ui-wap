@@ -16,7 +16,8 @@ wapApp.service('GoodsBuyService', function ($http, $location, ApiService, $state
     };
 
       this.sku = function(gid,condition){
-    		  return $http.get(ApiService.api.wapGoods.sku.replace(":gid",gid).replace(":condition",condition),
+    		  return $http.get(ApiService.api.wapGoods.sku.replace(":gid",gid),
+    		  	 	{params: {'conditions':condition}},
     		   {headers:{'Content-Type':'application/json;charset=UTF-8'}});
     };
 });

@@ -10,6 +10,9 @@
 wapApp.controller('GoodsDetailsController', 
     function ($scope, $cookies,$state, ConstantService,$stateParams,GoodsDetailsService) {
     	var gid=$stateParams.gid;
+
+    	$scope.isCart= false;
+
 		GoodsDetailsService.detail(gid).success(function(data){
 			$scope.goods = data.body;
 			//console.log($scope.goods);
@@ -32,6 +35,6 @@ wapApp.controller('GoodsDetailsController',
 
 		///购物车
 		$scope.toCart  = function(gid){
-			$state.go('product-details',{cart:1});
+			$scope.isCart= true;
 		}
 });
