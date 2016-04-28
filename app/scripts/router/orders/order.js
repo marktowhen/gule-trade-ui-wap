@@ -36,29 +36,47 @@ wapApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider){
         url:"/edit.html?id"
       })
 			/**我的订单查询页面*/
-			.state('order', {
-	        templateUrl: 'views/orders/order.html',
-	        controller: '',
-	        url:"/order.html"
+			.state('orderhistory', {
+				abstract:true,
+				templateUrl: 'views/orders/history/order.history.parent.html',
+				controller: function($scope){
+					$scope.tabname = 'all';
+				},
+				url:"/orders/history"
+			})
+			.state('orderhistory.all', {
+	        templateUrl: 'views/orders/history/order.history.all.html',
+	        controller: function($scope){
+						$scope.$parent.tabname = 'all';
+					},
+	        url:"/all.html"
 	      })
-	    .state('order_nopay', {
-	        templateUrl: 'views/orders/order_nopay.html',
-	        controller: '',
-	        url:"/order_nopay.html"
+	    .state('orderhistory.topay', {
+	        templateUrl: 'views/orders/history/order.history.topay.html',
+	        controller: function($scope){
+						$scope.$parent.tabname = 'topay';
+					},
+	        url:"/topay.html"
 	      })
-	    .state('order_nodeliver', {
-	        templateUrl: 'views/orders/order_nodeliver.html',
-	        controller: '',
-	        url:"/order_nodeliver.html"
+	    .state('orderhistory.paid', {
+	        templateUrl: 'views/orders/history/order.history.paid.html',
+	        controller: function($scope){
+						$scope.$parent.tabname = 'paid';
+					},
+	        url:"/paid.html"
 	      })
-	    .state('order_delivered', {
-	        templateUrl: 'views/orders/order_delivered.html',
-	        controller: '',
-	        url:"/order_delivered.html"
+	    .state('orderhistory.delivered', {
+	        templateUrl: 'views/orders/history/order.history.delivered.html',
+	        controller: function($scope){
+						$scope.$parent.tabname = 'delivered';
+					},
+	        url:"/delivered.html"
 	      })
-	    .state('order_received', {
-	        templateUrl: 'views/orders/order_received.html',
-	        controller: '',
-	        url:"/order_received.html"
+	    .state('orderhistory.received', {
+	        templateUrl: 'views/orders/history/order.history.received.html',
+	        controller: function($scope){
+						$scope.$parent.tabname = 'received';
+					},
+	        url:"/received.html"
 	      });
 });
