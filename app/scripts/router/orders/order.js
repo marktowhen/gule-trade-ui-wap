@@ -34,5 +34,31 @@ wapApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider){
         templateUrl: 'views/orders/address.edit.html',
         controller: '',
         url:"/edit.html?id"
-      });
+      })
+			/**我的订单查询页面*/
+			.state('order', {
+	        templateUrl: 'views/orders/order.html',
+	        controller: '',
+	        url:"/order.html"
+	      })
+	    .state('order_nopay', {
+	        templateUrl: 'views/orders/order_nopay.html',
+	        controller: '',
+	        url:"/order_nopay.html"
+	      })
+	    .state('order_nodeliver', {
+	        templateUrl: 'views/orders/order_nodeliver.html',
+	        controller: '',
+	        url:"/order_nodeliver.html"
+	      })
+	    .state('order_delivered', {
+	        templateUrl: 'views/orders/order_delivered.html',
+	        controller: '',
+	        url:"/order_delivered.html"
+	      })
+	    .state('order_received', {
+	        templateUrl: 'views/orders/order_received.html',
+	        controller: '',
+	        url:"/order_received.html"
+	      });
 });
