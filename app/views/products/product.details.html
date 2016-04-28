@@ -23,8 +23,8 @@
 		<div class="pd1-top">
 			<div class="pd1-left fl">{{goods.name}}</div>
 			<div class="pd1-right fl">
-				<div class="pd1-right-icon">
-					<p ng-click="fav(goods.gid)">s</p>
+
+				<div class="pd1-right-icon" ng-click="fav(goods.gid)">
 					<i class="icon-shouchang-1"></i>
 					<i class="icon-shouchang"></i>
 				</div>
@@ -43,8 +43,6 @@
 				<li>快递：0.00</li>
 				<li>评价：{{goods.comment}}条</li>
 				<li>成交额：{{goods.volume}}</li>
-				<li>评价：2541条</li>				
-				<li>月成交额：451</li>
 			</ul>
 		</div>
 	</div>
@@ -79,7 +77,7 @@
 			<i class="icon-arrow fr"></i>
 			<p ng-click="toMerchant(goods.mid)">进入店铺</p>
 			<i class="icon-sp fl"></i>	
-			<p>&nbsp;乐谷微商城</p>
+
 		</div>
 	</div>
 	<div class="cl h10"></div>
@@ -163,12 +161,15 @@
 		<div class="pd5-info1 fr">
 			<ul>
 				<li>
+				<a target=blank href=http://wpa.qq.com/msgrd?V=3&uin={{goods.mQQ}}&Site=中华阿胶网&Menu=yes 	>
 					<i class="icon-QQ"></i>
-					<p>客服</p>
+					
+				</a>
+				<p>客服</p>
 				</li>
 				<li>
 					<i class="icon-sp-1"></i>
-					<p>店铺</p>
+					<p ng-click="toMerchant(goods.mid)">店铺</p>
 				</li>
 			</ul>
 		</div>

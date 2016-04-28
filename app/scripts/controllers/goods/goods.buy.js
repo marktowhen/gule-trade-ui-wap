@@ -16,13 +16,14 @@ wapApp.controller('BuyController',
     	GoodsBuyService.condition(gid).success(function(data){
     		$scope.condition = data.body;
             $scope.condition.skuid= "";
-    		console.log($scope.condition);
+    		//console.log($scope.condition);
     	});
 
 
-
+      ///sku组合条件数组
     	$scope.conditions = [];
 
+      //查询
     	$scope.toCondition = function(id){
     		var index =  ex($scope.conditions,id);
     		if(index ==-1){
@@ -30,9 +31,11 @@ wapApp.controller('BuyController',
     		}else{
     			$scope.conditions.splice(index,1);
     		}
+          ///条件进行排序 以便和数据库数据一致
     			$scope.conditions.sort();
-    	
+    	     
             if($scope.conditions.length>0){
+
                  GoodsBuyService.sku(gid,$scope.conditions).success(function(data){
                    if(data.code==200 && data.body!=null){
                          $scope.condition.price = data.body.price;
@@ -40,11 +43,9 @@ wapApp.controller('BuyController',
                          $scope.condition.stock = data.body.stock;
                          $scope.condition.volume = data.body.volume;
                          $scope.condition.skuid = data.body.id;
+                         $scope.condition.sale = data.body.sale;
                          $scope.numFlag = true;
-                          //$scope.condition.sale = data.body.sale;
-                        console.log(  data.body);
-                     
-
+                        //console.log($scope.condition.sale);
                    }else{
                          $scope.condition.skuid ="";
                          $scope.numFlag = false;
