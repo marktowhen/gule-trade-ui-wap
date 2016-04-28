@@ -243,7 +243,7 @@ wapApp.service('ApiService', function () {
         'logistic':{
             'logisticlist':'http://localhost:8080/api/logistic/express/list',
             'expressinfo':'http://localhost:8080/api/logistic/express/info/:oid/:code/:codeid',
-            'postage':'http://localhost:8080/api/logistic/postage/calculation/goods'
+            'postage':'http://localhost:8080/api/logistic/postage/calculation/muti'
         },
         'wapGoods':{
             'list':'http://localhost:8080//api/wap/goods/list',

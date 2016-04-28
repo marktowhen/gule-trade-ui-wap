@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-wapApp.controller('OrderConfirmationParantController', 
+wapApp.controller('OrderConfirmationParantController',
     function ($scope, $cookies, ConstantService, OrderService, $state, PayService,
         MyReceiveAddressService, CashCouponService, DiscountCouponService, CouponService, PostageService) {
     var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
@@ -15,9 +15,9 @@ wapApp.controller('OrderConfirmationParantController',
 
     $scope.purchaseVo = {'addressid':'', 'city':'', 'address':'', 'receiver':'', 'mobile':'', 'zipcode':'',
                 'couponID':'', 'couponType':'', 'invoiceType':'', 'invoiceTitle':'',
-                'paytypeCode':'ONLINE', 'paytypeName':'线上支付', 
+                'paytypeCode':'ONLINE', 'paytypeName':'线上支付',
                 'orders':[
-                    {'MID':'', 'mname':'', 'deliveryTypeCode':'D002', 
+                    {'MID':'', 'mname':'', 'deliveryTypeCode':'D002',
                     'deliveryTypeName':'普通快递', 'postage':'', 'price':'',
                     'goods':[
                         {'GID':'', 'gname':'', 'price':'', 'count':''},
@@ -38,13 +38,13 @@ wapApp.controller('OrderConfirmationParantController',
             //$state.go("cart");//should be go to illegal order page.
             return;
         }
-        
+
     });
-    
-    $scope.$watch('$viewContentLoaded', function() {  
+
+    $scope.$watch('$viewContentLoaded', function() {
        listCashCoupon();
        listDiscountCoupon();
-    }); 
+    });
 
     $scope.$on("activeCashCoupon",
           function (event, msg) {
@@ -66,13 +66,13 @@ wapApp.controller('OrderConfirmationParantController',
             $scope.cashcoupons = data.body;
         });
     };
-    
+
     var listDiscountCoupon = function(){
          DiscountCouponService.getUnusedCoupon(uid).success(function(data){
             $scope.discountcoupons = data.body;
         });
     };
-   
+
 
     $scope.pureOriginMoney = 0;//没有邮费的订单价格
     $scope.originpostage = 0;//总邮费
@@ -84,25 +84,25 @@ wapApp.controller('OrderConfirmationParantController',
     $scope.$watch("originpostage", function(oldv, newv){
         $scope.finalmoney = $scope.pureOriginMoney + $scope.originpostage;
     });
-    
-    
+
+
     OrderService.listPaytype().success(function(data){
         $scope.paytypes = data.body;
     });
-    
+
     $scope.submit = function(){
-        
+
         if(!$scope.transaction || !$scope.transaction.orders){
             alert("订单信息有误，请检查后重新提交");
             return;
         }
-        
+
         if($scope.purchaseVo.couponID && $scope.transaction.orders.length > 1){
             $("#confirm-dialog").modal("show");
             return;
         }
         $scope.confirmSubmit();
-        
+
     };
 
     $scope.confirmSubmit = function(){
@@ -133,14 +133,14 @@ wapApp.controller('OrderConfirmationParantController',
                         }).success(function(data){
                             WeixinJSBridge.invoke(
                                'getBrandWCPayRequest', data.body,
-                               function(res){     
+                               function(res){
                                    if(res.err_msg == "get_brand_wcpay_request：ok" ) {
                                         alert("ok");
                                    }
-                                   // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。 
+                                   // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。
                                    console.log(res);
                                }
-                           ); 
+                           );
                         }).error(function(data){
                             alert("网络异常，请稍后重试。");
                         });
@@ -169,29 +169,33 @@ wapApp.controller('OrderConfirmationParantController',
         $scope.purchaseVo.couponID = '';
 
         var postagequery = {};
-        postagequery.params = [];
+        postagequery.merchants = [];
         if(!$scope.transaction || !$scope.transaction.orders){
             return;
         }
         for (var i = 0; i < $scope.transaction.orders.length; i++) {
-            var pquery = {};
             var o = $scope.transaction.orders[i];
+            var merchant = {};
+            merchant.mid = o.mid;
+            merchant.goods = [];
             for(var j = 0; j < o.goods.length; j++){
-                pquery.gid = o.goods[j].gid;
-                pquery.transportType = 'EXPRESS';
-                pquery.city = address.city;
-                postagequery.params.push(pquery);
+                var gs = {};
+                gs.gid = o.goods[j].gid;
+                gs.transportType = 'EXPRESS';
+                gs.city = address.city;
+                merchant.goods.push(gs);
             }
-            
+            postagequery.merchants.push(merchant);
         };
         PostageService.calculate(postagequery).success(function(data){
             if(data.ok){
                 var postageresponse = data.body;
-                if(!postageresponse) return;
+                if(!postageresponse | !postageresponse.merchants) return;
+                console.log(postageresponse);
                 var olen = $scope.transaction.orders.length;
                 var newpostage = 0;
-                for (var i = 0; i < postageresponse.length; i++) {
-                    var p = postageresponse[i];
+                for (var i = 0; i < postageresponse.merchants.length; i++) {
+                    var p = postageresponse.merchants[i];
                     for (var j = 0; j < olen; j++) {
                         if($scope.transaction.orders[j].mid === p.mid){
                             var oldpostage = $scope.transaction.orders[j].postage;
