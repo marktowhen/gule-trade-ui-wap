@@ -45,7 +45,11 @@ wapApp.service('ApiService', function () {
         'marketing':{
             'group':{
                 'listWithCondition':'http://localhost:8080/api/marketing/group/goods/list',
-                'detail':'http://localhost:8080/api/marketing/group/goods/detail'
+                'detail':'http://localhost:8080/api/marketing/group/goods/detail',
+                'user':{
+                    'count':'http://localhost:8080/api/marketing/group/user/count/:groupID',
+                    'list':'http://localhost:8080/api/marketing/group/user/list/:groupID'
+                }
             },
             'auction':{
                 'listWithCondition':'http://localhost:8080/api/marketing/auction/goods/list'
