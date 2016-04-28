@@ -8,11 +8,7 @@
 		</div>
 		<div class="dot">
 			<ul>
-				<li class="cur"></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
+				<li ng-repeat="img in goods.imgList"></li>
 			</ul>
 		</div>
 	</div>
@@ -31,8 +27,8 @@
 					<!-- <li>
 						<a href="javascript:;">100人以上 <span class="nn">￥200.00</span></a>
 					</li> -->
-					<li class="cur">
-						<a href="javascript:;">200人以上 <span class="nn">￥180.00</span></a>
+					<li class="cur" ng-repeat="ps in groupGoods.priceSettings">
+						<a href="javascript:;">{{ps.floor}}人 <span class="nn">￥{{ps.price}}</span></a>
 					</li>
 					<!-- <li>
 						<a href="javascript:;" >300人以上 <span class="nn">￥150.00</span></a>
@@ -42,24 +38,24 @@
 			<div class="gd-right1 fl">
 				<ul>
 					<li  class="cur">当前价格</li>
-					<li>当前价格</li>
-					<li>当前价格</li>
+					<!-- <li>当前价格</li>
+					<li>当前价格</li> -->
 				</ul>
 			</div>
 		</div>
 	</div>
 	<div class="cl h10"></div>
-	<!-- <div class="gd-progress">
+	<div class="gd-progress" ng-if="showGroup">
 		<dl class="gd-barbox">
 			<dd class="gd-barline fl">
-				<div class="gd-charts"></div>
+				<div class="gd-charts" style="width: {{count/groupGoods.currentPrice.floor*100}}%"></div>
 			</dd>
 		</dl>
 		<p>
-			<a href="#">187人</a>
+			<a href="#">{{count}}人</a>
 			已参团
 		</p>
-	</div> -->
+	</div>
 	<div class="cl h10"></div>
 	<div class="gd-info">
 		<div class="gd-text">
@@ -109,7 +105,7 @@
 	<div class="cl"></div>
 	<div class="pd-box5">
 		<div class="pd5-info3 fr" data-target="#add-cart-dialog" data-toggle="modal">
-			<p>￥180.00</p>
+			<p>￥{{groupGoods.currentPrice.price}}</p>
 			<p>立即参团</p>
 		</div>
 		<div class="pd5-info2 fr" data-target="#add-cart-dialog" data-toggle="modal">
@@ -134,22 +130,22 @@
 <script type="text/javascript">
 $(document).ready(function slide() {
 	var haha = document.getElementById('slide');
-		window.mySwipe = Swipe(
-			haha, 
-			{	
-				startSlide: 0,		
-				auto: 3000,         
-				continuous: true,   
-				disableScroll: true,  
-				stopPropagation: true,   
-				callback: function(index, element) {
-					$(".dot ul li").eq(index).addClass("cur").siblings().removeClass("cur");
-				}
-			}
-		);
+				window.mySwipe = Swipe(
+					haha, 
+					{	
+						startSlide: 0,		
+						auto: 3000,         
+						continuous: true,   
+						disableScroll: true,  
+						stopPropagation: true,   
+						callback: function(index, element) {
+							$(".dot ul li").eq(index).addClass("cur").siblings().removeClass("cur");
+						}
+					}
+				);
 
-		$(document).on('click','.dot ul li',function(){
-			mySwipe.slide($(this).index(),1000);
-	});
+				$(document).on('click','.dot ul li',function(){
+					mySwipe.slide($(this).index(),1000);
+				});
 });
 </script>

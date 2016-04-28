@@ -45,7 +45,11 @@ wapApp.service('ApiService', function () {
         'marketing':{
             'group':{
                 'listWithCondition':'http://localhost:8080/api/marketing/group/goods/list',
-                'detail':'http://localhost:8080/api/marketing/group/goods/detail'
+                'detail':'http://localhost:8080/api/marketing/group/goods/detail',
+                'user':{
+                    'count':'http://localhost:8080/api/marketing/group/user/count/:groupID',
+                    'list':'http://localhost:8080/api/marketing/group/user/list/:groupID'
+                }
             },
             'auction':{
                 'listWithCondition':'http://localhost:8080/api/marketing/auction/goods/list'
@@ -243,7 +247,7 @@ wapApp.service('ApiService', function () {
         'logistic':{
             'logisticlist':'http://localhost:8080/api/logistic/express/list',
             'expressinfo':'http://localhost:8080/api/logistic/express/info/:oid/:code/:codeid',
-            'postage':'http://localhost:8080/api/logistic/postage/calculation/goods'
+            'postage':'http://localhost:8080/api/logistic/postage/calculation/muti'
         },
         'wapGoods':{
             'list':'http://localhost:8080//api/wap/goods/list',

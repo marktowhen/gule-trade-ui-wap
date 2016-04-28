@@ -19,4 +19,9 @@ wapApp.service('GroupBuyService', ['$http', 'ApiService', function($http, ApiSer
                     {'params': {'ggid':ggid}});
     };
 
+    this.countUser = function(groupID, status){
+    	 return  $http.get(ApiService.api.marketing.group.user.count.replace(':groupID', groupID),
+                    {'params': {'status':status}});
+    }
+
 }]);
