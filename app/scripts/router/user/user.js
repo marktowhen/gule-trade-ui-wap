@@ -32,7 +32,7 @@ wapApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider){
       })
 
 			.state('coupons', {
-	        templateUrl: 'views/user/coupon/coupons.html',
+	        templateUrl: 'views/user/coupon/coupon.parent.html',
 	        controller: '',
 	        url:"/user/coupons.html"
 	      });
