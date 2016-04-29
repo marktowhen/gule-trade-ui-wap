@@ -34,7 +34,7 @@
                 {{attr.name}}：
                 <br/>
                 <!--cur-->
-                <button class="cd2-select" ng-disabled=""  ng-repeat="v in attr.valueList" ng-click="toCondition(v.id)" >
+                <button class="cd2-select "  ng-repeat="v in attr.valueList" ng-click="toConditionQuery(v.id,v.attrName)"  ng-class="{'cur': v.attrId==1}">
                   {{v.value}}
                   <div class="cd2-select-icon"><i class="icon-jiaobiao"></i></div>
                 </button>
