@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('fonts/icomoon.eot?709vo3');
-    src:    url('fonts/icomoon.eot?709vo3#iefix') format('embedded-opentype'),
-        url('fonts/icomoon.ttf?709vo3') format('truetype'),
-        url('fonts/icomoon.woff?709vo3') format('woff'),
-        url('fonts/icomoon.svg?709vo3#icomoon') format('svg');
+    src:    url('fonts/icomoon.eot?almz61');
+    src:    url('fonts/icomoon.eot?almz61#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?almz61') format('truetype'),
+        url('fonts/icomoon.woff?almz61') format('woff'),
+        url('fonts/icomoon.svg?almz61#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,6 +24,27 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-jiahao-1:before {
+    content: "\e943";
+}
+.icon-kongbai:before {
+    content: "\e944";
+}
+.icon-pengyouqian:before {
+    content: "\e945";
+}
+.icon-QQ-1:before {
+    content: "\e946";
+}
+.icon-weibo-1:before {
+    content: "\e947";
+}
+.icon-weixin-1:before {
+    content: "\e948";
+}
+.icon-xiaoxi-1:before {
+    content: "\e942";
+}
 .icon-jia-fenxiang:before {
     content: "\e932";
 }

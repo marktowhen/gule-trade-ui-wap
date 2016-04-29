@@ -97,4 +97,14 @@ var wapApp = angular
         controller: '',
         url:"/login.html"
       })
+    .state('blank', {
+        templateUrl: 'views/products/blank.html',
+        controller: '',
+        url:"/blank.html"
+      })
+    .state('news', {
+        templateUrl: 'views/user/news.html',
+        controller: '',
+        url:"/news.html"
+      })
   });
