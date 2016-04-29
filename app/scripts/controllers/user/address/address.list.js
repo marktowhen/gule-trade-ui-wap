@@ -7,8 +7,8 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-wapApp.controller('OrderAddressListController', 
-    function ($scope, $cookies, ConstantService, OrderService, $state, 
+wapApp.controller('OrderAddressListController',
+    function ($scope, $cookies, ConstantService, OrderService, $state,
         MyReceiveAddressService, CashCouponService, DiscountCouponService, CouponService, PostageService) {
     var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
 
@@ -37,7 +37,7 @@ wapApp.controller('OrderAddressListController',
     };
 
     $scope.select = function(address){
-        if($scope.transaction){
+        if($scope.transaction && $scope.transaction.orders && $scope.transaction.orders.length > 0){
             $scope.transaction.addressid = address.id;
             $scope.transaction.city = address.city;
             $scope.transaction.address = address.countryName+'-'+address.provinceName+'-'+address.cityName+'-'+address.address;
@@ -61,6 +61,14 @@ wapApp.controller('OrderAddressListController',
                     alert(data.message);
                 }
             });
+    };
+
+    $scope.editaddr = function(address){
+      if($scope.transaction && $scope.transaction.orders && $scope.transaction.orders.length > 0){
+        $state.go("orderconfirm.address.edit", {'id':address.id});
+      }else {
+        $state.go("address.edit", {'id':address.id});
+      }
     };
 
 });

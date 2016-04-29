@@ -32,16 +32,6 @@ var wapApp = angular
         controller: '',
         url:"/index_app.html"
       })
-     .state('user', {
-        templateUrl: 'views/user/user.html',
-        controller: '',
-        url:"/user.html"
-      })
-     .state('user-info', {
-        templateUrl: 'views/user/user-info.html',
-        controller: '',
-        url:"/user-info.html"
-      })
      .state('add-cart-dialog', {
         templateUrl: 'views/dialog/add-cart-dialog.html',
         controller: '',
@@ -76,11 +66,6 @@ var wapApp = angular
         templateUrl: 'views/user/myintegral.html',
         controller: '',
         url:"/user/myintegral.html"
-      })
-    .state('coupons', {
-        templateUrl: 'views/user/coupons.html',
-        controller: '',
-        url:"/user/coupons.html"
       })
     .state('auction-details', {
         templateUrl: 'views/index/auction-details.html',
