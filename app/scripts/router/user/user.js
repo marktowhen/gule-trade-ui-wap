@@ -31,9 +31,18 @@ wapApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider){
         url:"/edit.html?id"
       })
 
-			.state('coupons', {
+			.state('coupon', {
+					abstract: true,
 	        templateUrl: 'views/user/coupon/coupon.parent.html',
 	        controller: '',
-	        url:"/user/coupons.html"
-	      });
+	        url:"/user/coupon"
+	      }).state('coupon.cash', {
+		        templateUrl: 'views/user/coupon/coupon.cash.html',
+		        controller: '',
+		        url:"/cash.html"
+		      }).state('coupon.discount', {
+			        templateUrl: 'views/user/coupon/coupon.discount.html',
+			        controller: '',
+			        url:"/discount.html"
+			      });
 });
