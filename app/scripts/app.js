@@ -112,4 +112,9 @@ var wapApp = angular
         controller: '',
         url:"/pay-success.html"
     })
+    .state('joined-group', {
+        templateUrl: 'views/index/joined-group.html',
+        controller: '',
+        url:"/joined-group.html"
+    })
   });
