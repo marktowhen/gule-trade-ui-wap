@@ -97,6 +97,7 @@ var wapApp = angular
         controller: '',
         url:"/login.html"
       })
+<<<<<<< HEAD
     .state('blank', {
         templateUrl: 'views/products/blank.html',
         controller: '',
@@ -106,5 +107,11 @@ var wapApp = angular
         templateUrl: 'views/user/news.html',
         controller: '',
         url:"/news.html"
+=======
+    .state('pay-success', {
+        templateUrl: 'views/products/pay-success.html',
+        controller: '',
+        url:"/pay-success.html"
+>>>>>>> 24bdb0b01962775d8e4e528a5a1566e3d7779111
       })
   });
