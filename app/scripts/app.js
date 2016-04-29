@@ -97,4 +97,9 @@ var wapApp = angular
         controller: '',
         url:"/login.html"
       })
+    .state('pay-success', {
+        templateUrl: 'views/products/pay-success.html',
+        controller: '',
+        url:"/pay-success.html"
+      })
   });
