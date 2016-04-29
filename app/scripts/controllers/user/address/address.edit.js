@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-wapApp.controller('OrderAddressNewController', 
+wapApp.controller('OrderAddressNewController',
     function ($scope, $cookies, ConstantService, $state, $stateParams,
         MyReceiveAddressService, AreaService) {
     var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
@@ -27,14 +27,14 @@ wapApp.controller('OrderAddressNewController',
         $scope.address = {};
     }
 
-    
+
 
     AreaService.listCountry()
         .success(function(data){
             if(data.code==200){
-                $scope.countries = data.body;    
+                $scope.countries = data.body;
             }
-            
+
         });
     //获取省
     $scope.getProvince = function(){
@@ -47,10 +47,10 @@ wapApp.controller('OrderAddressNewController',
                 if(data.ok){
                     $scope.provinces = data.body;
                 }
-                
+
             });
         }
-        
+
     };
 
     //获取城市
@@ -63,10 +63,10 @@ wapApp.controller('OrderAddressNewController',
                 if(data.ok){
                     $scope.cities = data.body;
                 }
-                
+
             });
         }
-        
+
     };
 
     $scope.setdefault = function(){
@@ -79,7 +79,11 @@ wapApp.controller('OrderAddressNewController',
                 //add
                 MyReceiveAddressService.add($scope.address).success(function(data){
                     if(data.ok){
+                      if($scope.transaction && $scope.transaction.orders && $scope.transaction.orders.length > 0){
                         $state.go("orderconfirm.address.list");
+                      }else {
+                        $state.go("address.list");
+                      }
                     }else{
                         alert(data.message);
                     }
@@ -88,7 +92,11 @@ wapApp.controller('OrderAddressNewController',
             }else{
                 MyReceiveAddressService.refresh($scope.address).success(function(data){
                     if(data.ok){
+                      if($scope.transaction && $scope.transaction.orders && $scope.transaction.orders.length > 0){
                         $state.go("orderconfirm.address.list");
+                      }else {
+                        $state.go("address.list");
+                      }
                     }else{
                         alert(data.message);
                     }
@@ -96,5 +104,5 @@ wapApp.controller('OrderAddressNewController',
             }
         }
     };
-    
+
 });
