@@ -9,7 +9,7 @@
  */
 wapApp.controller('GroupListController', 
 	['$scope', 'GroupBuyService', function ($scope, GroupBuyService) {
-		var flag = false;
+		
 		$scope.ggoods = [];
 		var size = 20;
 		var hasMore = true;
@@ -22,6 +22,8 @@ wapApp.controller('GroupListController',
 					if (data.body.length<size) {
 						hasMore = false;
 					}
+
+					scrollListen();
 					
 				}
 			}).error(function(data){
@@ -45,13 +47,19 @@ wapApp.controller('GroupListController',
       };
 
 		  ////瀑布流追加
-       $(window).scroll(function(){
-          if(hasMore){
-           if (($(window).scrollTop() >= $(document).height()-$(window).height()-80) && !flag ){  //滚动条距离底部不足80px时触发
-                pushContent();
-                flag = true;
-              }
-          }
-       });	
+		var scrollListen = function(){
+			if($("#page_id").val()=='GroupGoodsList')  {
+				
+				 $(window).scroll(function(){
+		           if (hasMore && ($(window).scrollTop() >= $(document).height()-$(window).height()-70)  ){  //滚动条距离底部不足80px时触发
+		                pushContent();
+		              }
+		          
+		       });	
+			}
+		}
+
+		
+      
 	
 }]);

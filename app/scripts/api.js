@@ -46,6 +46,8 @@ wapApp.service('ApiService', function () {
             'group':{
                 'listWithCondition':'http://localhost:8080/api/marketing/group/goods/list',
                 'detail':'http://localhost:8080/api/marketing/group/goods/detail',
+                'start':'http://localhost:8080/api/marketing/group/purchase/start/:groupgoodsid',
+                'join':'http://localhost:8080/api/marketing/group/purchase/join/:groupid',
                 'user':{
                     'count':'http://localhost:8080/api/marketing/group/user/count/:groupID',
                     'list':'http://localhost:8080/api/marketing/group/user/list/:groupID'
@@ -250,16 +252,15 @@ wapApp.service('ApiService', function () {
             'postage':'http://localhost:8080/api/logistic/postage/calculation/muti'
         },
         'wapGoods':{
-            'list':'http://localhost:8080//api/wap/goods/list',
-            'detail':'http://localhost:8080//api/wap/goods/detail/:gid',
-            'info':'http://localhost:8080//api/wap/goods/info/:gid',
-            'favorite':'http://localhost:8080//api/wap/goods/favorite/save/:gid',
-            'getFavorites':'http://localhost:8080//api/wap/goods/favorite/list',
-            'condition':'http://localhost:8080//api/wap/goods/condition/:gid',
-            'sku':'http://localhost:8080//api/wap/goods/single/:gid',
-            'isfav':'http://localhost:8080//api/wap/goods//favorite/isfav/:gid',
-            'delfav':'http://localhost:8080//api/wap/goods/favorite/del/:favId'
-
+            'list':'http://localhost:8080/api/wap/goods/list',
+            'detail':'http://localhost:8080/api/wap/goods/detail/:gid',
+            'info':'http://localhost:8080/api/wap/goods/info/:gid',
+            'favorite':'http://localhost:8080/api/wap/goods/favorite/save/:gid',
+            'getFavorites':'http://localhost:8080/api/wap/goods/favorite/list',
+            'condition':'http://localhost:8080/api/wap/goods/condition/:gid',
+            'sku':'http://localhost:8080/api/wap/goods/single/:gid',
+            'isfav':'http://localhost:8080/api/wap/goods//favorite/isfav/:gid',
+            'delfav':'http://localhost:8080/api/wap/goods/favorite/del/:favId'
         }
     }
 });
