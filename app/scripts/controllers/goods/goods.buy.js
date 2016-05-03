@@ -133,8 +133,9 @@ wapApp.controller('BuyController',
                          $scope.condition.volume = data.body.volume;
                          $scope.condition.skuid = data.body.id;
                          $scope.condition.sale = data.body.sale;
+                         $scope.condition.properties_values = data.body.propertiesValue;
                          $scope.numFlag = true;
-                        //console.log($scope.condition.sale);
+                        console.log($scope.condition);
                    }else{
                          $scope.condition.skuid ="";
                          $scope.numFlag = false;
