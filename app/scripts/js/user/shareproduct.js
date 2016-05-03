@@ -1,3 +1,4 @@
+'use strict';
 function shareproduct_onload(){
     //分享到第三方的选择弹窗
     $(document).on('click','.shareproduct_wrap .share',function(){
