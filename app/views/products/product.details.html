@@ -25,8 +25,9 @@
 			<div class="pd1-right fl">
 
 				<div class="pd1-right-icon" ng-click="fav(goods.gid)">
-					<i class="icon-shouchang-1"></i>
-					<i class="icon-shouchang"></i>
+					<i class="icon-shouchang" ng-show="fav_id != ''"></i>
+					<i class="icon-shouchang-1" ng-show="fav_id == ''"></i>
+				
 				</div>
 			</div>
 		</div>

@@ -1,14 +1,15 @@
 
     <div class="allproducts_wrap clearfix" ng-controller="GoodsListController">
         <div>
-            <header class="sort" ><span ng-click="byOrder(0)"> 默认排序</span>
-            <span ng-click="byOrder(1)">按价格排序<i class="icon-exchange"></i></span>
-            <span ng-click="byOrder(2)">按销量排序<i class="icon-exchange"></i></span>
+            <header class="sort" >
+                <span ng-click="byOrder(0)"> 默认排序</span>
+          <!--       <span ng-click="byOrder(1)">按价格排序<i class="icon-exchange"></i></span>
+                <span ng-click="byOrder(2)">按销量排序<i class="icon-exchange"></i></span> -->
             <i></i>
-               <!--  <div class="sort_content hide">
-                    <div class="sortbysales" ng-click="byOrder(2)">按销量排序<i></i></div>
-                    <div class="sortbyprice" ng-click="byOrder(1)">按价格排序<i></i></div>
-                </div> -->
+                <div class="sort_content hide">
+                    <div class="sortbysales" ng-click="byOrder(2)">按销量排序<i class="icon-exchange"></i></div>
+                    <div class="sortbyprice" ng-click="byOrder(1)">按价格排序<i class="icon-exchange"></i></div>
+                </div> 
             </header>
 
         </div>
@@ -27,8 +28,8 @@
                         </div>
                         <div class="price_info">
                              <div class="price fl" ng-show="{{!goods.sale}}">￥{{goods.price}}</div>
-                            <div class="price fl" ng-show="{{goods.sale}}">￥{{goods.salePrice}}</div>
-                            <div class="price fl" ng-show="{{goods.sale}}">原价:￥{{goods.price}}</div>
+                            <div class="price fl" ng-show="{{goods.sale}}" sty>￥{{goods.salePrice}}</div>
+                            <div class="price fl" ng-show="{{goods.sale}}" style="text-decoration: line-through;">原价:￥{{goods.price}}</div>
                             <div class="sales fr">已售<span>{{goods.volume}}</span>笔</div>
 							<i class="icon-shouchang-1 shoucang fr"></i>
                         </div>

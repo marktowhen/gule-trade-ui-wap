@@ -22,7 +22,8 @@ wapApp.controller('GoodsDetailsController',
 		GoodsDetailsService.isfav(gid).success(function(data){
 			if(data.code==200){
 				$scope.fav_id = data.body;
-				console.log($scope.fav_id);
+			
+	
 			}
 		});
 
