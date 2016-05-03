@@ -2,7 +2,7 @@
 	<div id="slide" class="swipe">
 		<div class='swipe-wrap'>
 			<div ng-repeat="img in goods.imgList">
-				<img src="{{img.path}}" alt="{{goods.name}}" />
+				 <img src="{{img.path}}" alt="{{goods.name}}" />
 			</div>
 			
 		</div>
@@ -60,7 +60,7 @@
 	<div class="gd-info">
 		<div class="gd-text">
 			<p>
-				机秒到刷卡器信用卡刷机秒到刷秒到刷卡器信用卡刷机秒到刷卡器信用卡刷机秒到刷卡器信用卡刷机秒到刷卡器信用卡刷机秒到刷卡器信用卡刷机秒到刷卡器信用卡刷机秒到刷卡器信用卡刷POSPOS。[右上角转发并邀请好友]
+				{{goods.about}}[右上角转发并邀请好友]
 			</p>
 		</div>
 		<div class="pd-serve">
@@ -104,11 +104,11 @@
 	</div>
 	<div class="cl"></div>
 	<div class="pd-box5">
-		<div class="pd5-info3 fr" data-target="#add-cart-dialog" data-toggle="modal">
+		<div class="pd5-info3 fr" ng-click="join()" >
 			<p>￥{{groupGoods.currentPrice.price}}</p>
 			<p>立即参团</p>
 		</div>
-		<div class="pd5-info2 fr" data-target="#add-cart-dialog" data-toggle="modal">
+		<div class="pd5-info2 fr" ng-click="start()">
 			<p>建团</p>
 		</div>
 		<div class="pd5-info1 fr">
