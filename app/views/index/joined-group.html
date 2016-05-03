@@ -127,14 +127,16 @@
 		</div>
 		<div class="cl h30"></div>
 		<div class="joined-group-box6">
-			<div class="joined-box6-left fl">
-				<i class="icon-home-1 fl"></i>
-				<p>更多团购</p>
-			</div>
+			<a href="#marketing/group/list.html">
+				<div class="joined-box6-left fl">
+					<i class="icon-home-1 fl"></i>
+					<p>更多团购</p>
+				</div>
+			</a>
 			<div class="joined-box6-right fl">我也要参团</div>
 		</div>
 		<div class="joined-gray">
-			<i class="icon-UP fr"></i>
+			<i class="icon-hands fr"></i>
 			<div class="cl h35"></div>
 			<p class="fr">分享给小伙伴参团</p>
 			<div class="cl h153"></div>
@@ -149,4 +151,10 @@
 				$(this).hide();
 			}
 		);
+		$(document).ready(
+			function() {
+				$(".joined-gray").delay(10000).show(0);
+			}
+		);
+		
 	</script>

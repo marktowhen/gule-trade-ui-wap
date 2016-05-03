@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('fonts/icomoon.eot?almz61');
-    src:    url('fonts/icomoon.eot?almz61#iefix') format('embedded-opentype'),
-        url('fonts/icomoon.ttf?almz61') format('truetype'),
-        url('fonts/icomoon.woff?almz61') format('woff'),
-        url('fonts/icomoon.svg?almz61#icomoon') format('svg');
+    src:    url('fonts/icomoon.eot?emgeqx');
+    src:    url('fonts/icomoon.eot?emgeqx#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?emgeqx') format('truetype'),
+        url('fonts/icomoon.woff?emgeqx') format('woff'),
+        url('fonts/icomoon.svg?emgeqx#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,6 +24,9 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-hands:before {
+    content: "\e949";
+}
 .icon-jiahao-1:before {
     content: "\e943";
 }
