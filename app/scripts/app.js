@@ -117,4 +117,14 @@ var wapApp = angular
         controller: '',
         url:"/joined-group.html"
     })
+    .state('one-list', {
+        templateUrl: 'views/index/one-list.html',
+        controller: '',
+        url:"/one-list.html"
+    })
+    .state('one-details', {
+        templateUrl: 'views/index/one-details.html',
+        controller: '',
+        url:"/one-details.html"
+    })
   });

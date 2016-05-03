@@ -1,3 +1,4 @@
+'use strict';
 function partner_help_onload(){
     $(document).on('click','.partner-help_wrap i.icon-arrow,.help_title',function(){
         if($(this).siblings('.help_content').hasClass('hide')){
