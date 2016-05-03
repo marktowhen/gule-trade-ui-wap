@@ -160,19 +160,20 @@ wapApp.controller('BuyController',
             Dialog.alert($scope, "请输入正确的商品数量。");
             return;
           }
+          var goods = $scope.$parent.$parent.goods;
           var cartvo = {};
           cartvo.orders = [];
           var order0 = {};
-          order0.mid = $scope.goods.mid;
-          order0.mname = $scope.goods.mName;
+          order0.mid = goods.mid;
+          order0.mname = goods.mName;
           order0.type = "BASE";
           order0.goods = [];
           var goods0 = {};
-          goods0.gid = $scope.goods.gid;
+          goods0.gid = goods.gid;
           goods0.skuid = $scope.condition.skuid;
-          goods0.gname = $scope.goods.name + " " + $scope.goods.specifications;
-          goods0.mid = $scope.goods.mid;
-          goods0.mname = $scope.goods.mName;
+          goods0.gname = goods.name + " " + $scope.condition.properties_values;
+          goods0.mid = goods.mid;
+          goods0.mname = goods.mName;
           goods0.price = $scope.condition.price;
           goods0.pprice = $scope.condition.salePrice;
           goods0.count = $scope.num;
