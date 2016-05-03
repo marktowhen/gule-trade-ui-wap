@@ -1,5 +1,5 @@
 <headertop></headertop>
-    <div class="wrap">
+    <div class="wrap" ng-controller="IndexController">
         <div class="banner_wrap swiper-container" id="index_swiper_container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide banner banner1">
@@ -20,7 +20,7 @@
                 <div class="service_pic icon-qiandai"></div>
                 <div class="service_title">惠赚钱</div>
             </a>
-            <a href="#/order.html" class="service_list index_order fl">
+            <a href="#/orders/history/all.html" class="service_list index_order fl">
                 <div class="service_pic icon-huaban"></div>
                 <div class="service_title">我的订单</div>
             </a>
@@ -40,9 +40,9 @@
                 <div class="service_pic icon-jingpai"></div>
                 <div class="service_title">竞拍</div>
             </a>
-            <a href="#/mycollection.html" class="mt10 service_list index_collection fl">
+            <a href="#/mycollection.html" ng-click="toFav()"  class="mt10 service_list index_collection fl">
                 <div class="service_pic icon-shoucangjia-1"></div>
-                <div class="service_title">收藏夹</div>
+                <div class="service_title" >收藏夹</div>
             </a>
             <a href="#/products.html" class="mt10 service_list index_classify fl">
                 <div class="service_pic icon-fenlei-1"></div>
@@ -82,71 +82,29 @@
                 <b class="fs12">热销商品</b>
                 <a href="" class="fr moreproduct"><b>...</b></a>
             </div>
-            <ul>
-                <li>
+            <ul class="cl">
+                <li ng-repeat=" goods in showlist">
                     <div class="product_pic">
-                        <a href="#/product/details.html">
-                            <img src="../../images/index/product1.png" alt="">
+                        <a href="#/product/details.html?gid={{goods.gid}}">
+                            <img src="{{goods.path}}" alt="">
                         </a>     
                     </div>
                     <div class="product_name">
-                        <a href="#/product/details.html">
-                            <b>拉卡拉收款宝 手机pos机移动刷卡</b>
+                        <a href="#/product/details.html?gid={{goods.gid}}">
+                            <b>{{goods.name}}</b>
                         </a>
                     </div>
                     <div class="price_info clearfix">
-                        <div class="price fl">￥199.00</div>
-                        <div class="sales fr">已售<span>244</span>笔</div>
+                      
+                        <div class="price fl" ng-show="{{goods.sale}}">￥{{goods.salePrice}}</div>
+                        <div class="price fl" ng-show="{{goods.sale}}" style="text-decoration: line-through;">￥{{goods.price}}</div>
+                         <div class="price fl" ng-show="{{!goods.sale}}">￥{{goods.price}}</div>
+                        <div class="sales fr">已售<span>{{goods.volume}}</span>笔</div>
                     </div>
                 </li>
-                <li>
-                    <div class="product_pic">
-                        <a href="#/product/details.html">
-                            <img src="../../images/index/product1.png" alt="">
-                        </a>     
-                    </div>
-                    <div class="product_name">
-                        <a href="#/product/details.html">
-                            <b>拉卡拉收款宝 手机pos机移动刷卡</b>
-                        </a>
-                    </div>
-                    <div class="price_info clearfix">
-                        <div class="price fl">￥199.00</div>
-                        <div class="sales fr">已售<span>244</span>笔</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="product_pic">
-                        <a href="#/product/details.html">
-                            <img src="../../images/index/product1.png" alt="">
-                        </a>     
-                    </div>
-                    <div class="product_name">
-                        <a href="#/product/details.html">
-                            <b>拉卡拉收款宝 手机pos机移动刷卡</b>
-                        </a>
-                    </div>
-                    <div class="price_info clearfix">
-                        <div class="price fl">￥199.00</div>
-                        <div class="sales fr">已售<span>244</span>笔</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="product_pic">
-                        <a href="#/product/details.html">
-                            <img src="../../images/index/product1.png" alt="">
-                        </a>     
-                    </div>
-                    <div class="product_name">
-                        <a href="#/product/details.html">
-                            <b>拉卡拉收款宝 手机pos机移动刷卡</b>
-                        </a>
-                    </div>
-                    <div class="price_info clearfix">
-                        <div class="price fl">￥199.00</div>
-                        <div class="sales fr">已售<span>244</span>笔</div>
-                    </div>
-                </li>
+               
+             
+         
             </ul>
         </section>
         
@@ -162,6 +120,9 @@
             nextButton: '.swiper-button-next',
             prevButton: '.swiper-button-prev'
         });
+        //图片高度自适应
+        var img_hei=$('.index_products .product_pic img').width()*0.8;
+        $('.index_products .product_pic img').height(img_hei)
     </script>
     <nav></nav>
 

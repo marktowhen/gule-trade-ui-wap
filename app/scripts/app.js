@@ -32,16 +32,6 @@ var wapApp = angular
         controller: '',
         url:"/index_app.html"
       })
-     .state('user', {
-        templateUrl: 'views/user/user.html',
-        controller: '',
-        url:"/user.html"
-      })
-     .state('user-info', {
-        templateUrl: 'views/user/user-info.html',
-        controller: '',
-        url:"/user-info.html"
-      })
      .state('add-cart-dialog', {
         templateUrl: 'views/dialog/add-cart-dialog.html',
         controller: '',
@@ -77,11 +67,6 @@ var wapApp = angular
         controller: '',
         url:"/user/myintegral.html"
       })
-    .state('coupons', {
-        templateUrl: 'views/user/coupons.html',
-        controller: '',
-        url:"/user/coupons.html"
-      })
     .state('auction-details', {
         templateUrl: 'views/index/auction-details.html',
         controller: '',
@@ -112,4 +97,34 @@ var wapApp = angular
         controller: '',
         url:"/login.html"
       })
+    .state('blank', {
+        templateUrl: 'views/products/blank.html',
+        controller: '',
+        url:"/blank.html"
+      })
+    .state('news', {
+        templateUrl: 'views/user/news.html',
+        controller: '',
+        url:"/news.html"
+    })
+    .state('pay-success', {
+        templateUrl: 'views/products/pay-success.html',
+        controller: '',
+        url:"/pay-success.html"
+    })
+    .state('joined-group', {
+        templateUrl: 'views/index/joined-group.html',
+        controller: '',
+        url:"/joined-group.html"
+    })
+    .state('one-list', {
+        templateUrl: 'views/index/one-list.html',
+        controller: '',
+        url:"/one-list.html"
+    })
+    .state('one-details', {
+        templateUrl: 'views/index/one-details.html',
+        controller: '',
+        url:"/one-details.html"
+    })
   });
