@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-wapApp.controller('BuyController', 
+wapApp.controller('BuyController',
     function ($scope, $cookies,$state, ConstantService,$stateParams,GoodsBuyService, CartService) {
     	var gid=$stateParams.gid;
 
@@ -26,7 +26,7 @@ wapApp.controller('BuyController',
 
 
 
-     
+
 
 
 ///////////////////////////////////////选择属性进行sku查询/////////////////////////////////////
@@ -36,7 +36,7 @@ wapApp.controller('BuyController',
        for (var i = 0; i < $scope.conditions.length; i++) {
           if($scope.conditions[i].id==id){
             $scope.conditions.splice(i,1);
-          } 
+          }
        }
     };
 
@@ -46,7 +46,7 @@ wapApp.controller('BuyController',
               if($scope.conditions[i].name==name && $scope.conditions[i].id!=id){
                             delById($scope.conditions[i].id);
               }
-        } 
+        }
       };
 
 
@@ -63,10 +63,10 @@ wapApp.controller('BuyController',
                                     attrs.valueList[k].attrId = 1;
                                 }else{
                                    attrs.valueList[k].attrId = 2;
-                                } 
+                                }
                           }
                         }
-                  }        
+                  }
           }
       };
     ////////取消 去掉class样式////////////
@@ -78,7 +78,7 @@ wapApp.controller('BuyController',
                             attrs.valueList[k].attrId = 2;
                         }
                 }
-            
+
           }
     }
 
@@ -112,8 +112,8 @@ wapApp.controller('BuyController',
            $scope.conditions.splice(index,1);
            cleanCurClass(id,name);
         }
-         
-          
+
+
         $scope.toQuery =[];
         for (var i = 0; i < $scope.conditions.length; i++) {
              $scope.toQuery.push($scope.conditions[i].id)
@@ -133,15 +133,16 @@ wapApp.controller('BuyController',
                          $scope.condition.volume = data.body.volume;
                          $scope.condition.skuid = data.body.id;
                          $scope.condition.sale = data.body.sale;
+                         $scope.condition.properties_values = data.body.propertiesValue;
                          $scope.numFlag = true;
-                        //console.log($scope.condition.sale);
+                        console.log($scope.condition);
                    }else{
                          $scope.condition.skuid ="";
                          $scope.numFlag = false;
                    }
-                   
+
                  });
-            }  
+            }
     	};
 
 
@@ -149,19 +150,47 @@ wapApp.controller('BuyController',
 
 
 
-        $scope.buynow = function(goods){
-            CartService.submit()
-            .success(function(data){
-                if(data.ok){
-                    $state.go("orderconfirm.page");
-                    return;
-                }else{
-                    alert(data.message);
-                }
-            })
-            .error(function(){
-                alert("订单信息有误，请检查后重新提交");
-            });
+        $scope.buynow = function(){
+
+          if($scope.condition.stock == 0){
+            alert("该商品暂时无货。");
+            return;
+          }
+          if(!(Number($scope.num)) || (Number($scope.num) > $scope.condition.stock) ){
+            Dialog.alert($scope, "请输入正确的商品数量。");
+            return;
+          }
+          var goods = $scope.$parent.$parent.goods;
+          var cartvo = {};
+          cartvo.orders = [];
+          var order0 = {};
+          order0.mid = goods.mid;
+          order0.mname = goods.mName;
+          order0.type = "BASE";
+          order0.goods = [];
+          var goods0 = {};
+          goods0.gid = goods.gid;
+          goods0.skuid = $scope.condition.skuid;
+          goods0.gname = goods.name + " " + $scope.condition.properties_values;
+          goods0.mid = goods.mid;
+          goods0.mname = goods.mName;
+          goods0.price = $scope.condition.price;
+          goods0.pprice = $scope.condition.salePrice;
+          goods0.count = $scope.num;
+          order0.goods.push(goods0);
+          cartvo.orders.push(order0);
+          CartService.submit(cartvo)
+          .success(function(data){
+            if(data.ok){
+              $state.go("orderconfirm.page");
+              return;
+            }else{
+                alert(data.message);
+            }
+          })
+          .error(function(){
+            alert("订单信息有误，请检查后重新提交");
+          });
         };
 
         ///减少数量
@@ -178,10 +207,10 @@ wapApp.controller('BuyController',
         }
 
 
-        
+
         ///提交数据
         $scope.next = function(){
-            if($scope.condition.skuid!=""){ 
+            if($scope.condition.skuid!=""){
                   //购买数量
                 console.log("购买数量:"+$scope.num);
                   //skuid
@@ -190,7 +219,6 @@ wapApp.controller('BuyController',
                 alert("请选择一件商品!");
                 return;
             }
-          
+
         }
 });
-

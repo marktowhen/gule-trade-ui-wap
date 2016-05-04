@@ -3,7 +3,7 @@
 		<p>可得佣金：6.25</p>
 		<p>立即发送给朋友或分享到朋友圈</p>
 	</div>
-	<div id="slide" class="swipe">
+	<!-- <div id="slide" class="swipe">
 		<div class='swipe-wrap'>
 			<div ng-repeat="img in goods.imgList">
 				<img src="{{img.path}}" />
@@ -18,6 +18,26 @@
 				<li></li>
 			</ul>
 		</div>
+	</div> -->
+	<div class="swiper-container" id="product_swiper_container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<img src="../../images/product-details/p1.png" alt="">
+			</div>
+			<div class="swiper-slide">
+				<img src="../../images/product-details/p1.png" alt="">
+			</div>
+			<div class="swiper-slide">
+				<img src="../../images/product-details/p1.png" alt="">
+			</div>
+			<div class="swiper-slide">
+				<img src="../../images/product-details/p1.png" alt="">
+			</div>
+			<div class="swiper-slide">
+				<img src="../../images/product-details/p1.png" alt="">
+			</div>
+		</div>
+		<div class="swiper-pagination"></div>
 	</div>
 	<div class="pd-box1">
 		<div class="pd1-top">
@@ -178,24 +198,34 @@
 	<add-cart-dialog id='add-cart-dialog'></add-cart-dialog>
 </div>
 <script type="text/javascript">
-$(document).ready(function slide() {
-	var haha = document.getElementById('slide');
-		window.mySwipe = Swipe(
-			haha, 
-			{	
-				startSlide: 0,		
-				auto: 3000,         
-				continuous: true,   
-				disableScroll: true,  
-				stopPropagation: true,   
-				callback: function(index, element) {
-					$(".dot ul li").eq(index).addClass("cur").siblings().removeClass("cur");
-				}
-			}
-		);
+// $(document).ready(function slide() {
+// 	var haha = document.getElementById('slide');
+// 		window.mySwipe = Swipe(
+// 			haha, 
+// 			{	
+// 				startSlide: 0,		
+// 				auto: 3000,         
+// 				continuous: true,   
+// 				disableScroll: true,  
+// 				stopPropagation: true,   
+// 				callback: function(index, element) {
+// 					$(".dot ul li").eq(index).addClass("cur").siblings().removeClass("cur");
+// 				}
+// 			}
+// 		);
 
-		$(document).on('click','.dot ul li',function(){
-			mySwipe.slide($(this).index(),1000);
-	});
-});
+// 		$(document).on('click','.dot ul li',function(){
+// 			mySwipe.slide($(this).index(),1000);
+// 	});
+// });
+var swiper = new Swiper('#product_swiper_container', {
+        slidesPerView: 1,
+        slidesPerColumn: 1,
+        autoplay:5000,
+        loop:true,
+        pagination: '.swiper-pagination',
+		paginationClickable :true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev'
+    });
 </script>
