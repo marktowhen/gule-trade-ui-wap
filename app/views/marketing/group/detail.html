@@ -14,21 +14,10 @@
 	</div> -->
 	<div class="swiper-container" id="product_swiper_container">
 		<div class="swiper-wrapper">
-			<div class="swiper-slide">
-				<img src="../../images/product-details/p1.png" alt="">
+			<div class="swiper-slide" ng-repeat="img in goods.imgList">
+				<img src="{{img.path}}" alt="{{goods.name}}">
 			</div>
-			<div class="swiper-slide">
-				<img src="../../images/product-details/p1.png" alt="">
-			</div>
-			<div class="swiper-slide">
-				<img src="../../images/product-details/p1.png" alt="">
-			</div>
-			<div class="swiper-slide">
-				<img src="../../images/product-details/p1.png" alt="">
-			</div>
-			<div class="swiper-slide">
-				<img src="../../images/product-details/p1.png" alt="">
-			</div>
+			
 		</div>
 		<div class="swiper-pagination"></div>
 	</div>
