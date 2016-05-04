@@ -24,6 +24,15 @@ wapApp.controller('GroupDetailController',
 		GoodsDetailsService.detail($stateParams.gid)
 		.success(function(data2){
 				$scope.goods = data2.body;
+setTimeout(function(){var swiper = new Swiper('#product_swiper_container', {
+        slidesPerView: 1,
+        slidesPerColumn: 1,
+        autoplay:5000,
+        loop:true,
+        pagination: '.swiper-pagination',
+		paginationClickable :true,
+    });},200)
+	
 
 
 						
