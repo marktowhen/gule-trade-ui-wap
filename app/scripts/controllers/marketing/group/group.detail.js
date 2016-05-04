@@ -21,8 +21,11 @@ wapApp.controller('GroupDetailController',
 
 			});
 		//商品本身
-		GoodsDetailsService.detail($stateParams.gid).success(function(data2){
+		GoodsDetailsService.detail($stateParams.gid)
+		.success(function(data2){
 				$scope.goods = data2.body;
+
+
 						
 		});
 		//店铺
@@ -68,6 +71,10 @@ wapApp.controller('GroupDetailController',
 						alert(data.message);
 					}
 				});
+		}
+
+		$scope.buyit = function(){
+			
 		}
 
 		var creatCar = function(groupGoods, goods, price){

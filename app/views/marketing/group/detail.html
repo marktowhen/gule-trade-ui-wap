@@ -104,12 +104,16 @@
 	</div>
 	<div class="cl"></div>
 	<div class="pd-box5">
-		<div class="pd5-info3 fr" ng-click="join()" >
+		<div class="pd5-info3 fr" ng-click="start()" ng-if="!groupID" >
 			<p>￥{{groupGoods.currentPrice.price}}</p>
-			<p>{{groupGoods.currentPrice.floor}}人团</p>
+			<p>新建</p>
 		</div>
-		<div class="pd5-info2 fr" ng-click="start()">
-			<p>建团</p>
+		<div class="pd5-info3 fr" ng-click="join()" ng-if="groupID" >
+			<p>￥{{groupGoods.currentPrice.price}}</p>
+			<p>参团</p>
+		</div>
+		<div class="pd5-info2 fr" ng-click="buyit()">
+			<p>单独购买</p>
 		</div>
 		<div class="pd5-info1 fr">
 			<ul>
