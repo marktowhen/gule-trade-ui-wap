@@ -54,7 +54,14 @@ wapApp.service('ApiService', function () {
                 }
             },
             'auction':{
-                'listWithCondition':'http://localhost:8080/api/marketing/auction/goods/list'
+                'listWithCondition':'http://localhost:8080/api/marketing/auction/goods/list',
+                'detail':'http://localhost:8080/api/marketing/auction/goods/detail',
+                'join':'http://localhost:8080/api/marketing/auction/purchase/join/:id',
+                'auction':'http://localhost:8080/api/marketing/auction/purchase/:id',
+                'user':{
+                    'count':'http://localhost:8080/api/marketing/auction/user/count/:id',
+                    'list':'http://localhost:8080/api/marketing/auction/user/list/:id'
+                }
             }
         },
         'login':{

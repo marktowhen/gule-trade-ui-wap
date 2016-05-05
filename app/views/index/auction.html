@@ -1,5 +1,5 @@
 
-    <div class="auction_wrap clearfix">
+    <div class="auction_wrap clearfix" ng-controller="AuctionListController">
         <header>
             <div class="sort"><span>默认排序</span><i></i>
                 <div class="sort_content hide">
@@ -10,6 +10,32 @@
         </header>
         <section class="products clearfix">    
             <ul>
+                <li class="fs12" ng-repeat="au in ggoods">
+                    <div class="product_pic col-40 fl">
+                        <a href="#/auction-details.html?id={{au.id}}">
+                            <img src="{{au.goods.path}}" alt="{{au.goods.name+' '+au.sku.propertiesValue}}">
+                            <span class="participant">998人参拍</span>
+                        </a>       
+                    </div> 
+                    <div class="groupbuy_info col-60 fl"> 
+                        <div class="groupbuy_title">
+                            <span class="status">正在热拍</span>
+                            <a href="#/auction-details.html?id={{au.id}}">{{au.goods.name+' '+au.sku.propertiesValue}}</a>
+                        </div>
+                        <div class="groupbuy_sale fs12 over">
+                            <span class="col-50 fl">起拍价:<span>￥{{au.startPrice}}元</span></span>
+                            <span class="col-50 fl">参考价:<span>￥{{au.sku.salePrice}}元</span></span>
+                            <span class="col-50 fl">加价幅度:<span>￥{{au.addPrice}}元</span></span>
+                            <span class="col-50 fl">保证金:<span>￥{{au.deposit}}元</span></span>
+                        </div>
+                        <div class="startgroupbuy over fs12">
+                            <div class="countdown col-60 fl">距结束 <span>00:60:12</span></div>
+                            <div class="groupgo col-35 fl"><a href="#/auction-details.html?id={{au.id}}">我要拍 ＞</a></div>
+                        </div>
+                    </div>
+                </li>
+                
+
                 <li class="fs12">
                     <div class="product_pic col-40 fl">
                         <a href="#/auction-details.html">
