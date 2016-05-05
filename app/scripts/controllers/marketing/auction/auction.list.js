@@ -8,7 +8,7 @@
  * Controller of the jingyunshopApp
  */
 wapApp.controller('AuctionListController', 
-	['$scope', 'AuctionService', function ($scope, AuctionService) {
+	['$scope', 'AuctionService','$interval', function ($scope, AuctionService,$interval) {
 		
 		$scope.ggoods = [];
 		var size = 20;
@@ -63,30 +63,38 @@ wapApp.controller('AuctionListController',
 		}
 
 		var getEndTime = function (auction){
-	        var EndTime = new Date(auction.endTime); //截止时间 前端路上 http://www.51xuediannao.com/qd63/
-	        var NowTime = new Date();
-	        var t =EndTime.getTime() - NowTime.getTime();
+			$interval(function(){
+                var EndTime = new Date(auction.endTime); //截止时间 前端路上 http://www.51xuediannao.com/qd63/
+		        var NowTime = new Date();
+		        var t =EndTime.getTime() - NowTime.getTime();
 
-	        var d=Math.floor(t/1000/60/60/24);
-	        var h=Math.floor(t/1000/60/60%24);
-	        var m=Math.floor(t/1000/60%60);
-	        var s=Math.floor(t/1000%60);
+		        if(t<=0){
+		        	auction.end = {'day':0,'hour':0,'minute':0,'second':0};
+		        	AuctionService.single(auction.id).success(function(data){
+		        		auction = data.body;
+		        	})
+		        	return;
+		        }
 
-	        auction.end = {'day':d,'hour':h,'minute':m,'second':s};
+		        
+		        
+		        var d=addZero(Math.floor(t/1000/60/60/24));
+		        var h=addZero(Math.floor(t/1000/60/60%24));
+		        var m=addZero(Math.floor(t/1000/60%60));
+		        var s=addZero(Math.floor(t/1000%60));
+
+		        auction.end = {'day':d,'hour':h,'minute':m,'second':s};
+	          }, 1000, 100);
+	        
 	    }
 
-	    var getStartTime = function (auction){
-	        var startTime = new Date(auction.startTime); //截止时间 前端路上 http://www.51xuediannao.com/qd63/
-	        var NowTime = new Date();
-	        var t = NowTime.getTime() - startTime.getTime();
-
-	        var d=Math.floor(t/1000/60/60/24);
-	        var h=Math.floor(t/1000/60/60%24);
-	        var m=Math.floor(t/1000/60%60);
-	        var s=Math.floor(t/1000%60);
-
-	        auction.start = {'day':d,'hour':h,'minute':m,'second':s};
+	    var addZero = function(i){
+	    	if(i<10 && i>=0){
+	    		return '0'+i;
+	    	}
+	    	return i;
 	    }
+
 
 		
       
