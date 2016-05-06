@@ -3,7 +3,7 @@
 		<p>可得佣金：6.25</p>
 		<p>立即发送给朋友或分享到朋友圈</p>
 	</div>
-	<div id="slide" class="swipe">
+	<!-- <div id="slide" class="swipe">
 		<div class='swipe-wrap'>
 			<div ng-repeat="img in goods.imgList">
 				<img src="{{img.path}}" />
@@ -18,15 +18,36 @@
 				<li></li>
 			</ul>
 		</div>
+	</div> -->
+	<div class="swiper-container" id="product_swiper_container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<img src="../../images/product-details/p1.png" alt="">
+			</div>
+			<div class="swiper-slide">
+				<img src="../../images/product-details/p1.png" alt="">
+			</div>
+			<div class="swiper-slide">
+				<img src="../../images/product-details/p1.png" alt="">
+			</div>
+			<div class="swiper-slide">
+				<img src="../../images/product-details/p1.png" alt="">
+			</div>
+			<div class="swiper-slide">
+				<img src="../../images/product-details/p1.png" alt="">
+			</div>
+		</div>
+		<div class="swiper-pagination"></div>
 	</div>
 	<div class="pd-box1">
 		<div class="pd1-top">
 			<div class="pd1-left fl">{{goods.name}}</div>
 			<div class="pd1-right fl">
-				<div class="pd1-right-icon">
-					<p ng-click="fav(goods.gid)">s</p>
-					<i class="icon-shouchang-1"></i>
-					<i class="icon-shouchang"></i>
+
+				<div class="pd1-right-icon" ng-click="fav(goods.gid)">
+					<i class="icon-shouchang" ng-show="fav_id != ''"></i>
+					<i class="icon-shouchang-1" ng-show="fav_id == ''"></i>
+				
 				</div>
 			</div>
 		</div>
@@ -43,8 +64,6 @@
 				<li>快递：0.00</li>
 				<li>评价：{{goods.comment}}条</li>
 				<li>成交额：{{goods.volume}}</li>
-				<li>评价：2541条</li>				
-				<li>月成交额：451</li>
 			</ul>
 		</div>
 	</div>
@@ -79,7 +98,7 @@
 			<i class="icon-arrow fr"></i>
 			<p ng-click="toMerchant(goods.mid)">进入店铺</p>
 			<i class="icon-sp fl"></i>	
-			<p>&nbsp;乐谷微商城</p>
+
 		</div>
 	</div>
 	<div class="cl h10"></div>
@@ -163,12 +182,15 @@
 		<div class="pd5-info1 fr">
 			<ul>
 				<li>
+				<a target=blank href=http://wpa.qq.com/msgrd?V=3&uin={{goods.mQQ}}&Site=中华阿胶网&Menu=yes 	>
 					<i class="icon-QQ"></i>
-					<p>客服</p>
+					
+				</a>
+				<p>客服</p>
 				</li>
 				<li>
 					<i class="icon-sp-1"></i>
-					<p>店铺</p>
+					<p ng-click="toMerchant(goods.mid)">店铺</p>
 				</li>
 			</ul>
 		</div>
@@ -176,24 +198,32 @@
 	<add-cart-dialog id='add-cart-dialog'></add-cart-dialog>
 </div>
 <script type="text/javascript">
-$(document).ready(function slide() {
-	var haha = document.getElementById('slide');
-		window.mySwipe = Swipe(
-			haha, 
-			{	
-				startSlide: 0,		
-				auto: 3000,         
-				continuous: true,   
-				disableScroll: true,  
-				stopPropagation: true,   
-				callback: function(index, element) {
-					$(".dot ul li").eq(index).addClass("cur").siblings().removeClass("cur");
-				}
-			}
-		);
+// $(document).ready(function slide() {
+// 	var haha = document.getElementById('slide');
+// 		window.mySwipe = Swipe(
+// 			haha, 
+// 			{	
+// 				startSlide: 0,		
+// 				auto: 3000,         
+// 				continuous: true,   
+// 				disableScroll: true,  
+// 				stopPropagation: true,   
+// 				callback: function(index, element) {
+// 					$(".dot ul li").eq(index).addClass("cur").siblings().removeClass("cur");
+// 				}
+// 			}
+// 		);
 
-		$(document).on('click','.dot ul li',function(){
-			mySwipe.slide($(this).index(),1000);
-	});
-});
+// 		$(document).on('click','.dot ul li',function(){
+// 			mySwipe.slide($(this).index(),1000);
+// 	});
+// });
+var swiper = new Swiper('#product_swiper_container', {
+        slidesPerView: 1,
+        slidesPerColumn: 1,
+        autoplay:5000,
+        loop:true,
+        pagination: '.swiper-pagination',
+		paginationClickable :true,
+    });
 </script>

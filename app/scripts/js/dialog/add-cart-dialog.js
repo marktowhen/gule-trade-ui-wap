@@ -15,11 +15,11 @@ function cart_dialog() {
  //        $(this).prev().text(num)
 	// });
 
-	$(document).on('click','.cd2-select',function(){
+/*	$(document).on('click','.cd2-select',function(){
 		if($(this).hasClass("cur")){
 			$(this).removeClass("cur");
 		}else{
 			$(this).addClass("cur"); 
 		}
-	}); 
+	}); */
 }

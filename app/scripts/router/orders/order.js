@@ -26,12 +26,12 @@ wapApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider){
         url:"/address"
       })
     .state('orderconfirm.address.list', {
-        templateUrl: 'views/orders/address.list.html',
+        templateUrl: 'views/user/address/address.list.html',
         controller: '',
         url:"/list.html"
       })
      .state('orderconfirm.address.edit', {
-        templateUrl: 'views/orders/address.edit.html',
+        templateUrl: 'views/user/address/address.edit.html',
         controller: '',
         url:"/edit.html?id"
       })

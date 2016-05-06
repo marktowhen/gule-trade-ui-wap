@@ -19,4 +19,17 @@ wapApp.service('GroupBuyService', ['$http', 'ApiService', function($http, ApiSer
                     {'params': {'ggid':ggid}});
     };
 
+    this.countUser = function(groupID, status){
+    	 return  $http.get(ApiService.api.marketing.group.user.count.replace(':groupID', groupID),
+                    {'params': {'status':status}});
+    }
+
+    this.start = function( groupgoodsid,cart){
+    	return $http.post(ApiService.api.marketing.group.start.replace(':groupgoodsid',groupgoodsid), cart);
+    }
+
+    this.join = function(groupid,cart){
+    	return $http.post(ApiService.api.marketing.group.join.replace(':groupid',groupid), cart);
+    }
+
 }]);

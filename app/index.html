@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no;" name="viewport" />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -54,7 +54,7 @@
         </a>
     </section> -->
 
-    
+
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -94,21 +94,36 @@
         <script src="scripts/controllers/marketing/group/group.list.js"></script>
         <script src="scripts/controllers/marketing/group/group.detail.js"></script>
         <script src="scripts/services/marketing/group/group.js"></script>
+
         <!--一元购商品的js-->
         <script src="scripts/controllers/marketing/flashsale/flash-sale-list.js"></script>
         <script src="scripts/controllers/marketing/flashsale/flash-sale-detail.js"></script>
         <script src="scripts/services/marketing/flashsale/flashsale.js"></script>
         <!--一元购商品的js-->
+
+        <script src="scripts/services/merchant/merchant.js"></script>
+        <script src="scripts/controllers/marketing/auction/auction.list.js"></script>
+        <script src="scripts/controllers/marketing/auction/auction.detail.js"></script>
+        <script src="scripts/services/marketing/auction/auction.js"></script>
+
         <!-- 订单 -->
         <script src="scripts/controllers/orders/order.confirm.parent.js"></script>
         <script src="scripts/controllers/orders/order.confirm.js"></script>
-        <script src="scripts/controllers/orders/address.list.js"></script>
-        <script src="scripts/controllers/orders/address.edit.js"></script>
         <script src="scripts/services/orders/cart.js"></script>
         <script src="scripts/services/orders/order.js"></script>
         <script src="scripts/services/orders/pay.js"></script>
         <script src="scripts/router/orders/order.js"></script>
         <!-- 订单结束-->
+        <!--用户管理-->
+        <script src="scripts/router/user/user.js"></script>
+        <script src="scripts/controllers/user/coupon/coupon.parent.js"></script>
+        <script src="scripts/controllers/user/coupon/coupon.discount.js"></script>
+        <script src="scripts/controllers/user/coupon/coupon.cash.js"></script>
+        <!---->
+        <!--收货地址-->
+        <script src="scripts/controllers/user/address/address.list.js"></script>
+        <script src="scripts/controllers/user/address/address.edit.js"></script>
+        <!--收货地址结束-->
         <!-- 产品 -->
          <script src="scripts/controllers/goods/goods.list.js"></script>
          <script src="scripts/controllers/goods/goods.details.js"></script>
@@ -117,9 +132,17 @@
          <script src="scripts/services/goods/goods.buy.js"></script>
          <script src="scripts/services/goods/goods.details.js"></script>
 
-        <script src="scripts/controllers/header/header.js"></script>  
+         <script src="scripts/controllers/header/header.js"></script>
          <script src="scripts/router/products/products.js"></script>
         <!-- 产品结束-->
+        <!-- Index -->
+         <script src="scripts/controllers/index/index.js"></script>
+         <script src="scripts/services/users/collection.js"></script>
+        <!-- Index end -->
+       <!-- 收藏 -->
+         <script src="scripts/controllers/user/collection/collection.js"></script>
+         <script src="scripts/services/index/index.js"></script>
+        <!-- 收藏 end -->
         <!-- 会员 -->
         <script src="scripts/services/vip/coupon/cash.coupon.js"></script>
         <script src="scripts/services/vip/coupon/coupon.js"></script>
@@ -141,8 +164,6 @@
         <script type="text/javascript" src="scripts/js/user/user.js"></script>
         <script type="text/javascript" src="scripts/js/user/user-info.js"></script>
         <script type="text/javascript" src="scripts/js/products/product-details.js"></script>
-        <script type="text/javascript" src="scripts/js/products/swipe2.js"></script>
-        <script type="text/javascript" src="scripts/js/products/slide.js"></script>
         <script type="text/javascript" src="scripts/js/dialog/add-cart-dialog.js"></script>
         <script src="scripts/js/index/index.js"></script>
         <script src="scripts/js/products/products.js"></script>
@@ -156,6 +177,8 @@
         <script src="scripts/js/index/auction-details.js"></script>
         <script src="scripts/js/user/partner-help.js"></script>
         <script src="scripts/js/user/partner.js"></script>
+        <script src="scripts/js/user/shareproduct.js"></script>
+        <script src="scripts/js/user/news.js"></script>
         <script type="text/javascript">
             window.onload = function(){
                 product_details();
@@ -174,6 +197,9 @@
                 coupons_onload();
                 partner_help_onload();
                 partner();
+                shareproduct_onload();
+                news_onload();
+                mycollection_onload();
             }
         </script>
         <!-- endbuild -->
