@@ -15,7 +15,7 @@
         </div>
         <section class="products_products clearfix">
             <div class="title fs12">
-                <b>热销商品</b>
+                <b><!-- 热销商品 --></b>
                 <a href="" class="fr moreproduct"><b>...</b></a>
             </div>
             <ul>
@@ -29,7 +29,7 @@
                         <div class="price_info">
                              <div class="price fl" ng-show="{{!goods.sale}}">￥{{goods.price}}</div>
                             <div class="price fl" ng-show="{{goods.sale}}" sty>￥{{goods.salePrice}}</div>
-                            <div class="price fl" ng-show="{{goods.sale}}" style="text-decoration: line-through;">原价:￥{{goods.price}}</div>
+                            <div class="price fl del" ng-show="{{goods.sale}}" >原价:￥{{goods.price}}</div>
                             <div class="sales fr">已售<span>{{goods.volume}}</span>笔</div>
 							<i class="icon-shouchang-1 shoucang fr"></i>
                         </div>

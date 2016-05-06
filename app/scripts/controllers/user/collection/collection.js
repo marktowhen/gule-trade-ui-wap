@@ -24,7 +24,7 @@ wapApp.controller('CollectionController',
 		$scope.cleanCollection = function(id){
 				GoodsDetailsService.delfav(id).success(function(data){
 					 if(data.code==200){
-						 alert("删除收藏");
+						// alert("删除收藏");
 						    	CollectionService.list().success(function(data){
 										if(data.code==200){
 											$scope.favList = data.body;
