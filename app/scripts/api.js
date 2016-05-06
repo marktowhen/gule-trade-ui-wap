@@ -47,6 +47,10 @@ wapApp.service('ApiService', function () {
                 'listWithCondition':'http://192.168.3.196:8080/api/marketing/group/goods/list',
                 'detail':'http://192.168.3.196:8080/api/marketing/group/goods/detail'
             },
+            'flashsale':{
+                'list':'http://localhost:8080/api/flash/sale/bycondition/list',
+                'detail':'http://localhost:8080/api/flash/sale/detail'
+            },
             'auction':{
                 'listWithCondition':'http://192.168.3.196:8080/api/marketing/auction/goods/list'
             }
@@ -247,12 +251,15 @@ wapApp.service('ApiService', function () {
         },
         'wapGoods':{
             'list':'http://192.168.3.196:8080//api/wap/goods/list',
-            'detail':'http://192.168.3.196:8080//api/wap/goods/detail/:gid',
+            'detail':'http://localhost:8080//api/wap/goods/detail/:gid',
             'info':'http://192.168.3.196:8080//api/wap/goods/info/:gid',
             'favorite':'http://192.168.3.196:8080//api/wap/goods/favorite/save/:gid',
             'getFavorites':'http://192.168.3.196:8080//api/wap/goods/favorite/list',
             'condition':'http://192.168.3.196:8080//api/wap/goods/condition/:gid',
             'sku':'http://192.168.3.196:8080//api/wap/goods/single/:gid'
+        },
+        'indexs':{
+            'indexlist':'http://192.168.3.196:8080//api/get/user'
         }
     }
 });

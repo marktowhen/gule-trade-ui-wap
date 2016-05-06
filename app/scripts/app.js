@@ -112,4 +112,5 @@ var wapApp = angular
         controller: '',
         url:"/login.html"
       })
+    
   });
