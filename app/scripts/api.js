@@ -53,8 +53,19 @@ wapApp.service('ApiService', function () {
                     'list':'http://localhost:8080/api/marketing/group/user/list/:groupID'
                 }
             },
+            'flashsale':{
+                'list':'http://localhost:8080/api/flash/sale/bycondition/list',
+                'detail':'http://localhost:8080/api/flash/sale/detail'
+            },
             'auction':{
-                'listWithCondition':'http://localhost:8080/api/marketing/auction/goods/list'
+                'listWithCondition':'http://localhost:8080/api/marketing/auction/goods/list',
+                'detail':'http://localhost:8080/api/marketing/auction/goods/detail',
+                'join':'http://localhost:8080/api/marketing/auction/purchase/join/:id',
+                'auction':'http://localhost:8080/api/marketing/auction/purchase/:id',
+                'user':{
+                    'count':'http://localhost:8080/api/marketing/auction/user/count/:id',
+                    'list':'http://localhost:8080/api/marketing/auction/user/list/:id'
+                }
             }
         },
         'login':{
@@ -252,6 +263,17 @@ wapApp.service('ApiService', function () {
             'postage':'http://localhost:8080/api/logistic/postage/calculation/muti'
         },
         'wapGoods':{
+
+            'list':'http://localhost:8080/api/wap/goods/list',
+            'detail':'http://localhost:8080/api/wap/goods/detail/:gid',
+            'info':'http://localhost:8080/api/wap/goods/info/:gid',
+            'favorite':'http://localhost:8080/api/wap/goods/favorite/save/:gid',
+            'getFavorites':'http://localhost:8080/api/wap/goods/favorite/list',
+            'condition':'http://localhost:8080/api/wap/goods/condition/:gid',
+            'sku':'http://localhost:8080/api/wap/goods/single/:gid'
+        },
+        'indexs':{
+            'indexlist':'http://localhost:8080/api/get/user'
             'list':'http://localhost:8080/api/wap/goods/list',
             'detail':'http://localhost:8080/api/wap/goods/detail/:gid',
             'info':'http://localhost:8080/api/wap/goods/info/:gid',
@@ -261,6 +283,7 @@ wapApp.service('ApiService', function () {
             'sku':'http://localhost:8080/api/wap/goods/single/:gid',
             'isfav':'http://localhost:8080/api/wap/goods//favorite/isfav/:gid',
             'delfav':'http://localhost:8080/api/wap/goods/favorite/del/:favId'
+
         }
     }
 });

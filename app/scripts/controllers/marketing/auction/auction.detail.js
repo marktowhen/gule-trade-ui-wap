@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-wapApp.controller('GroupDetailController', 
+wapApp.controller('AuctionDetailController', 
 		 function ($scope, $state,GroupBuyService, $stateParams,GoodsDetailsService,MerchantService) {
 	
 		//团购商品

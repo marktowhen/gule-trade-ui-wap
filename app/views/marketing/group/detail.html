@@ -14,21 +14,10 @@
 	</div> -->
 	<div class="swiper-container" id="product_swiper_container">
 		<div class="swiper-wrapper">
-			<div class="swiper-slide">
-				<img src="../../images/product-details/p1.png" alt="">
+			<div class="swiper-slide" ng-repeat="img in goods.imgList">
+				<img src="{{img.path}}" alt="{{goods.name}}">
 			</div>
-			<div class="swiper-slide">
-				<img src="../../images/product-details/p1.png" alt="">
-			</div>
-			<div class="swiper-slide">
-				<img src="../../images/product-details/p1.png" alt="">
-			</div>
-			<div class="swiper-slide">
-				<img src="../../images/product-details/p1.png" alt="">
-			</div>
-			<div class="swiper-slide">
-				<img src="../../images/product-details/p1.png" alt="">
-			</div>
+			
 		</div>
 		<div class="swiper-pagination"></div>
 	</div>
@@ -152,12 +141,6 @@
 <add-cart-dialog id='add-cart-dialog'></add-cart-dialog>
 
 <script type="text/javascript">
-var swiper = new Swiper('#product_swiper_container', {
-        slidesPerView: 1,
-        slidesPerColumn: 1,
-        autoplay:5000,
-        loop:true,
-        pagination: '.swiper-pagination',
-		paginationClickable :true,
-    });
+var img_hei=$('#product_swiper_container img').width()*0.8;
+        $('#product_swiper_container img').height(img_hei)
 </script>
