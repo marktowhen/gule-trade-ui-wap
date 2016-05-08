@@ -125,6 +125,6 @@ var wapApp = angular
     .state('one-details', {
         templateUrl: 'views/index/one-details.html',
         controller: '',
-        url:"/one-details.html"
+        url:"/one-details.html?id"
     })
   });

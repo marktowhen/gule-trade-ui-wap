@@ -14,4 +14,10 @@
  	this.detail = function(id){
  		return $http.get(ApiService.api.marketing.flashsale.detail,{'params':{'id':id}});
  	};
+ 	this.startFlash = function(flashid,cart){
+ 		return $http.post(ApiService.api.marketing.flashsale.startFlash.replace(":flashid",flashid),cart);
+ 	};
+ 	this.updateStock = function(flashsale){
+ 		return $http.put(ApiService.api.marketing.flashsale.update,flashsale);
+ 	};
  })
