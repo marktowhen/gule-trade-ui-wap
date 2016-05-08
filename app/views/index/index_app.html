@@ -97,7 +97,7 @@
                     <div class="price_info clearfix">
                       
                         <div class="price fl" ng-show="{{goods.sale}}">￥{{goods.salePrice}}</div>
-                        <div class="price fl" ng-show="{{goods.sale}}" style="text-decoration: line-through;">￥{{goods.price}}</div>
+                        <div class="price fl del" ng-show="{{goods.sale}}" >￥{{goods.price}}</div>
                          <div class="price fl" ng-show="{{!goods.sale}}">￥{{goods.price}}</div>
                         <div class="sales fr">已售<span>{{goods.volume}}</span>笔</div>
                     </div>

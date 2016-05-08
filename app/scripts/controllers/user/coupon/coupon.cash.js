@@ -12,6 +12,6 @@ wapApp.controller('CouponCashController',
         CashCouponService, DiscountCouponService, CouponService) {
     var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
 
-    $scope.cashcoupons = [0, 1, 2];
+    $scope.cashcoupons = [0, 1];
 
 });

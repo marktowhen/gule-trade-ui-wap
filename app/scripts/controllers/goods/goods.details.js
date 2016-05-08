@@ -16,7 +16,7 @@ wapApp.controller('GoodsDetailsController',
 		///////////查询详细信息
 		GoodsDetailsService.detail(gid).success(function(data){
 			$scope.goods = data.body;
-			//console.log($scope.goods);
+			console.log($scope.goods);
 		});
 		////////判断此商品的收藏状态
 		GoodsDetailsService.isfav(gid).success(function(data){
@@ -45,7 +45,7 @@ wapApp.controller('GoodsDetailsController',
 			if($scope.fav_id==""){
 						GoodsDetailsService.fav(gid).success(function(data){
 							   if(data.code==200){
-									alert("收藏成功!");
+									//alert("收藏成功!");
 									$scope.fav_id = data.body;
 								}else{
 									alert("您还未登录!")
@@ -54,7 +54,7 @@ wapApp.controller('GoodsDetailsController',
 			}else{
 				GoodsDetailsService.delfav($scope.fav_id).success(function(data){
 					 if(data.code==200){
-						 alert("删除收藏")
+						 //alert("删除收藏")
 					     $scope.fav_id = "";
 					}
 					
