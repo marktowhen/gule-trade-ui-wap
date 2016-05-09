@@ -1,6 +1,6 @@
   <div class="one-list center-view" ng-controller="FlashSaleListController">
         <ul>
-            <li ng-repeat="fs in flashsale">
+            <!-- <li ng-repeat="fs in flashsale">
                 <img src="images/one/tu1.png" alt="">
                 <div class="one-list-box1">
                     <div class="one-list-bg"></div>
@@ -24,8 +24,8 @@
                     </div>
                     <div class={{fs.classes}} ng-click="godetail(fs.id)">{{fs.BtnValue}}</div>
                 </div>
-            </li>
-           <!--  <li>
+            </li> -->
+           <li class="green">
                 <img src="images/one/tu1.png" alt="">
                 <div class="one-list-box1">
                     <div class="one-list-bg"></div>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="cl"></div>
                 <div class="one-list-box2">
-                    <div class="one-list-box2-left fl green1">
+                    <div class="one-list-box2-left fl">
                         <div class="one-list-box2-left1 fl">
                             <p>￥<a href="#">1.00</a>元</p>
                         </div>
@@ -47,7 +47,7 @@
                             <span>00:03:20:0</span> 
                         </div>
                     </div>
-                    <div class="one-list-box2-right fr green">即将开始</div>
+                    <div class="one-list-box2-right fr">即将开始</div>
                 </div>
             </li>
             <li>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="cl"></div>
                 <div class="one-list-box2">
-                    <div class="one-list-box2-left fl gray1">
+                    <div class="one-list-box2-left fl">
                         <div class="one-list-box2-left1 fl">
                             <p>￥<a href="#">1.00</a>元</p>
                         </div>
@@ -72,8 +72,33 @@
                             <span>00:03:20:0</span> 
                         </div>
                     </div>
-                    <div class="one-list-box2-right fr gray">已结束</div>
+                    <div class="one-list-box2-right fr">立即秒杀</div>
                 </div>
-            </li> -->
+            </li>
+            <li class="gray">
+                <img src="images/one/tu1.png" alt="">
+                <div class="one-list-box1">
+                    <div class="one-list-bg"></div>
+                    <div class="one-list-text">
+                        <p class="fl">
+                            <a href="#">味之初 双层芝士蛋糕......</a>
+                        </p>
+                        <p class="fr">剩余：<a href="#">5</a>份</p>
+                    </div>
+                </div>
+                <div class="cl"></div>
+                <div class="one-list-box2">
+                    <div class="one-list-box2-left fl">
+                        <div class="one-list-box2-left1 fl">
+                            <p>￥<a href="#">1.00</a>元</p>
+                        </div>
+                        <div class="one-list-box2-left2 fl">
+                            <p>倒计时</p>
+                            <span>00:03:20:0</span> 
+                        </div>
+                    </div>
+                    <div class="one-list-box2-right fr">已结束</div>
+                </div>
+            </li>
         </ul>
      </div>
