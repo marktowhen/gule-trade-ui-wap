@@ -14,9 +14,7 @@ wapApp.controller('FlashSaleListController', function ($scope, $cookies,$state,$
 	FlashSaleService.list(0,size).success(function(data){
 		if(data.ok){
 			for (var i = 0; i < data.body.length; i++) {
-				/*alert(data.body[i].id);*/
 				runTiming(data.body[i]);
-				
 				$scope.flashsale.push(data.body[i]);
 			}
 		}
