@@ -64,11 +64,12 @@ wapApp.controller('FlashSaleDetailController', function ($scope, $cookies,$state
 	  		$scope.showtime = new Date(flashsale.showTime);	
 	  		var oft=Math.round(($scope.endtime-new Date())/1000);
 	  					if(oft<=0&&flashsale.stock>0){
+	  						flashsale.classes = "ad1-bottom org";
 			  		 		flashsale.BtnValue="立即秒杀";
 			  		 		flashsale.dao=('00:00:00:00');
 			  		 		return TimePromise;
 			  		 	}else if(oft<=0&&flashsale.stock==0){
-			  		 		$(".one-list-box2-right fr").addClass('gray');
+			  		 		flashsale.classes = "ad1-bottom gra";
 			  		 		flashsale.BtnValue="已结束";
 			  		 		flashsale.dao=('00:00:00:00');
 			  		 		
@@ -76,7 +77,7 @@ wapApp.controller('FlashSaleDetailController', function ($scope, $cookies,$state
 			  		 	}
 	  		TimePromise = $interval(function(){
 			  		 	if(oft>0&&flashsale.stock>0){
-			  		 		$(".one-list-box2-right fr").addClass('green');
+			  		 		flashsale.classes = "ad1-bottom";
 			  		 		flashsale.BtnValue="即将开始";
 			  		 		var ofd=parseInt(oft/3600/24);
 							var ofh=parseInt((oft%(3600*24))/3600);
