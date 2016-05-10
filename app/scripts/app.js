@@ -127,4 +127,14 @@ var wapApp = angular
         controller: '',
         url:"/one-details.html?id"
     })
+    .state('rankgroup', {
+    	  templateUrl: 'views/marketing/rankgroup/list.html',
+    	  controller: '',
+    	  url:"/marketing/rankgroup/list.html"
+      })
+     .state('rankgroup-details', {
+        templateUrl: 'views/marketing/rankgroup/detail.html',
+        controller: '',
+        url:"/marketing/rankgroup/details.html?ggid&gid&group_id"
+      })
   });

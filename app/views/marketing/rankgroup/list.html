@@ -1,0 +1,36 @@
+
+    
+    <div class="groupbuy_wrap clearfix" ng-controller="RankGroupListController">
+        <input type="hidden" id='page_id' value="GroupGoodsList"></input>
+        <header>
+            <div class="sort"><span>默认排序</span><i></i>
+                <div class="sort_content hide">
+                    <div class="sortbysales">最新<i class="icon-exchange"></i></div>
+                    <div class="sortbyprice">猜你喜欢<i class="icon-exchange"></i></div>
+                </div>
+            </div>
+        </header>
+        <section class="products clearfix">    
+            <ul>
+                <li class="fs12" ng-repeat="g in ggoods">
+                    <div class="product_pic col-40 fl">
+                        <a href="#/marketing/group/details.html?ggid={{g.id}}&gid={{g.gid}}">
+                            <img src="{{g.goods.path}}" alt="{{g.goods.name+' '+g.sku.propertiesValue}}">
+                        </a>       
+                    </div>
+                    <div class="groupbuy_info col-60 fl">
+                        <div class="groupbuy_title">
+                            <a href="#/marketing/group/details.html?ggid={{g.id}}&gid={{g.gid}}">{{g.goods.name+' '+g.sku.propertiesValue}}</a>
+                        </div>
+                        <div class="groupbuy_sold">已售 <span class="fs14">{{g.sku.volume}}</span> 件</div>
+                        <div class="startgroupbuy fs12">
+                            <div class="groupprice col-60 fl">￥{{g.showPrice}}</div>
+                            <div class="groupgo col-35 fl"><a href="#/marketing/rankgroup/details.html?ggid={{g.id}}&gid={{g.gid}}">去开团 ＞</a></div>
+                        </div>
+                    </div>
+                </li>
+                
+            </ul>
+        </section>
+    </div>
+    <nav></nav>

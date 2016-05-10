@@ -59,6 +59,16 @@ wapApp.service('ApiService', function () {
                 'startFlash':'http://localhost:8080/api/start/buy/falsh/:flashid',
                 'update':'http://localhost:8080/api/flash/sale/update/stock'
             },
+            'rankgroup':{
+            	'listWithCondition':'http://localhost:8080/api/marketing/rankgroupGoods/goods/list',
+            	'detail':'http://localhost:8080/api/marketing/rankgroupGoods/goods/detail',
+            	'join':'http://localhost:8080/api/marketing/rankgroup/purchase/join/:id',
+            	'start':'http://localhost:8080/api/marketing/rankgroup/start/:groupgoodsid',
+            	'user':{
+            		 'count':'http://localhost:8080/api/marketing/rankgroup/user/count/:groupID',
+                     'list':'http://localhost:8080/api/marketing/rankgroup/user/list/:groupID'
+            	}
+            },
             'auction':{
                 'listWithCondition':'http://localhost:8080/api/marketing/auction/goods/list',
                 'detail':'http://localhost:8080/api/marketing/auction/goods/detail',

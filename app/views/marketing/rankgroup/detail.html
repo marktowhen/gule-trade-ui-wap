@@ -1,0 +1,150 @@
+<div class="group-purchase-details center-view" ng-controller="RankGroupDetailController">
+	<!-- <div id="slide" class="swipe">
+		<div class='swipe-wrap'>
+			<div ng-repeat="img in goods.imgList">
+				 <img src="{{img.path}}" alt="{{goods.name}}" />
+			</div>
+			
+		</div>
+		<div class="dot">
+			<ul>
+				<li ng-repeat="img in goods.imgList"></li>
+			</ul>
+		</div>
+	</div> -->
+	<div class="swiper-container" id="product_swiper_container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide" ng-repeat="img in goods.imgList">
+				<img src="{{img.path}}" alt="{{goods.name}}">
+			</div>
+			
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+	<div class="pd-box1">
+		<div class="pd1-top">
+			<div >{{goods.name}}</div>
+		</div>
+		<div class="cl"></div>
+		<div class="pd1-price">
+			<span class="p2">原价：￥{{goods.price}}</span>
+		</div>
+		<div class="pd1-group-price">
+			<span class="p2 fl">拼团价：</span>
+			<div class="gd-dropdown fl">
+				
+				<div ng-if="groupID" >
+					<ul>
+						<li class="cur" ng-repeat="ps in groupGoods.priceSettings">
+							<a href="javascript:;">{{ps.floor}}人以上 <span class="nn">￥{{ps.price}}</span></a>
+						</li>
+				    </ul>
+		        </div>
+				<div  ng-if="!groupID" >
+					<ul>
+						<li  ng-repeat="ps in groupGoods.priceSettings">
+							<a href="javascript:;">{{ps.floor}} 人以上 <span class="nn">￥{{ps.price}}</span></a>
+						</li>
+				    </ul>
+		        </div>
+			</div>
+			<div class="gd-right1 fl">
+				<ul>
+					<li  class="cur">当前价格{{count}}</li>
+					<!-- <li>当前价格</li>
+					<li>当前价格</li> -->
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="cl h10"></div>
+	<div class="gd-progress" ng-if="showGroup">
+		<dl class="gd-barbox">
+			<dd class="gd-barline fl">
+				<div class="gd-charts" style="width: {{count/groupGoods.currentPrice.floor*100}}%"></div>
+			</dd>
+		</dl>
+		<p>
+			<a href="#">{{count}}人</a>
+			已参团
+		</p>
+	</div>
+	<div class="cl h10"></div>
+	<div class="gd-info">
+		<div class="gd-text">
+			<p>
+				{{goods.about}}[右上角转发并邀请好友]
+			</p>
+		</div>
+		<div class="pd-serve">
+			<ul>
+				<li>
+					<div class="pd1-info-icon fl">
+						<i class="icon-right"></i>
+					</div>
+					<p>&nbsp;100%正品保证</p>
+				</li>
+				<li>
+					<div class="pd1-info-icon fl">
+						<i class="icon-right"></i>
+					</div>
+					<p>&nbsp;7天退换货</p>
+				</li>
+				<li>
+					<div class="pd1-info-icon fl">
+						<i class="icon-right"></i>
+					</div>
+					<p>&nbsp;7X12在线客服</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="cl h10"></div>
+	<div class="pd-box4">
+		<div class="pd4-hd">
+			<ul>
+				<li>
+					<a href="javascript:;">商品详情</a>
+				</li>
+			</ul>
+		</div>
+		<div class="pd4-bd" ng-bind-html="goods.content">
+			<ul>
+				<li class="cur">
+					<div class="pd4-bd" ng-bind-html="goods.content"></div>
+			</ul>
+		</div>
+	</div>
+	<div class="cl"></div>
+	<div class="pd-box5">
+		<div class="pd5-info3 fr" ng-click="start()" ng-if="!groupID" >
+			<p>￥{{groupGoods.currentPrice.price}}</p>
+			<p>立即开团</p>
+		</div>
+		<div class="pd5-info3 fr" ng-click="join()" ng-if="groupID" >
+			<p>￥{{groupGoods.currentPrice.price}}</p>
+			<p>立即参团</p>
+		</div>
+		<div class="pd5-info2 fr" ng-click="buyit()">
+			<p>单独购买</p>
+		</div>
+		<div class="pd5-info1 fr">
+			<ul>
+				<li>
+					<i class="icon-QQ"></i>
+					<p>客服</p>
+				</li>
+				<li ng-click="toMerchant(goods.mid)">
+					<i class="icon-sp-1"></i>
+					<p>店铺</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<add-cart-dialog id='add-cart-dialog'></add-cart-dialog>
+
+<script type="text/javascript">
+var img_hei=$('#product_swiper_container img').width()*0.8;
+        $('#product_swiper_container img').height(img_hei)
+</script>
