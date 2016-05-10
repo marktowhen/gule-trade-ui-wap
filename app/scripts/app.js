@@ -117,6 +117,11 @@ var wapApp = angular
         controller: '',
         url:"/joined-group.html"
     })
+    .state('joined-rankgroup', {
+    	templateUrl: 'views/marketing/rankgroup/joined-rankgroup.html',
+    	controller: '',
+    	url:"/joined-rankgroup.html"
+    })
     .state('one-list', {
         templateUrl: 'views/index/one-list.html',
         controller: '',
