@@ -30,25 +30,6 @@ wapApp.controller('FlashSaleDetailController', function ($scope, $cookies,$state
 		});
 			
 	};
-	$scope.statrtFlash = function(){
-		FlashSaleService.startFlash($scope.flashsale.id,cart($scope.flashsale,$scope.goods)).success(function(data){
-			if(data.ok){
-
-				FlashSaleService.detail(data.body.flashId).success(function(data){
-					if(data.ok){
-						data.body.stock=data.body.stock-1;
-						FlashSaleService.updateStock(data.body);
-					}
-				})
-				
-				
-				$state.go('orderconfirm.page');
-
-			}else{
-				alert(data.message);
-			};
-		});
-	};
 
 	var cart = function(flashsale,goods){
 		var goodsInCart = [{'gid':flashsale.gid,'skuid':flashsale.skuId,'gname':goods.name,'mid':goods.mid,'mname':goods.mName,'price':flashsale.currentPrice,'count':1}];
@@ -65,13 +46,31 @@ wapApp.controller('FlashSaleDetailController', function ($scope, $cookies,$state
 	  		var oft=Math.round(($scope.endtime-new Date())/1000);
 	  					if(oft<=0&&flashsale.stock>0){
 	  						flashsale.classes = "ad1-bottom org";
+	  					$scope.statrtFlash = function(){
+							FlashSaleService.startFlash($scope.flashsale.id,cart($scope.flashsale,$scope.goods)).success(function(data){
+								if(data.ok){		
+
+									FlashSaleService.detail(data.body.flashId).success(function(data){
+										if(data.ok){
+											data.body.stock=data.body.stock-1;
+											FlashSaleService.updateStock(data.body);
+										}
+									})
+									$state.go('orderconfirm.page');
+								}else{
+									alert(data.message);
+								};
+							});
+						};
 			  		 		flashsale.BtnValue="立即秒杀";
 			  		 		flashsale.dao=('00:00:00:00');
+			  		 		flashsale.point="icon-arrow";
 			  		 		return TimePromise;
 			  		 	}else if(oft<=0&&flashsale.stock==0){
 			  		 		flashsale.classes = "ad1-bottom gra";
 			  		 		flashsale.BtnValue="已结束";
 			  		 		flashsale.dao=('00:00:00:00');
+			  		 		flashsale.point="";
 			  		 		
 			  		 		return TimePromise;
 			  		 	}
@@ -79,6 +78,7 @@ wapApp.controller('FlashSaleDetailController', function ($scope, $cookies,$state
 			  		 	if(oft>0&&flashsale.stock>0){
 			  		 		flashsale.classes = "ad1-bottom";
 			  		 		flashsale.BtnValue="即将开始";
+			  		 		flashsale.point="";
 			  		 		var ofd=parseInt(oft/3600/24);
 							var ofh=parseInt((oft%(3600*24))/3600);
 							var ofm=parseInt((oft%3600)/60);
