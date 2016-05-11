@@ -75,6 +75,9 @@ wapApp.controller('FlashSaleDetailController', function ($scope, $cookies,$state
 			  		 		return TimePromise;
 			  		 	}
 	  		TimePromise = $interval(function(){
+	  					$scope.endtime=new Date(flashsale.activityTime);
+	  					$scope.showtime = new Date(flashsale.showTime);	
+	  					var oft=Math.round(($scope.endtime-new Date())/1000);
 			  		 	if(oft>0&&flashsale.stock>0){
 			  		 		flashsale.classes = "ad1-bottom";
 			  		 		flashsale.BtnValue="即将开始";
