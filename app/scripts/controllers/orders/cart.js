@@ -7,26 +7,20 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-wapApp.controller('CartController', function ($scope, CartService, $cookies, $state, ConstantService, Dialog) {
+wapApp.controller('CartController', function ($scope, CartService, $cookies, $state) {
     
-    var loginuid = $cookies.get(ConstantService.LOGIN_ID_KEY);
+    /*var loginuid = $cookies.get(ConstantService.LOGIN_ID_KEY);*/
 
-    CartService.listCarts(loginuid).success(function(data){
+
+    CartService.listCarts("Ma9ogkIXSW-y0uSrvfqVIQ").success(function(data){
         
         $scope.carts = data.body;
-        var notEmpty = ifcartempty();
-        $scope.empty = !notEmpty;
+       /* console.log($scope.carts);
+        console.log($scope.carts.orders);
+        console.log($scope.carts.orders.goods);*/
+      
     });
-
-    var ifcartempty = function(){
-        return (($scope.carts)
-                        && ($scope.carts.orders)
-                        && ($scope.carts.orders.length > 0)
-                        && ($scope.carts.orders[0].goods)
-                        && ($scope.carts.orders[0].goods.length > 0));
-    };
-
-    $scope.submit = function(carts){
+       $scope.settleAccounts = function(carts){
         var orders = carts.orders;
         var newCarts = {};
         newCarts.uid = carts.uid;
@@ -39,6 +33,7 @@ wapApp.controller('CartController', function ($scope, CartService, $cookies, $st
                 existedNewOrder = {};
                 existedNewOrder.mid = order.mid;
                 existedNewOrder.mname = order.mname;
+                existedNewOrder.type = "BASE";
                 existedNewOrder.goods = [];
                 newCarts.orders.push(existedNewOrder);
             }
@@ -50,20 +45,20 @@ wapApp.controller('CartController', function ($scope, CartService, $cookies, $st
             });
         });
         if(newCarts.orders.length == 0){
-            Dialog.alert($scope, "请选择商品！");
+           alert("请选择商品！");
             return;
         }
         
         CartService.submit(newCarts)
             .success(function(response){
                 if(response.ok){
-                    $state.go("order-confirm");
+                    $state.go("orderconfirm.page");
                 }else{
-                    Dialog.alert($scope, response.message);
+                    alert(response.message);
                 }
             })
             .error(function(response){
-                Dialog.alert($scope, "网络异常，请稍后重试。");
+                alert("网络异常，请稍后重试。");
             });
     };
     $scope.selectedGoods = [];
@@ -100,7 +95,6 @@ wapApp.controller('CartController', function ($scope, CartService, $cookies, $st
         if($scope.allSelected){
             var orders = $scope.carts.orders;
             for(var i = 0; i < orders.length; i++){
-                orders[i].selected = true;
                 var goods = orders[i].goods;
                 for(var j = 0; j < goods.length; j++){
                     if(goods[j].selected) continue;
@@ -132,7 +126,7 @@ wapApp.controller('CartController', function ($scope, CartService, $cookies, $st
             var notEmpty = ifcartempty();
             $scope.empty = !notEmpty;
         }).error(function(data){
-            Dialog.alert($scope, "商品删除失败！");
+            alert("商品删除失败！");
         });
     };
     /**删除多个商品*/
@@ -159,7 +153,7 @@ wapApp.controller('CartController', function ($scope, CartService, $cookies, $st
             var notEmpty = ifcartempty();
             $scope.empty = !notEmpty;
         }).error(function(data){
-            Dialog.alert($scope, "商品删除失败！");
+            alert("商品删除失败！");
         });
     };
 
@@ -244,4 +238,5 @@ wapApp.controller('CartController', function ($scope, CartService, $cookies, $st
         });
         return has;
     };
+  
 });

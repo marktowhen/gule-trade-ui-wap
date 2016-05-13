@@ -32,6 +32,11 @@ var wapApp = angular
         controller: '',
         url:"/index_app.html"
       })
+     .state('now-buy-dialog', {
+        templateUrl: 'views/dialog/now-buy-dialog.html',
+        controller: '',
+        url:"/now-buy-dialog.html"
+      })
      .state('add-cart-dialog', {
         templateUrl: 'views/dialog/add-cart-dialog.html',
         controller: '',

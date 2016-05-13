@@ -18,16 +18,16 @@ function shoppingcart_onload(){
     });
     
     //点击选中或取消商品
-    $(document).on('click','.choose i',function(){
+   /* $(document).on('click','.choose i',function(){
         if($(this).hasClass('icon-right')){
             $(this).removeClass('icon-right');
         }else{
             $(this).addClass('icon-right');
         }
-    });
+    });*/
     
     //增减商品数量
-    $(document).on('click','i.reduce',function(){
+  /*  $(document).on('click','i.reduce',function(){
         var num=parseInt($(this).next().text());
         if(num != 1){
             num--;
@@ -39,9 +39,9 @@ function shoppingcart_onload(){
         num++;
         $(this).prev().text(num)
     });
-    
+    */
     //全选
-    $(document).on('click','.check_all i',function(){
+    /*$(document).on('click','.check_all i',function(){
         if($(this).hasClass('icon-right')){
             $(this).removeClass('icon-right');
             $('.choose i').removeClass('icon-right')
@@ -49,6 +49,6 @@ function shoppingcart_onload(){
             $(this).addClass('icon-right');
             $('.choose i').addClass('icon-right')
         }
-    });
+    });*/
 }
     

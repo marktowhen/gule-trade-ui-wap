@@ -28,7 +28,7 @@ wapApp.service('GoodsDetailsService', function ($http, $location, ApiService, $s
     };
 
     this.isfav = function (gid){
-          return $http.get(ApiService.api.wapGoods.isfav.replace(":gid",gid), 
+          return $http.get(ApiService.api.indexs.isfav.replace(":gid",gid), 
             {'gid':gid}, 
             {headers:{'Content-Type':'application/json;charset=UTF-8'}}
             );  

@@ -1,8 +1,41 @@
 
-    <div class="shoppingcart_wrap clearfix">
+    <div class="shoppingcart_wrap clearfix" ng-controller="CartController">
         <section class="shoppingcart_products clearfix">
             <ul>
-                <li>
+                <li ng-repeat="orders in carts.orders">
+                    <div class="product_body" ng-repeat="good in orders.goods">
+                        <div class="product_body_main fl">
+                            <div class="choose fl">
+                            
+                                <input type="checkbox" ng-class="{disabled: good.stock == 0}" ng-disabled="good.stock==0" ng-change="selectOneGoods(good)" ng-model="good.selected" ng-true-value="true" ng-false-value="false">
+                            
+                            </div>
+                            <div class="product_pic fl">
+                                <a href="#/product/details.html"><img src="../images/shoppingcart/product1.png" alt=""></a>
+                            </div>
+                            <div class="product_content fl">
+                                <div class="p_c_body">
+                                    <div class="product_name"><a href="#/product/details.html">{{good.gname}}</a></div>
+                                    <div class="product_info">官方直营 正品保障 顺丰包邮 滋
+        补上品 超值组合全场满99包邮</div>
+                                    <div class="price">
+                                        <div class="price_body">
+                                            <span ng-class="{disabled: good.count <= 1 || good.stock <= 0}" ng-click="countdown(good, order)" class="currentprice">￥{{good.pprice}}</span>
+                                            <span class="originalprice">￥{{good.price}}</span>
+                                            <span class="num fr">
+                                                <i class="reduce icon-jianhao fl"></i>
+                                                <i class="number fl">{{good.count}}</i>
+                                                <i ng-class="{disabled: (good.count == good.stock || good.stock == 0)}" class="add icon-jia fl" ng-click="countup(good, order)"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product_delete fl">删除</div>
+                    </div> 
+                </li>
+               <!--  <li>
                     <div class="product_body">
                         <div class="product_body_main fl">
                             <div class="choose fl">
@@ -94,50 +127,19 @@
                         </div>
                         <div class="product_delete fl">删除</div>
                     </div> 
-                </li>
-                <li>
-                    <div class="product_body">
-                        <div class="product_body_main fl">
-                            <div class="choose fl">
-                            <i></i>
-                            </div>
-                            <div class="product_pic fl">
-                                <a href="#/product/details.html"><img src="../images/shoppingcart/product1.png" alt=""></a>
-                            </div>
-                            <div class="product_content fl">
-                                <div class="p_c_body">
-                                    <div class="product_name"><a href="#/product/details.html">拉卡拉收款宝 手机移动pos机刷卡器实时到账 信用卡还款芯片</a></div>
-                                    <div class="product_info">官方直营 正品保障 顺丰包邮 滋
-        补上品 超值组合全场满99包邮</div>
-                                    <div class="price">
-                                        <div class="price_body">
-                                            <span class="currentprice">￥228</span>
-                                            <span class="originalprice">￥328</span>
-                                            <span class="num fr">
-                                                <i class="reduce icon-jianhao fl"></i>
-                                                <i class="number fl">1</i>
-                                                <i class="add icon-jia fl"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product_delete fl">删除</div>
-                    </div> 
-                </li>
+                </li> -->
             </ul>
         </section>
         <section class="settle">
             <div class="check_all fl">
-                <i class="fl"></i>
+               <input type="checkbox" style="margin-left:70px;margin-top:10px;" ng-change="selectGoodsInCart()" ng-model="allSelected" ng-true-value="true" ng-false-value="false">
             </div>
             <span class="check_all_word col-10 fl">全选</span>
             <div class="settle_info fl col-45">
-                <div class="total">合计：<span>￥456</span></div>
+                <div class="total">合计：￥<span ng-bind="goodsPrice()">456</span></div>
                 <div class="carriage">不含运费</div>
             </div>
-            <div class="settle_btn fl"><a href="#/orders/confirmation.html">结算（<span class="checknum">0</span>）</a></div>
+            <div class="settle_btn fl"><a href="#/orders/confirmation.html" ng-click="settleAccounts(carts)">结算（<span class="checknum" ng-bind="goodsCount()">0</span>）</a></div>
         </section>
     </div>
 

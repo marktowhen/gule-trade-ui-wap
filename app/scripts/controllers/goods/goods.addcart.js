@@ -7,11 +7,11 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-wapApp.controller('BuyController',
+ wapApp.controller('AddCartController',
     function ($scope, $cookies,$state, ConstantService,$stateParams,GoodsBuyService, CartService) {
     	var gid=$stateParams.gid;
 
-        $scope.num =1;
+    	  $scope.num =1;
     	GoodsBuyService.condition(gid).success(function(data){
     		    $scope.condition = data.body;
             $scope.condition.skuid= "";
@@ -138,72 +138,24 @@ wapApp.controller('BuyController',
                    }else{
                          $scope.condition.skuid ="";
                          $scope.numFlag = false;
-                   }
+                   };
 
                  });
-            }
+            };
     	};
 
-
-
-
-
-
-        $scope.buynow = function(){
-
-          if($scope.condition.stock == 0){
-            alert("该商品暂时无货。");
-            return;
-          }
-          if(!(Number($scope.num)) || (Number($scope.num) > $scope.condition.stock) ){
-            Dialog.alert($scope, "请输入正确的商品数量。");
-            return;
-          }
-          var goods = $scope.$parent.$parent.goods;
-          var cartvo = {};
-          cartvo.orders = [];
-          var order0 = {};
-          order0.mid = goods.mid;
-          order0.mname = goods.mName;
-          order0.type = "BASE";
-          order0.goods = [];
-          var goods0 = {};
-          goods0.gid = goods.gid;
-          goods0.skuid = $scope.condition.skuid;
-          goods0.gname = goods.name + " " + $scope.condition.properties_values;
-          goods0.mid = goods.mid;
-          goods0.mname = goods.mName;
-          goods0.price = $scope.condition.price;
-          goods0.pprice = $scope.condition.salePrice;
-          goods0.count = $scope.num;
-          order0.goods.push(goods0);
-          cartvo.orders.push(order0);
-          CartService.submit(cartvo)
-          .success(function(data){
-            if(data.ok){
-              $state.go("orderconfirm.page");
-              return;
-            }else{
-                alert(data.message);
-            }
-          })
-          .error(function(){
-            alert("订单信息有误，请检查后重新提交");
-          });
-        };
-
-        ///减少数量
+   ///减少数量
         $scope.downNum = function(){
             if($scope.num>1){
                  $scope.num = $scope.num - 1;
-            }
-        }
+            };
+        };
           ///增加数量
          $scope.upNum = function(){
             if($scope.num <  $scope.condition.stock ){
                  $scope.num = $scope.num + 1;
-            }
-        }
+            };
+        };
 
 
 
@@ -217,7 +169,40 @@ wapApp.controller('BuyController',
             }else{
                 alert("请选择一件商品!");
                 return;
-            }
+            };
 
-        }
-});
+        };
+
+        $scope.addcart = function(){
+        	if($scope.condition.stock == 0){
+            	alert("该商品暂时无货。");
+            	return;
+	        }
+	        if(!(Number($scope.num)) || (Number($scope.num) > $scope.condition.stock) ){
+	            Dialog.alert($scope, "请输入正确的商品数量。");
+	            return;
+	        }
+	        var goodsincart = {};
+	        var goods = $scope.$parent.$parent.goods;
+	        goodsincart.gid = goods.gid;
+	        goodsincart.skuid = $scope.condition.skuid;
+	        goodsincart.gname = goods.name;
+	        goodsincart.mid = goods.mid;
+	        goodsincart.mname = goods.mName;
+	        goodsincart.price = $scope.condition.price;
+	        goodsincart.pprice = $scope.condition.salePrice;
+	        goodsincart.count = $scope.num;
+	        console.log(goodsincart);
+	        CartService.addToCart(goodsincart).success(function(response){
+	        	if(response.code==200){
+	        		alert("添加购物车成功");
+	        	}else{
+	        		alert("添加购物车失败");
+	        	}
+	        }).error(function(response){
+	        	alert("网络异常，稍后重试");
+	        });
+
+      };
+
+    });

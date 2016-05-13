@@ -293,7 +293,7 @@ wapApp.service('ApiService', function () {
             'getFavorites':'http://localhost:8080/api/wap/goods/favorite/list',
             'condition':'http://localhost:8080/api/wap/goods/condition/:gid',
             'sku':'http://localhost:8080/api/wap/goods/single/:gid',
-            'isfav':'http://localhost:8080/api/wap/goods//favorite/isfav/:gid',
+            'isfav':'http://localhost:8080/api/wap/goods/favorite/isfav/:gid',
             'delfav':'http://localhost:8080/api/wap/goods/favorite/del/:favId'
 
         }
