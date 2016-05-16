@@ -63,23 +63,26 @@ wapApp.controller('CartController', function ($scope, CartService, $cookies, $st
     };
     $scope.selectedGoods = [];
 
-    $scope.selectOneGoods = function(goods){
-        if(goods.stock <= 0){
+    $scope.selectOneGoods = function(good){
+        if(good.stock <= 0){
             return;
         }
-        if(goods.selected){
-            $scope.selectedGoods.push(goods);
+        if(good.selected){
+           good.class="icon-right";
+            $scope.selectedGoods.push(good);
         }else{
-            $scope.selectedGoods.splice($scope.selectedGoods.indexOf(goods), 1);
+            good.class="";
+            $scope.selectedGoods.splice($scope.selectedGoods.indexOf(good), 1);
         }
     };
-    $scope.selectGoodsInOrder = function(order){
+   /* $scope.selectGoodsInOrder = function(order){
         if(order.selected){
             var goods = order.goods;
             for(var i = 0; i < goods.length; i++){
                 if(goods[i].selected) continue;
                 if(goods[i].stock <= 0) continue;
                 goods[i].selected = true;
+
                 $scope.selectedGoods.push(goods[i]);
             }
         }else{
@@ -89,27 +92,36 @@ wapApp.controller('CartController', function ($scope, CartService, $cookies, $st
                 $scope.selectedGoods.splice($scope.selectedGoods.indexOf(goods[i]), 1);
             }
         }
-    }
+    }*/
     $scope.allSelected = false;
     $scope.selectGoodsInCart = function(){
         if($scope.allSelected){
             var orders = $scope.carts.orders;
+            $scope.gclass="icon-right";
             for(var i = 0; i < orders.length; i++){
                 var goods = orders[i].goods;
+                
                 for(var j = 0; j < goods.length; j++){
+                   
                     if(goods[j].selected) continue;
                     if(goods[j].stock <= 0) continue;
                     goods[j].selected = true;
+                    var good = goods[j];
+                    good.class="icon-right";
+                    
                     $scope.selectedGoods.push(goods[j]);
                 }
             }
         }else{
             var orders = $scope.carts.orders;
+             $scope.gclass="";
             for(var i = 0; i < orders.length; i++){
                 orders[i].selected = false;
                 var goods = orders[i].goods;
                 for(var j = 0; j < goods.length; j++){
                     goods[j].selected = false;
+                    var good= goods[j];
+                    good.class="";
                     $scope.selectedGoods.splice($scope.selectedGoods.indexOf(goods[j]), 1);
                 }
             }

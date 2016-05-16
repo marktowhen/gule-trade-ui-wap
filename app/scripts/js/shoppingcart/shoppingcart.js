@@ -18,13 +18,13 @@ function shoppingcart_onload(){
     });
     
     //点击选中或取消商品
-   /* $(document).on('click','.choose i',function(){
-        if($(this).hasClass('icon-right')){
-            $(this).removeClass('icon-right');
-        }else{
-            $(this).addClass('icon-right');
-        }
-    });*/
+   // $(document).on('click','.choose i',function(){
+   //      if($(this).hasClass('icon-right')){
+   //          $(this).removeClass('icon-right');
+   //      }else{
+   //          $(this).addClass('icon-right');
+   //      }
+   //  });
     
     //增减商品数量
   /*  $(document).on('click','i.reduce',function(){

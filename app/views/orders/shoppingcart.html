@@ -6,8 +6,9 @@
                     <div class="product_body" ng-repeat="good in orders.goods">
                         <div class="product_body_main fl">
                             <div class="choose fl">
-                            
-                                <input type="checkbox" ng-class="{disabled: good.stock == 0}" ng-disabled="good.stock==0" ng-change="selectOneGoods(good)" ng-model="good.selected" ng-true-value="true" ng-false-value="false">
+                            <i class={{good.class}}>    
+                            <input type="checkbox" style="    position: absolute;top: 0px;left: 0px;opacity: 0;" ng-class="{disabled: good.stock == 0}" ng-disabled="good.stock==0" ng-change="selectOneGoods(good)" ng-model="good.selected" ng-true-value="true" ng-false-value="false"></i>
+                                
                             
                             </div>
                             <div class="product_pic fl">
@@ -132,7 +133,8 @@
         </section>
         <section class="settle">
             <div class="check_all fl">
-               <input type="checkbox" style="margin-left:70px;margin-top:10px;" ng-change="selectGoodsInCart()" ng-model="allSelected" ng-true-value="true" ng-false-value="false">
+            <i class={{gclass}}>
+               <input type="checkbox" style="position: absolute;top: 0px;left: 0px;opacity: 0;" ng-change="selectGoodsInCart()" ng-model="allSelected" ng-true-value="true" ng-false-value="false"></i>
             </div>
             <span class="check_all_word col-10 fl">全选</span>
             <div class="settle_info fl col-45">
