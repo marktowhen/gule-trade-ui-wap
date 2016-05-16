@@ -36,7 +36,7 @@ wapApp.service('GoodsDetailsService', function ($http, $location, ApiService, $s
 
 
        this.delfav = function (favId){
-          return $http.post(ApiService.api.wapGoods.delfav.replace(":favId",favId), 
+          return $http.post(ApiService.api.indexs.delfav.replace(":favId",favId), 
             {headers:{'Content-Type':'application/json;charset=UTF-8'}}
             );  
     };

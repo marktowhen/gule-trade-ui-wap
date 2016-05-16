@@ -41,7 +41,7 @@ wapApp.controller('MyOrderController', function ($scope, Dialog, ConstantService
         });
     };
 
-    var now = new Date();
+   /* var now = new Date();
     var latestWeek = new Date((new Date()).setDate(now.getDate() - 7));
     var latestMonth = new Date((new Date()).setMonth(now.getMonth()));
     var latest3Month = new Date((new Date()).setMonth(now.getMonth() - 2));
@@ -50,9 +50,9 @@ wapApp.controller('MyOrderController', function ($scope, Dialog, ConstantService
     						{'id':'1', 'name':'最近一周', 'value':latestWeek.getFullYear()+'-'+(latestWeek.getMonth()+1)+'-'+latestWeek.getDate()},
     						{'id':'2', 'name':'最近一个月', 'value':latestMonth.getFullYear()+'-'+latestMonth.getMonth()+'-'+latestMonth.getDate()},
     						{'id':'3', 'name':'最近三个月', 'value':latest3Month.getFullYear()+'-'+latest3Month.getMonth()+'-'+latest3Month.getDate()},
-    						{'id':'4', 'name':'最近一年', 'value':latestYear.getFullYear()+'-'+(latestYear.getMonth()+1)+'-'+latestYear.getDate()}];
+    						{'id':'4', 'name':'最近一年', 'value':latestYear.getFullYear()+'-'+(latestYear.getMonth()+1)+'-'+latestYear.getDate()}];*/
     //当前日期范围
-    $scope.currentdate = $scope.dateranges[0];
+ /*   $scope.currentdate = $scope.dateranges[0];
     $scope.keywords = '';
     OrderService.listOrderStatus().success(function(data){
     	$scope.orderstatus = data.body;
@@ -70,7 +70,7 @@ wapApp.controller('MyOrderController', function ($scope, Dialog, ConstantService
                 $scope.hasMore = (currentpage == 10);
 	    	});
     	}
-    };
+    };*/
     //当前时间的秒表示形式
     $scope.now = (new Date()).getTime();
 

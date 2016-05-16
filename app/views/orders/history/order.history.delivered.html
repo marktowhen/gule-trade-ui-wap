@@ -1,6 +1,6 @@
-
-    <ul>
-                <li>
+    <div ng-controller="OrdersDeliveredController">
+    <ul  ng-repeat="order in orders" style="margin-bottom:0px;">
+                <li ng-repeat="goods in order.goods">
                     <div class="order_pic col-25 fl">
                         <a href="#/product/details.html">
                             <img src="../images/index/product1.png" alt="">
@@ -9,11 +9,11 @@
                     <div class="order_info_wrap col-75 fs12 fl">
                         <div class="order_info_body">
                             <div class="order_title col-75 fl">
-                                <a href="#/product/details.html">拉卡拉收款宝手机pos机 信用卡刷 </a>
+                                <a href="#/product/details.html">{{goods.gname}} </a>
                             </div>
-                            <div class="order_num col-20 fl">×1</div>
-                            <div class="order_price col-75 fl">￥228.00
-                                <span class="order_freight">(含运费￥0.00)</span>
+                            <div class="order_num col-20 fl">×{{goods.count}}</div>
+                            <div class="order_price col-75 fl">￥{{goods.payout}}
+                                <span class="order_freight">(含运费￥{{goods.postage}})</span>
                             </div>
 
                         </div>
@@ -24,4 +24,5 @@
                     </div>
                 </li>
             </ul>
+        </div>
         

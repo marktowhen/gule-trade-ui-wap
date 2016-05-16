@@ -19,14 +19,14 @@ wapApp.service('ApiService', function () {
             'count':'http://localhost:8080/api/cart/goods/count/:uid'
         },
         'order':{
-            'listWithCondition': 'http://localhost:8080/api/orders/seller/list',
+            'listWithCondition': 'http://localhost:8080/api/orders/user/list',
             'accept':'http://localhost:8080/api/orders/acception',
             'delivered':'http://localhost:8080/api/orders/logistic',
             'singleByOID':'http://localhost:8080/api/orders/:oid',
             'listTraces': 'http://localhost:8080/api/orders/:oid/traces',
             'logistic':'http://localhost:8080/api/orders/:oid/logistic',
             'listOrderStatus':'http://localhost:8080/api/order/status/visible',
-            'cancel':'http://localhost:8080/api/orders/cancellation',
+            'cancel':'http://localhost:8080/api/orders/cancellation/:oid',
             'count':'http://localhost:8080/api/orders/seller/count',
             'listClearing':'http://localhost:8080/api/cart/clearing/list',
             'submit':'http://localhost:8080/api/order'

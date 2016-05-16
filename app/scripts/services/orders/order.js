@@ -12,10 +12,10 @@ wapApp.service('OrderService', function ($http, $location, ApiService, PayServic
     this.listOrders2Clearing = function(){
         return $http.get(ApiService.api.order.listClearing);
     };
-    this.listWithCondition = function(uid, statuscode, fromdate, keywords, from, size){
+    this.listWithCondition = function(uid, statuscode, from, size){
         return $http.get(
             ApiService.api.order.listWithCondition,
-            {params:{'status':statuscode, 'fromdate':fromdate, 'keywords':keywords, 'from':from, 'size':size}});
+            {params:{'status':statuscode,'from':from, 'size':size}});
     };
     this.listPaytype = function(){
         return $http.get(ApiService.api.pay.typelist);
@@ -32,9 +32,12 @@ wapApp.service('OrderService', function ($http, $location, ApiService, PayServic
     this.submit = function(purchaseVo){
         return $http.post(ApiService.api.order.submit, purchaseVo, {headers:{'Content-Type':'application/json;charset=UTF-8'}});        
     };
-    this.cancel = function(oid, reason){
-        return $http.put(ApiService.api.order.cancel, {'oid':oid, 'note':reason.v}, {headers:{'Content-Type':'application/json;charset=UTF-8'}});
+    this.cancel = function(oid){
+        return $http.put(ApiService.api.order.cancel.replace(":oid", oid));
     };
+  /*  this.cancel = function(ogid){
+
+    }*/
     this.listOrderStatus = function(){
         return $http.get(ApiService.api.order.listOrderStatus);
     };
