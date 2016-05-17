@@ -62,7 +62,8 @@ wapApp.service('ApiService', function () {
             'rankgroup':{
             	'listWithCondition':'http://localhost:8080/api/marketing/rankgroupGoods/goods/list',
             	'detail':'http://localhost:8080/api/marketing/rankgroupGoods/goods/detail',
-            	'join':'http://localhost:8080/api/marketing/rankgroup/purchase/join/:id',
+            	'join':'http://localhost:8080/api/marketing/rankgroup/join/:groupID',
+            	'joinDetail':'http://localhost:8080/api/marketing/rankgroup/joinDetail/:groupID',
             	'start':'http://localhost:8080/api/marketing/rankgroup/start/:groupgoodsid',
             	'user':{
             		 'count':'http://localhost:8080/api/marketing/rankgroup/user/count/:groupID',

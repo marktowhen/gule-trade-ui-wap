@@ -1,4 +1,4 @@
-<div class="joined-rankgroup center-view">
+<div class="rankgroup-joinDetail center-view" ng-controller="RankGroupJoinController">
 		<div class="joined-group-box1">
 			<div class="joined-box1-left fl">
 				<a href="#">
@@ -6,7 +6,7 @@
 				</a>
 			</div>	
 			<div class="joined-box1-right fl">
-				<p>拉卡拉收款宝手机pos机信用卡刷卡器移动pos...</p>
+				<p>{{goods.name}}</p>
 				<p>300人成团即享：<span class="org2">10.00</span>元</p>
 			</div>	
 		</div>
@@ -17,7 +17,7 @@
 					<img src="../../images/user/pic1.png" alt="">
 				</div>
 				<div class="joined-box2-head fl">团长 <a href="#">小小小苹果</a></div>
-				<div class="joined-box2-share fr">已有<a href="#">299</a>人参团！</div>
+				<div class="joined-box2-share fr">已有<a href="#">{{count}}</a>人参团！</div>
 			</div>
 			<div class="cl h10"></div>
 			<div class="joined-box2-bottom">
@@ -62,7 +62,7 @@
 			</div>
 		</div>
 		<div class="cl h10"></div>
-		<div class="joined-group-box3">距结束 <span>00:60:12</span></div>
+		<div class="joined-group-box3" id="dao"><span>{{dao}}</span></div>
 		<div class="cl h10"></div>
 		<div class="joined-group-box4">
 			<div class="joined-box4-hd">猜您可能还喜欢</div>
@@ -133,7 +133,7 @@
 					<p>更多团购</p>
 				</div>
 			</a>
-			<div class="joined-box6-right fl">我也要参团</div>
+			<div class="joined-box6-right fl" ng-click="join()">我也要参团</div>
 		</div>
 		<div class="joined-gray">
 			<i class="icon-hands fr"></i>

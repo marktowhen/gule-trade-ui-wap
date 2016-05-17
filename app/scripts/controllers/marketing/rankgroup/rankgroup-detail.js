@@ -15,6 +15,8 @@ wapApp.controller('RankGroupDetailController',
 			.success(function(data){
 				if(data.ok){
 					$scope.groupGoods = data.body;
+					$scope.groupGoods.groupID= data.body.groupID;
+					$scope.groupID=$scope.groupGoods.groupID;
 					$scope.groupGoods.currentPrice = data.body.priceSettings[0];
 				}
 			}).error(function(data){
@@ -24,6 +26,7 @@ wapApp.controller('RankGroupDetailController',
 		GoodsDetailsService.detail($stateParams.gid)
 		.success(function(data2){
 				$scope.goods = data2.body;
+				
 setTimeout(function(){var swiper = new Swiper('#product_swiper_container', {
         slidesPerView: 1,
         slidesPerColumn: 1,
@@ -40,7 +43,7 @@ setTimeout(function(){var swiper = new Swiper('#product_swiper_container', {
 		//店铺
 
 
-		$scope.groupID = $stateParams.group_id ;
+		$scope.groupID = $scope.groupID;
 		var isEmpty = function(str){
 			if(str==null || str==undefined || str==''){
 				return true;
@@ -57,6 +60,7 @@ setTimeout(function(){var swiper = new Swiper('#product_swiper_container', {
 		}
 
 		$scope.join = function(){
+			//到这里
 			if ($scope.groupID) {
 				var car  = creatCar($scope.groupGoods, $scope.goods,$scope.groupGoods.currentPrice.price);
 				RankGroupService.join($scope.groupID,car)
@@ -68,6 +72,14 @@ setTimeout(function(){var swiper = new Swiper('#product_swiper_container', {
 					}
 				})
 			}
+			
+		}
+		
+		//跳转到参团成功详情页 。。。。。。
+		$scope.joinDetails = function(){
+			$state.go('joined-rankgroup');
+						
+			
 			
 		}
 

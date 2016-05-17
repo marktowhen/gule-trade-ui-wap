@@ -124,7 +124,7 @@ var wapApp = angular
     })
     .state('joined-rankgroup', {
     	templateUrl: 'views/marketing/rankgroup/joined-rankgroup.html',
-    	controller: '',
+    	controller: 'RankGroupJoinController',
     	url:"/joined-rankgroup.html"
     })
     .state('one-list', {
