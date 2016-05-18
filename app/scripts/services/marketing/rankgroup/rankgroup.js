@@ -27,8 +27,11 @@ wapApp.service('RankGroupService', ['$http', 'ApiService', function($http, ApiSe
     	return $http.post(ApiService.api.marketing.rankgroup.start.replace(':groupgoodsid',groupgoodsid), cart);
     }
 
-    this.join = function(groupid,cart){
-    	return $http.post(ApiService.api.marketing.rankgroup.join.replace(':groupid',groupid), cart);
+    this.join = function(groupID,cart){
+    	return $http.post(ApiService.api.marketing.rankgroup.join.replace(':groupID',groupID), cart);
+    }
+    this.joinDetail = function(groupID,cart){
+    	return $http.get(ApiService.api.marketing.rankgroup.joinDetail.replace(':groupID',groupID));
     }
 
 }]);
