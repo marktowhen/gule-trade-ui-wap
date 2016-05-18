@@ -19,10 +19,28 @@
 
                         </div>
                     </div>
-                    <div class="order_btn fl">
+                    <!--待付款状态-->
+                    <div class="order_btn fl" ng-show="isnow(order)">
                         <a href="" class="order_pay fs12 fr">支付</a>
                         <button class="order_cancel fs12 fr">取消订单</button>
                     </div>
+                    <!--已收货的状态-->
+                    <div class="order_btn fl" ng-show="isreceived(order)">
+                        <a href="" class="order_payagain fs12 fr">再次购买</a>
+                        <a href="" class="order_evaluate fs12 fr">评价</a>
+                        <a href="" class="order_logistics fs12 fr">查看物流</a>                                 
+                    </div>
+                    <!--已发货状态-->
+                    <div class="order_btn fl" ng-show="isdelivered(order)">
+                        <a href="" class="order_pay fs12 fr">确认收货</a>
+                        <button class="order_cancel fs12 fr">查看物流</button>
+                    </div>
+                    <!--待发货状态-->
+                    <div class="order_btn fl" ng-show="isaccept(order)">
+                       <!--  <a href="" class="order_pay fs12 fr">催单</a> -->
+                        <button class="order_cancel fs12 fr" ng-click="deleteOrder(order)">取消订单</button>
+                    </div>
+
                 </li>
                <!--  <li>
                     <div class="order_pic col-25 fl">

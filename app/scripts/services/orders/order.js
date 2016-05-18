@@ -12,10 +12,10 @@ wapApp.service('OrderService', function ($http, $location, ApiService, PayServic
     this.listOrders2Clearing = function(){
         return $http.get(ApiService.api.order.listClearing);
     };
-    this.listWithCondition = function(uid, statuscode, from, size){
+    this.listWithCondition = function(uid, statuscode,anystatus, from, size){
         return $http.get(
             ApiService.api.order.listWithCondition,
-            {params:{'status':statuscode,'from':from, 'size':size}});
+            {params:{'status':statuscode,'anystatus':anystatus,'from':from, 'size':size}});
     };
     this.listPaytype = function(){
         return $http.get(ApiService.api.pay.typelist);

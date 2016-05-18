@@ -1,29 +1,41 @@
 <div class="coupons_wrap" ng-controller="CouponParentController">
     <div class="nav fs14">
-        <div class="fl col-50"><span class="col-60 voucher active">抵用券</span></div>
-        <div class="fl col-50"><span class="col-60 p-cash ">购物金</span></div>
+        <div class="fl col-50"><span class="col-60 voucher" style="cursor:pointer" ng-click="discount()">抵用券</span></div>
+        <div class="fl col-50"><span class="col-60 p-cash" style="cursor:pointer" ng-click="cash()">购物金</span></div>
     </div>
     <div class="coupons_body over">
         <div class="newcoupon">
             <i class="icon-jia"></i>
-            <span class="addvoucher">新增抵用券</span>
+            <span class="addvoucher" style="cursor:pointer" id="discount" ng-click="addDiscount()">新增抵用券</span>
+            <span class="addvoucher" style="cursor:pointer" id="cash" ng-click="addCash()">新增购物金</span>
         </div>
         <div class="coupons_list" ui-view>
 
         </div>
     </div>
-    <div class='curtain hide'></div>
-    <div class='addvoucher_body hide'>
-        <form action='' name=''>
+    <div class='curtain'></div>
+    <div class='addvoucher_body'>
+        <form action='' name='discountCouponForm'>
             <div class='addvoucher_title'>输入充值码</div>
             <i class='close icon-close'></i>
-            <input type='text' placeholder='请输入充值码' class='voucher_int coupons_int'>
+            <input type='text' placeholder='请输入充值码' ng-model="code" name="code" class='voucher_int coupons_int' required>
             <a href='' class='instructions fs12 fr'>使用说明</a>
-            <input type='submit' class='coupons_int coupons_sub' value="确定">
+            <input type='button' class='coupons_int coupons_sub' ng-disabled="discountCouponForm.code.$error.required" value="确定" ng-click="discountConfirm(code)">
+        </form>
+    </div>
+
+    <div class='curtain1'></div>
+    <div class='addvoucher_body1'>
+        <form action='' name='cashCouponForm'>
+            <div class='addvoucher_title'>输入充值码</div>
+            <i class='close icon-close'></i>
+            <input type='text' placeholder='请输入充值码' ng-model="code" name="code" class='voucher_int coupons_int' required>
+            <a href='' class='instructions fs12 fr'>使用说明</a>
+            <input type='submit' class='coupons_int coupons_sub' ng-disabled="cashCouponForm.code.$error.required"  value="确定" ng-click="cashConfirm(code)">
         </form>
     </div>
 </div>
 <nav></nav>
 <script>
-    $('.coupons_body').height($(window).height()-35)
+    $('.coupons_body').height($(window).height()-35);
 </script>

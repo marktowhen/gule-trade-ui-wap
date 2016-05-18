@@ -8,10 +8,12 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
+ //已发货状态
    wapApp.controller('OrdersReceivedController', function ($scope, ConstantService, OrderService, OrderStatusService, $state, $cookies, CartService) {
   	var size = 4;
 	var more =true;
- 	var statuscode = OrderStatusService.DELIVERED_CODE;
+ 	var statuscode = OrderStatusService.RECEIVED_CODE;
+  var anystatus = 1;
  	$scope.orders=[];
  	/*
 	var loginuid = $cookies.get(ConstantService.LOGIN_ID_KEY);
@@ -20,7 +22,7 @@
         return;
     }*/
 
-    OrderService.listWithCondition("Ma9ogkIXSW-y0uSrvfqVIQ",statuscode,0,size).success(function(data){
+    OrderService.listWithCondition("Ma9ogkIXSW-y0uSrvfqVIQ",statuscode,anystatus,0,size).success(function(data){
  		if(data.ok){
  			for(var i=0;i<data.body.length;i++){
  				$scope.orders.push(data.body[i]);
@@ -34,7 +36,7 @@
  	});
  	//瀑布流的方法
  	var falls = function(){
- 		OrderService.listWithCondition("Ma9ogkIXSW-y0uSrvfqVIQ",statuscode,$scope.orders.length,size).success(function(data){
+ 		OrderService.listWithCondition("Ma9ogkIXSW-y0uSrvfqVIQ",statuscode,anystatus,$scope.orders.length,size).success(function(data){
  			if(data.ok){
  				for(var i=0;i<data.body.length;i++){
  					$scope.orders.push(data.body[i]);

@@ -8,10 +8,11 @@
  * Controller of the jingyunshopApp
  */
  wapApp.controller('OrdersToPayController', function ($scope, ConstantService, OrderService, OrderStatusService, $state, $cookies, CartService) {
- 	/*必须授权之后才可以进入这个页面*/
+ 	/*必须授权之后才可以进入这个待支付页面*/
  	var size = 4;
 	var more =true;
  	var statuscode = OrderStatusService.NEW_CODE;
+ 	var anystatus = 1;
  	$scope.orders=[];
  	/*
 	var loginuid = $cookies.get(ConstantService.LOGIN_ID_KEY);
@@ -19,7 +20,7 @@
         Dialog.alert($scope, "请先登录");
         return;
     }*/
- 	OrderService.listWithCondition("Ma9ogkIXSW-y0uSrvfqVIQ",statuscode,0,size).success(function(data){
+ 	OrderService.listWithCondition("Ma9ogkIXSW-y0uSrvfqVIQ",statuscode,anystatus,0,size).success(function(data){
  		if(data.ok){
  			for(var i=0;i<data.body.length;i++){
  				$scope.orders.push(data.body[i]);
@@ -35,28 +36,20 @@
  	$scope.deleteOrder = function(order){
  		OrderService.cancel(order.id).success(function(data){
 	 		if(data.ok){
-	 			alert("fff");
-	 				/*OrderService.listWithCondition("Ma9ogkIXSW-y0uSrvfqVIQ",statuscode,0,size).success(function(data){
+	 				OrderService.listWithCondition("Ma9ogkIXSW-y0uSrvfqVIQ",statuscode,anystatus,0,size).success(function(data){
 				 		if(data.ok){
 				 			for(var i=0;i<data.body.length;i++){
 				 				$scope.orders.push(data.body[i]);
 				 			}
-				 			if(data.body.length<size){
- 								more=false;
- 							}
-
- 							scrollBars();//调用瀑布流
 				 		}
-	 				})*/
- 			}else{
- 				alert("订单取消失败");
+	 				})
  			}
 
  		})
  	}
  	//瀑布流的方法
  	var falls = function(){
- 		OrderService.listWithCondition("Ma9ogkIXSW-y0uSrvfqVIQ",statuscode,$scope.orders.length,size).success(function(data){
+ 		OrderService.listWithCondition("Ma9ogkIXSW-y0uSrvfqVIQ",statuscode,anystatus,$scope.orders.length,size).success(function(data){
  			if(data.ok){
  				for(var i=0;i<data.body.length;i++){
  					$scope.orders.push(data.body[i]);

@@ -23,13 +23,17 @@ function coupons_onload(){
     // });
 
     //新增抵用券和购物金弹窗
-    $(document).on('click','.coupons_wrap .newcoupon',function(){
+  /*  $(document).on('click','.coupons_wrap .newcoupon',function(){
        $('.curtain').removeClass('hide');
        $('.addvoucher_body').removeClass('hide');
-    });
+    });*/
     //弹窗关闭
     $(document).on('click','.coupons_wrap .addvoucher_body .close',function(){
        $('.curtain').addClass('hide');
        $('.addvoucher_body').addClass('hide');
+    });
+    $(document).on('click','.coupons_wrap .addvoucher_body1 .close',function(){
+       $('.curtain1').addClass('hide');
+       $('.addvoucher_body1').addClass('hide');
     });
 }
