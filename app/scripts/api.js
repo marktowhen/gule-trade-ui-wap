@@ -10,292 +10,292 @@
 wapApp.service('ApiService', function () {
     this.api = {
         'cart':{
-            'list':'http://localhost:8080/api/cart/goods/list/:uid',
-            'submit':'http://localhost:8080/api/cart/clearing',
-            'delete':'http://localhost:8080/api/cart/goods',
-            'clear': 'http://localhost:8080/api/cart/goods/:uid',//清空用户购物车
-            'countupdate':'http://localhost:8080/api/cart/goods/:id',
-            'addtocart':'http://localhost:8080/api/cart',
-            'count':'http://localhost:8080/api/cart/goods/count/:uid'
+            'list':'http://115.28.244.41:8080/api/cart/goods/list/:uid',
+            'submit':'http://115.28.244.41:8080/api/cart/clearing',
+            'delete':'http://115.28.244.41:8080/api/cart/goods',
+            'clear': 'http://115.28.244.41:8080/api/cart/goods/:uid',//清空用户购物车
+            'countupdate':'http://115.28.244.41:8080/api/cart/goods/:id',
+            'addtocart':'http://115.28.244.41:8080/api/cart',
+            'count':'http://115.28.244.41:8080/api/cart/goods/count/:uid'
         },
         'order':{
-            'listWithCondition': 'http://localhost:8080/api/orders/user/list',
-            'accept':'http://localhost:8080/api/orders/acception',
-            'delivered':'http://localhost:8080/api/orders/logistic',
-            'singleByOID':'http://localhost:8080/api/orders/:oid',
-            'listTraces': 'http://localhost:8080/api/orders/:oid/traces',
-            'logistic':'http://localhost:8080/api/orders/:oid/logistic',
-            'listOrderStatus':'http://localhost:8080/api/order/status/visible',
-            'cancel':'http://localhost:8080/api/orders/cancellation/:oid',
-            'count':'http://localhost:8080/api/orders/seller/count',
-            'listClearing':'http://localhost:8080/api/cart/clearing/list',
-            'submit':'http://localhost:8080/api/order'
+            'listWithCondition': 'http://115.28.244.41:8080/api/orders/user/list',
+            'accept':'http://115.28.244.41:8080/api/orders/acception',
+            'delivered':'http://115.28.244.41:8080/api/orders/logistic',
+            'singleByOID':'http://115.28.244.41:8080/api/orders/:oid',
+            'listTraces': 'http://115.28.244.41:8080/api/orders/:oid/traces',
+            'logistic':'http://115.28.244.41:8080/api/orders/:oid/logistic',
+            'listOrderStatus':'http://115.28.244.41:8080/api/order/status/visible',
+            'cancel':'http://115.28.244.41:8080/api/orders/cancellation/:oid',
+            'count':'http://115.28.244.41:8080/api/orders/seller/count',
+            'listClearing':'http://115.28.244.41:8080/api/cart/clearing/list',
+            'submit':'http://115.28.244.41:8080/api/order'
         },
         'pay':{
-            'list':'http://localhost:8080/api/payments',
-            'prepay':'http://localhost:8080/api/payments/prepay',
-            'typelist':'http://localhost:8080/api/pay/type/list'
+            'list':'http://115.28.244.41:8080/api/payments',
+            'prepay':'http://115.28.244.41:8080/api/payments/prepay',
+            'typelist':'http://115.28.244.41:8080/api/pay/type/list'
         },
         'refund':{
-            'listWithCondition': 'http://localhost:8080/api/refund/seller/list',
-            'accept':'http://localhost:8080/api/refund/acception',
-            'deny':'http://localhost:8080/api/refund/denial',
-            'done':'http://localhost:8080/api/refund/completion'
+            'listWithCondition': 'http://115.28.244.41:8080/api/refund/seller/list',
+            'accept':'http://115.28.244.41:8080/api/refund/acception',
+            'deny':'http://115.28.244.41:8080/api/refund/denial',
+            'done':'http://115.28.244.41:8080/api/refund/completion'
         },
         'marketing':{
             'group':{
-                'listWithCondition':'http://localhost:8080/api/marketing/group/goods/list',
-                'detail':'http://localhost:8080/api/marketing/group/goods/detail',
-                'start':'http://localhost:8080/api/marketing/group/purchase/start/:groupgoodsid',
-                'join':'http://localhost:8080/api/marketing/group/purchase/join/:groupid',
+                'listWithCondition':'http://115.28.244.41:8080/api/marketing/group/goods/list',
+                'detail':'http://115.28.244.41:8080/api/marketing/group/goods/detail',
+                'start':'http://115.28.244.41:8080/api/marketing/group/purchase/start/:groupgoodsid',
+                'join':'http://115.28.244.41:8080/api/marketing/group/purchase/join/:groupid',
                 'user':{
-                    'count':'http://localhost:8080/api/marketing/group/user/count/:groupID',
-                    'list':'http://localhost:8080/api/marketing/group/user/list/:groupID'
+                    'count':'http://115.28.244.41:8080/api/marketing/group/user/count/:groupID',
+                    'list':'http://115.28.244.41:8080/api/marketing/group/user/list/:groupID'
                 }
             },
             'flashsale':{
-                'list':'http://localhost:8080/api/flash/sale/bycondition/list',
-                'detail':'http://localhost:8080/api/flash/sale/detail',
-                'startFlash':'http://localhost:8080/api/start/buy/falsh/:flashid',
-                'update':'http://localhost:8080/api/flash/sale/update/stock'
+                'list':'http://115.28.244.41:8080/api/flash/sale/bycondition/list',
+                'detail':'http://115.28.244.41:8080/api/flash/sale/detail',
+                'startFlash':'http://115.28.244.41:8080/api/start/buy/falsh/:flashid',
+                'update':'http://115.28.244.41:8080/api/flash/sale/update/stock'
             },
             'rankgroup':{
-            	'listWithCondition':'http://localhost:8080/api/marketing/rankgroupGoods/goods/list',
-            	'detail':'http://localhost:8080/api/marketing/rankgroupGoods/goods/detail',
-            	'join':'http://localhost:8080/api/marketing/rankgroup/join/:groupID',
-            	'joinDetail':'http://localhost:8080/api/marketing/rankgroup/joinDetail/:groupID',
-            	'start':'http://localhost:8080/api/marketing/rankgroup/start/:groupgoodsid',
+            	'listWithCondition':'http://115.28.244.41:8080/api/marketing/rankgroupGoods/goods/list',
+            	'detail':'http://115.28.244.41:8080/api/marketing/rankgroupGoods/goods/detail',
+            	'join':'http://115.28.244.41:8080/api/marketing/rankgroup/join/:groupID',
+            	'joinDetail':'http://115.28.244.41:8080/api/marketing/rankgroup/joinDetail/:groupID',
+            	'start':'http://115.28.244.41:8080/api/marketing/rankgroup/start/:groupgoodsid',
             	'user':{
-            		 'count':'http://localhost:8080/api/marketing/rankgroup/user/count/:groupID',
-                     'list':'http://localhost:8080/api/marketing/rankgroup/user/list/:groupID'
+            		 'count':'http://115.28.244.41:8080/api/marketing/rankgroup/user/count/:groupID',
+                     'list':'http://115.28.244.41:8080/api/marketing/rankgroup/user/list/:groupID'
             	}
             },
             'auction':{
-                'listWithCondition':'http://localhost:8080/api/marketing/auction/goods/list',
-                'detail':'http://localhost:8080/api/marketing/auction/goods/detail',
-                'join':'http://localhost:8080/api/marketing/auction/purchase/join/:id',
-                'auction':'http://localhost:8080/api/marketing/auction/purchase/:id',
+                'listWithCondition':'http://115.28.244.41:8080/api/marketing/auction/goods/list',
+                'detail':'http://115.28.244.41:8080/api/marketing/auction/goods/detail',
+                'join':'http://115.28.244.41:8080/api/marketing/auction/purchase/join/:id',
+                'auction':'http://115.28.244.41:8080/api/marketing/auction/purchase/:id',
                 'user':{
-                    'count':'http://localhost:8080/api/marketing/auction/user/count/:id',
-                    'list':'http://localhost:8080/api/marketing/auction/user/list/:id'
+                    'count':'http://115.28.244.41:8080/api/marketing/auction/user/count/:id',
+                    'list':'http://115.28.244.41:8080/api/marketing/auction/user/list/:id'
                 }
             }
         },
         'login':{
-            'seller':'http://localhost:8080/api/login/seller',
-            'manager':'http://localhost:8080/api/login/manager'
+            'seller':'http://115.28.244.41:8080/api/login/seller',
+            'manager':'http://115.28.244.41:8080/api/login/manager'
         },
-        'logout':'http://localhost:8080/api/logout',
-        'refreshPwd':'http://localhost:8080/api/pwd/seller',
+        'logout':'http://115.28.244.41:8080/api/logout',
+        'refreshPwd':'http://115.28.244.41:8080/api/pwd/seller',
         //用户
         'user':{
-            'getLoginUser' :'http://localhost:8080/api/user/current'
+            'getLoginUser' :'http://115.28.244.41:8080/api/user/current'
         },
         //卖家
         'seller':{
-            'current' :'http://localhost:8080/api/seller/current'
+            'current' :'http://115.28.244.41:8080/api/seller/current'
         },
         //管理员
         'manager':{
-            'current' :'http://localhost:8080/api/manager/current'
+            'current' :'http://115.28.244.41:8080/api/manager/current'
         },
         'area' : {
-            'listCountry' : 'http://localhost:8080/api/statics/area/country/list',
+            'listCountry' : 'http://115.28.244.41:8080/api/statics/area/country/list',
             //根据国家查省 /{countryID}
-            'listProvince' : 'http://localhost:8080/api/statics/area/province/list',
+            'listProvince' : 'http://115.28.244.41:8080/api/statics/area/province/list',
             //根据省查市 /{provinceID}
-            'listCity' : 'http://localhost:8080/api/statics/area/city/list'
+            'listCity' : 'http://115.28.244.41:8080/api/statics/area/city/list'
         },
 
         'helpCenter':{
             'category' : {
-            	'list' : 'http://localhost:8080/api/statics/help/center/category/list',
-            	'single' : 'http://localhost:8080/api/statics/help/center/category/:id',
-            	'save' :'http://localhost:8080/api/statics/help/center/category/',
-            	'refresh' :'http://localhost:8080/api/statics/help/center/category/:id',
-            	'remove' :'http://localhost:8080/api/statics/help/center/category/:id'
+            	'list' : 'http://115.28.244.41:8080/api/statics/help/center/category/list',
+            	'single' : 'http://115.28.244.41:8080/api/statics/help/center/category/:id',
+            	'save' :'http://115.28.244.41:8080/api/statics/help/center/category/',
+            	'refresh' :'http://115.28.244.41:8080/api/statics/help/center/category/:id',
+            	'remove' :'http://115.28.244.41:8080/api/statics/help/center/category/:id'
             },
             'detail' : {
-            	'list' : 'http://localhost:8080/api/statics/help/center/detail/list/:categoryID',
-            	'single' : 'http://localhost:8080/api/statics/help/center/detail/:id',
-            	'save' :'http://localhost:8080/api/statics/help/center/detail/',
-            	'refresh' :'http://localhost:8080/api/statics/help/center/detail/:id',
-            	'remove' :'http://localhost:8080/api/statics/help/center/detail/:id'
+            	'list' : 'http://115.28.244.41:8080/api/statics/help/center/detail/list/:categoryID',
+            	'single' : 'http://115.28.244.41:8080/api/statics/help/center/detail/:id',
+            	'save' :'http://115.28.244.41:8080/api/statics/help/center/detail/',
+            	'refresh' :'http://115.28.244.41:8080/api/statics/help/center/detail/:id',
+            	'remove' :'http://115.28.244.41:8080/api/statics/help/center/detail/:id'
             }
         },
 
         // 收貨地址    
         'myReceieveAddress':{
             //用戶地址
-            'list' : 'http://localhost:8080/api/address/list/:uid/:offset/:size',
+            'list' : 'http://115.28.244.41:8080/api/address/list/:uid/:offset/:size',
             //all
-            'listAll':'http://localhost:8080/api/address/all',
+            'listAll':'http://115.28.244.41:8080/api/address/all',
             //详情
-            'single' : 'http://localhost:8080/api/address/:id',
+            'single' : 'http://115.28.244.41:8080/api/address/:id',
             //add
-            'add' : 'http://localhost:8080/api/address',
+            'add' : 'http://115.28.244.41:8080/api/address',
             //refresh
-            'refresh' : 'http://localhost:8080/api/address/:id',
+            'refresh' : 'http://115.28.244.41:8080/api/address/:id',
             //用戶地址
-            'remove' : 'http://localhost:8080/api/address/:id',
+            'remove' : 'http://115.28.244.41:8080/api/address/:id',
             //设置默认地址
-            'setDefault' : 'http://localhost:8080/api/address/default/:id'
+            'setDefault' : 'http://115.28.244.41:8080/api/address/default/:id'
         },
         'cashCoupon' :{
             //未消费的
-            'unusedCouponAmount' : 'http://localhost:8080/api/vip/coupon/cashcoupon/user/unused/amount/:uid',
-            'unusedCoupon' : 'http://localhost:8080/api/vip/coupon/cashcoupon/user/unused/:uid',
+            'unusedCouponAmount' : 'http://115.28.244.41:8080/api/vip/coupon/cashcoupon/user/unused/amount/:uid',
+            'unusedCoupon' : 'http://115.28.244.41:8080/api/vip/coupon/cashcoupon/user/unused/:uid',
             //已消费的
-            'consumedCouponAmount' : 'http://localhost:8080/api/vip/coupon/cashcoupon/user/consumed/amount/:uid',
-            'consumedCoupon' : 'http://localhost:8080/api/vip/coupon/cashcoupon/user/consumed/:uid',
+            'consumedCouponAmount' : 'http://115.28.244.41:8080/api/vip/coupon/cashcoupon/user/consumed/amount/:uid',
+            'consumedCoupon' : 'http://115.28.244.41:8080/api/vip/coupon/cashcoupon/user/consumed/:uid',
             //过期的
-            'overdueCouponAmount' : 'http://localhost:8080/api/vip/coupon/cashcoupon/user/overdue/amount/:uid',
-            'overdueCoupon' : 'http://localhost:8080/api/vip/coupon/cashcoupon/user/overdue/:uid',
+            'overdueCouponAmount' : 'http://115.28.244.41:8080/api/vip/coupon/cashcoupon/user/overdue/amount/:uid',
+            'overdueCoupon' : 'http://115.28.244.41:8080/api/vip/coupon/cashcoupon/user/overdue/:uid',
             //可使用的
-            'useableCouponAmount' : 'http://localhost:8080/api/vip/coupon/cashcoupon/user/useable/amount/:uid',
-            'useableCoupon' : 'http://localhost:8080/api/vip/coupon/cashcoupon/user/useable/:uid',
+            'useableCouponAmount' : 'http://115.28.244.41:8080/api/vip/coupon/cashcoupon/user/useable/amount/:uid',
+            'useableCoupon' : 'http://115.28.244.41:8080/api/vip/coupon/cashcoupon/user/useable/:uid',
             //是否可激活
-            'canActive' : 'http://localhost:8080/api/vip/coupon/cashcoupon/can/active/:code',
+            'canActive' : 'http://115.28.244.41:8080/api/vip/coupon/cashcoupon/can/active/:code',
             //激活券
-            'activeCashCoupon' : 'http://localhost:8080/api/vip/coupon/cashcoupon/user/:code'
+            'activeCashCoupon' : 'http://115.28.244.41:8080/api/vip/coupon/cashcoupon/user/:code'
 
         },
         'discountCoupon' :{
             //未消费的
-            'unusedCouponAmount' : 'http://localhost:8080/api/vip/coupon/discountcoupon/user/unused/amount/:uid',
-            'unusedCoupon' : 'http://localhost:8080/api/vip/coupon/discountcoupon/user/unused/:uid',
+            'unusedCouponAmount' : 'http://115.28.244.41:8080/api/vip/coupon/discountcoupon/user/unused/amount/:uid',
+            'unusedCoupon' : 'http://115.28.244.41:8080/api/vip/coupon/discountcoupon/user/unused/:uid',
             //已消费的
-            'consumedCouponAmount' : 'http://localhost:8080/api/vip/coupon/discountcoupon/user/consumed/amount/:uid',
-            'consumedCoupon' : 'http://localhost:8080/api/vip/coupon/discountcoupon/user/consumed/:uid',
+            'consumedCouponAmount' : 'http://115.28.244.41:8080/api/vip/coupon/discountcoupon/user/consumed/amount/:uid',
+            'consumedCoupon' : 'http://115.28.244.41:8080/api/vip/coupon/discountcoupon/user/consumed/:uid',
             //过期的
-            'overdueCouponAmount' : 'http://localhost:8080/api/vip/coupon/discountcoupon/user/overdue/amount/:uid',
-            'overdueCoupon' : 'http://localhost:8080/api/vip/coupon/discountcoupon/user/overdue/:uid',
+            'overdueCouponAmount' : 'http://115.28.244.41:8080/api/vip/coupon/discountcoupon/user/overdue/amount/:uid',
+            'overdueCoupon' : 'http://115.28.244.41:8080/api/vip/coupon/discountcoupon/user/overdue/:uid',
             //可使用的
-            'useableCouponAmount' : 'http://localhost:8080/api/vip/coupon/discountcoupon/user/useable/amount/:uid',
-            'useableCoupon' : 'http://localhost:8080/api/vip/coupon/discountcoupon/user/useable/:uid',
+            'useableCouponAmount' : 'http://115.28.244.41:8080/api/vip/coupon/discountcoupon/user/useable/amount/:uid',
+            'useableCoupon' : 'http://115.28.244.41:8080/api/vip/coupon/discountcoupon/user/useable/:uid',
             //是否可激活
-            'canActive' : 'http://localhost:8080/api/vip/coupon/discountcoupon/can/active/:code',
-            'activeDiscountCoupon' : 'http://localhost:8080/api/vip/coupon/discountcoupon/user/:code'
+            'canActive' : 'http://115.28.244.41:8080/api/vip/coupon/discountcoupon/can/active/:code',
+            'activeDiscountCoupon' : 'http://115.28.244.41:8080/api/vip/coupon/discountcoupon/user/:code'
 
         },
         'counpon':{
             'cashcounpon' : {
-                'list' : 'http://localhost:8080/api/vip/coupon/cashcoupon/list/:from/:size',
-                'count' : 'http://localhost:8080/api/vip/coupon/cashcoupon/amount',
-                'save' : 'http://localhost:8080/api/vip/coupon/cashcoupon/:amount',
-                'unlock' : 'http://localhost:8080/api/vip/coupon/cashcoupon/unlock/:ids'
+                'list' : 'http://115.28.244.41:8080/api/vip/coupon/cashcoupon/list/:from/:size',
+                'count' : 'http://115.28.244.41:8080/api/vip/coupon/cashcoupon/amount',
+                'save' : 'http://115.28.244.41:8080/api/vip/coupon/cashcoupon/:amount',
+                'unlock' : 'http://115.28.244.41:8080/api/vip/coupon/cashcoupon/unlock/:ids'
             },
             'discountcounpon' : {
-                'list' : 'http://localhost:8080/api/vip/coupon/discountcoupon/list/:from/:size',
-                'count' : 'http://localhost:8080/api/vip/coupon/discountcoupon/amount',
-                'save' : 'http://localhost:8080/api/vip/coupon/discountcoupon/:amount',
-                'unlock' : 'http://localhost:8080/api/vip/coupon/discountcoupon/unlock/:ids'
+                'list' : 'http://115.28.244.41:8080/api/vip/coupon/discountcoupon/list/:from/:size',
+                'count' : 'http://115.28.244.41:8080/api/vip/coupon/discountcoupon/amount',
+                'save' : 'http://115.28.244.41:8080/api/vip/coupon/discountcoupon/:amount',
+                'unlock' : 'http://115.28.244.41:8080/api/vip/coupon/discountcoupon/unlock/:ids'
             }
         },
         'goods':{//根据条件查询商品
-            'queryGoodsList':'http://localhost:8080/api/back/goods/list',
-            'up':'http://localhost:8080/api/goodsOperation/up/',
-            'down':'http://localhost:8080/api/goodsOperation/down/'
+            'queryGoodsList':'http://115.28.244.41:8080/api/back/goods/list',
+            'up':'http://115.28.244.41:8080/api/goodsOperation/up/',
+            'down':'http://115.28.244.41:8080/api/goodsOperation/down/'
         },
         'goodsOperation':{//商品操作
-            'merchantlist':'http://localhost:8080/api/goodsOperation/merchant/list',
-            'brandlist':'http://localhost:8080/api/goodsOperation/brands/',
-            'typelist':'http://localhost:8080/api/goods/type/list',
-            'show':'http://localhost:8080/api/goodsOperation/updateveiw/',
-            'save':'http://localhost:8080/api/goodsOperation/save',
-            'update':'http://localhost:8080/api/goodsOperation/update/',
-            'updatecount':'http://localhost:8080/api/goodsOperation/modfiycount/:gid/:count',
-            'checkcode':'http://localhost:8080/api/goodsOperation/checkcode/:code'
+            'merchantlist':'http://115.28.244.41:8080/api/goodsOperation/merchant/list',
+            'brandlist':'http://115.28.244.41:8080/api/goodsOperation/brands/',
+            'typelist':'http://115.28.244.41:8080/api/goods/type/list',
+            'show':'http://115.28.244.41:8080/api/goodsOperation/updateveiw/',
+            'save':'http://115.28.244.41:8080/api/goodsOperation/save',
+            'update':'http://115.28.244.41:8080/api/goodsOperation/update/',
+            'updatecount':'http://115.28.244.41:8080/api/goodsOperation/modfiycount/:gid/:count',
+            'checkcode':'http://115.28.244.41:8080/api/goodsOperation/checkcode/:code'
         },       
   
         'merchant':{//根据条件查询商品
-            'queryMerchantList':'http://localhost:8080/api/merchant/list',
-            'getMerchantInfo':'http://localhost:8080/api/merchant/info/:mid',
-            'update':'http://localhost:8080/api/merchant/updatemerchant',
-            'save':'http://localhost:8080/api/merchant/savemerchant',
-             'invoicelist':'http://localhost:8080/api/merchant/invoicetype/list',
-            'deliverylist':'http://localhost:8080/api/merchant/deliverytype/list'
+            'queryMerchantList':'http://115.28.244.41:8080/api/merchant/list',
+            'getMerchantInfo':'http://115.28.244.41:8080/api/merchant/info/:mid',
+            'update':'http://115.28.244.41:8080/api/merchant/updatemerchant',
+            'save':'http://115.28.244.41:8080/api/merchant/savemerchant',
+             'invoicelist':'http://115.28.244.41:8080/api/merchant/invoicetype/list',
+            'deliverylist':'http://115.28.244.41:8080/api/merchant/deliverytype/list'
         },
         'getinformation':{
-            'getSchoolSite':'http://localhost:8080/api/statics/information/sites/:siteid',
-            'getSchoolName':'http://localhost:8080/api/statics/information/sitesSchool/:names',
-            'saveSchool':'http://localhost:8080/api/statics/information/savedetails',
-            'alldetail':'http://localhost:8080/api/statics/information/alldetail',
-            'getMerchantInfo':'http://localhost:8080/api/merchant/info/:mid',
-            'update':'http://localhost:8080/api/merchant/updatemerchant',
-            'save':'http://localhost:8080/api/merchant/savemerchant',
-			 'invoicelist':'http://localhost:8080/api/merchant/invoicetype/list',
-            'deliverylist':'http://localhost:8080/api/merchant/deliverytype/list',
-            'deletedetail':'http://localhost:8080/api/statics/information/delete/:id',
-            'updateInfo':'http://localhost:8080/api/statics/information/update',
-            'getInfoById':'http://localhost:8080/api/statics/information/detail/:id',
-            'getInfoByName':'http://localhost:8080/api/statics/information/byname/detail',
-            'maxOrders':'http://localhost:8080/api/statics/information/detail/orders/:id'
+            'getSchoolSite':'http://115.28.244.41:8080/api/statics/information/sites/:siteid',
+            'getSchoolName':'http://115.28.244.41:8080/api/statics/information/sitesSchool/:names',
+            'saveSchool':'http://115.28.244.41:8080/api/statics/information/savedetails',
+            'alldetail':'http://115.28.244.41:8080/api/statics/information/alldetail',
+            'getMerchantInfo':'http://115.28.244.41:8080/api/merchant/info/:mid',
+            'update':'http://115.28.244.41:8080/api/merchant/updatemerchant',
+            'save':'http://115.28.244.41:8080/api/merchant/savemerchant',
+			 'invoicelist':'http://115.28.244.41:8080/api/merchant/invoicetype/list',
+            'deliverylist':'http://115.28.244.41:8080/api/merchant/deliverytype/list',
+            'deletedetail':'http://115.28.244.41:8080/api/statics/information/delete/:id',
+            'updateInfo':'http://115.28.244.41:8080/api/statics/information/update',
+            'getInfoById':'http://115.28.244.41:8080/api/statics/information/detail/:id',
+            'getInfoByName':'http://115.28.244.41:8080/api/statics/information/byname/detail',
+            'maxOrders':'http://115.28.244.41:8080/api/statics/information/detail/orders/:id'
 
 
         },
         'comment':{
-            'querycomment':'http://localhost:8080/api/allcomments'
+            'querycomment':'http://115.28.244.41:8080/api/allcomments'
         },
         'resource':{
-            'ueditor':'http://localhost:8080/api/resource/ueditor/upload',
-            'single':'http://localhost:8080/api/resource/upload/single'
+            'ueditor':'http://115.28.244.41:8080/api/resource/ueditor/upload',
+            'single':'http://115.28.244.41:8080/api/resource/upload/single'
         },
         'track':{//推广系统模块
-            'getAddetailInfo':'http://localhost:8080/api/track/addetail/info/:id',
-            'updateAddetail':'http://localhost:8080/api/track/addetail/updateAddetail',
-            'saveAddetail':'http://localhost:8080/api/track/addetail/saveAddetail',
-            'getAdmoduleInfo':'http://localhost:8080/api/track/admodule/info/:id',
-            'updateAdmodule':'http://localhost:8080/api/track/admodule/updateAdmodule',
-            'saveAdmodule':'http://localhost:8080/api/track/admodule/saveAdmodule',
-            'queryAdmoduleList':'http://localhost:8080/api/track/admodule/list',
-            'queryAddetailList':'http://localhost:8080/api/track/addetail/list',
-            'removeAddetail':'http://localhost:8080/api/track/addetail/remove/:id',
-            'removeAdmodule':'http://localhost:8080/api/track/admodule/remove/:id',
-            'admodulelist':'http://localhost:8080/api/track/admodule/list'
+            'getAddetailInfo':'http://115.28.244.41:8080/api/track/addetail/info/:id',
+            'updateAddetail':'http://115.28.244.41:8080/api/track/addetail/updateAddetail',
+            'saveAddetail':'http://115.28.244.41:8080/api/track/addetail/saveAddetail',
+            'getAdmoduleInfo':'http://115.28.244.41:8080/api/track/admodule/info/:id',
+            'updateAdmodule':'http://115.28.244.41:8080/api/track/admodule/updateAdmodule',
+            'saveAdmodule':'http://115.28.244.41:8080/api/track/admodule/saveAdmodule',
+            'queryAdmoduleList':'http://115.28.244.41:8080/api/track/admodule/list',
+            'queryAddetailList':'http://115.28.244.41:8080/api/track/addetail/list',
+            'removeAddetail':'http://115.28.244.41:8080/api/track/addetail/remove/:id',
+            'removeAdmodule':'http://115.28.244.41:8080/api/track/admodule/remove/:id',
+            'admodulelist':'http://115.28.244.41:8080/api/track/admodule/list'
         },
         'brand':{
-            'brandlist':'http://localhost:8080//api/brand/brands/',
-            'save':'http://localhost:8080/api/brand/save',
-            'getbyid':'http://localhost:8080/api/brand/updateveiw/',
-            'update':'http://localhost:8080/api/brand//update/',
-             'del':'http://localhost:8080/api/brand/'
+            'brandlist':'http://115.28.244.41:8080//api/brand/brands/',
+            'save':'http://115.28.244.41:8080/api/brand/save',
+            'getbyid':'http://115.28.244.41:8080/api/brand/updateveiw/',
+            'update':'http://115.28.244.41:8080/api/brand//update/',
+             'del':'http://115.28.244.41:8080/api/brand/'
 
 
         },
         'goodstype':{
-            'typelist':'http://localhost:8080//api/goodstype/list/',
-            'save':'http://localhost:8080/api/goodstype/save',
-            'getbyid':'http://localhost:8080/api/goodstype/single/',
-            'update':'http://localhost:8080/api/goodstype/update/',
-            'del':'http://localhost:8080/api/goodstype/del/'
+            'typelist':'http://115.28.244.41:8080//api/goodstype/list/',
+            'save':'http://115.28.244.41:8080/api/goodstype/save',
+            'getbyid':'http://115.28.244.41:8080/api/goodstype/single/',
+            'update':'http://115.28.244.41:8080/api/goodstype/update/',
+            'del':'http://115.28.244.41:8080/api/goodstype/del/'
         },
         'logistic':{
-            'logisticlist':'http://localhost:8080/api/logistic/express/list',
-            'expressinfo':'http://localhost:8080/api/logistic/express/info/:oid/:code/:codeid',
-            'postage':'http://localhost:8080/api/logistic/postage/calculation/muti'
+            'logisticlist':'http://115.28.244.41:8080/api/logistic/express/list',
+            'expressinfo':'http://115.28.244.41:8080/api/logistic/express/info/:oid/:code/:codeid',
+            'postage':'http://115.28.244.41:8080/api/logistic/postage/calculation/muti'
         },
         'wapGoods':{
 
-            'list':'http://localhost:8080/api/wap/goods/list',
-            'detail':'http://localhost:8080/api/wap/goods/detail/:gid',
-            'info':'http://localhost:8080/api/wap/goods/info/:gid',
-            'favorite':'http://localhost:8080/api/wap/goods/favorite/save/:gid',
-            'getFavorites':'http://localhost:8080/api/wap/goods/favorite/list',
-            'condition':'http://localhost:8080/api/wap/goods/condition/:gid',
-            'sku':'http://localhost:8080/api/wap/goods/single/:gid'
+            'list':'http://115.28.244.41:8080/api/wap/goods/list',
+            'detail':'http://115.28.244.41:8080/api/wap/goods/detail/:gid',
+            'info':'http://115.28.244.41:8080/api/wap/goods/info/:gid',
+            'favorite':'http://115.28.244.41:8080/api/wap/goods/favorite/save/:gid',
+            'getFavorites':'http://115.28.244.41:8080/api/wap/goods/favorite/list',
+            'condition':'http://115.28.244.41:8080/api/wap/goods/condition/:gid',
+            'sku':'http://115.28.244.41:8080/api/wap/goods/single/:gid'
         },
         'indexs':{
-            'indexlist':'http://localhost:8080/api/get/user',
-            'list':'http://localhost:8080/api/wap/goods/list',
-            'detail':'http://localhost:8080/api/wap/goods/detail/:gid',
-            'info':'http://localhost:8080/api/wap/goods/info/:gid',
-            'favorite':'http://localhost:8080/api/wap/goods/favorite/save/:gid',
-            'getFavorites':'http://localhost:8080/api/wap/goods/favorite/list',
-            'condition':'http://localhost:8080/api/wap/goods/condition/:gid',
-            'sku':'http://localhost:8080/api/wap/goods/single/:gid',
-            'isfav':'http://localhost:8080/api/wap/goods/favorite/isfav/:gid',
-            'delfav':'http://localhost:8080/api/wap/goods/favorite/del/:favId'
+            'indexlist':'http://115.28.244.41:8080/api/get/user',
+            'list':'http://115.28.244.41:8080/api/wap/goods/list',
+            'detail':'http://115.28.244.41:8080/api/wap/goods/detail/:gid',
+            'info':'http://115.28.244.41:8080/api/wap/goods/info/:gid',
+            'favorite':'http://115.28.244.41:8080/api/wap/goods/favorite/save/:gid',
+            'getFavorites':'http://115.28.244.41:8080/api/wap/goods/favorite/list',
+            'condition':'http://115.28.244.41:8080/api/wap/goods/condition/:gid',
+            'sku':'http://115.28.244.41:8080/api/wap/goods/single/:gid',
+            'isfav':'http://115.28.244.41:8080/api/wap/goods/favorite/isfav/:gid',
+            'delfav':'http://115.28.244.41:8080/api/wap/goods/favorite/del/:favId'
 
         }
     }

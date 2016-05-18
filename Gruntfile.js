@@ -90,7 +90,7 @@ module.exports = function (grunt) {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
         //hostname: '0.0.0.0',
-		hostname: 'localhost',
+		hostname: '192.168.2.198',
         livereload: 35729
       },
       livereload: {
