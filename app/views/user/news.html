@@ -1,13 +1,19 @@
-<div class="news_wrap">
-    <div class="newslist">
-        <div class="left fl icon-tuan"></div>
-        <div class="right fl">
-            <div class="title fl fs12">您团购的香水已结束</div>
-            <div class="time fr fs12">2016-05-01</div>
-            <div class="content cl fs10">经营者销售或者购买商品，可以以明示方式给中间人佣金。经营者给中间人佣金的，必须如实入账；中间人接收佣金的，必须如实入账</div>
+<div class="news_wrap" ng-controller="MyNewController">
+    <input type="hidden" id="pageId" value="new"></input>
+    <div ng-repeat="list in newList">
+        <div ng-click="updateStatus(list)" style="cursor:pointer">
+            <div class={{list.class}}>
+                <div class="left fl icon-tuan"></div>
+                <div class="right fl">
+                    <div class="title fl fs12">{{list.title}}</div>
+                    <div class="time fr fs12">{{list.addtime}}</div>
+                    <div class="content cl fs10">{{list.content}}</div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="newslist">
+   
+   <!-- <div class="newslist">
         <div class="left fl icon-jingpai"></div>
         <div class="right fl">
             <div class="title fl fs12">您团购的香水已结束</div>
@@ -22,8 +28,8 @@
             <div class="time fr fs12">2016-05-01</div>
             <div class="content cl fs10">经营者销售或者购买商品，可以以明示方式给中间人佣金。经营者给中间人佣金的，必须如实入账；中间人接收佣金的，必须如实入账</div>
         </div>
-    </div>
-    <div class="newslist seen">
+    </div> -->
+   <!--  <div class="newslist seen">
         <div class="left fl icon-tuan"></div>
         <div class="right fl">
             <div class="title fl fs12">您团购的香水已结束</div>
@@ -38,7 +44,7 @@
             <div class="time fr fs12">2016-05-01</div>
             <div class="content cl fs10">经营者销售或者购买商品，可以以明示方式给中间人佣金。经营者给中间人佣金的，必须如实入账；中间人接收佣金的，必须如实入账</div>
         </div>
-    </div>
+    </div>  -->
 </div>
 <nav></nav>
 <script>

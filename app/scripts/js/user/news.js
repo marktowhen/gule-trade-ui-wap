@@ -1,4 +1,4 @@
-function news_onload(){
+/*function news_onload(){
     $(document).on('click','.news_wrap .newslist',function(){
         $(this).addClass('seen');
         if($(this).hasClass('active')){
@@ -7,4 +7,4 @@ function news_onload(){
             $(this).addClass('active')
         }
     })
-}
+}*/

@@ -18,6 +18,10 @@ wapApp.service('ApiService', function () {
             'addtocart':'http://localhost:8888/api/cart',
             'count':'http://localhost:8888/api/cart/goods/count/:uid'
         },
+        'message':{
+            'list':'http://localhost:8888/api/message/list/:uid/:from/:size',
+            'updateStatus':'http://localhost:8888/api/message/:id'
+        },
         'order':{
             'listWithCondition': 'http://localhost:8888/api/orders/user/list',
             'accept':'http://localhost:8888/api/orders/acception',

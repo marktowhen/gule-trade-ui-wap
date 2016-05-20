@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-wapApp.controller('CouponCashController',function ($scope, $cookies, ConstantService,$stateParams, $state,CashCouponService, DiscountCouponService, CouponService) {
+wapApp.controller('MyNewController',function ($scope, $cookies, ConstantService,$stateParams, $state,CashCouponService, DiscountCouponService, CouponService) {
    
     var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
     CashCouponService.getUnusedCoupon("2").success(function(data){
