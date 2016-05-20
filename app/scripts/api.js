@@ -18,9 +18,13 @@ wapApp.service('ApiService', function () {
             'addtocart':'http://localhost:8888/api/cart',
             'count':'http://localhost:8888/api/cart/goods/count/:uid'
         },
+        'indexBanner':{
+            'imgList':'http://localhost:8888/api/statics/banner/list/:from/:size'
+        },
         'message':{
             'list':'http://localhost:8888/api/message/list/:uid/:from/:size',
-            'updateStatus':'http://localhost:8888/api/message/:id'
+            'updateStatus':'http://localhost:8888/api/message/:id',
+            'notheadcount':'http://localhost:8888/api/message/unread/amount/:uid'
         },
         'order':{
             'listWithCondition': 'http://localhost:8888/api/orders/user/list',

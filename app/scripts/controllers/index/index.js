@@ -18,12 +18,17 @@ wapApp.controller('IndexController',
          $scope.pagesize = 4;
 
 
-    	 GoodsListService.allGoodsList($scope.mid,$scope.tid,$scope.order,$scope.name,$scope.pagefrom,$scope.pagesize)
+    	GoodsListService.allGoodsList($scope.mid,$scope.tid,$scope.order,$scope.name,$scope.pagefrom,$scope.pagesize)
 		      .success(function(data){
          	if(data.code==200){
          		$scope.showlist = data.body;
          		console.log($scope.showlist)
          	}
-		 });
+		});
+        IndexService.banner("index",0,4).success(function(data){
+            if(data.ok){
+                $scope.imgList = data.body;
+            }
+        })
 
 });

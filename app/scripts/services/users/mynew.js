@@ -13,4 +13,7 @@ wapApp.service('MyNewService', function ($http, $location , ApiService) {
 	this.updatestatus = function(id){
 		return $http.get(ApiService.api.message.updateStatus.replace(':id',id));
 	};
+	this.notheadcount = function(uid){
+		return $http.get(ApiService.api.message.notheadcount.replace(':uid',uid));
+	};
 })
