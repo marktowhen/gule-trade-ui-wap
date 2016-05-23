@@ -2,13 +2,19 @@
     <input type="hidden" id="pageId" value="flashsale"></input>
         <ul>
              <li ng-repeat="fs in flashsale">
+                <div class="recommend1">
+                    <img src="images/one/tj.png" alt="">
+                </div>
                 <img src="images/one/tu1.png" alt="">
                 <div class="one-list-box1">
                     <div class="one-list-bg"></div>
                     <div class="one-list-text">
-                        <p class="fl">
-                            <a href="#">{{fs.goods.name}}</a>
-                        </p>
+                        <div class="fl" style="width:70%;">
+                            <p class="text-abb" style="width:100%;">
+                                <a href="#">{{fs.goods.name}}</a>
+                            </p>
+                            <span>蛋糕100-110g 香浓软化 入口即化</span>
+                        </div>
                         <p class="fr">剩余：<a href="#">{{fs.stock}}</a>份</p>
                     </div>
                 </div>
