@@ -1,7 +1,106 @@
-<div class="one-details center-view" ng-controller="FlashSaleDetailController">
+<div class="one-details center-view">
+	 	<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img src="images/one/tu1.png" alt=""></div>
+				<div class="swiper-slide">
+					<img src="images/one/tu1.png" alt=""></div>
+				<div class="swiper-slide">
+					<img src="images/one/tu1.png" alt=""></div>
+				<div class="swiper-slide">
+					<img src="images/one/tu1.png" alt=""></div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+	 	<div class="cl"></div>
+	 	<div class="od-box1">
+	 		<p>观赏鱼观赏鱼观赏鱼观赏鱼观赏鱼观赏鱼观赏鱼观赏鱼观赏鱼银龙</p>
+	 		<p>番茄多汁鲜嫩，富含苹果酸、柠檬酸等弱酸性成分，能减轻雀斑，使肌肤健康美丽。</p>
+	 		<div class="od1-bottom">
+	 			<div class="od-box1-left fl">剩余：<span>5份</span></div>
+	 			<div class="od-box1-right fr">距开始 00:00:00:0</div>
+	 		</div>
+	 	</div>
+	 	<div class="cl h10"></div>
+	 	<div class="od-box2">
+	 		<div class="od-box2-hd">秒杀规则</div>
+	 		<div class="od-box2-bd">
+	 			<ul>
+	 				<li class="cur">
+	 					<div class="od-box2-num fl">1</div>
+	 					<div class="od-box2-text fl">选择心仪商品</div>
+	 				</li>
+	 				<li>
+	 					<div class="od-box2-num fl">2</div>
+	 					<div class="od-box2-text fl">点击立即秒杀</div>
+	 				</li>
+	 				<li>
+	 					<div class="od-box2-num fl">3</div>
+	 					<div class="od-box2-text fl">付款秒杀成功</div>
+	 				</li>
+	 			</ul>
+	 		</div>
+	 	</div>
+	 	<div class="cl h10"></div>
+	 	<div class="ad-box2">
+	 		<div class="ad2-hd">
+	 			图文详情
+	 		</div>
+	 		<div class="cl"></div>
+	 		<div class="ad2-bd">
+	 			<img src="images/one/pics.png" alt="">
+	 		</div>
+	 	</div>
+	 	<div class="one-details-fix">
+	 		<div class="ad1-top">
+	 			<div class="ad1-left fl">
+	 				<p>￥<span class="ag">1.00</span>元</p>
+	 				<p>原价：￥764元</p>
+	 			</div>
+	 			<div class="ad1-right fl">
+	 				立即秒杀<i class="icon-arrow"></i>
+	 			</div>
+	 		</div>
+	 	</div>
+	 </div>
+	 <script type="text/javascript">
+	 	var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        slidesPerColumn: 1,
+        autoplay:5000,
+        loop:true,
+        pagination: '.swiper-pagination',
+		paginationClickable :true,
+    });
+	 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="one-details center-view" ng-controller="FlashSaleDetailController">
 	 	<div class="ad-img">
 	 		<img src="images/one/tu1.png" alt="">
-	 		<!-- {{goods.path}} -->
 	 	</div>
 	 	<div class="cl"></div>
 	 	<div class="ad-box1">
@@ -52,14 +151,6 @@
 	 					<div ng-repeat="img in goods.imgList">
 	 					<img src="{{img.path}}" alt="">
 	 					<div>
-	 					<!-- <img src="images/auction-details/i2.png" alt="">
-	 					<img src="images/auction-details/i3.png" alt="">
-	 					<img src="images/auction-details/i4.png" alt="">
-	 					<img src="images/auction-details/i5.png" alt="">
-	 					<img src="images/auction-details/i6.png" alt="">
-	 					<img src="images/auction-details/i7.png" alt="">
-	 					<img src="images/auction-details/i8.png" alt="">
-	 					<img src="images/auction-details/i9.png" alt=""> -->
 	 				</li>
 	 				<li>
 	 					<div class="ad-detail-info">
@@ -99,4 +190,4 @@
 		 		<p ng-click="statrtFlash()">{{flashsale.BtnValue}}<i class={{flashsale.point}}></i></p>
 		 	</div>
 	 	</div>
-	 </div>
+	 </div> -->
