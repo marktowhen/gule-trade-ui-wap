@@ -1,4 +1,4 @@
-<div class="auction-details center-view">
+<div class="auction-details center-view" ng-controller="AuctionDetailController">
 	<div class="ad-img">
 		<img src="images/auction-details/a1.png" alt=""></div>
 	<div class="cl"></div>
@@ -7,10 +7,10 @@
 			<div class="ad1-left cur fl">
 				<p>
 					起拍价：￥
-					<span class="ag">0</span>
+					<span class="ag">{{auction.startPrice}}</span>
 					元
 				</p>
-				<p>参考价：￥764元</p>
+				<p>参考价：￥{{goods.price}}元</p>
 			</div>
 			<div class="ad1-left fl ad1-left1">
 				<p>
@@ -45,7 +45,7 @@
 		<div class="ad1-mid">
 			<div class="adm-left fl">
 				<p>
-					<a href="#">拉卡拉收款宝手机pos机信用卡刷卡器移动pos...</a>
+					<a href="#">{{goods.name}}</a>
 				</p>
 			</div>
 			<div class="adm-right fl">
@@ -56,8 +56,8 @@
 		<div class="cl"></div>
 		<div class="ad1-mid2">
 			<ul>
-				<li>加价幅度：10元</li>
-				<li>保证金：10元</li>
+				<li>加价幅度：{{auction.addPrice}}元</li>
+				<li>保证金：{{auction.deposit}}元</li>
 				<li>
 					<a href="#" class="ra">0人</a>
 					参拍
