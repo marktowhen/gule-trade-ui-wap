@@ -16,6 +16,7 @@ wapApp.controller('FlashSaleDetailController', function ($scope, $cookies,$state
 			$scope.flashsale=data.body;
 			runTiming(data.body);
 			getGoods($scope.flashsale.gid);
+			getGoodSku($scope.flashsale.skuId);
 			//console.log($scope.goods);
 		
 		};
@@ -29,6 +30,14 @@ wapApp.controller('FlashSaleDetailController', function ($scope, $cookies,$state
 			
 		});
 			
+	};
+	var getGoodSku = function(skuid){
+		FlashSaleService.getsku(skuid).success(function(data){
+			if(data.ok){
+				$scope.goodSku = data.body;
+			};
+		});
+
 	};
 
 	var cart = function(flashsale,goods){
@@ -45,7 +54,7 @@ wapApp.controller('FlashSaleDetailController', function ($scope, $cookies,$state
 	  		$scope.showtime = new Date(flashsale.showTime);	
 	  		var oft=Math.round(($scope.endtime-new Date())/1000);
 	  					if(oft<=0&&flashsale.stock>0){
-	  						flashsale.classes = "ad1-bottom org";
+	  						flashsale.classes = "ad1-right orange fr";
 	  					$scope.statrtFlash = function(){
 							FlashSaleService.startFlash($scope.flashsale.id,cart($scope.flashsale,$scope.goods)).success(function(data){
 								if(data.ok){		
@@ -67,7 +76,7 @@ wapApp.controller('FlashSaleDetailController', function ($scope, $cookies,$state
 			  		 		flashsale.point="icon-arrow";
 			  		 		return TimePromise;
 			  		 	}else if(oft<=0&&flashsale.stock==0){
-			  		 		flashsale.classes = "ad1-bottom gra";
+			  		 		flashsale.classes = "ad1-right gray fr";
 			  		 		flashsale.BtnValue="已结束";
 			  		 		flashsale.dao=('00:00:00:00');
 			  		 		flashsale.point="";
@@ -79,7 +88,7 @@ wapApp.controller('FlashSaleDetailController', function ($scope, $cookies,$state
 	  					$scope.showtime = new Date(flashsale.showTime);	
 	  					var oft=Math.round(($scope.endtime-new Date())/1000);
 			  		 	if(oft>0&&flashsale.stock>0){
-			  		 		flashsale.classes = "ad1-bottom";
+			  		 		flashsale.classes = "ad1-right fr";
 			  		 		flashsale.BtnValue="即将开始";
 			  		 		flashsale.point="";
 			  		 		var ofd=parseInt(oft/3600/24);
