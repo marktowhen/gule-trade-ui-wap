@@ -14,9 +14,13 @@ wapApp.service('AuctionService', ['$http', 'ApiService', function($http, ApiServ
                     {'params': {'offset':from, 'size':size}});
     };
 
-    this.detail  = function (ggid){
+    /*this.detail  = function (ID){
         return  $http.get(ApiService.api.marketing.auction.detail,
-                    {'params': {'ggid':ggid}});
+                    {'params': {'ID':ID}});
+    };*/
+    this.detail  = function (ID){
+        return  $http.get(ApiService.api.marketing.auction.detail,
+                    {'params': {'ID':ID}});
     };
 
 }]);

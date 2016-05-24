@@ -20,6 +20,7 @@ wapApp.controller('AuctionListController',
 						if('AUCTIONING'==data.body[i].status){
 							getEndTime(data.body[i]);
 						}
+						
 						$scope.ggoods .push( data.body[i]);
 					}
 					if (data.body.length<size) {
