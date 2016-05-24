@@ -65,7 +65,8 @@ wapApp.service('ApiService', function () {
                 'list':'http://localhost:8888/api/flash/sale/bycondition/list',
                 'detail':'http://localhost:8888/api/flash/sale/detail',
                 'startFlash':'http://localhost:8888/api/start/buy/falsh/:flashid',
-                'update':'http://localhost:8888/api/flash/sale/update/stock'
+                'update':'http://localhost:8888/api/flash/sale/update/stock',
+                'getsku':'http://localhost:8888/api/goods/operation/sku/byId/:id'
             },
             'rankgroup':{
             	'listWithCondition':'http://localhost:8888/api/marketing/rankgroupGoods/goods/list',

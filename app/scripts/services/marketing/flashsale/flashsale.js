@@ -20,4 +20,7 @@
  	this.updateStock = function(flashsale){
  		return $http.put(ApiService.api.marketing.flashsale.update,flashsale);
  	};
+ 	this.getsku = function(id){
+ 		return $http.get(ApiService.api.marketing.flashsale.getsku.replace(":id",id));
+ 	}
  })
