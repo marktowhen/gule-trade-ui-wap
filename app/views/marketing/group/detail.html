@@ -1,17 +1,148 @@
-<div class="group-purchase-details center-view" ng-controller="GroupDetailController">
-	<!-- <div id="slide" class="swipe">
-		<div class='swipe-wrap'>
-			<div ng-repeat="img in goods.imgList">
-				 <img src="{{img.path}}" alt="{{goods.name}}" />
+<div class="group-purchase-details center-view">
+	 	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<img src="images/product-details/p1.png" alt=""></div>
+			<div class="swiper-slide">
+				<img src="images/product-details/p1.png" alt=""></div>
+			<div class="swiper-slide">
+				<img src="images/product-details/p1.png" alt=""></div>
+			<div class="swiper-slide">
+				<img src="images/product-details/p1.png" alt=""></div>
+		</div>
+		<!-- 小圆点 -->
+		<div class="swiper-pagination"></div>
+	</div>
+	 	<div class="pd-box1">
+	 		<div class="pd1-top">
+	 			<div class="adm-left fl">
+	 				<p><a href="#">新鲜青柠檬6个14.9【初夏来杯柠檬水】</a></p>
+	 			</div>
+	 			<div class="adm-right fl">
+	 				<i class="icon-share"></i>
+	 				<p class="b3">分享</p>
+	 			</div>	
+	 		</div>
+	 		<div class="cl"></div>
+	 		<p style="color: #B0B0B0;margin-bottom:5px;" class="fs12">单果约70g 酸才够爽 沁人心脾</p>
+	 		<div class="group-nums">
+	 			<ul>
+	 				<li>快递：0.00</li>
+	 				<li>累计销量：819件</li>
+	 			</ul>
+	 		</div>
+	 	</div>
+	 	<div class="cl"></div>
+	 	<div class="group-info1">开团并邀请2人开团，人数不足自动退款</div>
+	 	<div class="cl"></div>
+	 	<div class="joined-group-box5">
+			<div class="joined-box5-hd">拼团规则</div>
+			<div class="joined-box5-bd">
+				<ul>
+					<li class="cur">
+						<div class="joined-rule-left fl">1</div>
+						<div class="joined-rule-right fl">
+							选择<br/>心仪商品
+						</div>
+					</li>
+					<li>
+						<div class="joined-rule-left fl">2</div>
+						<div class="joined-rule-right fl">
+							支付开团<br/>或参团
+						</div>
+					</li>
+					<li>
+						<div class="joined-rule-left fl">3</div>
+						<div class="joined-rule-right fl">
+							邀请好友<br/>参团
+						</div>
+					</li>
+					<li>
+						<div class="joined-rule-left fl">4</div>
+						<div class="joined-rule-right fl">
+							达成人数<br/>参团成功
+						</div>
+					</li>
+				</ul>
 			</div>
-			
 		</div>
-		<div class="dot">
-			<ul>
-				<li ng-repeat="img in goods.imgList"></li>
-			</ul>
-		</div>
-	</div> -->
+		<div class="cl h10"></div>
+	 	<div class="ad-box2">
+	 		<div class="ad2-hd">
+	 			图文详情
+	 		</div>
+	 		<div class="cl"></div>
+	 		<div class="ad2-bd">
+	 			<img src="images/one/pics.png" alt="">
+	 		</div>
+	 	</div>
+	 	<div class="cl"></div>
+	 	<div class="pd-box5">
+	 		<div class="pd5-info1 fl">
+	 			<i class="icon-home-1"></i>
+	 			<p>首页</p>
+	 		</div>
+	 		<div class="pd5-info3 fl" style="background-color:#FD9490;width:40%;">
+	 			<a href="#no-payment.html">
+	 				<p>￥21.90 </p>
+	 				<p>单独购</p>
+	 			</a>
+	 		</div>
+	 		<div class="pd5-info3 fl" style="width:40%;">
+	 			<a href="#no-payment.html">
+	 				<p>￥14.90 </p>
+	 				<p>3人团</p>
+	 			</a>
+	 		</div>
+	 	</div>
+	 	<div class="gotop">
+	 		<i class="icon-arrow"></i>
+	 		<p>TOP</p>
+	 	</div>
+	 </div>
+	 <script type="text/javascript">
+	 var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        slidesPerColumn: 1,
+        autoplay:5000,
+        loop:true,
+        pagination: '.swiper-pagination',
+		paginationClickable :true,
+    });
+    var img_hei=$('.swiper-container img').width()*0.8;
+        $('.swiper-container img').height(img_hei)
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="group-purchase-details center-view" ng-controller="GroupDetailController">
 	<div class="swiper-container" id="product_swiper_container">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide" ng-repeat="img in goods.imgList">
@@ -33,22 +164,17 @@
 			<span class="p2 fl">拼团价：</span>
 			<div class="gd-dropdown fl">
 				<ul>
-					<!-- <li>
-						<a href="javascript:;">100人以上 <span class="nn">￥200.00</span></a>
-					</li> -->
+					
 					<li class="cur" ng-repeat="ps in groupGoods.priceSettings">
 						<a href="javascript:;">{{ps.floor}}人 <span class="nn">￥{{ps.price}}</span></a>
 					</li>
-					<!-- <li>
-						<a href="javascript:;" >300人以上 <span class="nn">￥150.00</span></a>
-					</li> -->
+					
 				</ul>
 			</div>
 			<div class="gd-right1 fl">
 				<ul>
 					<li  class="cur">当前价格</li>
-					<!-- <li>当前价格</li>
-					<li>当前价格</li> -->
+					
 				</ul>
 			</div>
 		</div>
@@ -143,4 +269,4 @@
 <script type="text/javascript">
 var img_hei=$('#product_swiper_container img').width()*0.8;
         $('#product_swiper_container img').height(img_hei)
-</script>
+</script> -->
