@@ -10,36 +10,39 @@
         </header>
         <section class="products clearfix">    
             <ul>
-                <li class="fs12">
-                    <div class="groupbuy-poa1">
+                <li class="fs12" ng-repeat="group in ggoods">
+                    <div class="groupbuy-poa1" ng-show="group.showhide">
                         <img src="images/index/hot.png" alt="">
+                    </div>
+                     <div class="groupbuy-poa1" ng-show="group.hideshow">
+                        <img src="images/index/new.png" alt="">
                     </div>
                     <div class="product_pic">
                         <a href="#/marketing/group/details.html">
-                            <img src="images/index/product1.png" alt="">
+                            <img src="{{group.goods.path}}" alt="">
                         </a>       
                     </div>
                     <div class="groupbuy_info">
                         <div class="groupbuy_title">
-                            <a class="fs14" href="#/marketing/group/details.html">【直降5元】 移动机秒到刷卡器信2用29.9元【甜过你的初恋】</a>
-                            <p class="b3 fs12" style="text-indent: 1em;">吃葡萄不吐葡萄皮 · 硬脆多汁 · 甜酸可人</p>
+                            <a class="fs14" href="#/marketing/group/details.html">{{group.goods.name+''+group.sku.propertiesValue}}</a>
+                            <p class="b3 fs12" style="text-indent: 1em;">{{group.goods.about}}</p>
                         </div>
                         <div class="cl h10"></div>
                         <div class="startgroupbuy fs12">
                             <div class="groupprice fl col-65">
                                 <div class="groupprice-now fl">
-                                    <p class="fl">￥<span class="fs24 mr5"> 29.90</span></p>
-                                    <p class="fl b3 mr15 mt3">/ 2斤</p>
+                                    <p class="fl">￥<span class="fs24 mr5"> {{group.groupPrice}}</span></p>
+                                    <p class="fl b3 mr15 mt3">元</p>
                                 </div>
                                 <div class="groupprice-old fl b3 mt3">
-                                    原价：34.9
+                                    原价：{{group.sku.price}}
                                 </div>
                             </div>
-                            <div class="groupgo col-35 fr"><a href="#/marketing/group/details.html">2人团 | 去开团</a></div>
+                            <div class="groupgo col-35 fr"  ng-show="group.show"><a href="#/marketing/group/details.html">{{group.groupPeople}}人团 | 去开团</a></div>
                         </div>
                     </div>
                 </li>
-                <li class="fs12">
+                <!-- <li class="fs12">
                     <div class="groupbuy-poa1">
                         <img src="images/index/new.png" alt="">
                     </div>
@@ -119,7 +122,7 @@
                             <div class="groupgo col-35 fr"><a class="group-over" href="#/marketing/group/details.html">已结束</a></div>
                         </div>
                     </div>
-                </li>
+                </li> -->
             </ul>
         </section>
     </div>

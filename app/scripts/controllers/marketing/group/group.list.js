@@ -17,6 +17,13 @@ wapApp.controller('GroupListController',
 			.success(function(data){
 				if(data.ok){
 					for (var i = 0; i < data.body.length; i++) {
+						var group = data.body[i];
+						if(group.sku.grade==2){
+							group.hideshow = true;
+						}
+						if(group.sku.grade==3){
+							group.showhide=true;
+						}
 						$scope.ggoods .push( data.body[i]);
 					}
 					if (data.body.length<size) {
