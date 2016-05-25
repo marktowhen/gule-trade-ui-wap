@@ -1,77 +1,121 @@
-<div class="no-payment center-view" ng-controller="OrderConfirmController">
-	<div class="pay-address" ng-show="transaction.addressid != ''">
-		<div class="pad-box1">
-			<i class="icon-dizhi fl"></i>
-			<p>收货地址</p>
-			<div class="change-but fr"><a href="#/orders/address/list.html">修改</a></div>
-			<div class="cl h10"></div>
-			<div class="consignee-info1">
-				<p>收货人： {{transaction.receiver}}</p>
-				<p>{{transaction.mobile}}</p>
-			</div>
-		</div>
-		<div class="cl"></div>
-		<div class="pad-box2">
-			<div class="consignee-info2">
-				<p>收货地址 ：{{transaction.countryName}}{{transaction.provinceName}}{{transaction.cityName}}{{transaction.address}}</p>
-			</div>
-		</div>
-	</div>
-	<div class="cl h10"></div>
-	<div class="pay-info" ng-repeat="order in transaction.orders">
-		<div class="pi-box1">
-			<div class="pi1-hd">店铺： {{order.mname}}</div>
-			<div class="cl h10"></div>
-			<div class="pi1-bd" ng-repeat="goods in order.goods">
-				<div class="pi1-pic fl">
-					<img src="images/no-payment/p1.png" alt="">
-				</div>
-				<div class="pi1-info fl">
-					<div class="pi1-text">{{goods.gname}}</div>
-					<div class="pi1-price">
-						<p>
-							<span class="s1 fl">￥{{goods.price}}</span>
-						</p>
-						<p>x {{goods.count}}</p>
-					</div>
-				</div>
-			</div>
+<div class="no-payment center-view">
+	<div class="pay-address">
+		<div class="pd-box1">
+			<p class="fs18 fl">送至</p>
+			<div class="change-but fr">编辑</div>
 			<div class="cl"></div>
-			<div class="pi1-freight">
-				<p>运费</p>
-				<p>{{(order.postage && order.postage > 0)? (order.postage|currency:"￥") : "包邮"}}</p>
+			<div class="consignee-info1 fs18">
+				<p class="fl">收货人：麻婷婷</p>
+				<p class="fr">18560032060</p>
 			</div>
-			<div class="cl"></div>
-			<div class="pi1-message">
-				<p>留言信息</p>
-				<input type="text" class="pim" placeholder="请勿填写有关支付、发票、物流配送等信息。谢谢！">
-			</div>
-			<!-- <div class="cl"></div>
-			<div class="pi1-total">
-				<p>
-					合计：
-					<span class="s2">￥168.00</span>
-				</p>
-				<p>共计1件商品</p>
-			</div> -->
+			<div class="cl h10"></div>
+			<p style="color:#999;">收货地址 ：山东省-济南市-历下区泉城路世茂国际广场B座</p>
 		</div>
-	</div>
-	<div class="cl h10"></div>
-	<!-- <div class="pay-discount">
-		<p>优惠</p>
-		<i class="icon-arrow fr"></i>
-		<p>使用优惠</p>
-	</div>
-	<div class="cl h10"></div> -->
-	<div class="pay-price">
-		<p></p>
-		<p>需付： ￥{{finalmoney|number:2}}</p>
 	</div>
 	<div class="cl h20"></div>
+	<div class="pay-info">
+		<div class="pi-box1">
+			<div class="pi1-pic fl">
+				<img src="images/no-payment/p1.png" alt=""></div>
+			<div class="pi1-info fl">
+				<div class="pi1-text">新鲜青柠檬6个14.9【初夏来杯柠檬水】</div>
+				<div class="pi1-price">
+					<p class="fs12">
+						￥
+						<span class="fs18">14.90</span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="pi1-total">
+		<p>
+			总价：
+			<span class="fs12">
+				￥
+				<span class="fs18">14.90</span>
+			</span>
+		</p>
+		<p>快递：￥0.00</p>
+	</div>
+	<div class="cl"></div>
 	<div class="payment-method">
-		<div class="pm-box1" ng-click="submit()">微信安全支付</div>
-		<!-- <div class="cl h13"></div>
-		<div class="pm-box2">其他支付方式</div> -->
+		<div class="pm-box1-hd">请选择支付方式</div>
+		<div class="pm-box1-bd">
+			<div class="pm-circle cur fl"> <i class="icon-right"></i>
+			</div>
+			<div class="wx fl">
+				<img src="images/weixin.png" alt=""></div>
+			<p class="mt3" style="color:#929292;">微信支付</p>
+			<div class="cl"></div>
+			<div class="pm-box1">立即支付</div>
+		</div>
 	</div>
 	<div class="cl h70"></div>
 </div>
+
+<!-- <div class="no-payment center-view" ng-controller="OrderConfirmController">
+<div class="pay-address" ng-show="transaction.addressid != ''">
+	<div class="pad-box1"> <i class="icon-dizhi fl"></i>
+		<p>收货地址</p>
+		<div class="change-but fr">
+			<a href="#/orders/address/list.html">修改</a>
+		</div>
+		<div class="cl h10"></div>
+		<div class="consignee-info1">
+			<p>收货人： {{transaction.receiver}}</p>
+			<p>{{transaction.mobile}}</p>
+		</div>
+	</div>
+	<div class="cl"></div>
+	<div class="pad-box2">
+		<div class="consignee-info2">
+			<p>
+				收货地址 ：{{transaction.countryName}}{{transaction.provinceName}}{{transaction.cityName}}{{transaction.address}}
+			</p>
+		</div>
+	</div>
+</div>
+<div class="cl h10"></div>
+<div class="pay-info" ng-repeat="order in transaction.orders">
+	<div class="pi-box1">
+		<div class="pi1-hd">店铺： {{order.mname}}</div>
+		<div class="cl h10"></div>
+		<div class="pi1-bd" ng-repeat="goods in order.goods">
+			<div class="pi1-pic fl">
+				<img src="images/no-payment/p1.png" alt=""></div>
+			<div class="pi1-info fl">
+				<div class="pi1-text">{{goods.gname}}</div>
+				<div class="pi1-price">
+					<p>
+						<span class="s1 fl">￥{{goods.price}}</span>
+					</p>
+					<p>x {{goods.count}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="cl"></div>
+		<div class="pi1-freight">
+			<p>运费</p>
+			<p>
+				{{(order.postage && order.postage > 0)? (order.postage|currency:"￥") : "包邮"}}
+			</p>
+		</div>
+		<div class="cl"></div>
+		<div class="pi1-message">
+			<p>留言信息</p>
+			<input type="text" class="pim" placeholder="请勿填写有关支付、发票、物流配送等信息。谢谢！"></div>
+	</div>
+</div>
+<div class="cl h10"></div>
+<div class="pay-price">
+	<p></p>
+	<p>需付： ￥{{finalmoney|number:2}}</p>
+</div>
+<div class="cl h20"></div>
+<div class="payment-method">
+	<div class="pm-box1" ng-click="submit()">微信安全支付</div>
+</div>
+<div class="cl h70"></div>
+</div>
+-->
