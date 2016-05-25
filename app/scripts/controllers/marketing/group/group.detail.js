@@ -48,7 +48,7 @@ setTimeout(function(){var swiper = new Swiper('#product_swiper_container', {
 		//店铺
 
 
-		$scope.groupID = $stateParams.group_id ;
+		
 		var isEmpty = function(str){
 			if(str==null || str==undefined || str==''){
 				return true;
@@ -65,8 +65,7 @@ setTimeout(function(){var swiper = new Swiper('#product_swiper_container', {
 		}
 
 		$scope.join = function(){
-			if ($scope.groupID) {
-				var car  = creatCar($scope.groupGoods, $scope.goods,$scope.groupGoods.currentPrice.price);
+				var car  = creatCar($scope.groupGoods, $scope.goods);
 				GroupBuyService.join($scope.groupID,car)
 				.success(function(data){
 					if(data.ok){
@@ -75,12 +74,10 @@ setTimeout(function(){var swiper = new Swiper('#product_swiper_container', {
 						alert(data.message);
 					}
 				})
-			}
-			
 		}
 
 		$scope.start = function(){
-			GroupBuyService.start($scope.groupGoods.id,creatCar($scope.groupGoods, $scope.goods,$scope.groupGoods.currentPrice.price))
+			GroupBuyService.start($scope.groupGoods.id,creatCar($scope.groupGoods, $scope.goods))
 				.success(function(data){
 					if(data.ok){
 						$state.go('orderconfirm.page');
@@ -94,8 +91,8 @@ setTimeout(function(){var swiper = new Swiper('#product_swiper_container', {
 			
 		}
 
-		var creatCar = function(groupGoods, goods, price){
-	    	var goodsInCar = [{'gid':goods.gid,'skuid':groupGoods.skuid,'gname':goods.name,'mid':goods.mid,'mname':goods.mName,'price':price,'count':1}];
+		var creatCar = function(groupGoods, goods){
+	    	var goodsInCar = [{'gid':goods.gid,'skuid':groupGoods.skuid,'gname':goods.name,'mid':goods.mid,'mname':goods.mName,'price':groupGoods.groupPrice,'count':1}];
 	    	
 	    	var orderInCar = [{'mid':goods.mid,'mname':goods.mName,'postage':0,'type':'GROUP','goods':goodsInCar}];
 	    	return {'orders':orderInCar};
