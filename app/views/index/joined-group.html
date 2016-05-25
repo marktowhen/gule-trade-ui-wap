@@ -1,15 +1,26 @@
 <div class="joined-group center-view">
-		<div class="joined-group-box1">
-			<div class="joined-box1-left fl">
-				<a href="#">
-					<img src="../../images/joined-group/group1.png" alt="">
-				</a>
-			</div>	
-			<div class="joined-box1-right fl">
-				<p>拉卡拉收款宝手机pos机信用卡刷卡器移动pos...</p>
-				<p>10人成团：<span class="org2">20.00</span>元</p>
-			</div>	
+		<div class="open-group-success">
+			<div class="open-top">
+				<div class="open-circle fl"><i class="icon-right"></i></div>
+				<p class="fl fs18" style="color:#33CC66;">开团成功</p>
+			</div>
+			<div class="cl"></div>
+			<p>快去邀请好友加入吧</p>
 		</div>
+		<div class="cl h10"></div>
+		<div class="pay-info">
+	 		<div class="pi-box1"> 
+	 			<div class="pi1-pic fl">
+	 				<img src="images/no-payment/p1.png" alt="">
+	 			</div>
+ 				<div class="pi1-info fl">
+ 					<div class="pi1-text">新鲜青柠檬6个14.9【初夏来杯柠檬水】</div>
+ 					<div class="pi1-price">
+ 						<p class="fs12">￥<span class="fs18">14.90</span></p>
+ 					</div>
+ 				</div>
+	 		</div>
+ 		</div>	
 		<div class="cl h10"></div>
 		<div class="joined-group-box2">
 			<div class="joined-box2-top">
@@ -61,9 +72,14 @@
 				</ul>
 			</div>
 		</div>
-		<div class="cl h10"></div>
-		<div class="joined-group-box3">距结束 <span>00:60:12</span></div>
-		<div class="cl h10"></div>
+		<div class="cl"></div>
+		<div class="joined-group-box3">
+			<img src="images/bg-line.png" alt="">
+			<div class="joined-b3-poa">
+				剩余&nbsp;<span>23</span>:<span>59</span>:<span>16</span>&nbsp; 结束
+			</div>
+		</div>
+		<div class="cl"></div>
 		<div class="joined-group-box4">
 			<div class="joined-box4-hd">猜您可能还喜欢</div>
 			<div class="cl h20"></div>
@@ -101,7 +117,7 @@
 					<li class="cur">
 						<div class="joined-rule-left fl">1</div>
 						<div class="joined-rule-right fl">
-							选择<br/>心仪的商品
+							选择<br/>心仪商品
 						</div>
 					</li>
 					<li>
@@ -127,23 +143,62 @@
 		</div>
 		<div class="cl h30"></div>
 		<div class="joined-group-box6">
-			<a href="#marketing/group/list.html">
-				<div class="joined-box6-left fl">
-					<i class="icon-home-1 fl"></i>
-					<p>更多团购</p>
-				</div>
-			</a>
-			<div class="joined-box6-right fl">我也要参团</div>
+			<div class="joined-box6-left fl">
+				<i class="icon-home-1 fl"></i>
+				<p>更多团购</p>
+			</div>
+			<div class="joined-box6-right fl">还差5人组团成功</div>
 		</div>
 		<div class="joined-gray">
-			<i class="icon-hands fr"></i>
+			<!-- <i class="icon-hands fr"></i> -->
 			<div class="cl h35"></div>
-			<p class="fr">分享给小伙伴参团</p>
-			<div class="cl h153"></div>
 			<div class="joined-gray-bottom">
-				<p>还差9人就能组团成功</p>
+				<p>还差9人，快快分享吧！</p>
 			</div>
+			<p class="">分享给小伙伴</p>
+			<p class="">咻的一下就成团了</p>
+			<div class="cl h153"></div>
+			<p class="fr">分享朋友圈</p>
+			<p class="fr">更容易成团哦</p>
+			<div class="cl"></div>
 		</div>
+		<div class="pop_up fs10">
+            <h5 class="title fs14">分享</h5>
+            <div class="third-party cl">
+                <div class="qq fl">
+                    <a href="">
+                        <i class="icon-QQ-feixiang"></i>
+                        <h5>QQ</h5>
+                    </a> 
+                </div>
+                <div class="weixin fl">
+                    <a href="">
+                        <i class="icon-weixin-fenxiang"></i>
+                        <h5>微信</h5>
+                    </a>
+                </div>
+                <div class="weibo fl">
+                    <a href="">
+                        <i class="icon-weibo-fenxiang"></i>
+                        <h5>微博</h5>
+                    </a>
+                </div>
+                <div class="pengyouquan fl">
+                    <a href="">
+                        <i class="icon-pengyouquan-fenxiang"></i>
+                        <h5>朋友圈</h5>
+                    </a>
+                </div>
+                <div class="more fl">
+                    <a href="">
+                        <i class="icon-jiahao-1"></i>
+                        <h5>更多</h5>
+                    </a>
+                </div>
+            </div>
+            <div class="cancel fs14">取消</div>
+            <i class="icon-close"></i>
+        </div> 
 	</div>
 	<script type="text/javascript">
 		$(".joined-gray").click(
@@ -154,6 +209,7 @@
 		$(document).ready(
 			function() {
 				$(".joined-gray").delay(10000).show(0);
+				$(".pop_up").delay(10000).show(0);
 			}
 		);
 		
