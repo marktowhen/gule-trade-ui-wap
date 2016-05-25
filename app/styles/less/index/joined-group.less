@@ -3,39 +3,40 @@
 	width: 100%;
 	overflow: hidden;
 	background-color:#F3F3F3;
-	position: relative;
-	margin-bottom: 65px;
+	margin-bottom: 52px;
 }
-.joined-group-box1{
+.open-group-success{
+	border-bottom: 1px solid #33CC66;
 	padding-top: 10px;
-	padding-bottom: 12px;
-	padding-left: 2%;
-	padding-right: 2%;
+	padding-bottom: 15px;
+	background-color:#F5FCF7;
+	text-align: center;
+	color: #595959;
+}
+.open-top{
+	width:31%;
+	text-align: center;
 	overflow: hidden;
-	background-color: #fff;
+	margin: 0 auto;
+	height: 25px;
+	line-height: 25px;
 }
-.joined-box1-left{
-	width: 30%;
-	margin-right: 5%;
+.open-circle{
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	background-color:#33CC66;
+	border-radius: 10px;
+	margin-top: 3px;
+	margin-right: 2px;
 }
-.joined-box1-right{
-	width: 65%;
-	font-size: 16px;
+.open-circle i.icon-right{
+	color: #fff;
 }
-.joined-box1-right p:nth-child(1){
-	margin-bottom: 15px;
-}
-.joined-box1-right p:nth-child(2){
-	font-size: 14px;
-}
-span.org2{
-	color: #FF6701;
-	font-size: 16px;
-}
-
-
-.joined-box1-left a img{
-	width: 100%;
+.joined-group .pay-info{
+	border-top: none;
+	border-bottom: none;
 }
 .joined-group-box2{
 	overflow: hidden;
@@ -60,9 +61,13 @@ span.org2{
 .joined-box2-img{
 	margin-right: 2%;
 }
+.joined-box2-share{
+	height: 40px;
+	line-height: 35px;
+}
 .joined-box2-share a{
-	color: #FF6701;
-	font-weight: bold;
+	color: #FF473f;
+	font-size: 18px;
 }
 .joined-box2-head a{
 	color: #000;
@@ -102,22 +107,42 @@ span.org2{
 .joined-group-box3{
 	height: 50px;
 	line-height: 50px;
+	color:#333;
+	font-size: 12px;
 	text-align: center;
-	color: #fff;
-	background-color:#A0A0A0;
+	padding-left: 5%;
+	padding-right: 5%;
+	position: relative;
 }
-.joined-group-box3 span{
-	font-size: 16px;
+.joined-group-box3 img{
+	width: 100%;
+}
+.joined-b3-poa{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:100%;
+	margin: 0 auto;
+}
+.joined-b3-poa span{
+	width: 15px;
+	height: 15px;
+	background-color:#404040;
+	border-radius: 4px;
+	color: #fff;
+	padding:3px 4px;
+	display: initial !important;
 }
 .joined-group-box4{
 	background-color: #fff;
 	padding-top: 10px;
 	overflow: hidden;
 	padding-bottom: 10px;
+	color: #4B4B4B;
 }
 .joined-box4-hd{
 	height: 14px;
-	font-size: 16px;
+	font-size: 18px;
 	padding-left: 2%;
 }
 .joined-box4-bd{
@@ -126,6 +151,7 @@ span.org2{
 .joined-box4-bd>ul>li{
 	float: left;
 	width: 32%;
+	height: 160px;
 	margin-right: 1%;
 	overflow: hidden;
 }
@@ -141,7 +167,7 @@ span.org2{
 	font-size: 14px;
 }
 .joined-box4-bd>ul>li p a{
-	color: #000;
+	color:#4b4b4b;
 }
 .joined-box4-text{
 	padding-left: 2%;
@@ -154,7 +180,6 @@ span.joined-price{
 .joined-group-box5{
 	padding-top: 10px;
 	padding-bottom: 15px;
-	/*padding-left: 1%;*/
 	background-color: #fff;
 	overflow: hidden;
 }
@@ -163,6 +188,7 @@ span.joined-price{
 	font-weight: bold;
 	margin-bottom: 15px;
 	padding-left: 2%;
+	color: #B0B0B0 !important;
 }
 .joined-box5-bd{
 	padding-left: 1%;
@@ -195,31 +221,33 @@ span.joined-price{
 	color: #fff;
 }
 .joined-group-box6{
-	height:65px;
-	line-height:65px;
+	height:50px;
+	line-height:50px;
 	color: #fff;
 	font-size: 16px;
 	font-weight: bold;
 	cursor: pointer;
 	position: fixed;
-	bottom: 0;
+	bottom:0;
 	width: 100%;
 }
 .joined-box6-left{
+	background-color: #fff;
 	width: 40%;
-	background-color:#777777;
 	text-align: center;
 	position: relative;
 	padding-left: 5%;
+	color:#333333;
+	border-top: 1px solid #ccc;
 }
 .joined-box6-right{
 	width: 60%;
-	background-color: #FF6600;
+	background-color: #FF473f;
 	text-align: center;
 }
 .joined-box6-left i.icon-home-1{
 	position: absolute;	
-	top: 19px;
+	top:10px;
 	font-size: 24px;
 	left: 7%;
 }
@@ -249,3 +277,19 @@ span.joined-price{
 	overflow: hidden;
 	text-align: center;
 }
+.joined-group .pop_up{
+	display: none;
+}
+.pop_up{position: fixed;bottom: 0;left: 0;z-index: 15;width: 100%;height: 185px;background: #fff;border-radius: 8px 8px 0 0;color: #303030;}
+.pop_up .title{text-align: center;line-height: 44px;}
+.pop_up .third-party{margin-top: 2px}
+.pop_up .third-party>div{width: 20%;height: 70px;border-radius: 23px;text-align: center}
+.pop_up i{font-size: 45px}
+.pop_up .qq i{color: #14e2fa}
+.pop_up .weixin i{color: #7ee58a}
+.pop_up .weibo i{color: #ff4a87}
+.pop_up .pengyouquan i{color: #ff784e}
+.pop_up .more i{color: #7b91ff}
+.pop_up .third-party h5{font-size: 10px;margin-top: 6px;color: #303030}
+.pop_up .cancel{width: 92%;height: 35px;margin: 20px 4% 0;text-align: center;line-height: 35px;background: #ccc;border-radius: 5px;}
+.pop_up .icon-close{color:#bbb;font-size: 22px;position: absolute;right: 8px;top: 6px}
