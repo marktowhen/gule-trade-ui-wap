@@ -31,14 +31,13 @@
                         <div class="startgroupbuy fs12">
                             <div class="groupprice fl col-65">
                                 <div class="groupprice-now fl">
-                                    <p class="fl">￥<span class="fs24 mr5"> {{group.groupPrice}}</span></p>
-                                    <p class="fl b3 mr15 mt3">元</p>
+                                    <p class="fl mr15">￥<span class="fs24 mr5"> {{group.groupPrice}}</span></p>
                                 </div>
-                                <div class="groupprice-old fl b3 mt3">
+                                <div class="groupprice-old fl b3 mt3 del">
                                     原价：{{group.sku.price}}
                                 </div>
                             </div>
-                            <div class="groupgo col-35 fr"  ng-show="group.show"><a href="#/marketing/group/details.html">{{group.groupPeople}}人团 | 去开团</a></div>
+                            <div class="groupgo col-35 fr"  ng-show="group.show"><a href="#/marketing/group/details.html?ggid={{group.id}}&gid={{group.gid}}">{{group.groupPeople}}人团 | 去开团</a></div>
                         </div>
                     </div>
                 </li>

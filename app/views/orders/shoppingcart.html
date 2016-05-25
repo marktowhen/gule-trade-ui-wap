@@ -21,10 +21,10 @@
         补上品 超值组合全场满99包邮</div>
                                     <div class="price">
                                         <div class="price_body">
-                                            <span ng-class="{disabled: good.count <= 1 || good.stock <= 0}" ng-click="countdown(good, order)" class="currentprice">￥{{good.pprice}}</span>
+                                            <span class="currentprice">￥{{good.pprice}}</span>
                                             <span class="originalprice">￥{{good.price}}</span>
                                             <span class="num fr">
-                                                <i class="reduce icon-jianhao fl"></i>
+                                                <i class="reduce icon-jianhao fl" ng-class="{disabled: good.count <= 1 || good.stock <= 0}" ng-click="countdown(good, order)"></i>
                                                 <i class="number fl">{{good.count}}</i>
                                                 <i ng-class="{disabled: (good.count == good.stock || good.stock == 0)}" class="add icon-jia fl" ng-click="countup(good, order)"></i>
                                             </span>

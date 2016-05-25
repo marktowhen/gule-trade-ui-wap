@@ -8,14 +8,14 @@
  * Controller of the jingyunshopApp
  */
 wapApp.controller('GroupDetailController', 
-		 function ($scope, $state,GroupBuyService, $stateParams,GoodsDetailsService,MerchantService) {
+		 function ($scope, $state,GroupBuyService, $stateParams,GoodsDetailsService,MerchantService,FlashSaleService) {
 	
 		//团购商品
 		GroupBuyService.detail($stateParams.ggid)
 			.success(function(data){
 				if(data.ok){
 					$scope.groupGoods = data.body;
-					$scope.groupGoods.currentPrice = data.body.priceSettings[0];
+					goodsSku($scope.groupGoods.skuid);
 				}
 			}).error(function(data){
 
@@ -37,6 +37,14 @@ setTimeout(function(){var swiper = new Swiper('#product_swiper_container', {
 
 						
 		});
+
+		var goodsSku = function(skuid){
+			FlashSaleService.getsku(skuid).success(function(data){
+				if(data.ok){
+					$scope.goodSku = data.body;
+				};
+			});
+		}
 		//店铺
 
 

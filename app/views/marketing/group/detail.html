@@ -1,34 +1,50 @@
-<div class="group-purchase-details center-view">
+<div class="group-purchase-details center-view" ng-controller="GroupDetailController">
 	 	<div class="swiper-container">
 		<div class="swiper-wrapper">
-			<div class="swiper-slide">
+			<div class="swiper-slide" ng-repeat="img in goods.imgList">
+				<img src="{{img.path}}" alt="{{goods.name}}"></div>
+			<!-- <div class="swiper-slide">
 				<img src="images/product-details/p1.png" alt=""></div>
 			<div class="swiper-slide">
 				<img src="images/product-details/p1.png" alt=""></div>
 			<div class="swiper-slide">
-				<img src="images/product-details/p1.png" alt=""></div>
-			<div class="swiper-slide">
-				<img src="images/product-details/p1.png" alt=""></div>
+				<img src="images/product-details/p1.png" alt=""></div> -->
 		</div>
 		<!-- 小圆点 -->
 		<div class="swiper-pagination"></div>
 	</div>
+
 	 	<div class="pd-box1">
 	 		<div class="pd1-top">
 	 			<div class="adm-left fl">
-	 				<p><a href="#">新鲜青柠檬6个14.9【初夏来杯柠檬水】</a></p>
+	 				<p><a href="#">{{goods.name+''+goodSku.propertiesValue}}</a></p>
 	 			</div>
 	 			<div class="adm-right fl">
 	 				<i class="icon-share"></i>
 	 				<p class="b3">分享</p>
+
+					<!-- 分享代码 -->
+					<div class="jiathis_style">
+						<a class="jiathis_button_qzone"></a>
+						<a class="jiathis_button_tsina"></a>
+						<a class="jiathis_button_tqq"></a>
+						<a class="jiathis_button_weixin"></a>
+						<a class="jiathis_button_renren"></a>
+						<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+						<a class="jiathis_counter_style"></a>
+					
+					<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+					<!-- JiaThis Button END -->
+					</div>
+	 			
 	 			</div>	
 	 		</div>
 	 		<div class="cl"></div>
-	 		<p style="color: #B0B0B0;margin-bottom:5px;" class="fs12">单果约70g 酸才够爽 沁人心脾</p>
+	 		<p style="color: #B0B0B0;margin-bottom:5px;" class="fs12">{{goods.about}}</p>
 	 		<div class="group-nums">
 	 			<ul>
 	 				<li>快递：0.00</li>
-	 				<li>累计销量：819件</li>
+	 				<li>累计销量：{{goods.volume}}件</li>
 	 			</ul>
 	 		</div>
 	 	</div>
@@ -36,7 +52,11 @@
 	 	<div class="group-info1">开团并邀请2人开团，人数不足自动退款</div>
 	 	<div class="cl"></div>
 	 	<div class="joined-group-box5">
-			<div class="joined-box5-hd">拼团规则</div>
+			<div class="joined-box5-hd">
+				<p class="fl fs16">拼团规则</p>
+				<p class="fr fs12">了解详情</p>
+			</div>
+			<div class="cl"></div>
 			<div class="joined-box5-bd">
 				<ul>
 					<li class="cur">
@@ -72,8 +92,8 @@
 	 			图文详情
 	 		</div>
 	 		<div class="cl"></div>
-	 		<div class="ad2-bd">
-	 			<img src="images/one/pics.png" alt="">
+	 		<div class="ad2-bd" ng-bind-html="goods.content">
+	 			<!-- <img src="images/one/pics.png" alt=""> -->
 	 		</div>
 	 	</div>
 	 	<div class="cl"></div>
@@ -82,16 +102,14 @@
 	 			<i class="icon-home-1"></i>
 	 			<p>首页</p>
 	 		</div>
-	 		<div class="pd5-info3 fl" style="background-color:#FD9490;width:40%;">
-	 			<a href="#no-payment.html">
-	 				<p>￥21.90 </p>
+	 		<div class="pd5-info3 fl" style="background-color:#FD9490;width:40%;" data-target="#now-buy-dialog" data-toggle="modal">
+	 				<p>￥{{goods.price}} </p>
 	 				<p>单独购</p>
-	 			</a>
 	 		</div>
 	 		<div class="pd5-info3 fl" style="width:40%;">
 	 			<a href="#no-payment.html">
-	 				<p>￥14.90 </p>
-	 				<p>3人团</p>
+	 				<p>￥{{groupGoods.groupPrice}}</p>
+	 				<p>{{groupGoods.groupPeople}}人团</p>
 	 			</a>
 	 		</div>
 	 	</div>
@@ -99,6 +117,7 @@
 	 		<i class="icon-arrow"></i>
 	 		<p>TOP</p>
 	 	</div>
+	 	<now-buy-dialog id='now-buy-dialog'></now-buy-dialog>
 	 </div>
 	 <script type="text/javascript">
 	 var swiper = new Swiper('.swiper-container', {
