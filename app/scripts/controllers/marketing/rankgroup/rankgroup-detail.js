@@ -17,7 +17,27 @@ wapApp.controller('RankGroupDetailController',
 					$scope.groupGoods = data.body;
 					$scope.groupGoods.groupID= data.body.groupID;
 					$scope.groupID=$scope.groupGoods.groupID;
+					$scope.deposit=$scope.groupGoods.deposit;
 					$scope.groupGoods.currentPrice = data.body.priceSettings[0];
+					
+					/*团购详情*/
+					if(!isEmpty($scope.groupID)){
+						$scope.showGroup = true;
+						//查询参团数量
+						RankGroupService.joinDetail($scope.groupID)
+						.success(function(data){
+							if(data.ok){
+								$scope.group = data.body;
+								$scope.start=$scope.group.start; // 团开始时间
+								$scope.count=$scope.group.buyers.length; // 参团人数
+								$scope.leader=$scope.group.leader; // 团长
+								runTiming();
+							}
+						}).error(function(data){
+
+						});
+					}
+					/*团购详情  结束*/
 				}
 			}).error(function(data){
 
@@ -26,23 +46,20 @@ wapApp.controller('RankGroupDetailController',
 		GoodsDetailsService.detail($stateParams.gid)
 		.success(function(data2){
 				$scope.goods = data2.body;
-				
-setTimeout(function(){var swiper = new Swiper('#product_swiper_container', {
-        slidesPerView: 1,
-        slidesPerColumn: 1,
-        autoplay:5000,
-        loop:true,
-        pagination: '.swiper-pagination',
-		paginationClickable :true,
-    });},200)
-	
+				$scope.goodId = $stateParams.gid;
+		setTimeout(function(){var swiper = new Swiper('#product_swiper_container', {
+		        slidesPerView: 1,
+		        slidesPerColumn: 1,
+		        autoplay:5000,
+		        loop:true,
+		        pagination: '.swiper-pagination',
+				paginationClickable :true,
+		    });},200)
 
+		})
+		
 
-						
-		});
 		//店铺
-
-
 		$scope.groupID = $scope.groupID;
 		var isEmpty = function(str){
 			if(str==null || str==undefined || str==''){
@@ -79,6 +96,12 @@ setTimeout(function(){var swiper = new Swiper('#product_swiper_container', {
 		$scope.joinDetails = function(){
 			$state.go('joined-rankgroup');
 						
+			
+			
+		}
+		//跳转到参团成功详情页 。。。。。。
+		$scope.toCart = function(){
+			$state.go('product-details',{cart:1});
 			
 			
 		}
@@ -121,7 +144,8 @@ setTimeout(function(){var swiper = new Swiper('#product_swiper_container', {
 		}
 
 		///购物车
-		$scope.toCart  = function(gid){
+		/*$scope.toCart  = function(){
+			alert("ddd")
 			$state.go('product-details',{cart:1});
-		}
+		}*/
 });
