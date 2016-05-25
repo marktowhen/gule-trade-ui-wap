@@ -53,8 +53,8 @@ wapApp.controller('RankGroupJoinController',
 		if(data.ok){
 			$scope.group = data.body;
 			$scope.start=$scope.group.start; // 团开始时间
-			$scope.count=$scope.group.buyers.length; // 团开始时间
-			$scope.leader=$scope.group.leader; // 团开始时间
+			$scope.count=$scope.group.buyers.length; // 参团人数
+			$scope.leader=$scope.group.leader; // 团长
 			runTiming();
 		}
 	}).error(function(data){
@@ -66,9 +66,9 @@ wapApp.controller('RankGroupJoinController',
 	
 	$scope.groupID='uxetSgu7SBqLCoZJF-9RtA';
 	$scope.join = function(){
-		//到这里
+		//参团
 		if ($scope.groupID) {
-			var car  = creatCar($scope.groupGoods, $scope.goods,$scope.groupGoods.currentPrice.price);
+			var car  = creatCar($scope.groupGoods, $scope.goods,10);
 			RankGroupService.join($scope.groupID,car)
 			.success(function(data){
 				if(data.ok){

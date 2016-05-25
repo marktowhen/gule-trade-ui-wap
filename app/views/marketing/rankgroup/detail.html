@@ -35,6 +35,9 @@
 				
 				<div ng-if="groupID" >
 					<ul>
+					     <li>
+							<a href="javascript:;">0人以上 <span class="nn">￥{{goods.price}}</span></a>
+						</li>
 						<li class="cur" ng-repeat="ps in groupGoods.priceSettings">
 							<a href="javascript:;">{{ps.floor}}人以上 <span class="nn">￥{{ps.price}}</span></a>
 						</li>
@@ -42,6 +45,9 @@
 		        </div>
 				<div  ng-if="!groupID" >
 					<ul>
+						 <li>
+							<a href="javascript:;">0人以上 <span class="nn">￥{{goods.price}}</span></a>
+						 </li>
 						<li  ng-repeat="ps in groupGoods.priceSettings">
 							<a href="javascript:;">{{ps.floor}} 人以上 <span class="nn">￥{{ps.price}}</span></a>
 						</li>
@@ -50,9 +56,7 @@
 			</div>
 			<div class="gd-right1 fl">
 				<ul>
-					<li  class="cur">当前价格{{count}}</li>
-					<!-- <li>当前价格</li>
-					<li>当前价格</li> -->
+					<li  class="cur">当前价格</li>
 				</ul>
 			</div>
 		</div>
@@ -61,7 +65,7 @@
 	<div class="gd-progress" ng-if="showGroup">
 		<dl class="gd-barbox">
 			<dd class="gd-barline fl">
-				<div class="gd-charts" style="width: {{count/groupGoods.currentPrice.floor*100}}%"></div>
+				<div class="gd-charts" style="width: {{count/ps.floor*100}}%"></div>
 			</dd>
 		</dl>
 		<p>
@@ -118,17 +122,17 @@
 	<div class="cl"></div>
 	<div class="pd-box5">
 		<div class="pd5-info3 fr" ng-click="start()" ng-if="!groupID" >
-			<p>￥{{groupGoods.currentPrice.price}}</p>
+			<p>￥{{deposit}}</p>
 			<p>立即开团</p>
 		</div>
 		<div class="pd5-info3 fr" ng-click="join()" ng-if="groupID" >
-			<p>￥{{groupGoods.currentPrice.price}}</p>
+			<p>￥{{deposit}}</p>
 			<p>立即参团</p>
 		</div>
 		<!-- <div class="pd5-info2 fr" ng-click="buyit()">
 			<p>单独购买</p>
 		</div> -->
-		<div class="pd5-info2 fr" ng-click="joinDetails()">
+		<div class="pd5-info2 fr" ng-click="toCart()">
 			<p>加入购物车</p>
 		</div>
 		<div class="pd5-info1 fr">
