@@ -2,25 +2,44 @@
 <div class="user center-view">
 	<div class="user-box1">
 		<div class="user1-info">
-			<div class="left1 fl">
+			<div class="left1">
 				<a href="#user-info.html">
 					<img src="images/user/pic1.png" alt="">
 				</a>
 			</div>
-			<div class="right1 fr">
+			<div class="right1">
 				<p>我是小呀小乐谷</p>
-				<div class="right1-cir fr">
-					<i class="icon-wenhao"></i>
-				</div>
-				<p><a href="#/user/myintegral.html">0积分</a></p>
-				<i class="icon-xiaoxi-1 fr"></i>
-				<p><a href="#/news.html">消息</a></p>
+			</div>
+			<div class="user1-poa">
+				<i class="icon-ling-xiaoxi" style="margin-right: 5px;"></i>
+				<i class="icon-me-sz"></i>
 			</div>
 		</div>
 	</div>
 	<div class="cl"></div>
+	<div class="user-box3-top">
+		<ul>
+			<li>
+				<a ui-sref="orderhistory.all">
+					<div class="user3-left fl">购买记录</div>
+					<div class="user3-right fr">
+						<i class="icon-arrow"></i>
+					</div>
+				</a>
+			</li>
+		</ul>
+	 </div>
+	 <div class="cl h10"></div>
 	<div class="user-box2">
 		<ul>
+			<li>
+				<a ui-sref="orderhistory.all">
+					<div class="user2-top">
+						<i class="icon-me-qb"></i>
+					</div>
+					<div class="user2-bottom">全部</div>
+				</a>
+			</li>
 			<li>
 				<a ui-sref="orderhistory.topay">
 					<div class="user2-top">
@@ -45,78 +64,19 @@
 					<div class="user2-bottom">待收货</div>
 				</a>
 			</li>
-			<li>
-				<a ui-sref="orderhistory.received">
-					<div class="user2-top">
-						<i class="icon-FLOWER"></i>
-					</div>
-					<div class="user2-bottom">待评价</div>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<div class="user2-top">
-						<i class="icon-flag"></i>
-					</div>
-					<div class="user2-bottom">维权</div>
-				</a>
-			</li>
 		</ul>
 	</div>
 	<div class="user-box3">
-	 		<div class="user-box3-top">
-	 			<ul>
-	 				<li>
-	 					<a ui-sref="orderhistory.all">
-		 					<div class="user3-left fl">全部订单</div>
-		 					<div class="user3-right fr">
-		 						<i class="icon-arrow"></i>
-		 					</div>
-	 					</a>
-	 				</li>
-	 			</ul>
-	 		</div>
+	 		
 	 		<div class="cl h10"></div>
 	 		<div class="user-box3-bottom">
 	 			<ul>
 	 				<li>
-	 					<a href="#mycollection.html">
-		 					<div class="user3-top">
-		 						<i class="icon-shouchang"></i>
-		 					</div>
-		 					<div class="user3-bottom">收藏夹</div>
-	 					</a>
-	 				</li>
-	 				<li>
-	 					<a href="#/user/coupon/cash.html">
-		 					<div class="user3-top">
-		 						<i class="icon-youhuiquan-ME"></i>
-		 					</div>
-		 					<div class="user3-bottom">优惠券</div>
-	 					</a>
-	 				</li>
-	 				<li>
-	 					<a href="#partner.html">
-		 					<div class="user3-top">
-		 						<i class="icon-renren"></i>
-		 					</div>
-		 					<div class="user3-bottom">我是合伙人</div>
-	 					</a>
-	 				</li>
-	 				<li>
-	 					<a href="#/user/address/list.html">
-		 					<div class="user3-top">
-		 						<i class="icon-me"></i>
-		 					</div>
-		 					<div class="user3-bottom">收货地址</div>
-	 					</a>
-	 				</li>
-	 				<li>
 	 					<a href="#">
 		 					<div class="user3-top">
-		 						<i class="icon-tuangou-ME"></i>
+		 						<i class="icon-me-pt"></i>
 		 					</div>
-		 					<div class="user3-bottom">团购订单</div>
+		 					<div class="user3-bottom">拼团订单</div>
 	 					</a>
 	 				</li>
 	 				<li>
@@ -128,19 +88,35 @@
 	 					</a>
 	 				</li>
 	 				<li>
-	 					<a href="#user/myintegral.html">
+	 					<a href="#/user/address/list.html">
 		 					<div class="user3-top">
-		 						<i class="icon-jifenduihuan-ME"></i>
+		 						<i class="icon-me"></i>
 		 					</div>
-		 					<div class="user3-bottom">积分兑换</div>
+		 					<div class="user3-bottom">收货地址</div>
 	 					</a>
 	 				</li>
 	 				<li>
-	 					<a href="#/erweima.html">
+	 					<a href="#mycollection.html">
 		 					<div class="user3-top">
-		 						<i class="icon-erweima-ME"></i>
+		 						<i class="icon-shouchang"></i>
 		 					</div>
-		 					<div class="user3-bottom">扫一扫</div>
+		 					<div class="user3-bottom">收藏夹</div>
+	 					</a>
+	 				</li>
+	 				<li>
+	 					<a href="">
+		 					<div class="user3-top">
+		 						<i class="icon-me-kf"></i>
+		 					</div>
+		 					<div class="user3-bottom">售后服务</div>
+	 					</a>
+	 				</li>
+	 				<li>
+	 					<a href="">
+		 					<div class="user3-top" style="color: #fff;background-color:#ff473f;border-radius:13px;">
+		 						<i class="icon-wenhao" style="color: #fff;font-size:16px;"></i>
+		 					</div>
+		 					<div class="user3-bottom">常见问题</div>
 	 					</a>
 	 				</li>
 	 			</ul>
