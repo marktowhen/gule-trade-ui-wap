@@ -94,10 +94,10 @@ wapApp.controller('AuctionListController', function ($scope, AuctionService,$int
 							var ofh=parseInt((zft%(3600*24))/3600);
 							var ofm=parseInt((zft%3600)/60);
 							var ofs=zft%60;
-							auction.end=(ofd+' 天 ' +ofh+ ' 时 ' +ofm+ ' 分 ' +ofs+' 秒');
+							auction.end=(ofh+ '时' +ofm+ '分' +ofs+'秒');
 			  		 		return TimePromise;
 			  		 	}else if(zft<0&&oft<0){
-			  		 		auction.end=("距结束： 00时00分00秒");
+			  		 		auction.end=("00时00分00秒");
 			  		 		return TimePromise;
 			  		 	}
 	  		TimePromise = $interval(function(){
@@ -110,7 +110,7 @@ wapApp.controller('AuctionListController', function ($scope, AuctionService,$int
 							var ofh=parseInt((oft%(3600*24))/3600);
 							var ofm=parseInt((oft%3600)/60);
 							var ofs=oft%60;
-							auction.end=(ofd+' 天 ' +ofh+ ' 时 ' +ofm+ ' 分 ' +ofs+' 秒');
+							auction.end=(ofh+ '时' +ofm+ '分' +ofs+'秒');
 			  		 	}
 	  			
 	  		 	
