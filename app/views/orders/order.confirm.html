@@ -15,17 +15,19 @@
 		</div>
 	</div>
 	<div class="cl h20"></div>
-	<div class="pay-info" ng-repeat="order in transaction.orders">
+<div ng-repeat="order in transaction.orders">
+	<div class="pay-info">
 		<div class="pi-box1" ng-repeat="goods in order.goods">
 			<div class="pi1-pic fl">
 				<img src="images/no-payment/p1.png" alt=""></div>
 			<div class="pi1-info fl">
 				<div class="pi1-text">{{goods.gname}}</div>
 				<div class="pi1-price">
-					<p class="fs12">
+					<p class="fs12 fl">
 						￥
 						<span class="fs18">{{goods.price}}</span>
 					</p>
+					<p class="fs12 fr" style="color: rgb(153, 153,153);margin-right: 10px;">x {{goods.count}}</p>
 				</div>
 			</div>
 		</div>
@@ -41,7 +43,9 @@
 		<p>快递: 
 			{{(order.postage && order.postage > 0)? (order.postage|currency:"￥") : "包邮"}}
 		</p>
+		
 	</div>
+</div>
 	<div class="cl"></div>
 	<div class="payment-method">
 		<div class="pm-box1-hd">请选择支付方式</div>
@@ -56,9 +60,15 @@
 		</div>
 	</div>
 	<div class="cl h70"></div>
-</div>
+</div> 
 
-<!-- <div class="no-payment center-view" ng-controller="OrderConfirmController">
+
+
+
+
+
+
+<!--  <div class="no-payment center-view" ng-controller="OrderConfirmController">
 <div class="pay-address" ng-show="transaction.addressid != ''">
 	<div class="pad-box1"> <i class="icon-dizhi fl"></i>
 		<p>收货地址</p>
@@ -122,4 +132,4 @@
 </div>
 <div class="cl h70"></div>
 </div>
--->
+ -->
