@@ -92,10 +92,10 @@ var wapApp = angular
         controller: '',
         url:"/partner.html"
       })
-    .state('erweima', {
-        templateUrl: 'views/user/erweima.html',
+    .state('customer-service', {
+        templateUrl: 'views/user/customer-service.html',
         controller: '',
-        url:"/erweima.html"
+        url:"/customer-service.html"
       })
     .state('login', {
         templateUrl: 'views/user/login.html',
