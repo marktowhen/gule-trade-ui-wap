@@ -150,20 +150,24 @@
 			<div class="joined-box6-right fl">还差5人组团成功</div>
 		</div>
 		<div class="joined-gray">
-			<!-- <i class="icon-hands fr"></i> -->
 			<div class="cl h35"></div>
 			<div class="joined-gray-bottom">
 				<p>还差9人，快快分享吧！</p>
 			</div>
-			<p class="">分享给小伙伴</p>
-			<p class="">咻的一下就成团了</p>
-			<div class="cl h153"></div>
-			<p class="fr">分享朋友圈</p>
-			<p class="fr">更容易成团哦</p>
-			<div class="cl"></div>
+			<p class="fs18" style="margin-bottom:20px;">分享给小伙伴</p>
+			<p class="fs18">咻的一下就成团了</p>
+			<div class="cl h97"></div>
+			<div class="fr" style="text-align: left;margin-right: 5%;
+">
+				<p class="fs14" style="line-height:23px;">分享朋友圈</p>
+				<p class="fs14">更容易成团哦</p>
+			</div>
+			<div class="fr">
+					<img src="images/share.png" alt="" style="width: 30px;margin-top: 10px;margin-right: 7px;">
+				</div>
+			<div class="cl fs14"></div>
 		</div>
 		<div class="pop_up fs10">
-            <h5 class="title fs14">分享</h5>
             <div class="third-party cl">
                 <div class="qq fl">
                     <a href="">
@@ -197,13 +201,13 @@
                 </div>
             </div>
             <div class="cancel fs14">取消</div>
-            <i class="icon-close"></i>
+            <!-- <i class="icon-close"></i> -->
         </div> 
 	</div>
 	<script type="text/javascript">
-		$(".joined-gray").click(
+		$(".joined-group .cancel").click(
 			function(){
-				$(this).hide();
+				$(this).parent(".pop_up").hide().siblings(".joined-gray").hide();
 			}
 		);
 		$(document).ready(
