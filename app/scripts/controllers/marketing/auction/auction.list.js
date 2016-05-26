@@ -18,9 +18,9 @@ wapApp.controller('AuctionListController', function ($scope, AuctionService,$int
 					for (var i = 0; i < data.body.length; i++) {
 						if('AUCTIONING'==data.body[i].status){
 						}
-						runTiming(data.body[i]);
-/*						alert(data.body[i].end)
-*/						data.body[i].times=10;
+						runTiming(data.body[i]);//倒计时处理
+						addTimes(data.body[i]);// 竞拍出价次数处理
+						data.body[i].times=10;
 						$scope.ggoods .push( data.body[i]);
 					}
 					if (data.body.length<size) {
@@ -68,25 +68,28 @@ wapApp.controller('AuctionListController', function ($scope, AuctionService,$int
 
 		
 		//查询出价次数
-		var addTimes = function(gid){
+		var addTimes = function(auction){
 	    var times=0;
-	    AuctionService.count(gid)
-	    
-	    
-	    	return times;
-	    }
-		
+	    AuctionService.addTimes(auction.id).success(function(data){
+	    	if(data.ok){
+	    		auction.times=data.body;
+	    		
+			}
+	    	
+	     
+		}).error(function(data){
+
+		});
+
+      }
 		
 		
 		//竞拍时间格式处理
 		var TimePromise;
 	  	var runTiming = function(auction){
 	  		var EndTime = new Date(auction.startTime)
-	  		alert(EndTime)
 	  		$scope.endtime=auction.endTime;
 	  		$scope.starttime = auction.startTime;	
-	  		alert($scope.endtime)
-	  		alert($scope.starttime)
 	  		var oft=Math.round(($scope.endtime-new Date())/1000);
 	  		var zft=Math.round(($scope.starttime-new Date())/1000);
 	  					if(zft>0){
