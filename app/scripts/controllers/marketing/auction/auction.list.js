@@ -20,7 +20,6 @@ wapApp.controller('AuctionListController', function ($scope, AuctionService,$int
 						}
 						runTiming(data.body[i]);//倒计时处理
 						addTimes(data.body[i]);// 竞拍出价次数处理
-						data.body[i].times=10;
 						$scope.ggoods .push( data.body[i]);
 					}
 					if (data.body.length<size) {
