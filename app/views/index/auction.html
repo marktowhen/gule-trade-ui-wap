@@ -28,10 +28,11 @@
                             <span class="col-50 fl">参考价:<span>￥{{au.sku.salePrice}}元</span></span>
                             <span class="col-50 fl">加价幅度:<span>￥{{au.addPrice}}元</span></span>
                             <span class="col-50 fl">保证金:<span>￥{{au.deposit}}元</span></span>
-                            <span class="col-50 fl">保证金:<span>￥{{au.deposit}}元</span></span>
+                            <!-- <span class="col-50 fl">保证金:<span>￥{{au.deposit}}元</span></span>
+                            <span class="col-50 fl">保证金:<span>￥{{au.times}}元</span></span> -->
                         </div>
                         <div class="startgroupbuy over fs12">
-                            <div class="countdown wait_endtime col-60 fl"> <span>{{au.startTime | date:'MM月dd日 hh:mm'}}</span></div>
+                            <div class="countdown wait_endtime col-60 fl"> <span>{{au.startTime | date:'MM月dd日 hh:mm'}}开始</span></div>
                             <div class="groupgo group_wait col-35 fl"><a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">即将开始 ＞</a></div>
                         </div>
                     </div>
@@ -48,7 +49,7 @@
                             <span class="col-50 fl">保证金:<span>￥{{au.deposit}}元</span></span>
                         </div>
                         <div class="startgroupbuy over fs12">
-                            <div class="countdown col-60 fl">距结束 <span>{{au.end.hour}}:{{au.end.minute}}:{{au.end.second}}</span></div>
+                            <div class="countdown col-60 fl">距结束 <span>{{au.end}}</span></div>
                             <div class="groupgo col-35 fl"><a href="#/auction-details.html?id={{au.id}}">我要拍 ＞</a></div>
                         </div>
                     </div>
@@ -65,7 +66,7 @@
                             <span class="col-50 fl">保证金:<span>￥{{au.deposit}}元</span></span>
                         </div>
                         <div class="startgroupbuy over fs12">
-                            <div class="countdown col-60 end_time end_endtime fl">结束时间 <span>{{au.endTime | date:'hh:mm'}}</span></div>
+                            <div class="countdown col-60 end_time end_endtime fl"><span>{{au.end}}</span></div>
                             <div class="groupgo group_end col-35  fl"><a href="#/auction-details.html?id={{au.id}}">已结束 ＞</a></div>
                         </div>
                     </div>
