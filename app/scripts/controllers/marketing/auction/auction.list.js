@@ -72,14 +72,10 @@ wapApp.controller('AuctionListController', function ($scope, AuctionService,$int
 	    AuctionService.addTimes(auction.id).success(function(data){
 	    	if(data.ok){
 	    		auction.times=data.body;
-	    		
 			}
-	    	
-	     
 		}).error(function(data){
 
 		});
-
       }
 		
 		

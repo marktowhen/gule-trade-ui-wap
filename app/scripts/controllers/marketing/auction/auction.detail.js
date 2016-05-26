@@ -59,4 +59,15 @@ wapApp.controller('AuctionDetailController',
 			});
 	
 	
+			//查询竞拍次数
+		    AuctionService.addTimes($stateParams.id).success(function(data){
+		    	if(data.ok){
+		    		$scope.addTimes=data.body;
+				}
+			}).error(function(data){
+		
+			});
+		 
+	
+	
 });
