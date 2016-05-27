@@ -56,9 +56,11 @@ wapApp.service('ApiService', function () {
                 'detail':'http://localhost:8888/api/marketing/group/goods/detail',
                 'start':'http://localhost:8888/api/marketing/group/purchase/start/:groupgoodsid',
                 'join':'http://localhost:8888/api/marketing/group/purchase/join/:groupid',
+                'singlegroup':'http://localhost:8888/api/marketing/group/:groupid',
                 'user':{
                     'count':'http://localhost:8888/api/marketing/group/user/count/:groupID',
-                    'list':'http://localhost:8888/api/marketing/group/user/list/:groupID'
+                    'list':'http://localhost:8888/api/marketing/group/user/list/:groupID',
+                    'single':'http://localhost:8888/api/marketing/group/user/single/:groupid/:uid'
                 }
             },
             'flashsale':{

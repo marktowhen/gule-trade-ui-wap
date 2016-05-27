@@ -31,5 +31,11 @@ wapApp.service('GroupBuyService', ['$http', 'ApiService', function($http, ApiSer
     this.join = function(groupid,cart){
     	return $http.post(ApiService.api.marketing.group.join.replace(':groupid',groupid), cart);
     }
+    this.singlegroup = function(groupid){
+        return $http.get(ApiService.api.marketing.group.singlegroup.replace(':groupid',groupid));
+    }
+    this.singleUser = function(groupid,uid){
+        return $http.get(ApiService.api.marketing.group.user.single.replace(':groupid',groupid).replace(':uid',uid));
+    };
 
 }]);
