@@ -1,5 +1,4 @@
 .auction-details{
-	font-size: 14px;
 	overflow: hidden;
 	margin-bottom: 50px;
 	background-color:#F0F0F0;
@@ -95,14 +94,6 @@
 	cursor: pointer;
 	color: #333;
 }
-.adm-right-icon{
-	position: absolute;
-	top:10px;
-	left:37%;
-	width: 14px;
-	height: 14px;
-	background: url(../images/icon.png) no-repeat -224px -173px;
-}
 .ad1-mid2>ul>li{
 	float: left;
 	width: 33%;
@@ -134,15 +125,6 @@
 	cursor: pointer;
 	position: relative;
 }
-.ad1-bottom p::after{
-	content:"";
-	position: absolute;
-	top:16px;
-	right:36%;
-	width:5px;
-	height:10px;
-	background: url(../images/icon.png) no-repeat -188px -292px;
-}
 .ad-offer{
 	overflow: hidden;
 	background-color: #fff;
@@ -169,63 +151,67 @@
 .ad-offer-bd{
 	padding-bottom: 10px;
 }
-.ad-offer-bd>ul>li{
+/*************************/
+.ad-offer-hd1{
+	overflow: hidden;
+}
+.ad-offer-hd1>ul>li{
 	float: left;
 	width: 25%;
 	text-align: center;
 	height: 36px;
 	line-height: 36px;
 	color: #999999;
+	font-size: 14px;
 }
-.ad-offer-bd>ul>li:nth-child(1){
+.ad-offer-hd1>ul>li:nth-child(1){
 	width: 20%;
 }
-.ad-offer-bd>ul>li:nth-child(2){
+.ad-offer-hd1>ul>li:nth-child(2){
 	width: 22%;
 }
-.ad-offer-bd>ul>li:nth-child(3){
+.ad-offer-hd1>ul>li:nth-child(3){
 	width: 18%;
 }
-.ad-offer-bd>ul>li:nth-child(4){
+.ad-offer-hd1>ul>li:nth-child(4){
 	width: 35%;
 }
-table.ad{
+.ad-offer-bd1{
 	padding-left: 3%;
-	padding-right: 4%;
+	padding-right:3%;
+	overflow: hidden;
 }
-table.ad th{
-	height: 36px;
-	line-height: 36px;
-}
-table.ad tr{
+.ad-offer-bd1>ul>li{
+	width: 100%;
 	height:20px;
 	line-height:20px;
 	font-size: 12px;
+	margin-bottom: 10px;
 }
-table.ad tr td:nth-child(1){
-	width: 14%;
+.ad-offer-bd1>ul>li.cur>ul>li:nth-child(1){
+	background-color:#F45C01;
+}
+.ad-offer-bd1>ul>li>ul>li{
+	float: left;
 	text-align: center;
+	color: #666;
+	height: 20px;
+	line-height: 20px;
+}
+.ad-offer-bd1>ul>li>ul>li:nth-child(1){
+	width: 14%;
 	color: #fff;
 	border-radius: 4px;
 	background-color:#CCCCCC;
 }
-table.ad tr.cur td:nth-child(1){
-	background-color:#ff473f;
-}
-table.ad tr td:nth-child(2){
+.ad-offer-bd1>ul>li>ul>li:nth-child(2){
 	width: 30%;
-	text-align: center;
-	color: #666;
 }
-table.ad tr td:nth-child(3){
+.ad-offer-bd1>ul>li>ul>li:nth-child(3){
 	width: 16%;
-	text-align: center;
-	color: #666;
 }
-table.ad tr td:nth-child(4){
-	width:47%;
-	text-align: center;
-	color: #666;
+.ad-offer-bd1>ul>li>ul>li:nth-child(4){
+	width:40%;
 }
 .auction-details .ad-box2{
 	background-color: #fff;
@@ -245,43 +231,7 @@ table.ad tr td:nth-child(4){
 .auction-details .ad2-bd img{
 	width: 100%;
 }
-/*.ad2-hd>ul>li{
-	float: left;
-	width: 30%;
-	height: 30px;
-	line-height: 30px;
-	text-align: center;
-}
-.ad2-hd>ul>li.cur{
-	border-bottom: 2px solid #ff473f;
-}
-.ad2-hd>ul>li a{
-	display: block;
-	color:#666; 
-}
-.ad2-bd>ul>li{
-	display: none;
-}
-.ad2-bd>ul>li.cur{
-	display: block;
-}
-.ad2-bd>ul>li img{
-	border-bottom: 1px solid #C2C2C2;
-	width: 100%;
-}
-.ad-detail-info{
-	padding-top: 15px;
-	padding-left: 2%;
-	padding-right: 2%;
-}
-.ad-detail-info p{
-	line-height: 25px;
-	text-indent: 2em;
-	margin-bottom: 10px;
-}*/
-/*a.ra{
-	color: #ff473f;
-}*/
+/**/
 .joined-box5-hd{
 	color:#B0B0B0;
 	font-size: 14px;
@@ -370,7 +320,4 @@ table.ad tr td:nth-child(4){
 }
 .swiper-slide img{
 	height: 230px !important;
-}
-table{
-	border-collapse: inherit !important;
 }

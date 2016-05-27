@@ -1,27 +1,32 @@
-<div class="auction-details center-view">
+<div class="auction-details center-view" ng-controller="AuctionDetailController">
 	<div class="swiper-container">
 		<div class="swiper-wrapper">
-			<div class="swiper-slide">
-				<img src="images/one/tu1.png" alt=""></div>
-			<div class="swiper-slide">
-				<img src="images/one/tu1.png" alt=""></div>
-			<div class="swiper-slide">
-				<img src="images/one/tu1.png" alt=""></div>
-			<div class="swiper-slide">
-				<img src="images/one/tu1.png" alt=""></div>
+			<div class="swiper-slide" ng-repeat="img in goods.imgList">
+				<img src="{{img.path}}" alt="{{goods.name}}">
+			</div>
 		</div>
 	</div>
 	<div class="cl"></div>
-	<div class="ad1-top before">
+	<div class="ad1-top before" ng-if="'NEW'==auction.status">
 		<div class="ad1-circle fl"> <i class="icon-zb"></i>
 		</div>
-		<p class="fl">05月05日 10:00开始</p>
+		<p class="fl">{{auction.startTime | date:'MM月dd日 HH:mm'}} 开始</p>
+	</div>
+	<div class="ad1-top over" ng-if="'AUCTIONING'==auction.status">
+		<div class="ad1-circle fl"> <i class="icon-zb"></i>
+		</div>
+		<p class="fl">{{end}}</p>
+	</div>
+	<div class="ad1-top over" ng-if="'AUCTIONING'!=auction.status && 'NEW'!=auction.status">
+		<div class="ad1-circle fl"> <i class="icon-zb"></i>
+		</div>
+		<p class="fl">{{end}}</p>
 	</div>
 	<div class="ad-box1">
 		<div class="ad1-mid">
 			<div class="adm-left fl">
 				<p>
-					<a href="#">拉卡拉收款宝手机pos机信用卡刷卡器移动pos</a>
+					<a href="#">{{goods.name+' '+goods.sku.propertiesValue}}</a>
 				</p>
 			</div>
 			<div class="adm-right fl"> <i class="icon-share"></i>
@@ -32,22 +37,60 @@
 				起拍价:
 				<span>
 					￥
-					<span class="fs18">1.00</span>
+					<span class="fs18">{{auction.startPrice}}</span>
 				</span>
 			</span>
 		</div>
 		<div class="cl"></div>
 		<div class="ad1-mid2">
 			<ul>
-				<li>加价幅度：10元</li>
-				<li>保证金：10元</li>
-				<li>0人参拍</li>
+				<li>加价幅度：{{auction.addPrice}}元</li>
+				<li>保证金：{{auction.deposit}}元</li>
+				<li>{{addTimes}}次参拍</li>
 			</ul>
 		</div>
 		<div class="cl h10"></div>
 	</div>
 	<div class="cl"></div>
+	
 	<div class="ad-offer">
+			<div class="ad-offer-hd cur">
+				<p class="fl">出价纪录 | {{addTimes}}条</p>
+				<i class="icon-arrow-12 fr"></i>
+			</div>
+			<div class="ad-offer-bd">
+				<div class="ad-offer-hd1">
+					<ul>
+						<li>竞价</li>
+						<li>竞拍人</li>
+						<li>价格</li>
+						<li>竞拍时间</li>
+					</ul>
+				</div>
+				<div class="cl"></div>
+				<div class="ad-offer-bd1">
+					<ul ng-repeat="plog in priceLog">
+						<li class="cur" ng-if="'first'==plog.status">
+							<ul>
+								<li>领先</li>
+								<li>138*******36</li>
+								<li>{{plog.price}}元</li>
+								<li>{{plog.addtime | date:'yyyy.MM.dd HH:mm:ss'}}</li>
+							</ul>
+						</li>
+						<li ng-if="'out'==plog.status">
+							<ul>
+								<li>出局</li>
+								<li>158*******52</li>
+								<li>{{plog.price}}元</li>
+								<li>{{plog.addtime | date:'yyyy.MM.dd HH:mm:ss'}}</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+<!-- 	<div class="ad-offer">
 		<div class="ad-offer-hd cur">
 			<p class="fl">出价纪录 | 5条</p>
 			<i class="icon-arrow-12 fr"></i>
@@ -59,46 +102,23 @@
 				<li>价格</li>
 				<li>竞拍时间</li>
 			</ul>
-			<table class="ad">
-				<tr class="cur">
+			<table class="ad" ng-repeat="plog in priceLog">
+				<tr class="cur" ng-if="'first'==plog.status">
 					<td>领先</td>
 					<td>158*******52</td>
-					<td>260元</td>
-					<td>2016.04.19 09:20:32</td>
+					<td>{{plog.price}}元</td>
+					<td>{{plog.addtime | date:'yyyy.MM.dd HH:mm:ss'}}</td>
 				</tr>
-				<tr>
+				<tr ng-if="'out'==plog.status">
 					<td>出局</td>
 					<td>158*******52</td>
-					<td>260元</td>
+					<td>{{plog.price}}元</td>
 					<td>2016.04.19 09:20:32</td>
 				</tr>
-				<tr>
-					<td>出局</td>
-					<td>158*******52</td>
-					<td>260元</td>
-					<td>2016.04.19 09:20:32</td>
-				</tr>
-				<tr>
-					<td>出局</td>
-					<td>158*******52</td>
-					<td>260元</td>
-					<td>2016.04.19 09:20:32</td>
-				</tr>
-				<tr>
-					<td>出局</td>
-					<td>158*******52</td>
-					<td>260元</td>
-					<td>2016.04.19 09:20:32</td>
-				</tr>
-				<tr>
-					<td>出局</td>
-					<td>158*******52</td>
-					<td>260元</td>
-					<td>2016.04.19 09:20:32</td>
-				</tr>
+				
 			</table>
 		</div>
-	</div>
+	</div> -->
 	<div class="cl h10"></div>
 	<div class="joined-group-box5">
 		<div class="joined-box5-hd">
