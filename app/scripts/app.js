@@ -77,6 +77,11 @@ var wapApp = angular
         controller: '',
         url:"/auction-details.html?id&gid"
       })
+    .state('signup', {
+        templateUrl: 'views/index/signup.html',
+        controller: '',
+        url:"/signup.html"
+      })
     .state('shareproduct', {
         templateUrl: 'views/user/shareproduct.html',
         controller: '',
