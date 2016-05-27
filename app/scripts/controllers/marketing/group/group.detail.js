@@ -49,6 +49,8 @@ setTimeout(function(){var swiper = new Swiper('#product_swiper_container', {
 
 
 		
+		/*
+		参团用到的东西
 		var isEmpty = function(str){
 			if(str==null || str==undefined || str==''){
 				return true;
@@ -74,7 +76,7 @@ setTimeout(function(){var swiper = new Swiper('#product_swiper_container', {
 						alert(data.message);
 					}
 				})
-		}
+		}*/
 
 		$scope.start = function(){
 			GroupBuyService.start($scope.groupGoods.id,creatCar($scope.groupGoods, $scope.goods))

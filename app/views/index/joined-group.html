@@ -1,4 +1,4 @@
-<div class="joined-group center-view">
+<div class="joined-group center-view" ng-controller="JoinGroupController">
 		<div class="open-group-success">
 			<div class="open-top">
 				<div class="open-circle fl"><i class="icon-right"></i></div>
@@ -14,9 +14,9 @@
 	 				<img src="images/no-payment/p1.png" alt="">
 	 			</div>
  				<div class="pi1-info fl">
- 					<div class="pi1-text">新鲜青柠檬6个14.9【初夏来杯柠檬水】</div>
+ 					<div class="pi1-text">{{goods.name+''+goodSku.propertiesValue}}</div>
  					<div class="pi1-price">
- 						<p class="fs12">￥<span class="fs18">14.90</span></p>
+ 						<p class="fs12">￥<span class="fs18">{{groupGoods.groupPrice}}</span></p>
  					</div>
  				</div>
 	 		</div>
@@ -25,15 +25,19 @@
 		<div class="joined-group-box2">
 			<div class="joined-box2-top">
 				<div class="joined-box2-img fl">
-					<img src="../../images/user/pic1.png" alt="">
+					<img src="{{singleUser.headImgUrl}}" alt="">
 				</div>
-				<div class="joined-box2-head fl">团长 <a href="#">小小小苹果</a></div>
-				<div class="joined-box2-share fr">还差<a href="#">9</a>人，快快分享吧！</div>
+				<div class="joined-box2-head fl">团长 <a href="#">{{singleUser.nickname}}</a></div>
+				<div class="joined-box2-share fr">还差<a href="#">{{groupGoods.groupPeople-count}}</a>人，快快分享吧！</div>
 			</div>
 			<div class="cl h10"></div>
 			<div class="joined-box2-bottom">
 				<ul>
-					<li class="cur">
+					<li class="cur" ng-repeat="groupuser in user">
+						<i class="icon-women"></i>
+						<img src="{{groupuser.headImgUrl}}" alt="">
+					</li>
+					<!-- <li class="cur">
 						<i class="icon-women"></i>
 						<img src="../../images/user/pic1.png" alt="">
 					</li>
@@ -45,7 +49,11 @@
 						<i class="icon-women"></i>
 						<img src="../../images/user/pic1.png" alt="">
 					</li>
-					<li class="cur">
+					<li>
+						<i class="icon-women"></i>
+						<img src="../../images/user/pic1.png" alt="">
+					</li> -->
+					<!-- <li>
 						<i class="icon-women"></i>
 						<img src="../../images/user/pic1.png" alt="">
 					</li>
@@ -60,15 +68,7 @@
 					<li>
 						<i class="icon-women"></i>
 						<img src="../../images/user/pic1.png" alt="">
-					</li>
-					<li>
-						<i class="icon-women"></i>
-						<img src="../../images/user/pic1.png" alt="">
-					</li>
-					<li>
-						<i class="icon-women"></i>
-						<img src="../../images/user/pic1.png" alt="">
-					</li>
+					</li> -->
 				</ul>
 			</div>
 		</div>
@@ -76,7 +76,7 @@
 		<div class="joined-group-box3">
 			<img src="images/bg-line.png" alt="">
 			<div class="joined-b3-poa">
-				剩余&nbsp;<span>23</span>:<span>59</span>:<span>16</span>&nbsp; 结束
+				剩余&nbsp;{{groupGoods.time}}&nbsp; 结束
 			</div>
 		</div>
 		<div class="cl"></div>
@@ -85,14 +85,14 @@
 			<div class="cl h20"></div>
 			<div class="joined-box4-bd">
 				<ul>
-					<li>
-						<a href="#"><img src="../../images/joined-group/info1.png" alt=""></a>
+					<li ng-repeat="goods in showlist">
+						<a href="#/product/details.html?gid={{goods.gid}}"><img src="{{goods.path}}" alt=""></a>
 						<div class="joined-box4-text">
-							<p><a href="#">味之初 双层芝士蛋糕......</a></p>
-							<span class="joined-price">￥10</span>
+							<p><a href="#/product/details.html?gid={{goods.gid}}">{{goods.name}}</a></p>
+							<span class="joined-price">￥{{goods.price}}</span>
 						</div>
 					</li>
-					<li>
+					<!-- <li>
 						<a href="#"><img src="../../images/joined-group/info2.png" alt=""></a>
 						<div class="joined-box4-text">
 							<p><a href="#">味之初 双层芝士蛋糕......</a></p>
@@ -105,7 +105,7 @@
 							<p><a href="#">味之初 双层芝士蛋糕......</a></p>
 							<span class="joined-price">￥10</span>
 						</div>
-					</li>
+					</li> -->
 				</ul>
 			</div>
 		</div>
@@ -147,12 +147,12 @@
 				<i class="icon-home-1 fl"></i>
 				<p>更多团购</p>
 			</div>
-			<div class="joined-box6-right fl">还差5人组团成功</div>
+			<div class="joined-box6-right fl">还差{{groupGoods.groupPeople-count}}人</div>
 		</div>
 		<div class="joined-gray">
 			<div class="cl h35"></div>
 			<div class="joined-gray-bottom">
-				<p>还差9人，快快分享吧！</p>
+				<p>还差{{groupGoods.groupPeople-count}}人，快快分享吧！</p>
 			</div>
 			<p class="fs18" style="margin-bottom:20px;">分享给小伙伴</p>
 			<p class="fs18">咻的一下就成团了</p>
