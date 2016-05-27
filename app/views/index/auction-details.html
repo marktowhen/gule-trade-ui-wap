@@ -1,180 +1,366 @@
-<div class="auction-details center-view" ng-controller="AuctionDetailController">
-	<div class="ad-img">
-		<img src="images/auction-details/a1.png" alt=""></div>
-	<div class="cl"></div>
-	<div class="ad-box1">
-		<div class="ad1-top">
-			<div class="ad1-left cur fl">
-				<p>
-					起拍价：￥
-					<span class="ag">{{auction.startPrice}}</span>
-					元
-				</p>
-				<p>参考价：￥{{goods.price}}元</p>
-			</div>
-			<div class="ad1-left fl ad1-left1">
-				<p>
-					起拍价：￥
-					<span class="ag">0</span>
-					元
-				</p>
-				<p>参考价：￥764元</p>
-			</div>
-			<div class="ad1-left fl ad1-left1">
-				<p>
-					成交价：￥
-					<span class="ag">260</span>
-					元
-				</p>
-				<p>参考价：￥764元</p>
-			</div>
-			<div class="ad1-right fl cur">
-				<p>距开始还有</p>
-				<p>00:03:20:0</p>
-			</div>
-			<div class="ad1-right fl">
-				<p>距结束仅剩</p>
-				<p>00:60:12:0</p>
-			</div>
-			<div class="ad1-right fl">
-				<p>距结束仅剩</p>
-				<p>00:00:00:0</p>
-			</div>
+<div class="auction-details center-view">
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<img src="images/one/tu1.png" alt=""></div>
+			<div class="swiper-slide">
+				<img src="images/one/tu1.png" alt=""></div>
+			<div class="swiper-slide">
+				<img src="images/one/tu1.png" alt=""></div>
+			<div class="swiper-slide">
+				<img src="images/one/tu1.png" alt=""></div>
 		</div>
-		<div class="cl"></div>
+	</div>
+	<div class="cl"></div>
+	<div class="ad1-top before">
+		<div class="ad1-circle fl"> <i class="icon-zb"></i>
+		</div>
+		<p class="fl">05月05日 10:00开始</p>
+	</div>
+	<div class="ad-box1">
 		<div class="ad1-mid">
 			<div class="adm-left fl">
 				<p>
-					<a href="#">{{goods.name}}</a>
+					<a href="#">拉卡拉收款宝手机pos机信用卡刷卡器移动pos</a>
 				</p>
 			</div>
-			<div class="adm-right fl">
-				<i class="icon-share"></i>
+			<div class="adm-right fl"> <i class="icon-share"></i>
 				<p>分享</p>
 			</div>
+			<div class="cl"></div>
+			<span class="sp1">
+				起拍价:
+				<span>
+					￥
+					<span class="fs18">1.00</span>
+				</span>
+			</span>
 		</div>
 		<div class="cl"></div>
 		<div class="ad1-mid2">
 			<ul>
-				<li>加价幅度：{{auction.addPrice}}元</li>
-				<li>保证金：{{auction.deposit}}元</li>
-				<li>
-					<a href="#" class="ra">{{addTimes}}次</a>
-					出价
-				</li>
+				<li>加价幅度：10元</li>
+				<li>保证金：10元</li>
+				<li>0人参拍</li>
 			</ul>
-		</div>
-		<div class="cl h15"></div>
-		<div class="ad1-bottom cur">
-			<p>即将开始</p>
-			<i class="icon-arrow fl"></i>
-		</div>
-		<div class="ad1-bottom ad1-orange ">
-			<p>我要拍</p>
-			<i class="icon-arrow fl"></i>
-		</div>
-		<div class="ad1-bottom ad1-gray ">
-			<p>已结束</p>
-			<i class="icon-arrow fl"></i>
 		</div>
 		<div class="cl h10"></div>
 	</div>
 	<div class="cl"></div>
 	<div class="ad-offer">
 		<div class="ad-offer-hd cur">
-			<p>最新出价&nbsp;</p>
-			<i class="icon-UP fl"></i>
-			<i class="icon-xiangxia fl"></i>
+			<p class="fl">出价纪录 | 5条</p>
+			<i class="icon-arrow-12 fr"></i>
 		</div>
 		<div class="ad-offer-bd">
-			<div class="ad-offer-hd1">
-				<ul>
-					<li>竞价</li>
-					<li>竞拍人</li>
-					<li>价格</li>
-					<li>竞拍时间</li>
-				</ul>
-			</div>
-			<div class="cl"></div>
-			<div class="ad-offer-bd1">
-				<ul ng-repeat="plog in priceLog">
-					<li class="cur" ng-if="'first'==plog.status">
-						<ul>
-							<li>领先</li>
-							<li>158*******52</li>
-							<li>{{plog.price}}元</li>
-							<li>{{plog.addtime | date:'yyyy.MM.dd HH:mm:ss'}}</li>
-						</ul>
-					</li>
-					<li  ng-if="'out'==plog.status">
-						<ul>
-							<li>出局</li>
-							<li>158*******52</li>
-							<li>{{plog.price}}元</li>
-							<li>{{plog.addtime | date:'yyyy.MM.dd HH:mm:ss'}}</li>
-						</ul>
-					</li>
-					
-				</ul>
-			</div>
+			<ul>
+				<li>竞价</li>
+				<li>竞拍人</li>
+				<li>价格</li>
+				<li>竞拍时间</li>
+			</ul>
+			<table class="ad">
+				<tr class="cur">
+					<td>领先</td>
+					<td>158*******52</td>
+					<td>260元</td>
+					<td>2016.04.19 09:20:32</td>
+				</tr>
+				<tr>
+					<td>出局</td>
+					<td>158*******52</td>
+					<td>260元</td>
+					<td>2016.04.19 09:20:32</td>
+				</tr>
+				<tr>
+					<td>出局</td>
+					<td>158*******52</td>
+					<td>260元</td>
+					<td>2016.04.19 09:20:32</td>
+				</tr>
+				<tr>
+					<td>出局</td>
+					<td>158*******52</td>
+					<td>260元</td>
+					<td>2016.04.19 09:20:32</td>
+				</tr>
+				<tr>
+					<td>出局</td>
+					<td>158*******52</td>
+					<td>260元</td>
+					<td>2016.04.19 09:20:32</td>
+				</tr>
+				<tr>
+					<td>出局</td>
+					<td>158*******52</td>
+					<td>260元</td>
+					<td>2016.04.19 09:20:32</td>
+				</tr>
+			</table>
 		</div>
 	</div>
 	<div class="cl h10"></div>
-	<div class="ad-box2">
-		<div class="ad2-hd">
-			<ul>
-				<li class="cur">
-					<a href="javascript:;">拍品详情</a>
-				</li>
-				<li>
-					<a href="javascript:;">活动规则</a>
-				</li>
-			</ul>
+	<div class="joined-group-box5">
+		<div class="joined-box5-hd">
+			<p class="fl fs14">竞拍规则</p>
+			<p class="fr fs12">了解详情</p>
 		</div>
 		<div class="cl"></div>
-		<div class="ad2-bd">
+		<div class="joined-box5-bd">
 			<ul>
 				<li class="cur">
-					<img src="images/auction-details/i1.png" alt="">
-					<img src="images/auction-details/i2.png" alt="">
-					<img src="images/auction-details/i3.png" alt="">
-					<img src="images/auction-details/i4.png" alt="">
-					<img src="images/auction-details/i5.png" alt="">
-					<img src="images/auction-details/i6.png" alt="">
-					<img src="images/auction-details/i7.png" alt="">
-					<img src="images/auction-details/i8.png" alt="">
-					<img src="images/auction-details/i9.png" alt=""></li>
+					<div class="joined-rule-left fl">1</div>
+					<div class="joined-rule-right fl">
+						选择
+						<br/>
+						心仪商品
+					</div>
+				</li>
 				<li>
-					<div class="ad-detail-info">
-						<p>一、竞拍规则</p>
-						<p>第一条：竞拍分为正在热拍、下期预告、历史成交三类，会员只能在已经开始的竞拍中进行竞拍。</p>
-						<p>第二条：每一个竞拍商品都设置竞拍时间，竞拍开始，可以参与竞拍，竞拍时间结束，则竞拍结束。</p>
-						<p>第三条：参与竞拍时需要参缴保证金，参与竞拍出价时确保账户中有足够的保证金支付。</p>
-						<p>第四条：每个竞拍商品支付都设有拍币限制，在支付竞拍商品时，拍币数量不能超过该拍币限制。</p>
-						<p>
-							第五条：会员参与商品竞拍，保证金转为冻结状态，竞拍结束后，竞拍失败者冻结保证金将在1个工作日内解冻，竞拍成功者，保证金将不会解冻，直接转为商品支付款。由于卖家的原因或者非买家造成的未付款，买家申诉取消交易成功，系统将会返还保证金。
-						</p>
-						<p>第六条：每一款商品设有起步价、加价幅度，起步价和加价幅度由商家自行设置。</p>
-						<p>
-							第七条：出价是在当前的最高的出价的基础上加价，如一款手机的起步价是10元，加价是10元，第一位出价，则它的购买价格是20元，第二位加价，应是20加10,则它的购买价格是30元，以此类推。
-						</p>
-						<p>第八条：出价时需要填写资金密码，会员应保管好自己的资金密码。</p>
-						<p>
-							第九条：商品在竞拍模式下，只要竞拍没有结束，在竞拍过程中，可以选择多次出价。如果商品是在竞拍中奖模式下，只能出一次价，不能多次出价。
-						</p>
-						<p>
-							第十条：首次出价10%中奖是指在竞拍中奖模式下，对任意一个商品首次出价，系统将随机发送一组六位数字的随机码到您绑定的手机上，随机码的个位若与上证指数收盘个位数字相同，您可以按你首次出价的价格获得商品。
-						</p>
-						<p>第十一条：中奖者交易规则</p>
-						<p>1、中奖者可以选择购买商品，也可以选择放弃购买，放弃购买不会扣保证金。</p>
-						<p>
-							2、中奖者需要在一周内购买，以中奖日期为准，在第七天的16:00为领取有最后期限，逾期取消购买资格。例：2013.1.1中奖，则需要在2013.1.8 16:00之前购买。
-						</p>
-						<p>3、中奖者购买商品时，需要登录账号，进入活动领取，点击购买即可。</p>
-						<p>4、在竞拍未结束时，保证金未解冻，中奖者购买商品，需要另外支付商品款。</p>
+					<div class="joined-rule-left fl">2</div>
+					<div class="joined-rule-right fl">
+						点击
+						<br/>
+						去报名
+					</div>
+				</li>
+				<li>
+					<div class="joined-rule-left fl">3</div>
+					<div class="joined-rule-right fl">
+						进入竞拍
+						<br/>
+						大厅出价
+					</div>
+				</li>
+				<li>
+					<div class="joined-rule-left fl">4</div>
+					<div class="joined-rule-right fl">
+						竞拍成功
+						<br/>
+						支付尾款
 					</div>
 				</li>
 			</ul>
 		</div>
 	</div>
+	<div class="cl h10"></div>
+	<div class="ad-box2">
+		<div class="ad2-hd">图文详情</div>
+		<div class="cl"></div>
+		<div class="ad2-bd">
+			<img src="images/one/pics.png" alt=""></div>
+	</div>
+	<div class="cl"></div>
+	<div class="auction-details-fix">
+		<div class="auction-fix-left fl">
+			<ul>
+				<li>
+					<i class="icon-xiaoxi-home"></i>
+					<p>客服</p>
+				</li>
+			</ul>
+		</div>
+		<div class="auction-fix-right fr into">
+			<p class="ap1">
+				<span class="fs18">去报名</span>
+				（保证金：10元）
+			</p>
+			<p class="ap2">
+				<i class="icon-jingpai-me"></i>
+				进入竞拍大厅
+			</p>
+		</div>
+	</div>
 </div>
+<script type="text/javascript">
+	 	var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        slidesPerColumn: 1,
+        autoplay:5000,
+        loop:true,
+        pagination: '.swiper-pagination',
+		paginationClickable :true,
+    });
+	 </script>
+
+<!-- <div class="auction-details center-view" ng-controller="AuctionDetailController">
+<div class="ad-img">
+	<img src="images/auction-details/a1.png" alt=""></div>
+<div class="cl"></div>
+<div class="ad-box1">
+	<div class="ad1-top">
+		<div class="ad1-left cur fl">
+			<p>
+				起拍价：￥
+				<span class="ag">{{auction.startPrice}}</span>
+				元
+			</p>
+			<p>参考价：￥{{goods.price}}元</p>
+		</div>
+		<div class="ad1-left fl ad1-left1">
+			<p>
+				起拍价：￥
+				<span class="ag">0</span>
+				元
+			</p>
+			<p>参考价：￥764元</p>
+		</div>
+		<div class="ad1-left fl ad1-left1">
+			<p>
+				成交价：￥
+				<span class="ag">260</span>
+				元
+			</p>
+			<p>参考价：￥764元</p>
+		</div>
+		<div class="ad1-right fl cur">
+			<p>距开始还有</p>
+			<p>00:03:20:0</p>
+		</div>
+		<div class="ad1-right fl">
+			<p>距结束仅剩</p>
+			<p>00:60:12:0</p>
+		</div>
+		<div class="ad1-right fl">
+			<p>距结束仅剩</p>
+			<p>00:00:00:0</p>
+		</div>
+	</div>
+	<div class="cl"></div>
+	<div class="ad1-mid">
+		<div class="adm-left fl">
+			<p>
+				<a href="#">{{goods.name}}</a>
+			</p>
+		</div>
+		<div class="adm-right fl">
+			<i class="icon-share"></i>
+			<p>分享</p>
+		</div>
+	</div>
+	<div class="cl"></div>
+	<div class="ad1-mid2">
+		<ul>
+			<li>加价幅度：{{auction.addPrice}}元</li>
+			<li>保证金：{{auction.deposit}}元</li>
+			<li>
+				<a href="#" class="ra">{{addTimes}}次</a>
+				出价
+			</li>
+		</ul>
+	</div>
+	<div class="cl h15"></div>
+	<div class="ad1-bottom cur">
+		<p>即将开始</p>
+		<i class="icon-arrow fl"></i>
+	</div>
+	<div class="ad1-bottom ad1-orange ">
+		<p>我要拍</p>
+		<i class="icon-arrow fl"></i>
+	</div>
+	<div class="ad1-bottom ad1-gray ">
+		<p>已结束</p>
+		<i class="icon-arrow fl"></i>
+	</div>
+	<div class="cl h10"></div>
+</div>
+<div class="cl"></div>
+<div class="ad-offer">
+	<div class="ad-offer-hd cur">
+		<p>最新出价&nbsp;</p>
+		<i class="icon-UP fl"></i>
+		<i class="icon-xiangxia fl"></i>
+	</div>
+	<div class="ad-offer-bd">
+		<div class="ad-offer-hd1">
+			<ul>
+				<li>竞价</li>
+				<li>竞拍人</li>
+				<li>价格</li>
+				<li>竞拍时间</li>
+			</ul>
+		</div>
+		<div class="cl"></div>
+		<div class="ad-offer-bd1">
+			<ul ng-repeat="plog in priceLog">
+				<li class="cur" ng-if="'first'==plog.status">
+					<ul>
+						<li>领先</li>
+						<li>158*******52</li>
+						<li>{{plog.price}}元</li>
+						<li>{{plog.addtime | date:'yyyy.MM.dd HH:mm:ss'}}</li>
+					</ul>
+				</li>
+				<li  ng-if="'out'==plog.status">
+					<ul>
+						<li>出局</li>
+						<li>158*******52</li>
+						<li>{{plog.price}}元</li>
+						<li>{{plog.addtime | date:'yyyy.MM.dd HH:mm:ss'}}</li>
+					</ul>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="cl h10"></div>
+<div class="ad-box2">
+	<div class="ad2-hd">
+		<ul>
+			<li class="cur">
+				<a href="javascript:;">拍品详情</a>
+			</li>
+			<li>
+				<a href="javascript:;">活动规则</a>
+			</li>
+		</ul>
+	</div>
+	<div class="cl"></div>
+	<div class="ad2-bd">
+		<ul>
+			<li class="cur">
+				<img src="images/auction-details/i1.png" alt="">
+				<img src="images/auction-details/i2.png" alt="">
+				<img src="images/auction-details/i3.png" alt="">
+				<img src="images/auction-details/i4.png" alt="">
+				<img src="images/auction-details/i5.png" alt="">
+				<img src="images/auction-details/i6.png" alt="">
+				<img src="images/auction-details/i7.png" alt="">
+				<img src="images/auction-details/i8.png" alt="">
+				<img src="images/auction-details/i9.png" alt=""></li>
+			<li>
+				<div class="ad-detail-info">
+					<p>一、竞拍规则</p>
+					<p>第一条：竞拍分为正在热拍、下期预告、历史成交三类，会员只能在已经开始的竞拍中进行竞拍。</p>
+					<p>第二条：每一个竞拍商品都设置竞拍时间，竞拍开始，可以参与竞拍，竞拍时间结束，则竞拍结束。</p>
+					<p>第三条：参与竞拍时需要参缴保证金，参与竞拍出价时确保账户中有足够的保证金支付。</p>
+					<p>第四条：每个竞拍商品支付都设有拍币限制，在支付竞拍商品时，拍币数量不能超过该拍币限制。</p>
+					<p>
+						第五条：会员参与商品竞拍，保证金转为冻结状态，竞拍结束后，竞拍失败者冻结保证金将在1个工作日内解冻，竞拍成功者，保证金将不会解冻，直接转为商品支付款。由于卖家的原因或者非买家造成的未付款，买家申诉取消交易成功，系统将会返还保证金。
+					</p>
+					<p>第六条：每一款商品设有起步价、加价幅度，起步价和加价幅度由商家自行设置。</p>
+					<p>
+						第七条：出价是在当前的最高的出价的基础上加价，如一款手机的起步价是10元，加价是10元，第一位出价，则它的购买价格是20元，第二位加价，应是20加10,则它的购买价格是30元，以此类推。
+					</p>
+					<p>第八条：出价时需要填写资金密码，会员应保管好自己的资金密码。</p>
+					<p>
+						第九条：商品在竞拍模式下，只要竞拍没有结束，在竞拍过程中，可以选择多次出价。如果商品是在竞拍中奖模式下，只能出一次价，不能多次出价。
+					</p>
+					<p>
+						第十条：首次出价10%中奖是指在竞拍中奖模式下，对任意一个商品首次出价，系统将随机发送一组六位数字的随机码到您绑定的手机上，随机码的个位若与上证指数收盘个位数字相同，您可以按你首次出价的价格获得商品。
+					</p>
+					<p>第十一条：中奖者交易规则</p>
+					<p>1、中奖者可以选择购买商品，也可以选择放弃购买，放弃购买不会扣保证金。</p>
+					<p>
+						2、中奖者需要在一周内购买，以中奖日期为准，在第七天的16:00为领取有最后期限，逾期取消购买资格。例：2013.1.1中奖，则需要在2013.1.8 16:00之前购买。
+					</p>
+					<p>3、中奖者购买商品时，需要登录账号，进入活动领取，点击购买即可。</p>
+					<p>4、在竞拍未结束时，保证金未解冻，中奖者购买商品，需要另外支付商品款。</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+</div>
+-->
