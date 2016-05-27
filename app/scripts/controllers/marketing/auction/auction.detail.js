@@ -10,7 +10,7 @@
 wapApp.controller('AuctionDetailController', 
 		 function ($scope, $state,GroupBuyService, $stateParams,GoodsDetailsService,MerchantService,AuctionService) {
 	
-		//竞拍商品查询 (时间、状态)
+	//竞拍商品查询 (时间、状态)
 	$scope.ggoods = [];
 	AuctionService.detail($stateParams.id)
 			.success(function(data){
@@ -23,7 +23,7 @@ wapApp.controller('AuctionDetailController',
 	
 	
 	
-		//商品本身
+	//商品本身
 	GoodsDetailsService.detail($stateParams.gid)
 	.success(function(data2){
 			$scope.goods = data2.body;
@@ -59,15 +59,13 @@ wapApp.controller('AuctionDetailController',
 			});
 	
 	
-			//查询竞拍次数
-		    AuctionService.addTimes($stateParams.id).success(function(data){
-		    	if(data.ok){
-		    		$scope.addTimes=data.body;
-				}
-			}).error(function(data){
-		
-			});
-		 
+	//查询竞拍次数
+    AuctionService.addTimes($stateParams.id).success(function(data){
+	    	if(data.ok){
+	    		$scope.addTimes=data.body;
+			}
+		}).error(function(data){
 	
+		});			    	
 	
 });

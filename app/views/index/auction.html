@@ -1,24 +1,27 @@
-<div class="auction_wrap clearfix">
+<div class="auction_wrap clearfix" ng-controller="AuctionListController">
     <section class="products clearfix">
-        <ul>
-            <li class="fs12 conducting">
+        <ul ng-repeat="au in ggoods">
+            <li class="fs12 conducting" ng-if="'AUCTIONING'==au.status" >
                 <div class="product_pic">
-                    <a href="#/auction-details.html">
+                    <a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">
                         <img src="images/index/product1.png" alt=""></a>
+                        <!-- <img src="{{au.goods.path}}" alt="{{au.goods.name+' '+au.sku.propertiesValue}}"> -->
                 </div>
                 <div class="groupbuy_info">
                     <div class="fl col-80">
                         <div class="groupbuy_title text-abb" style="width:92%;">
-                            <a href="#/auction-details.html">拉卡拉收款宝 手机移动pos机刷卡器实时到账 信用卡还款芯片</a>
+                            <a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">{{au.goods.name+' '+au.sku.propertiesValue}}</a>
                         </div>
                         <div class="groupbuy_sale fs12">
                             <span class="sp1">
                                 距结束
-                                <span>04</span>
+                                <span>{{au.ofd}}</span>
+                               日
+                                <span>{{au.ofh}}</span>
                                 时
-                                <span>50</span>
+                                <span>{{au.ofm}}</span>
                                 分
-                                <span>21</span>
+                                <span>{{au.ofs}}</span>
                                 秒
                             </span>
                             <br/>
@@ -26,7 +29,7 @@
                                 起拍价:
                                 <span>
                                     ￥
-                                    <span class="fs18">10.00</span>
+                                    <span class="fs18">{{au.startPrice}}</span>
                                 </span>
                             </span>
                         </div>
@@ -37,39 +40,39 @@
                             <div class="offer-state">进行中</div>
                         </div>
                         <div class="offer-amount">
-                            <span class="fs25">25</span>
+                            <span class="fs25">{{au.times}}</span>
                             <br/>
                             次出价
                         </div>
                     </div>
                 </div>
             </li>
-            <li class="fs12 willbegin">
+            <li class="fs12 willbegin"  ng-if="'NEW'==au.status">
                 <div class="product_pic">
-                    <a href="#/auction-details.html">
+                    <a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">
                         <img src="images/index/product1.png" alt=""></a>
                 </div>
                 <div class="groupbuy_info">
                     <div class="fl col-80">
                         <div class="groupbuy_title text-abb" style="width:92%;">
-                            <a href="#/auction-details.html">拉卡拉收款宝 手机移动pos机刷卡器实时到账 信用卡还款芯片</a>
+                            <a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">{{au.goods.name+' '+au.sku.propertiesValue}}</a>
                         </div>
                         <div class="groupbuy_sale fs12 over">
                             <span class="sp1">
-                                距结束
-                                <span>04</span>
-                                时
-                                <span>50</span>
-                                分
-                                <span>21</span>
-                                秒
+                                
+                                <span>{{au.startTime | date:'MM'}}</span>
+                                月
+                                <span>{{au.startTime | date:'dd'}}</span>
+                                日
+                                <span>{{au.startTime | date:'HH:mm'}}</span>
+                                开始
                             </span>
                             <br/>
                             <span class="sp1">
                                 起拍价:
                                 <span>
                                     ￥
-                                    <span class="fs18">10.00</span>
+                                    <span class="fs18">{{au.startPrice}}</span>
                                 </span>
                             </span>
                         </div>
@@ -80,31 +83,33 @@
                             <div class="offer-state">即将开始</div>
                         </div>
                         <div class="offer-amount">
-                            <span class="fs25">25</span>
+                            <span class="fs25">{{au.times}}</span>
                             <br/>
                             次出价
                         </div>
                     </div>
                 </div>
             </li>
-            <li class="fs12 over">
+            <li class="fs12 over" ng-if="'AUCTIONING'!=au.status && 'NEW'!=au.status">
                 <div class="product_pic">
-                    <a href="#/auction-details.html">
+                    <a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">
                         <img src="images/index/product1.png" alt=""></a>
                 </div>
                 <div class="groupbuy_info">
                     <div class="fl col-80">
                         <div class="groupbuy_title text-abb" style="width:92%;">
-                            <a href="#/auction-details.html">拉卡拉收款宝 手机移动pos机刷卡器实时到账 信用卡还款芯片</a>
+                            <a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">{{au.goods.name+' '+au.sku.propertiesValue}}</a>
                         </div>
                         <div class="groupbuy_sale fs12 over">
                             <span class="sp1">
-                                距结束
-                                <span>04</span>
+                              距结束
+                                <span>{{au.ofd}}</span>
+                               日
+                                <span>{{au.ofh}}</span>
                                 时
-                                <span>50</span>
+                                <span>{{au.ofm}}</span>
                                 分
-                                <span>21</span>
+                                <span>{{au.ofs}}</span>
                                 秒
                             </span>
                             <br/>
@@ -112,7 +117,7 @@
                                 起拍价:
                                 <span>
                                     ￥
-                                    <span class="fs18">10.00</span>
+                                    <span class="fs18">{{au.startPrice}}</span>
                                 </span>
                             </span>
                         </div>
@@ -123,7 +128,7 @@
                             <div class="offer-state">已结束</div>
                         </div>
                         <div class="offer-amount">
-                            <span class="fs25">25</span>
+                            <span class="fs25">{{au.times}}</span>
                             <br/>
                             次出价
                         </div>
@@ -133,10 +138,10 @@
         </ul>
     </section>
 </div>
-<nav></nav>
+<!-- <nav></nav> -->
 
-<!-- 
-    <div class="auction_wrap clearfix" ng-controller="AuctionListController">
+
+<!--     <div class="auction_wrap clearfix" ng-controller="AuctionListController">
 <header>
     <div class="sort">
         <span>默认排序</span> <i></i>
@@ -276,5 +281,4 @@
     </ul>
 </section>
 </div>
-<nav></nav>
--->
+<nav></nav> -->
