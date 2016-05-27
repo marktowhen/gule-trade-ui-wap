@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('fonts/icomoon.eot?emgeqx');
-    src:    url('fonts/icomoon.eot?emgeqx#iefix') format('embedded-opentype'),
-        url('fonts/icomoon.ttf?emgeqx') format('truetype'),
-        url('fonts/icomoon.woff?emgeqx') format('woff'),
-        url('fonts/icomoon.svg?emgeqx#icomoon') format('svg');
+    src:    url('fonts/icomoon.eot?fgeigu');
+    src:    url('fonts/icomoon.eot?fgeigu#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?fgeigu') format('truetype'),
+        url('fonts/icomoon.woff?fgeigu') format('woff'),
+        url('fonts/icomoon.svg?fgeigu#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,6 +24,27 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-me-dh:before {
+    content: "\e950";
+}
+.icon-me-sz:before {
+    content: "\e94d";
+}
+.icon-me-wxzf:before {
+    content: "\e94e";
+}
+.icon-me-xx:before {
+    content: "\e94f";
+}
+.icon-me-kf:before {
+    content: "\e94a";
+}
+.icon-me-pt:before {
+    content: "\e94b";
+}
+.icon-me-qb:before {
+    content: "\e94c";
+}
 .icon-hands:before {
     content: "\e949";
 }

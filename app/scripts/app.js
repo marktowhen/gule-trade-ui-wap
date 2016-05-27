@@ -82,20 +82,50 @@ var wapApp = angular
         controller: '',
         url:"/shareproduct.html"
       })
-    .state('partner-help', {
-        templateUrl: 'views/user/partner-help.html',
+    .state('problems', {
+        templateUrl: 'views/user/problems.html',
         controller: '',
-        url:"/partner-help.html"
+        url:"/problems.html"
+      })
+    .state('problem1', {
+        templateUrl: 'views/user/problem1.html',
+        controller: '',
+        url:"/problem1.html"
+      })
+    .state('problem2', {
+        templateUrl: 'views/user/problem2.html',
+        controller: '',
+        url:"/problem2.html"
+      })
+    .state('problem3', {
+        templateUrl: 'views/user/problem3.html',
+        controller: '',
+        url:"/problem3.html"
+      })
+    .state('problem4', {
+        templateUrl: 'views/user/problem4.html',
+        controller: '',
+        url:"/problem4.html"
+      })
+    .state('problem5', {
+        templateUrl: 'views/user/problem5.html',
+        controller: '',
+        url:"/problem5.html"
+      })
+    .state('problem6', {
+        templateUrl: 'views/user/problem6.html',
+        controller: '',
+        url:"/problem6.html"
       })
     .state('partner', {
         templateUrl: 'views/user/partner.html',
         controller: '',
         url:"/partner.html"
       })
-    .state('erweima', {
-        templateUrl: 'views/user/erweima.html',
+    .state('customer-service', {
+        templateUrl: 'views/user/customer-service.html',
         controller: '',
-        url:"/erweima.html"
+        url:"/customer-service.html"
       })
     .state('login', {
         templateUrl: 'views/user/login.html',
