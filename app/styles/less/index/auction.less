@@ -1,39 +1,79 @@
 
 i{display: inline-block}
-/*头部*/
-.auction_wrap header{width: 100%;height: 40px;line-height:40px;background: #fd8842;color: #fff;font-size: 13px;position: fixed;top: 0;z-index: 2}
-
-/*头部分类*/
-.auction_wrap .sort{text-align: center;font-size: 14px}
-.auction_wrap .sort i{position: relative;top: 1px;left: 4px}
-.auction_wrap .sort>i{width: 0;height: 0;border-left: 6px solid transparent;border-right: 6px solid transparent;border-top:11px solid #fff;}
-.auction_wrap .sort_content>div{height: 40px;position: relative;z-index: 2;background: #f0f0f0;color: #fd8841} 
-.auction_wrap .sort_content .sortbysales{border-bottom: 1px solid #ebebeb}
 
 /*热销商品*/
-.auction_wrap .products{background: #f0f0f0;margin-top: 40px}
-.auction_wrap .products .title{line-height: 25px;}
-.auction_wrap .products .title b{margin-left: 3%}
+.auction_wrap .products{background: #f0f0f0;margin-bottom: 52px;}
 .auction_wrap .products .title a{color: #3e3e3e;margin-right: 3%}
-.auction_wrap .products ul li{width: 100%;min-height: 132px;margin-bottom: 2%;float: left;background: #fff;padding-bottom: 5px}
+.auction_wrap .products ul li{position: relative;width: 100%;min-height: 132px;margin-bottom: 2%;float: left;background: #fff;padding-bottom: 5px}
 .auction_wrap .products ul li,.auction_wrap .products ul li a{color: #333}
-.auction_wrap .products ul li:nth-child(2n-1){margin-right: 0.4%}
-.auction_wrap .products .product_pic{text-align: center;line-height:132px}
-.auction_wrap .products ul li .product_pic a{position: relative;display:inline-block}
-.auction_wrap .products .product_pic img{width:118px;height: 118px;vertical-align: middle}
-.auction_wrap .products .participant{width: 100%;height: 20px;line-height: 20px;background:#cccccc;color: #3f3c3c;position: absolute;bottom: 5px;left: 0;}
-.auction_wrap .products .groupbuy_info{height: 118px;padding:7px 0;}
+.auction_wrap .products .product_pic{text-align: center;}
+.auction_wrap .products ul li .product_pic a{display:block;}
+.auction_wrap .products .product_pic img{width:100%;vertical-align: middle;height: 100%;}
+.auction_wrap .products .groupbuy_info{overflow: hidden;padding-left: 3%;padding-right: 3%;}
 .auction_wrap .products .groupbuy_title{max-height:36px;overflow: hidden;font-size: 14px;line-height: 18px;margin:5px 5px 0 0}
-.auction_wrap .products .groupbuy_title span.status{padding: 0 2px;color: #fff;background: #fd8841;box-sizing: border-box}
-.auction_wrap .products .groupbuy_title span.status_end{background: #cccccc}
-.auction_wrap .products .groupbuy_title span.status_wait{background: #fff;color: #40d071;border: 1px solid #40d071}
 .auction_wrap .products .groupbuy_sale{margin:7px 0 8px 0;}
-.auction_wrap .products .groupbuy_sale span>span{color: #fd8841}
-.auction_wrap .products .startgroupbuy{width: 100%;text-align: center;line-height: 28px}
-.auction_wrap .products .countdown{text-align: center;border: 1px solid #fd8842;}
-.auction_wrap .products .end_endtime{border: 1px solid #ccc;}
-.auction_wrap .products .wait_endtime{border: 1px solid #42cf71;}
-.auction_wrap .products .countdown span{font-family: '黑体';line-height: 26px}
-.auction_wrap .products .groupgo a{width: 100%;line-height: 30px;background: #fd8842;text-align: center;color: #fff;display: inline-block;border-radius:0 14px 14px 0} 
-.auction_wrap .products .group_end a{background: #ccc}  
-.auction_wrap .products .group_wait a{background: #42cf71;}
+
+
+/**************************8*/
+.fs25{
+	font-size:25px;
+}
+.offer-amount{
+	width:60px;
+	height:60px;
+	background-color:#ccc;
+	text-align: center;
+	color: #fff;
+}
+.offer-title-poa{
+	position: absolute;
+	bottom:25px;
+	right: 3%;
+	color: #fff;
+}
+.offer-title-top{
+	position: relative;
+}
+.offer-poa-bg{
+	width: 60px;
+	height: 25px;
+	line-height: 44px;
+	overflow: hidden;
+	background-color:#ccc;
+	opacity: 0.5;
+}
+.offer-state{
+	position: absolute;
+	bottom: 4px;
+	right:0;
+	color: #fff;
+	width:98%;
+	text-align: center;
+}
+.auction_wrap .products>ul>li.conducting .groupbuy_sale span.sp1 span{
+	color: #ff473f;
+}
+.auction_wrap .products>ul>li.conducting .offer-poa-bg{
+	background-color:#ff473f;
+}
+.auction_wrap .products>ul>li.conducting .offer-amount{
+	background-color:#ff473f;
+}
+.auction_wrap .products>ul>li.willbegin .groupbuy_sale span.sp1 span{
+	color:#33CC66;
+}
+.auction_wrap .products>ul>li.willbegin .offer-poa-bg{
+	background-color:#33CC66;
+}
+.auction_wrap .products>ul>li.willbegin .offer-amount{
+	background-color:#33CC66;
+}
+.auction_wrap .products>ul>li.over .groupbuy_sale span.sp1 span{
+	color:#808080;
+}
+.auction_wrap .products>ul>li.over .offer-poa-bg{
+	background-color:#808080;
+}
+.auction_wrap .products>ul>li.over .offer-amount{
+	background-color:#808080;
+}
