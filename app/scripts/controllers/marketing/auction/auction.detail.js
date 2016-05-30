@@ -58,7 +58,7 @@ wapApp.controller('AuctionDetailController',
 					}
 				}
 			}).error(function(data){
-				alert("error")
+				
 			});
 	
 	

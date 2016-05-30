@@ -29,7 +29,7 @@
 			<span class="p1" ng-show="goods.sale">￥{{goods.salePrice}}</span>
 			<span class="p1" ng-show="!goods.sale">￥{{goods.price}}</span>
 			<span class="p2" ng-show="goods.sale">
-				￥<del>{{goods.price}}</del>
+				价格：￥<del>{{goods.price}}</del>
 			</span>
 		</div>
 		<div class="pd1-info">
@@ -114,9 +114,9 @@
 				<li>
 					<a href="javascript:;" ng-click="getInfo(goods.gid)">产品参数</a>
 				</li>
-				<li >
+				<!-- <li >
 					<a href="javascript:;">商品推荐</a>
-				</li>
+				</li> -->
 			</ul>
 		</div>
 		<div class="pd4-bd">
@@ -144,25 +144,28 @@
 	</div>
 	<div class="cl"></div>
 	<div class="pd-box5">
-		<div style="width:34%;" class="pd5-info3 fr" data-target="#now-buy-dialog" data-toggle="modal" 
+		<div style="width:34%;background-color:#ff473f;" class="pd5-info3 fr" data-target="#now-buy-dialog" data-toggle="modal" 
 		ng-click="toBuy(goods.gid)">
 			<p>立即购买</p>			
 		</div>
-		<div class="pd5-info2 fr" data-target="#add-cart-dialog" data-toggle="modal"  ng-click="toCart(goods.gid)">
+		<div style="background-color:#FE8B86;"class="pd5-info2 fr" data-target="#add-cart-dialog" data-toggle="modal"  ng-click="toCart(goods.gid)">
 			<p>加入购物车</p>
 		</div>
 		<div class="pd5-info1 fr">
 			<ul>
-				<li>
+				<li style="border-right: 1px solid #ccc;">
 				<a target=blank href=http://wpa.qq.com/msgrd?V=3&uin={{goods.mQQ}}&Site=中华阿胶网&Menu=yes 	>
-					<i class="icon-QQ"></i>
+					<i class=" icon-xiaoxi-home"></i>
 					
 				</a>
 				<p>客服</p>
 				</li>
 				<li>
-					<i class="icon-sp-1"></i>
-					<p ng-click="toMerchant(goods.mid)">店铺</p>
+					<i class=" icon-shouchang-1"></i>
+					<i style="display: none;" class="icon-shouchang"></i>
+					<p>收藏</p>
+					<!-- <i class="icon-sp-1"></i>
+					<p ng-click="toMerchant(goods.mid)">店铺</p> -->
 				</li>
 			</ul>
 		</div>
