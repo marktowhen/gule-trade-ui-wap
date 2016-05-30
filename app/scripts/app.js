@@ -147,6 +147,11 @@ var wapApp = angular
         controller: '',
         url:"/news.html"
     })
+    .state('news1', {
+        templateUrl: 'views/user/news1.html',
+        controller: '',
+        url:"/news1.html"
+    })
     .state('pay-success', {
         templateUrl: 'views/products/pay-success.html',
         controller: '',

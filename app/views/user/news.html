@@ -1,6 +1,6 @@
 <div class="news_wrap" style="margin-bottom:50px;" ng-controller="MyNewController">
     <input type="hidden" id="pageId" value="new"></input>
-    <div ng-repeat="list in newList">
+    <!-- <div ng-repeat="list in newList">
         <div ng-click="updateStatus(list)" style="cursor:pointer">
             <div class={{list.class}}>
                 <div class="left fl icon-tuan"></div>
@@ -11,40 +11,36 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
    
-   <!-- <div class="newslist">
+    <div class="newslist" ui-sref="news1">
+        <div class="left fl icon-tuan"></div>
+        <div class="right fl">
+            <div class="title fl fs12">非常抱歉，您团购的商品已结束！</div>
+            <div class="time cl fs10">2016-05-01</div>
+        </div>
+    </div>
+   <div class="newslist seen">
         <div class="left fl icon-jingpai"></div>
         <div class="right fl">
-            <div class="title fl fs12">您团购的香水已结束</div>
-            <div class="time fr fs12">2016-05-01</div>
-            <div class="content cl fs10">经营者销售或者购买商品，可以以明示方式给中间人佣金。经营者给中间人佣金的，必须如实入账；中间人接收佣金的，必须如实入账</div>
+            <div class="title fl fs12">恭喜您，已团购成功！</div>
+            <div class="time cl fs10">2016-05-01</div>
         </div>
     </div>
     <div class="newslist seen">
-        <div class="left fl icon-tuan"></div>
+        <div class="left fl icon-me-tz"></div>
         <div class="right fl">
-            <div class="title fl fs12">您团购的香水已结束</div>
-            <div class="time fr fs12">2016-05-01</div>
-            <div class="content cl fs10">经营者销售或者购买商品，可以以明示方式给中间人佣金。经营者给中间人佣金的，必须如实入账；中间人接收佣金的，必须如实入账</div>
-        </div>
-    </div> -->
-   <!--  <div class="newslist seen">
-        <div class="left fl icon-tuan"></div>
-        <div class="right fl">
-            <div class="title fl fs12">您团购的香水已结束</div>
-            <div class="time fr fs12">2016-05-01</div>
-            <div class="content cl fs10">经营者销售或者购买商品，可以以明示方式给中间人佣金。经营者给中间人佣金的，必须如实入账；中间人接收佣金的，必须如实入账</div>
+            <div class="title fl fs12">恭喜您，已团购成功！</div>
+            <div class="time cl fs10">2016-05-01</div>
         </div>
     </div>
     <div class="newslist seen">
-        <div class="left fl icon-tuan"></div>
+        <div class="left fl me-tz"></div>
         <div class="right fl">
-            <div class="title fl fs12">您团购的香水已结束</div>
-            <div class="time fr fs12">2016-05-01</div>
-            <div class="content cl fs10">经营者销售或者购买商品，可以以明示方式给中间人佣金。经营者给中间人佣金的，必须如实入账；中间人接收佣金的，必须如实入账</div>
+            <div class="title fl fs12">非常抱歉，您竞拍的商品已结束！</div>
+            <div class="time cl fs10">2016-05-01</div>
         </div>
-    </div>  -->
+    </div>
 </div>
 <nav></nav>
 <script>
