@@ -3,24 +3,27 @@ html,body{background: #f0f0f0}
 
 /*头部导航*/
 .order_nav{position: fixed;top: 0;width: 100%;z-index: 3;background: #fff}
-.order_nav>a{width: 20%;text-align: center;float: left;line-height:40px;position: relative;color: #333}  
-.order_nav>a.active {color: #fd8841}
-.order_nav>a.active i{width: 80%;height: 2px;background: #fd8841;position: absolute;bottom: 0;left: 10%}
+.order_nav>ul>li a{width: 25%;text-align: center;float: left;line-height:40px;position: relative;color: #333}  
+.order_nav>ul>li.cur a {color: #ff473f}
+.order_nav>ul>li.cur a i{width: 80%;height: 2px;background: #ff473f;position: absolute;bottom: 0;left: 10%}
 
 /*订单列表*/
-.order_wrap .order_body ul{margin:0 0 60px 0;}
+.order_wrap .order_body ul{margin:0 0 60px 0;display: none;}
+.order_wrap .order_body ul.cur{
+	display: block;
+}
 .order_wrap .order_body ul li{height: 130px;background: #fff;margin-bottom:5px}
-.order_wrap ul li .order_pic{text-align: center;line-height: 90px}
-.order_wrap ul li .order_pic img{width: 65px;vertical-align: middle}
+.order_wrap ul li .order_pic{text-align: center;height: 76px;overflow: hidden;border: 1px solid #ccc;margin-right:3%;}
+.order_wrap ul li .order_pic img{width:100%;vertical-align: middle}
 .order_wrap ul li .order_info_wrap{height: 90px}
-.order_wrap ul li .order_info_body{margin: 15px 10px;height: 65px}
+.order_wrap ul li .order_info_body{overflow: hidden;}
 .order_wrap ul li .order_title a{height:30px;line-height: 15px;overflow: hidden;color: #333333}
-.order_wrap ul li .order_price{color: #fd8841;margin-top: 15px}
-.order_wrap ul li .order_num{text-align: right;margin:6px 5% 0 0}
-.order_wrap ul li .order_btn{width: 96%;height: 25px;margin:0 2%;border-top: 1px solid #bebebe;padding: 7px 0}
+.order_wrap ul li .order-prices{color: #ff473f;}
+.order_wrap ul li .order_num{text-align: right;margin-right: 2px;}
+.order_wrap ul li .order_btn{width: 96%;overflow: hidden;margin:0 2%;padding: 7px 0}
 .order_wrap ul li .order_cancel,.order_wrap ul li .order_pay,.order_wrap ul li .order_payagain,.order_wrap ul li .order_evaluate,.order_wrap ul li .order_logistics,.order_wrap ul li .order_confirm{height: 25px;box-sizing: border-box;border-radius: 3px;text-align: center;}
-.order_wrap ul li .order_cancel{width: 65px;border: 1px solid #bebebe;background: #fff;color: #3f3f3f;margin-right: 10px}
-.order_wrap ul li .order_pay{width: 50px;background: #fd8842;color: #fff;line-height: 25px;margin-right:4%}
+.order_wrap ul li .order_cancel{width: 65px;border: 1px solid #bebebe;background: #fff;color: #3f3f3f;}
+.order_wrap ul li .order_pay{width:65px;color: #ff473f;border: 1px solid #ff473f;line-height: 25px;margin-right:4%}
 .order_wrap ul li .order_confirm{width: 65px;border: 1px solid #fd8842;background: #fd8842;color: #fff;margin-right: 10px;line-height: 23px}
 .order_wrap ul li .order_evaluate{width: 50px;background: #fff;color: #3f3f3f;line-height: 23px;margin-right:10px;border: 1px solid #bebebe;}
 .order_wrap ul li .order_payagain{width: 65px;background: #fd8842;color: #fff;line-height: 25px;margin-right:4%;}
@@ -37,3 +40,22 @@ html,body{background: #f0f0f0}
 /*合并支付*/
 .order_wrap .merge_pay{width: 100%;height: 45px;position: fixed;bottom: 52px;z-index: 2;background: #f3f3f3}
 .order_wrap .merge_pay .merge_pay_a{width: 80px;line-height: 30px;background: #fd8842;border-radius: 3px;text-align: center;margin: 7px 5% 0 0}
+
+/****************/
+.order-hd1{
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #ccc;
+	padding-left: 4%;
+	padding-right: 4%;
+	color: #807E7E;
+}
+.order-bd1{
+	padding-left: 4%;
+	padding-right: 4%;
+	padding-top: 15px;
+	overflow: hidden;
+}
+.col-67{
+	width: 67%;
+}

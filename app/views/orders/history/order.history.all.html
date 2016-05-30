@@ -1,161 +1,153 @@
-<div ng-controller="OrdersAllController">
+<ul class="cur" style="margin-bottom: 0px;">
+    <li>
+        <div class="order-hd1">
+            <div class="order-hd1-left fl">2016年5月25日 22:00:11</div>
+            <div class="order-hd1-right fr fs14">待支付</div>
+        </div>
+        <div class="cl"></div>
+        <div class="order-bd1">
+            <div class="order_pic col-30 fl">
+                <a href="#/product/details.html">
+                    <img src="images/index/product2.png" alt=""></a>
+            </div>
+            <div class="order_info_wrap col-67 fs12 fl">
+                <div class="order_info_body">
+                    <div class="order_title col-70 fl">
+                        <a href="#/product/details.html">拉卡拉收款宝手机pos机 信用卡刷</a>
+                    </div>
+                    <div class="order-prices col-30 fr">
+                        <div class="order_price">
+                            ￥
+                            <span class="fs14">228.00</span>
+                        </div>
+                        <div class="cl"></div>
+                        <div class="order_num">×1</div>
+                    </div>
+                    <div class="cl h10"></div>
+                    <div class="order_btn fl">
+                        <button class="order_cancel fs12 fr">取消订单</button>
+                        <a href="" class="order_pay fs12 fr">立即支付</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="order-hd1">
+            <div class="order-hd1-left fl">2016年5月25日 22:00:11</div>
+            <div class="order-hd1-right fr fs14">待收货</div>
+        </div>
+        <div class="cl"></div>
+        <div class="order-bd1">
+            <div class="order_pic col-30 fl">
+                <a href="#/product/details.html">
+                    <img src="images/index/product2.png" alt=""></a>
+            </div>
+            <div class="order_info_wrap col-67 fs12 fl">
+                <div class="order_info_body">
+                    <div class="order_title col-70 fl">
+                        <a href="#/product/details.html">拉卡拉收款宝手机pos机 信用卡刷</a>
+                    </div>
+                    <div class="order-prices col-30 fr">
+                        <div class="order_price">
+                            ￥
+                            <span class="fs14">228.00</span>
+                        </div>
+                        <div class="cl"></div>
+                        <div class="order_num">×1</div>
+                    </div>
+                    <div class="cl h10"></div>
+                    <div class="order_btn fl">
+                        <button class="order_cancel fs12 fr" style="">查看物流</button>
+                        <a href="" class="order_pay fs12 fr">确认收货</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="order-hd1">
+            <div class="order-hd1-left fl">2016年5月25日 22:00:11</div>
+            <div class="order-hd1-right fr fs14">待发货</div>
+        </div>
+        <div class="cl"></div>
+        <div class="order-bd1">
+            <div class="order_pic col-30 fl">
+                <a href="#/product/details.html">
+                    <img src="images/index/product2.png" alt=""></a>
+            </div>
+            <div class="order_info_wrap col-67 fs12 fl">
+                <div class="order_info_body">
+                    <div class="order_title col-70 fl">
+                        <a href="#/product/details.html">拉卡拉收款宝手机pos机 信用卡刷</a>
+                    </div>
+                    <div class="order-prices col-30 fr">
+                        <div class="order_price">
+                            ￥
+                            <span class="fs14">228.00</span>
+                        </div>
+                        <div class="cl"></div>
+                        <div class="order_num">×1</div>
+                    </div>
+                    <div class="cl h10"></div>
+                    <div class="order_btn fl">
+                        <button class="order_cancel fs12 fr" style="">联系客服</button>
+                        <a href="" class="order_pay fs12 fr">查看订单</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- <div ng-controller="OrdersAllController">
 <input type="hidden" id="pageId" value="topay"></input>
 <ul ng-repeat="order in orders" style="margin-bottom: 0px;">
-                <li ng-repeat="goods in order.goods">
-                    <div class="order_pic col-25 fl">
-                        <a href="#/product/details.html">
-                            <img src="../images/index/product1.png" alt="">
-                        </a>
-                    </div>
-                    <div class="order_info_wrap col-75 fs12 fl">
-                        <div class="order_info_body">
-                            <div class="order_title col-75 fl">
-                                <a href="#/product/details.html">{{goods.gname}} </a>
-                            </div>
-                            <div class="order_num col-20 fl">×{{goods.count}}</div>
-                            <div class="order_price col-75 fl">￥{{goods.payout}}
-                                <span class="order_freight">(含运费￥{{order.postage}})</span>
-                            </div>
+<li ng-repeat="goods in order.goods">
+    <div class="order_pic col-25 fl">
+        <a href="#/product/details.html">
+            <img src="../images/index/product1.png" alt=""></a>
+    </div>
+    <div class="order_info_wrap col-75 fs12 fl">
+        <div class="order_info_body">
+            <div class="order_title col-75 fl">
+                <a href="#/product/details.html">{{goods.gname}}</a>
+            </div>
+            <div class="order_num col-20 fl">×{{goods.count}}</div>
+            <div class="order_price col-75 fl">
+                ￥{{goods.payout}}
+                <span class="order_freight">(含运费￥{{order.postage}})</span>
+            </div>
 
-                        </div>
-                    </div>
-                    <!--待付款状态-->
-                    <div class="order_btn fl" ng-show="isnow(order)">
-                        <a href="" class="order_pay fs12 fr">支付</a>
-                        <button class="order_cancel fs12 fr">取消订单</button>
-                    </div>
-                    <!--已收货的状态-->
-                    <div class="order_btn fl" ng-show="isreceived(order)">
-                        <a href="" class="order_payagain fs12 fr">再次购买</a>
-                        <a href="" class="order_evaluate fs12 fr">评价</a>
-                        <a href="" class="order_logistics fs12 fr">查看物流</a>                                 
-                    </div>
-                    <!--已发货状态-->
-                    <div class="order_btn fl" ng-show="isdelivered(order)">
-                        <a href="" class="order_pay fs12 fr">确认收货</a>
-                        <button class="order_cancel fs12 fr">查看物流</button>
-                    </div>
-                    <!--待发货状态-->
-                    <div class="order_btn fl" ng-show="isaccept(order)">
-                       <!--  <a href="" class="order_pay fs12 fr">催单</a> -->
-                        <button class="order_cancel fs12 fr" ng-click="deleteOrder(order)">取消订单</button>
-                    </div>
-
-                </li>
-               <!--  <li>
-                    <div class="order_pic col-25 fl">
-                        <a href="#/product/details.html">
-                            <img src="../images/index/product1.png" alt="">
-                        </a>
-                    </div>
-                    <div class="order_info_wrap col-75 fs12 fl">
-                        <div class="order_info_body">
-                            <div class="order_title col-75 fl">
-                                <a href="#/product/details.html">拉卡拉收款宝手机pos机 信用卡刷 </a>
-                            </div>
-                            <div class="order_num col-20 fl">×1</div>
-                            <div class="order_price col-75 fl">￥228.00
-                                <span class="order_freight">(含运费￥0.00)</span>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="order_btn fl">
-                        <a href="" class="order_payagain fs12 fr">再次购买</a>
-                        <a href="" class="order_evaluate fs12 fr">评价</a>
-                        <a href="" class="order_logistics fs12 fr">查看物流</a>                                               </div>
-                </li>
-                <li>
-                    <div class="order_pic col-25 fl">
-                        <a href="#/product/details.html">
-                            <img src="../images/index/product1.png" alt="">
-                        </a>
-                    </div>
-                    <div class="order_info_wrap col-75 fs12 fl">
-                        <div class="order_info_body">
-                            <div class="order_title col-75 fl">
-                                <a href="#/product/details.html">拉卡拉收款宝手机pos机 信用卡刷 </a>
-                            </div>
-                            <div class="order_num col-20 fl">×1</div>
-                            <div class="order_price col-75 fl">￥228.00
-                                <span class="order_freight">(含运费￥0.00)</span>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="order_btn fl">
-                        <a href="" class="order_pay fs12 fr">评价</a>
-                        <button class="order_cancel fs12 fr">查看物流</button>
-                    </div>
-                </li>
-                <li>
-                    <div class="order_pic col-25 fl">
-                        <a href="#/product/details.html">
-                            <img src="../images/index/product1.png" alt="">
-                        </a>
-                    </div>
-                    <div class="order_info_wrap col-75 fs12 fl">
-                        <div class="order_info_body">
-                            <div class="order_title col-75 fl">
-                                <a href="#/product/details.html">拉卡拉收款宝手机pos机 信用卡刷 </a>
-                            </div>
-                            <div class="order_num col-20 fl">×1</div>
-                            <div class="order_price col-75 fl">￥228.00
-                                <span class="order_freight">(含运费￥0.00)</span>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="order_btn fl">
-                        <a href="" class="order_pay fs12 fr">催单</a>
-                        <button class="order_cancel fs12 fr">取消订单</button>
-                    </div>
-                </li>
-                <li>
-                    <div class="order_pic col-25 fl">
-                        <a href="#/product/details.html">
-                            <img src="../images/index/product1.png" alt="">
-                        </a>
-                    </div>
-                    <div class="order_info_wrap col-75 fs12 fl">
-                        <div class="order_info_body">
-                            <div class="order_title col-75 fl">
-                                <a href="#/product/details.html">拉卡拉收款宝手机pos机 信用卡刷 </a>
-                            </div>
-                            <div class="order_num col-20 fl">×1</div>
-                            <div class="order_price col-75 fl">￥228.00
-                                <span class="order_freight">(含运费￥0.00)</span>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="order_btn fl">
-                        <a href="" class="order_pay fs12 fr">支付</a>
-                        <button class="order_cancel fs12 fr">取消订单</button>
-                    </div>
-                </li>
-                <li class="nopay">
-                    <div class="order_pic col-25 fl">
-                        <a href="#/product/details.html">
-                            <img src="../images/index/product1.png" alt="">
-                        </a>
-                    </div>
-                    <div class="order_info_wrap col-75 fs12 fl">
-                        <div class="order_info_body">
-                            <div class="order_title col-75 fl">
-                                <a href="#/product/details.html">拉卡拉收款宝手机pos机 信用卡刷 </a>
-                            </div>
-                            <div class="order_num col-20 fl">×1</div>
-                            <div class="order_price col-75 fl">￥228.00
-                                <span class="order_freight">(含运费￥0.00)</span>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="order_btn fl">
-                        <a href="" class="order_pay fs12 fr">支付</a>
-                        <button class="order_cancel fs12 fr">取消订单</button>
-                    </div>
-                </li>  -->
-            </ul>
         </div>
+    </div>
+
+    <div class="order_btn fl" ng-show="isnow(order)">
+        <a href="" class="order_pay fs12 fr">支付</a>
+        <button class="order_cancel fs12 fr">取消订单</button>
+    </div>
+
+    <div class="order_btn fl" ng-show="isreceived(order)">
+        <a href="" class="order_payagain fs12 fr">再次购买</a>
+        <a href="" class="order_evaluate fs12 fr">评价</a>
+        <a href="" class="order_logistics fs12 fr">查看物流</a>
+    </div>
+
+    <div class="order_btn fl" ng-show="isdelivered(order)">
+        <a href="" class="order_pay fs12 fr">确认收货</a>
+        <button class="order_cancel fs12 fr">查看物流</button>
+    </div>
+
+    <div class="order_btn fl" ng-show="isaccept(order)">
+
+        <button class="order_cancel fs12 fr" ng-click="deleteOrder(order)">取消订单</button>
+    </div>
+
+</li>
+
+</ul>
+</div>
+-->
