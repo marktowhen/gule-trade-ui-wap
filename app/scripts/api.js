@@ -102,7 +102,8 @@ wapApp.service('ApiService', function () {
         'refreshPwd':'http://localhost:8888/api/pwd/seller',
         //用户
         'user':{
-            'getLoginUser' :'http://localhost:8888/api/user/current'
+            'getLoginUser' :'http://localhost:8888/api/user/current',
+            'getSingleUser':'http://localhost:8888/api/get/user/name/:id'
         },
         //卖家
         'seller':{

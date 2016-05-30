@@ -1,14 +1,14 @@
 
-<div class="user center-view">
+<div class="user center-view" ng-controller="UserController">
 	<div class="user-box1">
 		<div class="user1-info">
 			<div class="left1">
 				<a href="#user-info.html">
-					<img src="images/user/pic1.png" alt="">
+					<img src="{{user.headImgUrl}}" alt="">
 				</a>
 			</div>
 			<div class="right1">
-				<p>我是小呀小乐谷</p>
+				<p>{{user.nickname}}</p>
 			</div>
 			<div class="user1-poa">
 				<i class="icon-ling-xiaoxi" style="margin-right: 5px;"></i>
