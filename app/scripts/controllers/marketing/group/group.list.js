@@ -24,7 +24,7 @@ wapApp.controller('GroupListController',
 						if(group.sku.grade==3){
 							group.showhide=true;
 						}
-						$scope.ggoods .push( data.body[i]);
+						$scope.ggoods .push(data.body[i]);
 					}
 					if (data.body.length<size) {
 						hasMore = false;

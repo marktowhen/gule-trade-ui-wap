@@ -59,21 +59,23 @@
         </section>
         <section class="index_activity over">
             <div class="index_groupbuy_body fl">
-                <a href="#/marketing/group/details.html"><img src="../../images/index/groupbuy1.png" alt=""></a>
+                <a href="#/marketing/group/details.html?ggid={{groupGoods.id}}&gid={{groupGoods.gid}}"><img src="../../images/index/groupbuy1.png" alt=""></a>
+                <!-- {{groupGoods.goods.path}} -->
                 <div class="index_groupbuy_title fs12">
                     移动POS机刷卡器 无线0.38积分26封顶一清pos 实时到账pos刷卡机 
                 </div>
                 <div class="groupbuy_info">
                     <div class="index_people_num fs12">
                         <i class="icon-renren"></i>
-                        <span class="col-20">2人团</span>
-                        <span>￥200.00</span>
-                        <a href="#/marketing/group/details.html" class="index_groupstart fr col-35">去开团 ＞</a>
+                        <span class="col-20">{{groupGoods.groupPeople}}人团</span>
+                        <span>￥{{groupGoods.groupPrice}}</span>
+                        <a href="#/marketing/group/details.html?ggid={{groupGoods.id}}&gid={{groupGoods.gid}}" class="index_groupstart fr col-35">去开团＞</a>
                     </div>
                 </div>
             </div>
-            <div class="index_hotsale fr">
-                <img src="../../images/index/hotsale.png" alt="">
+            <div class="index_hotsale fr" style="cursor:pointer" ng-click="godetail(flash.id)">
+                <!-- {{flash.goods.path}} -->
+                 <img src="../../images/index/hotsale.png" alt="">
             </div>
         </section>
         <section class="index_products clearfix">
