@@ -37,5 +37,13 @@ wapApp.service('GroupBuyService', ['$http', 'ApiService', function($http, ApiSer
     this.singleUser = function(groupid,uid){
         return $http.get(ApiService.api.marketing.group.user.single.replace(':groupid',groupid).replace(':uid',uid));
     };
+    /*通过uid查询出对应团的信息*/
+    this.getgroup = function(uid){
+        return $http.get(ApiService.api.marketing.group.user.getgroup.replace(':uid',uid));
+    };
+    /*通过id查出对应的团的详细信息*/
+    this.getgroupgoods = function(id,status){
+        return $http.get(ApiService.api.marketing.group.user.getgroupgoods.replace(':id',id),{'params':{'status':status}});
+    };
 
 }]);
