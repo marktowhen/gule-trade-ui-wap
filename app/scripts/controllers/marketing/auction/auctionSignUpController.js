@@ -8,7 +8,7 @@
  * Controller of the jingyunshopApp
  */
 wapApp.controller('AuctionSignUpController',
-    function ($scope, $cookies, ConstantService, OrderService, $state, PayService,
+    function ($scope, $cookies, ConstantService, OrderService,AuctionService, $state, PayService,
         MyReceiveAddressService, CashCouponService, DiscountCouponService, CouponService, PostageService) {
     var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
 
@@ -159,7 +159,12 @@ wapApp.controller('AuctionSignUpController',
             });
     };
 
-    $scope.selectAddress = function(address){
+    $scope.selectAddresss = function(address){
+    	 var orders = purchaseVo.orders;
+         var oids = [];
+         for(var i = 0; i < orders.length; i++){
+             oids.push(orders[i].id);
+         }
         $scope.purchaseVo.addressid = address.id;
         $scope.purchaseVo.city = address.city;
         $scope.purchaseVo.address = address.countryName+'-'+address.provinceName+'-'+address.cityName+'-'+address.address;
@@ -224,4 +229,17 @@ wapApp.controller('AuctionSignUpController',
     $scope.gobackCart = function(){
         $state.go("cart");
     };
+ 
+    
+    
+    AuctionService.single()
+	.success(function(data){
+		if(data.ok){
+			$scope.auction = data.body;
+			$scope.deposit=$scope.auction.deposit;
+		}
+	}).error(function(data){
+		
+	});
+    
 });
