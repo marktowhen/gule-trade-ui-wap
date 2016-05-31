@@ -7,12 +7,12 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-wapApp.controller('auctionSignUpController',
+wapApp.controller('AuctionSignUpController',
     function ($scope, $cookies, ConstantService, OrderService, $state, PayService,
         MyReceiveAddressService, CashCouponService, DiscountCouponService, CouponService, PostageService) {
     var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
 
-
+    
     $scope.purchaseVo = {'addressid':'', 'city':'', 'address':'', 'receiver':'', 'mobile':'', 'zipcode':'',
                 'couponID':'', 'couponType':'', 'invoiceType':'', 'invoiceTitle':'',
                 'paytypeCode':'ONLINE', 'paytypeName':'线上支付',
@@ -28,12 +28,14 @@ wapApp.controller('auctionSignUpController',
 
     OrderService.listOrders2Clearing().success(function(data){
         $scope.transaction = data.body;
+       
         var price = 0;
         if($scope.transaction && $scope.transaction.orders){
             $scope.finalmoney = $scope.transaction.totalPrice;
             $scope.pureOriginMoney = $scope.transaction.totalPriceWithoutPostage;
             $scope.originpostage = $scope.finalmoney - $scope.pureOriginMoney;
-         
+           
+          
         }else{
             alert("订单信息不正确。");
             //$state.go("cart");//should be go to illegal order page.

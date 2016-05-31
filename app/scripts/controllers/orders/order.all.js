@@ -6,7 +6,7 @@
  * Controller of the jingyunshopApp
  */
  wapApp.controller('OrdersAllController', function ($scope, ConstantService, OrderService, OrderStatusService, $state, $cookies, CartService) {
- 	var size = 4;
+ 	var size = 5;
 	var more =true;
  	var statuscode = "";
  	var anystatus = 0
@@ -20,6 +20,15 @@
     OrderService.listWithCondition("Ma9ogkIXSW-y0uSrvfqVIQ",statuscode,anystatus,0,size).success(function(data){
  		if(data.ok){
  			for(var i=0;i<data.body.length;i++){
+ 				var order = data.body[i];
+ 				if(data.body[i].statusCode==OrderStatusService.NEW_CODE){
+ 					order.type="待支付";
+ 				}else if(data.body[i].statusCode==OrderStatusService.ACCEPT_CODE){
+ 					order.type="待发货";
+ 				}else if(data.body[i].statusCode==OrderStatusService.DELIVERED_CODE){
+ 					order.type="待收货";
+ 				}
+
  				$scope.orders.push(data.body[i]);
  			}
  			if(data.body.length<size){
@@ -36,6 +45,14 @@
  				OrderService.listWithCondition("Ma9ogkIXSW-y0uSrvfqVIQ",statuscode,anystatus,0,size).success(function(data){
 		 			if(data.ok){
 			 			for(var i=0;i<data.body.length;i++){
+			 				var order = data.body[i];
+							if(data.body[i].statusCode==OrderStatusService.NEW_CODE){
+								order.type="待支付";
+							}else if(data.body[i].statusCode==OrderStatusService.ACCEPT_CODE){
+								order.type="待发货";
+							}else if(data.body[i].statusCode==OrderStatusService.DELIVERED_CODE){
+								order.type="待收货";
+							}
 			 				$scope.orders.push(data.body[i]);
 			 			}
 			 			if(data.body.length<size){
@@ -48,17 +65,14 @@
  			}
  		})
  	};
- 	$scope.isnow=function(order){
+ 	$scope.ispayment=function(order){
  		return order.statusCode==OrderStatusService.NEW_CODE;
  	};
- 	$scope.isreceived = function(order){
- 		return order.statusCode==OrderStatusService.RECEIVED_CODE;
+ 	$scope.ispaid = function(order){
+ 		return order.statusCode==OrderStatusService.ACCEPT_CODE;
  	};
  	$scope.isdelivered = function(order){
  		return order.statusCode == OrderStatusService.DELIVERED_CODE;
- 	};
- 	$scope.isaccept = function(order){
- 		return order.statusCode == OrderStatusService.ACCEPT_CODE;
  	};
 
 

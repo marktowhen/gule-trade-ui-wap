@@ -24,7 +24,8 @@ wapApp.service('ApiService', function () {
         'message':{
             'list':'http://localhost:8888/api/message/list/:uid/:from/:size',
             'updateStatus':'http://localhost:8888/api/message/:id',
-            'notheadcount':'http://localhost:8888/api/message/unread/amount/:uid'
+            'notheadcount':'http://localhost:8888/api/message/unread/amount/:uid',
+            'sigleMessage':'http://localhost:8888/api/message/single/:id'
         },
         'order':{
             'listWithCondition': 'http://localhost:8888/api/orders/user/list',
@@ -60,7 +61,9 @@ wapApp.service('ApiService', function () {
                 'user':{
                     'count':'http://localhost:8888/api/marketing/group/user/count/:groupID',
                     'list':'http://localhost:8888/api/marketing/group/user/list/:groupID',
-                    'single':'http://localhost:8888/api/marketing/group/user/single/:groupid/:uid'
+                    'single':'http://localhost:8888/api/marketing/group/user/single/:groupid/:uid',
+                    'getgroup':'http://localhost:8888/api/marketing/group/user/group/list/:uid',
+                    'getgroupgoods':'http://localhost:8888/api/marketing/group/user//group/single/:id'
                 }
             },
             'flashsale':{

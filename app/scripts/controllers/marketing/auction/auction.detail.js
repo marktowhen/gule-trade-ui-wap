@@ -121,10 +121,6 @@ wapApp.controller('AuctionDetailController',
   	
   	$scope.auctionid=$stateParams.id;
   	$scope.signUp = function(){
-  		alert($scope.auction)
-  		alert($scope.goods)
-  		alert($scope.auction.deposit)
-  		alert($scope.auctionid)
   		AuctionService.signUp($scope.auctionid,creatCar($scope.auction, $scope.goods,$scope.auction.deposit))
 			.success(function(data){
 				if(data.ok){
@@ -136,11 +132,9 @@ wapApp.controller('AuctionDetailController',
 	}
   	
   	var creatCar = function(groupGoods, goods, price){
-  		alert("ddd")
     	var goodsInCar = [{'gid':goods.gid,'skuid':groupGoods.skuid,'gname':goods.name,'mid':goods.mid,'mname':goods.mName,'price':price,'count':1}];
     	
     	var orderInCar = [{'mid':goods.mid,'mname':goods.mName,'postage':0,'type':'GROUP','goods':goodsInCar}];
-    	alert("lll")
     	return {'orders':orderInCar};
 	}
 	
