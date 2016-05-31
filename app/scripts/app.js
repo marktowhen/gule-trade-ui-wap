@@ -192,6 +192,11 @@ var wapApp = angular
         controller: '',
         url:"/one-details.html?id"
     })
+    .state('confirm-receipt', {
+        templateUrl: 'views/orders/confirm-receipt.html',
+        controller: '',
+        url:"/confirm-receipt.html"
+    })
     .state('rankgroup', {
     	  templateUrl: 'views/marketing/rankgroup/list.html',
     	  controller: '',
