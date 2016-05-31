@@ -16,4 +16,7 @@ wapApp.service('MyNewService', function ($http, $location , ApiService) {
 	this.notheadcount = function(uid){
 		return $http.get(ApiService.api.message.notheadcount.replace(':uid',uid));
 	};
+	this.getSingleMessage = function(id){
+		return $http.get(ApiService.api.message.sigleMessage.replace(':id',id));
+	}
 })

@@ -13,11 +13,11 @@
         </div>
     </div> -->
    
-    <div class="newslist" ui-sref="news1">
-        <div class="left fl icon-tuan"></div>
-        <div class="right fl">
-            <div class="title fl fs12">非常抱歉，您团购的商品已结束！</div>
-            <div class="time cl fs10">2016-05-01</div>
+    <div class="newslist" ng-repeat="list in newList" >
+        <div class={{list.class}} ng-click="updateStatus(list.id)"></div>
+        <div class="right fl" ng-click="updateStatus(list.id)">
+            <div class="title fl fs12">{{list.title}}</div>
+            <div class="time cl fs10">{{list.addtime}}</div>
         </div>
     </div>
   <!--  <div class="newslist seen">

@@ -150,7 +150,7 @@ var wapApp = angular
     .state('news1', {
         templateUrl: 'views/user/news1.html',
         controller: '',
-        url:"/news1.html"
+        url:"/news1.html?id"
     })
     .state('user-set', {
         templateUrl: 'views/user/user-set.html',

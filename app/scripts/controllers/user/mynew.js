@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
- wapApp.controller('MyNewController',function ($scope, $cookies, MyNewService,$stateParams,ConstantService) {
+ wapApp.controller('MyNewController',function ($scope,$state, $cookies, MyNewService,$stateParams,ConstantService) {
  	var size = 8;
 	var more =true;
 	$scope.newList = [];
@@ -18,9 +18,9 @@
  			for(var i=0;i<data.body.length;i++){
  				var list=data.body[i];
  				if(list.hasRead){
- 					list.class = "newslist seen";
+ 					list.class = "left fl icon-me-tz colorss";
  				}else{
- 					list.class = "newslist";
+ 					list.class = "left fl icon-me-tz";
  				}
  				$scope.newList.push(data.body[i]);
  				
@@ -32,34 +32,9 @@
  		};
  	});
  	
-	$scope.updateStatus=function(list){
-		
-		if(list.class=="newslist seen active"){
-			list.class="newslist seen";
-		}else{
-			list.class="newslist seen active";
-		}
-		MyNewService.updatestatus(list.id).success(function(data){
-			if(data.ok){
-					MyNewService.list("Ma9ogkIXSW-y0uSrvfqVIQ",0,size).success(function(data){
-				 		if(data.ok){
-				 			for(var i=0;i<data.body.length;i++){
-				 				var list=data.body[i];
-				 				if(list.hasRead){
-				 					list.class = "newslist seen";
-				 				}else{
-				 					list.class = "newslist";
-				 				}
-				 				$scope.newList.push(data.body[i]);
-				 				
-				 			}
-				 			
-				 		};
- 					});
-			}else{
-				alert("修改状态出错");
-			}
-		})
+	$scope.updateStatus=function(id){
+		$state.go('news1',{id:id});
+		alert(list.id);	
 	}
 
 	var falls = function(){
@@ -68,9 +43,9 @@
  				for(var i=0;i<data.body.length;i++){
  					var list=data.body[i];
  					if(list.hasRead){
-				 		list.class = "newslist seen";
+				 		list.class = "left fl icon-me-tz colorss";
 				 	}else{
-				 		list.class = "newslist";
+				 		list.class = "left fl icon-me-tz";
 				 	}
  					$scope.newList.push(data.body[i]);
  				}

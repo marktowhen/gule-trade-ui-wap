@@ -1,3 +1,9 @@
+<div class="order_nav">
+    <a ui-sref="orderhistory.all" class="all" ng-class="{'active': tabname=='all'}">全部<i></i></a>
+    <a ui-sref="orderhistory.topay" class="non-payment" ng-class="{'active': tabname=='topay'}">待支付<i></i></a>
+    <a ui-sref="orderhistory.paid" class="unfilled" ng-class="{'active': tabname=='paid'}">待发货<i></i></a>
+    <a ui-sref="orderhistory.delivered" class="delivered" ng-class="{'active': tabname=='delivered'}">待收货<i></i></a>
+</div>
 <ul>
     <li>
         <div class="order-hd1">
