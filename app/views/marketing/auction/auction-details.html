@@ -152,7 +152,7 @@
 						大厅出价
 					</div>
 				</li>
-				<li style="margin-right: 0px">
+				<li style="margin: none">
 					<div class="joined-rule-left fl">4</div>
 					<div class="joined-rule-right fl">
 						竞拍成功
@@ -182,12 +182,14 @@
 		</div>
 		<div class="auction-fix-right fr into">
 			<p class="ap1">
-				<span class="fs18">去报名</span>
-				（保证金：10元）
+				<!-- <a href="#/auction-signup.html?id={{auction.id}}&gid={{auction.id}}"> --><span class="fs18" ng-click="signUp()">去报名</span><!-- </a> -->
+				（保证金：{{auction.deposit}}元）
 			</p>
 			<p class="ap2">
+			<a href="#/auction-hall.html?id={{auction.id}}&gid={{auction.id}}">
 				<i class="icon-jingpai-me"></i>
 				进入竞拍大厅
+			</a>
 			</p>
 		</div>
 	</div>
