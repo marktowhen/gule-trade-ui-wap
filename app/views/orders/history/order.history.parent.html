@@ -1,10 +1,10 @@
 
-    <div class="order_wrap">
+    <div class="order_wrap" ng-controller="OrderParentController">
         <div class="order_nav over">
-            <a ui-sref="orderhistory.all" class="all" ng-class="{'active': tabname=='all'}">全部<i></i></a>
-            <a ui-sref="orderhistory.topay" class="non-payment" ng-class="{'active': tabname=='topay'}">待支付<i></i></a>
-            <a ui-sref="orderhistory.paid" class="unfilled" ng-class="{'active': tabname=='paid'}">待发货<i></i></a>
-            <a ui-sref="orderhistory.delivered" class="delivered" ng-class="{'active': tabname=='delivered'}">待收货<i></i></a>
+            <a class="all" style="cursor:pointer" ng-click="goall()">全部<i class="all"></i></a>
+            <a class="payment" style="cursor:pointer" ng-click="gopayment()">待支付<i class="payment"></i></a>
+            <a class="paid" style="cursor:pointer" ng-click="gounfilled()">待发货<i class="paid"></i></a>
+            <a class="delivered" style="cursor:pointer" ng-click="godelivered()">待收货<i class="delivered"></i></a>
             <!-- <a ui-sref="orderhistory.received" class="Received" ng-class="{'active': tabname=='received'}">已收货<i></i></a> -->
         </div>
         <section class="order_body" ui-view>

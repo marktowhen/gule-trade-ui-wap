@@ -5,8 +5,38 @@ html,body{background: #f0f0f0}
 .order_nav{position: fixed;top: 0;width: 100%;height: 40px;
 	line-height: 40px;z-index: 3;background: #fff}
 .order_nav a{width: 25%;text-align: center;float: left;line-height:40px;position: relative;color: #333}  
-.order_nav a {color: #ff473f}
-.order_nav a i{width: 80%;height: 2px;background: #ff473f;position: absolute;bottom: 0;left: 10%}
+.order_nav a i{width: 80%;height: 2px;position: absolute;bottom: 0;left: 10%}
+.order_nav a.all.on{
+	color:#ff473f;
+}
+
+.order_nav a i.all.on{
+	background:#ff473f;
+}
+
+.order_nav a.payment.on{
+	color:#ff473f;
+}
+
+.order_nav a i.payment.on{
+	background:#ff473f;
+}
+
+.order_nav a.paid.on{
+	color:#ff473f;
+}
+
+.order_nav a i.paid.on{
+	background:#ff473f;
+}
+.order_nav a.delivered.on{
+	color:#ff473f;
+}
+
+.order_nav a i.delivered.on{
+	background:#ff473f;
+}
+
 
 /*订单列表*/
 .order_wrap .order_body ul{margin:0 0 60px 0;}

@@ -43,7 +43,7 @@
  		})
  	}
  	var scrollBars = function(){
- 		if($("#pageId").val()=="topay"){
+ 		if($("#pageId").val()=="delivered"){
  			$(window).scroll(function(){
 				if(more && ($(window).scrollTop() >= $(document).height()-$(window).height()-70)){//滚动条的距离底部不足70px时触发
 					falls();
