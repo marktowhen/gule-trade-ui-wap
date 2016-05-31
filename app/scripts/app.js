@@ -63,12 +63,17 @@ var wapApp = angular
         url:"/marketing/group/list.html"
       })
     .state('auction', {
-        templateUrl: 'views/index/auction.html',
+        templateUrl: 'views/marketing/auction/auction.html',
         controller: '',
         url:"/index/auction.html"
       })
+    .state('auction-hall', {
+        templateUrl: 'views/marketing/auction/auction-hall.html',
+        controller: '',
+        url:"/auction-hall.html"
+      })
     .state('auction-success', {
-        templateUrl: 'views/index/auction-success.html',
+        templateUrl: 'views/marketing/auction/auction-success.html',
         controller: '',
         url:"/index/auction-success.html"
       })
@@ -78,14 +83,14 @@ var wapApp = angular
         url:"/user/myintegral.html"
       })
     .state('auction-details', {
-        templateUrl: 'views/index/auction-details.html',
+        templateUrl: 'views/marketing/auction/auction-details.html',
         controller: '',
         url:"/auction-details.html?id&gid"
       })
-    .state('signup', {
-        templateUrl: 'views/index/signup.html',
-        controller: '',
-        url:"/signup.html"
+    .state('auction-signup', {
+          templateUrl: 'views/marketing/auction/signup.html',
+          controller: '',
+          url:"/auction-signup.html?id&gid"
       })
     .state('shareproduct', {
         templateUrl: 'views/user/shareproduct.html',
@@ -186,6 +191,11 @@ var wapApp = angular
         templateUrl: 'views/index/one-details.html',
         controller: '',
         url:"/one-details.html?id"
+    })
+    .state('confirm-receipt', {
+        templateUrl: 'views/orders/confirm-receipt.html',
+        controller: '',
+        url:"/confirm-receipt.html"
     })
     .state('rankgroup', {
     	  templateUrl: 'views/marketing/rankgroup/list.html',

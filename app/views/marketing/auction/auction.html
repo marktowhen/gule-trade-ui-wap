@@ -1,0 +1,284 @@
+<div class="auction_wrap clearfix" ng-controller="AuctionListController">
+    <section class="products clearfix">
+        <ul ng-repeat="au in ggoods">
+            <li class="fs12 conducting" ng-if="'AUCTIONING'==au.status" >
+                <div class="product_pic">
+                    <a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">
+                        <img src="images/index/product1.png" alt=""></a>
+                        <!-- <img src="{{au.goods.path}}" alt="{{au.goods.name+' '+au.sku.propertiesValue}}"> -->
+                </div>
+                <div class="groupbuy_info">
+                    <div class="fl col-80">
+                        <div class="groupbuy_title text-abb" style="width:92%;">
+                            <a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">{{au.goods.name+' '+au.sku.propertiesValue}}</a>
+                        </div>
+                        <div class="groupbuy_sale fs12">
+                            <span class="sp1">
+                                距结束
+                                <span>{{au.ofd}}</span>
+                               日
+                                <span>{{au.ofh}}</span>
+                                时
+                                <span>{{au.ofm}}</span>
+                                分
+                                <span>{{au.ofs}}</span>
+                                秒
+                            </span>
+                            <br/>
+                            <span class="sp1">
+                                起拍价:
+                                <span>
+                                    ￥
+                                    <span class="fs18">{{au.startPrice}}</span>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="offer-title-poa">
+                        <div class="offer-title-top">
+                            <div class="offer-poa-bg"></div>
+                            <div class="offer-state">进行中</div>
+                        </div>
+                        <div class="offer-amount">
+                            <span class="fs25">{{au.times}}</span>
+                            <br/>
+                            次出价
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="fs12 willbegin"  ng-if="'NEW'==au.status">
+                <div class="product_pic">
+                    <a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">
+                        <img src="images/index/product1.png" alt=""></a>
+                </div>
+                <div class="groupbuy_info">
+                    <div class="fl col-80">
+                        <div class="groupbuy_title text-abb" style="width:92%;">
+                            <a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">{{au.goods.name+' '+au.sku.propertiesValue}}</a>
+                        </div>
+                        <div class="groupbuy_sale fs12 over">
+                            <span class="sp1">
+                                
+                                <span>{{au.startTime | date:'MM'}}</span>
+                                月
+                                <span>{{au.startTime | date:'dd'}}</span>
+                                日
+                                <span>{{au.startTime | date:'HH:mm'}}</span>
+                                开始
+                            </span>
+                            <br/>
+                            <span class="sp1">
+                                起拍价:
+                                <span>
+                                    ￥
+                                    <span class="fs18">{{au.startPrice}}</span>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="offer-title-poa">
+                        <div class="offer-title-top">
+                            <div class="offer-poa-bg"></div>
+                            <div class="offer-state">即将开始</div>
+                        </div>
+                        <div class="offer-amount">
+                            <span class="fs25">{{au.times}}</span>
+                            <br/>
+                            次出价
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="fs12 over" ng-if="'AUCTIONING'!=au.status && 'NEW'!=au.status">
+                <div class="product_pic">
+                    <a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">
+                        <img src="images/index/product1.png" alt=""></a>
+                </div>
+                <div class="groupbuy_info">
+                    <div class="fl col-80">
+                        <div class="groupbuy_title text-abb" style="width:92%;">
+                            <a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">{{au.goods.name+' '+au.sku.propertiesValue}}</a>
+                        </div>
+                        <div class="groupbuy_sale fs12 over">
+                            <span class="sp1">
+                              距结束
+                                <span>{{au.ofd}}</span>
+                               日
+                                <span>{{au.ofh}}</span>
+                                时
+                                <span>{{au.ofm}}</span>
+                                分
+                                <span>{{au.ofs}}</span>
+                                秒
+                            </span>
+                            <br/>
+                            <span class="sp1">
+                                起拍价:
+                                <span>
+                                    ￥
+                                    <span class="fs18">{{au.startPrice}}</span>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="offer-title-poa">
+                        <div class="offer-title-top">
+                            <div class="offer-poa-bg"></div>
+                            <div class="offer-state">已结束</div>
+                        </div>
+                        <div class="offer-amount">
+                            <span class="fs25">{{au.times}}</span>
+                            <br/>
+                            次出价
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+</div>
+<!-- <nav></nav> -->
+
+
+<!--     <div class="auction_wrap clearfix" ng-controller="AuctionListController">
+<header>
+    <div class="sort">
+        <span>默认排序</span> <i></i>
+        <div class="sort_content hide">
+            <div class="sortbysales">
+                最新 <i class="icon-exchange"></i>
+            </div>
+            <div class="sortbyprice">
+                猜你喜欢
+                <i class="icon-exchange"></i>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="products clearfix">
+    <ul>
+        <li class="fs12" ng-repeat="au in ggoods" >
+            <div class="product_pic col-40 fl">
+                <a href="#/auction-details.html?id={{au.id}}">
+                    <img src="{{au.goods.path}}" alt="{{au.goods.name+' '+au.sku.propertiesValue}}">
+                    <span class="participant">{{au.userAmount}}人参拍</span>
+                </a>
+            </div>
+            <div class="groupbuy_info col-60 fl" ng-if="'NEW'==au.status">
+                <div class="groupbuy_title">
+                    <span class="status status_wait">即将开始</span>
+                    <a href="#/auction-details.html?id={{au.id}}">{{au.goods.name+' '+au.sku.propertiesValue}}</a>
+                </div>
+                <div class="groupbuy_sale fs12 over">
+                    <span class="col-50 fl">
+                        起拍价:
+                        <span>￥{{au.startPrice}}元</span>
+                    </span>
+                    <span class="col-50 fl">
+                        参考价:
+                        <span>￥{{au.sku.salePrice}}元</span>
+                    </span>
+                    <span class="col-50 fl">
+                        加价幅度:
+                        <span>￥{{au.addPrice}}元</span>
+                    </span>
+                    <span class="col-50 fl">
+                        保证金:
+                        <span>￥{{au.deposit}}元</span>
+                    </span>
+                    <span class="col-50 fl">
+                        出价:
+                        <span>{{au.times}}次</span>
+                    </span>
+                </div>
+                <div class="startgroupbuy over fs12">
+                    <div class="countdown wait_endtime col-60 fl">
+                        <span>{{au.startTime | date:'MM月dd日 hh:mm'}}开始</span>
+                    </div>
+                    <div class="groupgo group_wait col-35 fl">
+                        <a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">即将开始 ＞</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="groupbuy_info col-60 fl" ng-if="'AUCTIONING'==au.status" >
+                <div class="groupbuy_title">
+                    <span class="status">正在热拍</span>
+                    <a href="#/auction-details.html?id={{au.id}}">{{au.goods.name+' '+au.sku.propertiesValue}}</a>
+                </div>
+                <div class="groupbuy_sale fs12 over">
+                    <span class="col-50 fl">
+                        起拍价:
+                        <span>￥{{au.startPrice}}元</span>
+                    </span>
+                    <span class="col-50 fl">
+                        参考价:
+                        <span>￥{{au.sku.salePrice}}元</span>
+                    </span>
+                    <span class="col-50 fl">
+                        加价幅度:
+                        <span>￥{{au.addPrice}}元</span>
+                    </span>
+                    <span class="col-50 fl">
+                        保证金:
+                        <span>￥{{au.deposit}}元</span>
+                    </span>
+                    <span class="col-50 fl">
+                        出价:
+                        <span>{{au.times}}次</span>
+                    </span>
+                </div>
+                <div class="startgroupbuy over fs12">
+                    <div class="countdown col-60 fl">
+                        距结束
+                        <span>{{au.end}}</span>
+                    </div>
+                    <div class="groupgo col-35 fl">
+                        <a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">我要拍 ＞</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="groupbuy_info col-60 fl" ng-if="'AUCTIONING'!=au.status && 'NEW'!=au.status">
+                <div class="groupbuy_title">
+                    <span class="status status_end">竞拍结束</span>
+                    <a href="#/auction-details.html?id={{au.id}}">{{au.goods.name+' '+au.sku.propertiesValue}}</a>
+                </div>
+                <div class="groupbuy_sale fs12 over">
+                    <span class="col-50 fl">
+                        起拍价:
+                        <span>￥{{au.startPrice}}元</span>
+                    </span>
+                    <span class="col-50 fl">
+                        参考价:
+                        <span>￥{{au.sku.salePrice}}元</span>
+                    </span>
+                    <span class="col-50 fl">
+                        加价幅度:
+                        <span>￥{{au.addPrice}}元</span>
+                    </span>
+                    <span class="col-50 fl">
+                        保证金:
+                        <span>￥{{au.deposit}}元</span>
+                    </span>
+                    <span class="col-50 fl">
+                        出价:
+                        <span>{{au.times}}次</span>
+                    </span>
+                </div>
+                <div class="startgroupbuy over fs12">
+                    <div class="countdown col-60 end_time end_endtime fl">
+                        距结束
+                        <span>{{au.end}}</span>
+                    </div>
+                    <div class="groupgo group_end col-35  fl">
+                        <a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">已结束 ＞</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</section>
+</div>
+<nav></nav> -->

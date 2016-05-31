@@ -118,5 +118,24 @@ wapApp.controller('AuctionDetailController',
 	return TimePromise;
 	
   	}
+  	
+  	$scope.auctionid=$stateParams.id;
+  	$scope.signUp = function(){
+  		AuctionService.signUp($scope.auctionid,creatCar($scope.auction, $scope.goods,$scope.auction.deposit))
+			.success(function(data){
+				if(data.ok){
+					$state.go('auction-signup');
+				}else{
+					alert(data.message);
+				}
+			});
+	}
+  	
+  	var creatCar = function(groupGoods, goods, price){
+    	var goodsInCar = [{'gid':goods.gid,'skuid':groupGoods.skuid,'gname':goods.name,'mid':goods.mid,'mname':goods.mName,'price':price,'count':1}];
+    	
+    	var orderInCar = [{'mid':goods.mid,'mname':goods.mName,'postage':0,'type':'GROUP','goods':goodsInCar}];
+    	return {'orders':orderInCar};
+	}
 	
 });
