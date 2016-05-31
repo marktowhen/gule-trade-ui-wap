@@ -232,4 +232,9 @@ var wapApp = angular
         controller: '',
         url:"/my-groups-failed.html"
       })
+     .state('my-auctions', {
+        templateUrl: 'views/marketing/my-auctions/my-auctions.html',
+        controller: '',
+        url:"/my-auctions.html"
+      })
   });
