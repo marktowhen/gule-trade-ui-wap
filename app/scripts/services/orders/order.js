@@ -59,4 +59,10 @@ wapApp.service('OrderService', function ($http, $location, ApiService, PayServic
         return $http.get(ApiService.api.order.expressinfo.replace(':oid',oid)
             .replace(':code',code).replace(':codeid',codeid));
     };
+    this.confirmDelivered = function(oid){
+        return $http.put(ApiService.api.order.confirmDelivered.replace(':oid',oid));
+    };
+    this.singleorder = function(oid){
+        return $http.get(ApiService.api.order.singleorder.replace(':oid',oid));
+    };
 });
