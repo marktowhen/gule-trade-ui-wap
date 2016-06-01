@@ -1,8 +1,18 @@
-<div class="auction-hall center-view">
-	<div class="ad1-top before">
+<div class="auction-hall center-view" ng-controller="AuctionHallController">
+	<div class="ad1-top before" ng-if="'NEW'==auction.status">
 		<div class="ad1-circle fl"> <i class="icon-zb"></i>
 		</div>
-		<p class="fl">05月05日 10:00开始</p>
+		<p class="fl">{{auction.startTime | date:'MM月dd日 HH:mm'}} 开始</p>
+	</div>
+	<div class="ad1-top over" ng-if="'AUCTIONING'==auction.status">
+		<div class="ad1-circle fl"> <i class="icon-zb"></i>
+		</div>
+		<p class="fl">{{end}}</p>
+	</div>
+	<div class="ad1-top over" ng-if="'AUCTIONING'!=auction.status && 'NEW'!=auction.status">
+		<div class="ad1-circle fl"> <i class="icon-zb"></i>
+		</div>
+		<p class="fl">{{end}}</p>
 	</div>
 	<div class="ad-box1">
 		<div class="ad1-mid">
@@ -17,7 +27,7 @@
 					起拍价:
 					<span style="color:#ff473f;">
 						￥
-						<span class="fs30">1.00</span>
+						<span class="fs30">{{auction.startPrice}}</span>
 					</span>
 				</span>
 			</div>
@@ -32,8 +42,8 @@
 				</div>
 			</div>
 			<div class="an-box2-prices fl">
-				<span class="fs30 ah-num" style="font-weight: bold;">1</span>
-				<p class="fs12" style="color:#B3B1B1;">您将出价10元</p>
+				<span class="fs30 ah-num" style="font-weight: bold;">{{auction.addPrice}}</span>
+				<p class="fs12" style="color:#B3B1B1;">您将出价{{auction.addPrice}}元</p>
 			</div>
 			<div class="fl ah-add">
 				<div class="ah-circle">
@@ -42,11 +52,15 @@
 			</div>
 		</div>
 		<div class="cl h30"></div>
-		<div class="an-box2-bottom">
+		<div class="an-box2-bottom" ng-if="'NEW'==auction.status">
 			<p>等待开拍</p>
-			<!-- <p style="color:#790001;">正在领先中</p>
-		-->
-	</div>
+	   </div>
+		<div class="an-box2-bottom" ng-if="'AUCTIONING'==auction.status">
+			<p style="color:#790001;">立即出价</p>
+	   </div>
+		<div class="an-box2-bottom" ng-if="'AUCTIONING'!=auction.status && 'NEW'!=auction.status">
+			<p>竞拍已结束</p>
+	   </div>
 </div>
 <div class="cl h30"></div>
 <div class="ah-box3">

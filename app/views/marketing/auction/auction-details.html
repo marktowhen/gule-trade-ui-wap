@@ -180,12 +180,16 @@
 				</li>
 			</ul>
 		</div>
-		<div class="auction-fix-right fr into">
+		<div class="auction-fix-right fr into" ng-if="'detail'==auction.key">
 			<p class="ap2">
 				<!-- <a href="#/auction-signup.html?id={{auction.id}}&gid={{auction.id}}"> --><span class="fs18" ng-click="signUp()">去报名</span><!-- </a> -->
 				（保证金：{{auction.deposit}}元）
 			</p>
-			<p class="ap1">
+			
+		</div>
+		<div class="auction-fix-right fr into" ng-if="'hall'==auction.key">
+			
+			<p class="ap2">
 			<a href="#/auction-hall.html?id={{auction.id}}&gid={{auction.id}}">
 				<i class="icon-jingpai-me"></i>
 				进入竞拍大厅

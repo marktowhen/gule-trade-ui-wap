@@ -39,7 +39,7 @@
 				</p>
 			</div>
 			<div class="cl"></div>
-			<div class="pm-box1" style="margin: 30px auto;">报名，提交保证金</div>
+			<div class="pm-box1" style="margin: 30px auto;" ng-click="submits()">报名，提交保证金</div>
 		</div>
 	</div>
 	
@@ -49,9 +49,9 @@
 	
 	
 	
-<!-- 	<div class="cl h70"></div>
+	<div class="cl h70"></div>
 	
-	<div class="pay-address">
+	<!-- <div class="pay-address">
 		<div class="pd-box1">
 			<p class="fs18 fl">送至</p>
 			<div class="change-but fr">
@@ -65,7 +65,7 @@
 			<div class="cl h10"></div>
 			<p style="color:#999;">{{transaction.countryName}}{{transaction.provinceName}}{{transaction.cityName}}{{transaction.address}}</p>
 		</div>
-	</div> -->
+	</div>  -->
 	<div class="cl h20" style="display: none"></div>
 <div ng-repeat="order in transaction.orders" style="display: none">
 	<div class="pay-info">
