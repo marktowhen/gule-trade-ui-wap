@@ -257,4 +257,9 @@ var wapApp = angular
         controller: '',
         url:"/auction-bond.html"
       })
+     .state('view-details', {
+        templateUrl: 'views/marketing/my-auctions/view-details.html',
+        controller: '',
+        url:"/view-details.html"
+      })
   });
