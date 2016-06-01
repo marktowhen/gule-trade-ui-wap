@@ -38,7 +38,9 @@ wapApp.service('ApiService', function () {
             'cancel':'http://localhost:8888/api/orders/cancellation/:oid',
             'count':'http://localhost:8888/api/orders/seller/count',
             'listClearing':'http://localhost:8888/api/cart/clearing/list',
-            'submit':'http://localhost:8888/api/order'
+            'submit':'http://localhost:8888/api/order',
+            'confirmDelivered':'http://localhost:8888/api/orders/update/status/:oid',
+            'singleorder':'http://localhost:8888/api/order/single/:oid'
         },
         'pay':{
             'list':'http://localhost:8888/api/payments',

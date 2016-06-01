@@ -8,8 +8,7 @@
  * Controller of the jingyunshopApp
  */
 wapApp.controller('OrderParentController', function ($scope,$state) {
-	$(".order_nav a.all").addClass('on');
-	$(".order_nav a i.all").addClass('on');
+	
 	$scope.goall = function(){
 		$state.go('orderhistory.all');
 		$(".order_nav a.all").addClass('on');

@@ -28,11 +28,11 @@
                     </div>
                     <div class="cl h10"></div>
                     <div class="order_btn fl">
-                        <button class="order_cancel fs12 fr">取消订单</button>
-                        <a href="" class="order_pay fs12 fr">立即支付</a>
+                        <button class="order_cancel fs12 fr" ng-click="deleteOrder(order)">取消订单</button>
+                        <a href="" class="order_pay fs12 fr" ng-click="payment(order,goods)">立即支付</a>
                     </div>
 
-                </div>
+                </div> 
             </div>
         </div>
     </li>
