@@ -46,6 +46,23 @@ wapApp.controller('AuctionHallController',
 
 	})
 	
+	//竞拍记录
+	$scope.priceLog = [];
+	AuctionService.listPriceLog($stateParams.id)
+			.success(function(data){
+				if(data.ok){
+					for (var i = 0; i < data.body.length; i++) {
+						if(i==0){
+							$scope.winner=data.body[i];//领先
+						}else{
+							$scope.priceLog .push( data.body[i]);
+						}
+					}
+				}
+			}).error(function(data){
+				
+			});
+	
 	
 	//竞拍时间格式处理
 	var TimePromise;

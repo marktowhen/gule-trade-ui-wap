@@ -66,12 +66,23 @@
 <div class="ah-box3">
 		<div class="ah-box3-details">
 			<ul class="fl">
-				<li class="cur">
+				<li class="cur" >
 					<p class="">
 						<i class="icon-jp-king"></i>
-						我 09:00:36 出价
-						<span>￥11.00</span>
+						158*******16 {{winner.addtime | date:'HH:mm:ss'}} 出价
+						<span>￥{{winner.price}}</span>
 					</p>
+				</li>
+				<li class="" ng-repeat="plog in priceLog">
+					<ul>
+					 <li>
+					  <p class="">
+						<i class="icon-jp-i"></i>
+						138*******32 {{plog.addtime | date:'HH:mm:ss'}} 出价
+						<span>￥{{plog.price}}</span>
+					</p>
+					 </li>
+					</ul>
 				</li>
 				<li class="">
 					<p class="">
