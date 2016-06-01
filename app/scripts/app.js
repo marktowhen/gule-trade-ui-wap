@@ -237,4 +237,24 @@ var wapApp = angular
         controller: '',
         url:"/my-auctions.html"
       })
+     .state('auction-record', {
+        templateUrl: 'views/marketing/my-auctions/auction-record.html',
+        controller: '',
+        url:"/auction-record.html"
+      })
+     .state('auction-over', {
+        templateUrl: 'views/marketing/my-auctions/auction-over.html',
+        controller: '',
+        url:"/auction-over.html"
+      })
+     .state('auction-topay', {
+        templateUrl: 'views/marketing/my-auctions/auction-topay.html',
+        controller: '',
+        url:"/auction-topay.html"
+      })
+     .state('auction-bond', {
+        templateUrl: 'views/marketing/my-auctions/auction-bond.html',
+        controller: '',
+        url:"/auction-bond.html"
+      })
   });
