@@ -207,4 +207,54 @@ var wapApp = angular
         controller: '',
         url:"/marketing/rankgroup/details.html?ggid&gid&group_id"
       })
+     .state('my-groups-parent', {
+        templateUrl: 'views/marketing/my-groups/my-groups-parent.html',
+        controller: '',
+        url:"/my-groups-parent.html"
+      })
+     .state('my-groups-all', {
+        templateUrl: 'views/marketing/my-groups/my-groups-all.html',
+        controller: '',
+        url:"/my-groups-all.html"
+      })
+     .state('my-groups-ing', {
+        templateUrl: 'views/marketing/my-groups/my-groups-ing.html',
+        controller: '',
+        url:"/my-groups-ing.html"
+      })
+     .state('my-groups-success', {
+        templateUrl: 'views/marketing/my-groups/my-groups-success.html',
+        controller: '',
+        url:"/my-groups-success.html"
+      })
+     .state('my-groups-failed', {
+        templateUrl: 'views/marketing/my-groups/my-groups-failed.html',
+        controller: '',
+        url:"/my-groups-failed.html"
+      })
+     .state('my-auctions', {
+        templateUrl: 'views/marketing/my-auctions/my-auctions.html',
+        controller: '',
+        url:"/my-auctions.html"
+      })
+     .state('auction-record', {
+        templateUrl: 'views/marketing/my-auctions/auction-record.html',
+        controller: '',
+        url:"/auction-record.html"
+      })
+     .state('auction-over', {
+        templateUrl: 'views/marketing/my-auctions/auction-over.html',
+        controller: '',
+        url:"/auction-over.html"
+      })
+     .state('auction-topay', {
+        templateUrl: 'views/marketing/my-auctions/auction-topay.html',
+        controller: '',
+        url:"/auction-topay.html"
+      })
+     .state('auction-bond', {
+        templateUrl: 'views/marketing/my-auctions/auction-bond.html',
+        controller: '',
+        url:"/auction-bond.html"
+      })
   });

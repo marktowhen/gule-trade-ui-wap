@@ -8,7 +8,7 @@
  * Controller of the jingyunshopApp
  */
 wapApp.controller('OrderAddressListController',
-    function ($scope, $cookies, ConstantService, OrderService, $state,
+    function ($scope,$stateParams, $cookies, ConstantService, OrderService, $state,
         MyReceiveAddressService, CashCouponService, DiscountCouponService, CouponService, PostageService) {
     var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
 
@@ -37,19 +37,37 @@ wapApp.controller('OrderAddressListController',
     };
 
     $scope.select = function(address){
-        if($scope.transaction && $scope.transaction.orders && $scope.transaction.orders.length > 0){
-            $scope.transaction.addressid = address.id;
-            $scope.transaction.city = address.city;
-            $scope.transaction.address = address.countryName+'-'+address.provinceName+'-'+address.cityName+'-'+address.address;
-            $scope.transaction.receiver = address.receiver;
-            $scope.transaction.mobile = address.mobile;
-            $scope.transaction.zipcode = address.zipcode;
-            $scope.transaction.countryName = address.countryName;
-            $scope.transaction.provinceName = address.provinceName;
-            $scope.transaction.cityName = address.cityName;
-            $scope.selectAddress(address);
-            $state.go("orderconfirm.page");
-        }
+    	if($stateParams.key=="auction"){
+    		if($scope.transaction && $scope.transaction.orders && $scope.transaction.orders.length > 0){
+    			$scope.transaction.addressid = address.id;
+    			$scope.transaction.city = address.city;
+    			$scope.transaction.address = address.countryName+'-'+address.provinceName+'-'+address.cityName+'-'+address.address;
+    			$scope.transaction.receiver = address.receiver;
+    			$scope.transaction.mobile = address.mobile;
+    			$scope.transaction.zipcode = address.zipcode;
+    			$scope.transaction.countryName = address.countryName;
+    			$scope.transaction.provinceName = address.provinceName;
+    			$scope.transaction.cityName = address.cityName;
+    			//$scope.selectAddress(address);
+    			$state.go("auction-signup");
+    		}
+    	}else{
+    		if($scope.transaction && $scope.transaction.orders && $scope.transaction.orders.length > 0){
+    			$scope.transaction.addressid = address.id;
+    			$scope.transaction.city = address.city;
+    			$scope.transaction.address = address.countryName+'-'+address.provinceName+'-'+address.cityName+'-'+address.address;
+    			$scope.transaction.receiver = address.receiver;
+    			$scope.transaction.mobile = address.mobile;
+    			$scope.transaction.zipcode = address.zipcode;
+    			$scope.transaction.countryName = address.countryName;
+    			$scope.transaction.provinceName = address.provinceName;
+    			$scope.transaction.cityName = address.cityName;
+    			$scope.selectAddress(address);
+    			
+    			$state.go("orderconfirm.page");
+    			
+    		}
+    	}
     };
 
     $scope.deleteaddr = function(address){

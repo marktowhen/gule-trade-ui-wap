@@ -1,3 +1,5 @@
+'use strict'
+
 function mycollection_onload(){
     //取消收藏
     $(document).on('click','.mycollection_wrap .deselect',function(){

@@ -19,6 +19,10 @@ wapApp.service('AuctionService', ['$http', 'ApiService', function($http, ApiServ
         return  $http.get(ApiService.api.marketing.auction.detail,
                     {'params': {'ID':ID}});
     };
+    //查询单个
+    this.single  = function (){
+    	return  $http.get(ApiService.api.marketing.auction.single);
+    };
     
     //查询出价记录
     this.addTimes  = function (auctionGoodsID){
@@ -34,5 +38,5 @@ wapApp.service('AuctionService', ['$http', 'ApiService', function($http, ApiServ
     this.signUp  = function (auctionid,cart){
     	return $http.post(ApiService.api.marketing.auction.signUp.replace(':auctionid',auctionid), cart)
     };
-
+  
 }]);
