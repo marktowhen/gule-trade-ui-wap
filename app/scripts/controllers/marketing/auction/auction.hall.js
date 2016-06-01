@@ -21,6 +21,7 @@ wapApp.controller('AuctionHallController',
 					//$scope.auction.key = $stateParams.key;
 					$scope.endtime=$scope.auction.endTime;
 			  		$scope.starttime = $scope.auction.startTime;	
+			  		$scope.duration = Math.round((($scope.endtime-$scope.starttime)/1000)/3600);
 					runTiming()
 				}
 			}).error(function(data){

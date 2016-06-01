@@ -20,7 +20,7 @@
 				<img src="images/auction-details/p2.png" alt=""></div>
 			<div class="adm-left fr">
 				<p>
-					<a href="#">拉卡拉收款宝手机pos机信用卡刷卡器移动pos</a>
+					<a href="#">{{goods.name+' '+goods.sku.propertiesValue}}</a>
 				</p>
 				<div class="cl"></div>
 				<span class="sp1">
@@ -77,13 +77,13 @@
 					<p class="">
 						<i class="icon-jp-i"></i>
 						拍品起拍价
-						<span>￥1.00</span>
+						<span>￥{{auction.startPrice}}</span>
 					</p>
 				</li>
 				<li>
 					<p class="">
 						<i class="icon-jp-i"></i>
-						竞拍时间约24小时
+						竞拍时间约{{duration}}小时
 					</p>
 				</li>
 			</ul>
