@@ -10,6 +10,24 @@
 wapApp.controller('AuctionHallController',
     function ($scope,$interval,$state,GoodsDetailsService,$stateParams,$location,AuctionService) {
 	
+	//竞拍记录
+	$scope.priceLog = [];
+	$scope.winner;
+	AuctionService.listPriceLog($stateParams.id)
+	.success(function(data){
+		if(data.ok){
+			for (var i = 0; i < data.body.length; i++) {
+				if(i==0){
+					$scope.winner=data.body[i];//领先
+					$scope.currentPrice=$scope.winner.price;//当前出价
+				}else{
+					$scope.priceLog .push( data.body[i]);
+				}
+			}
+		}
+	}).error(function(data){
+		
+	});
 	
 	//竞拍商品查询 (时间、状态)
 	$scope.ggoods = [];
@@ -18,10 +36,12 @@ wapApp.controller('AuctionHallController',
 			.success(function(data){
 				if(data.ok){
 					$scope.auction = data.body;
+					$scope.auction.myPrice = $scope.currentPrice;
 					//$scope.auction.key = $stateParams.key;
 					$scope.endtime=$scope.auction.endTime;
 			  		$scope.starttime = $scope.auction.startTime;	
 			  		$scope.duration = Math.round((($scope.endtime-$scope.starttime)/1000)/3600);
+			  		$scope.priceSty = $scope.auction.addPrice;//出价幅度
 					runTiming()
 				}
 			}).error(function(data){
@@ -46,22 +66,6 @@ wapApp.controller('AuctionHallController',
 
 	})
 	
-	//竞拍记录
-	$scope.priceLog = [];
-	AuctionService.listPriceLog($stateParams.id)
-			.success(function(data){
-				if(data.ok){
-					for (var i = 0; i < data.body.length; i++) {
-						if(i==0){
-							$scope.winner=data.body[i];//领先
-						}else{
-							$scope.priceLog .push( data.body[i]);
-						}
-					}
-				}
-			}).error(function(data){
-				
-			});
 	
 	
 	//竞拍时间格式处理
@@ -110,6 +114,21 @@ wapApp.controller('AuctionHallController',
 	
 	return TimePromise;
 	
+  	}
+  	
+  	$scope.myPrice=$scope.currentPrice; //我的出价
+  	//$scope.currentPrice=$scope.winner.price; //当前价格
+  	$scope.addTimes=0; //加价次数
+  	$scope.reduceTimes=0; //减价次数
+  	//$scope.priceSty=$scope.auction.addPrice; //加价幅度
+  	
+  	$scope.add = function(){
+  		$scope.addTimes=$scope.addTimes+1;
+  		$scope.auction.myPrice=$scope.auction.myPrice+$scope.priceSty;
+	}
+  	$scope.reduce = function(){
+  		$scope.reduceTimes=$scope.reduceTimes+1;
+  		$scope.auction.myPrice=$scope.auction.myPrice-$scope.priceSty;
   	}
     
 });
