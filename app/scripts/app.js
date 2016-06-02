@@ -267,4 +267,9 @@ var wapApp = angular
         controller: '',
         url:"/order-details.html"
       })
+     .state('search', {
+        templateUrl: 'views/index/search.html',
+        controller: '',
+        url:"/search.html"
+      })
   });
