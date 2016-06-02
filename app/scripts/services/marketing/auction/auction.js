@@ -38,5 +38,10 @@ wapApp.service('AuctionService', ['$http', 'ApiService', function($http, ApiServ
     this.signUp  = function (auctionid,cart){
     	return $http.post(ApiService.api.marketing.auction.signUp.replace(':auctionid',auctionid), cart)
     };
+    //出价
+    this.bidding  = function (auctionid,price){
+        return  $http.get(ApiService.api.marketing.auction.bidding,
+                    {'params': {'auctionid':auctionid,'price':price}});
+    };
   
 }]);

@@ -267,4 +267,14 @@ var wapApp = angular
         controller: '',
         url:"/order-details.html?id"
       })
+     .state('search', {
+        templateUrl: 'views/index/search.html',
+        controller: '',
+        url:"/search.html"
+      })
+     .state('group-over-details', {
+        templateUrl: 'views/marketing/my-groups/group-over-details.html',
+        controller: '',
+        url:"/group-over-details.html"
+      })
   });
