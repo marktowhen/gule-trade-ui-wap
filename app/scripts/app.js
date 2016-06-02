@@ -67,10 +67,10 @@ var wapApp = angular
         controller: '',
         url:"/index/auction.html"
       })
-    .state('auction-hall', {
+     .state('auction-hall', {
         templateUrl: 'views/marketing/auction/auction-hall.html',
         controller: '',
-        url:"/auction-hall.html"
+        url:"/auction-hall.html?id&gid"
       })
     .state('auction-success', {
         templateUrl: 'views/marketing/auction/auction-success.html',
@@ -85,7 +85,7 @@ var wapApp = angular
     .state('auction-details', {
         templateUrl: 'views/marketing/auction/auction-details.html',
         controller: '',
-        url:"/auction-details.html?id&gid"
+        url:"/auction-details.html?id&gid&key"
       })
     .state('auction-signup', {
           templateUrl: 'views/marketing/auction/signup.html',
@@ -256,5 +256,15 @@ var wapApp = angular
         templateUrl: 'views/marketing/my-auctions/auction-bond.html',
         controller: '',
         url:"/auction-bond.html"
+      })
+     .state('view-details', {
+        templateUrl: 'views/marketing/my-auctions/view-details.html',
+        controller: '',
+        url:"/view-details.html"
+      })
+     .state('order-details', {
+        templateUrl: 'views/orders/order-details.html',
+        controller: '',
+        url:"/order-details.html"
       })
   });

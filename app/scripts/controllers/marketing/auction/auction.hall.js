@@ -7,19 +7,41 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-wapApp.controller('AuctionDetailController', 
-		 function ($scope, $state,GroupBuyService, $stateParams,GoodsDetailsService,MerchantService,AuctionService,$interval) {
+wapApp.controller('AuctionHallController',
+    function ($scope,$interval,$state,GoodsDetailsService,$stateParams,$location,AuctionService) {
+	
+	//竞拍记录
+	$scope.priceLog = [];
+	$scope.winner;
+	AuctionService.listPriceLog($stateParams.id)
+	.success(function(data){
+		if(data.ok){
+			for (var i = 0; i < data.body.length; i++) {
+				if(i==0){
+					$scope.winner=data.body[i];//领先
+					$scope.currentPrice=$scope.winner.price;//当前出价
+				}else{
+					$scope.priceLog .push( data.body[i]);
+				}
+			}
+		}
+	}).error(function(data){
+		
+	});
 	
 	//竞拍商品查询 (时间、状态)
 	$scope.ggoods = [];
+	
 	AuctionService.detail($stateParams.id)
 			.success(function(data){
 				if(data.ok){
 					$scope.auction = data.body;
-					$scope.auction.key = $stateParams.key;
-					
+					$scope.auction.myPrice = $scope.currentPrice;
+					//$scope.auction.key = $stateParams.key;
 					$scope.endtime=$scope.auction.endTime;
 			  		$scope.starttime = $scope.auction.startTime;	
+			  		$scope.duration = Math.round((($scope.endtime-$scope.starttime)/1000)/3600);
+			  		$scope.priceSty = $scope.auction.addPrice;//出价幅度
 					runTiming()
 				}
 			}).error(function(data){
@@ -44,36 +66,9 @@ wapApp.controller('AuctionDetailController',
 
 	})
 	
-	//竞拍记录
-	$scope.priceLog = [];
-	AuctionService.listPriceLog($stateParams.id)
-			.success(function(data){
-				if(data.ok){
-					for (var i = 0; i < data.body.length; i++) {
-						if(i==0){
-							data.body[i].status="first"; //领先
-						}else{
-							
-							data.body[i].status="out"  //出局
-						}
-						$scope.priceLog .push( data.body[i]);
-					}
-				}
-			}).error(function(data){
-				
-			});
 	
 	
-	//查询竞拍次数
-    AuctionService.addTimes($stateParams.id).success(function(data){
-	    	if(data.ok){
-	    		$scope.addTimes=data.body;
-			}
-		}).error(function(data){
-	
-		});	
-    
-  //竞拍时间格式处理
+	//竞拍时间格式处理
 	var TimePromise;
   	var runTiming = function(){
   		/*var EndTime = new Date(auction.startTime)*/
@@ -121,23 +116,19 @@ wapApp.controller('AuctionDetailController',
 	
   	}
   	
-  	$scope.auctionid=$stateParams.id;
-  	$scope.signUp = function(){
-  		AuctionService.signUp($scope.auctionid,creatCar($scope.auction, $scope.goods,$scope.auction.deposit))
-			.success(function(data){
-				if(data.ok){
-					$state.go('auction-signup');
-				}else{
-					alert(data.message);
-				}
-			});
-	}
+  	$scope.myPrice=$scope.currentPrice; //我的出价
+  	//$scope.currentPrice=$scope.winner.price; //当前价格
+  	$scope.addTimes=0; //加价次数
+  	$scope.reduceTimes=0; //减价次数
+  	//$scope.priceSty=$scope.auction.addPrice; //加价幅度
   	
-  	var creatCar = function(groupGoods, goods, price){
-    	var goodsInCar = [{'gid':goods.gid,'skuid':groupGoods.skuid,'gname':goods.name,'mid':goods.mid,'mname':goods.mName,'price':price,'count':1}];
-    	
-    	var orderInCar = [{'mid':goods.mid,'mname':goods.mName,'postage':0,'type':'GROUP','goods':goodsInCar}];
-    	return {'orders':orderInCar};
+  	$scope.add = function(){
+  		$scope.addTimes=$scope.addTimes+1;
+  		$scope.auction.myPrice=$scope.auction.myPrice+$scope.priceSty;
 	}
-	
+  	$scope.reduce = function(){
+  		$scope.reduceTimes=$scope.reduceTimes+1;
+  		$scope.auction.myPrice=$scope.auction.myPrice-$scope.priceSty;
+  	}
+    
 });

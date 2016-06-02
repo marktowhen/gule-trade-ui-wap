@@ -242,4 +242,20 @@ wapApp.controller('AuctionSignUpController',
 		
 	});
     
+    
+    
+    $scope.submits = function(){
+    	$state.go("auction-success");
+        if(!$scope.transaction || !$scope.transaction.orders){
+            //alert("订单信息有误，请检查后重新提交");
+            return;
+        }
+
+        if($scope.purchaseVo.couponID && $scope.transaction.orders.length > 1){
+            $("#confirm-dialog").modal("show");
+            return;
+        }
+        
+
+    };
 });
