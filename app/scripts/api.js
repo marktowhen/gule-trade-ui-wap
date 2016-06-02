@@ -159,6 +159,8 @@ wapApp.service('ApiService', function () {
             'refresh' : 'http://localhost:8888/api/address/:id',
             //用戶地址
             'remove' : 'http://localhost:8888/api/address/:id',
+            //用户的默认地址
+            'userAddress':'http://localhost:8888/api/address/default',
             //设置默认地址
             'setDefault' : 'http://localhost:8888/api/address/default/:id'
         },

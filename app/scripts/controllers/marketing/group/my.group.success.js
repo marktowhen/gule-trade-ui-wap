@@ -14,6 +14,7 @@
  			for(var i=0;i<data.body.length;i++){
  				GroupBuyService.getgroupgoods(data.body[i].groupID).success(function(data1){
  					if(data1.ok){
+
  						if(data1.body.status=="PAID"){
  							$scope.GroupList.push(data1.body);
  						}

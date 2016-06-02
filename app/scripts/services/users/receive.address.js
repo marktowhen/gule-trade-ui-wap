@@ -45,5 +45,8 @@ wapApp.service('MyReceiveAddressService', function ($http, $location , ApiServic
     this.cancelDefault = function(id){
         return $http.put(ApiService.api.myReceieveAddress.setDefault.replace(':id',id) , false);
     }
+    this.userAddress = function(){
+        return $http.get(ApiService.api.myReceieveAddress.userAddress);
+    }
     
 });

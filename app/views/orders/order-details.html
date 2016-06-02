@@ -1,12 +1,12 @@
-<div class="no-payment center-view" style="font-size:14px;">
+<div class="no-payment center-view" style="font-size:14px;" ng-controller="GroupOrderDetailController">
 	<div class="pay-address">
 		<div class="pd-box1" style="border-bottom: none;">
 			<div class="consignee-info1 fs16" style="border-bottom: none;">
-				<p class="fl">麻婷婷</p>
-				<p class="fr">18560032060</p>
+				<p class="fl">{{address.receiver}}</p>
+				<p class="fr">{{address.mobile}}</p>
 				<div class="cl"></div>
 			</div>
-			<p style="" class="fs12">收货地址 ：山东省-济南市-历下区泉城路世茂国际广场B座</p>
+			<p style="" class="fs12">收货地址 ：{{address.address}}</p>
 		</div>
 	</div>
 	<div class="cl h10"></div>
@@ -15,11 +15,11 @@
 			<div class="pi1-pic fl">
 				<img src="images/no-payment/p1.png" alt=""></div>
 			<div class="pi1-info fl">
-				<div class="pi1-text">新鲜青柠檬6个14.9【初夏来杯柠檬水】</div>
+				<div class="pi1-text">{{group.gname + '' +group.propertyValue}}</div>
 				<div class="pi1-price">
 					<p class="fs12 fl" style="color:#808080;">
 						价格：
-						<span style="color:#ff473f;">10元</span>
+						<span style="color:#ff473f;">{{group.goods.groupPrice}}元</span>
 					</p>
 				</div>
 			</div>
@@ -29,16 +29,16 @@
 		<p>
 			共计一件商品：
 			<span class="fs12">
-				<span class="fs18">14.90</span>
+				<span class="fs18">{{group.totalPrice}}</span>
 				元
 			</span>
-			（免运费）
+			（{{(group.postage && group.postage > 0)? (group.group|currency:"￥") : "包邮"}}）
 		</p>
 	</div>
 	<div class="cl h10"></div>
 	<div class="pm-box1-hd" style="border:none;background-color: #fff;height:80px;line-height:20px;padding:10px 5%;">
-		<p>订单编号：160428-05946057205</p>
+		<p>订单编号：{{group.orderno}}</p>
 		<p>支付方式：微信</p>
-		<p>下单时间：2016-04-28 14:54:01</p>
+		<p>下单时间：{{group.ordertime}}</p>
 	</div>
 </div>

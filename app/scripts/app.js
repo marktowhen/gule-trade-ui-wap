@@ -265,6 +265,6 @@ var wapApp = angular
      .state('order-details', {
         templateUrl: 'views/orders/order-details.html',
         controller: '',
-        url:"/order-details.html"
+        url:"/order-details.html?id"
       })
   });
