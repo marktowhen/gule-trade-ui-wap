@@ -277,4 +277,24 @@ var wapApp = angular
         controller: '',
         url:"/group-over-details.html?id"
       })
+     .state('order-history-all', {
+          templateUrl: 'views/orders/history/order-history-all.html',
+          controller:  '',
+          url:"/order-history-all.html"
+      })
+      .state('order-history-topay', {
+          templateUrl: 'views/orders/history/order-history-topay.html',
+          controller:  '',
+          url:"/order-history-topay.html"
+      })
+       .state('order-history-paid', {
+          templateUrl: 'views/orders/history/order-history-paid.html',
+          controller:  '',
+          url:"/order-history-paid.html"
+      })
+       .state('order-history-delivered', {
+          templateUrl: 'views/orders/history/order-history-delivered.html',
+          controller:  '',
+          url:"/order-history-delivered.html"
+      })
   });
