@@ -43,5 +43,10 @@ wapApp.service('AuctionService', ['$http', 'ApiService', function($http, ApiServ
         return  $http.get(ApiService.api.marketing.auction.bidding,
                     {'params': {'auctionid':auctionid,'price':price}});
     };
+    //我的竞拍
+    this.listMy  = function (status){
+    	return  $http.get(ApiService.api.marketing.auction.listMy,
+    			{'params': {'status':status}});
+    };
   
 }]);

@@ -3,10 +3,10 @@
     <section class="order_body">
         <!-- 待付款 -->
             <ul>
-                <li>
+                <li ng-repeat="au in auctionList" ng-if="'TOPAY'==au.status">
                     <div class="order-hd1">
                         <div class="order-hd1-left fl">
-                            2016年5月25日 22:00已结束
+                            {{au.endTime | date:'yyyy年MM月dd日 HH:mm'}}已结束
                         </div>
                     </div>
                     <div class="cl"></div>
@@ -17,7 +17,7 @@
                     <div class="order_info_wrap col-67 fs12 fl">
                         <div class="order_info_body">
                             <div class="order_title col-70 fl" ui-sref="auction-hall">
-                                拉卡拉收款宝手机pos机 信用卡刷
+                                {{au.gname+''+au.propertiesValue}}
                             </div>
                             <div class="order-prices col-30 fr">
                                 <span style="color:#807E7E;">中标价</span>
@@ -25,7 +25,7 @@
                                 <div class="order_price">￥<span class="fs14">1.00</span></div>
                             </div>
                             <div class="cl"></div>
-                            <p style="color:#807E7E;">保证金：￥10.00</p>
+                            <p style="color:#807E7E;">保证金：￥{{au.deposit}}</p>
                             <div class="cl h10"></div>
                              <div class="order_btn fl">
                                 <button class="order_cancel fs12 fr red" ui-sref="orderconfirm.page">立即支付</button>
