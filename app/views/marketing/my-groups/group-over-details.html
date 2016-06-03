@@ -1,18 +1,18 @@
-<div class="joined-group center-view group-over-details">
+<div class="joined-group center-view group-over-details" ng-controller="GroupOverDetailController">
 	<div class="state-details">
-		<img src="images/failed.png" alt="" class="hide">
-		<img src="images/success.png" alt="" class=""></div>
+		<img src="images/failed.png" alt="" class="showfailed">
+		<img src="images/success.png" alt="" class="showsuccess"></div>
 	<div class="pay-info">
 		<div class="pi-box1">
 			<div class="pi1-pic fl">
 				<img src="images/no-payment/p1.png" alt=""></div>
 			<div class="pi1-info fl">
-				<div class="pi1-text">新鲜青柠檬6个14.9【初夏来杯柠檬水】</div>
+				<div class="pi1-text">{{goods.name+''+goodSku.propertiesValue}}</div>
 				<div class="pi1-price">
 					<p class="fs12">
 						￥
-						<span class="fs18">14.90/</span>
-						5人团
+						<span class="fs18">{{groupGoods.groupPrice}}/</span>
+						{{groupGoods.groupPeople}}人团
 					</p>
 				</div>
 			</div>
@@ -22,46 +22,31 @@
 	<div class="joined-group-box2">
 		<div class="joined-box2-top">
 			<div class="joined-box2-img fl">
-				<img src="images/user/pic1.png" alt=""></div>
+				<img src="{{singleUser.headImgUrl}}" alt=""></div>
 			<div class="joined-box2-head fl">
 				团长
-				<a href="#">小小小苹果</a>
+				<a href="#">{{singleUser.nickname}}</a>
 			</div>
 		</div>
 		<div class="cl h10"></div>
 		<div class="joined-box2-bottom">
 			<ul class="">
-				<li class="cur"> <i class="icon-women"></i>
-					<img src="images/user/pic1.png" alt=""></li>
-				<li class="cur"> <i class="icon-women"></i>
-					<img src="images/user/pic1.png" alt=""></li>
-				<li class="cur">
+				<li class="cur" ng-repeat="groupUser in user"> 
 					<i class="icon-women"></i>
-					<img src="images/user/pic1.png" alt=""></li>
-				<li class="cur">
+					<img src="{{groupUser.headImgUrl}}" alt="">
+				</li>
+				<li ng-repeat="one in peopleList" class="showhide"> 
 					<i class="icon-women"></i>
-					<img src="images/user/pic1.png" alt=""></li>
-				<li>
-					<i class="icon-women"></i>
-					<img src="images/user/pic1.png" alt=""></li>
-				<li>
-					<i class="icon-women"></i>
-					<img src="images/user/pic1.png" alt=""></li>
-				<li>
-					<i class="icon-women"></i>
-					<img src="images/user/pic1.png" alt=""></li>
-				<li>
-					<i class="icon-women"></i>
-					<img src="images/user/pic1.png" alt=""></li>
-				<li>
-					<i class="icon-women"></i>
-					<img src="images/user/pic1.png" alt=""></li>
+					<img src="" alt="">
+				</li>
+				
 			</ul>
-			<ul style="width: 100%;margin-left: 22%;" class="hide">
-				<li class="cur">
+			<!--<ul style="width: 100%;margin-left: 22%;" class="hide">
+				<li class="cur" ng-repeat="groupuser in user">
 					<i class="icon-women"></i>
-					<img src="images/user/pic1.png" alt=""></li>
-				<li class="cur">
+					<img src="{{groupuser.headImgUrl}}" alt="">
+				</li>
+				 <li class="cur">
 					<i class="icon-women"></i>
 					<img src="images/user/pic1.png" alt=""></li>
 				<li class="cur">
@@ -72,7 +57,7 @@
 					<img src="images/user/pic1.png" alt=""></li>
 				<li>
 					<i class="icon-women"></i>
-					<img src="images/user/pic1.png" alt=""></li>
+					<img src="images/user/pic1.png" alt=""></li>  -->
 			</ul>
 		</div>
 	</div>
@@ -82,17 +67,17 @@
 		<div class="cl h20"></div>
 		<div class="joined-box4-bd">
 			<ul>
-				<li>
+				<li ng-repeat="goods in showlist">
 					<a href="#">
 						<img src="images/joined-group/info1.png" alt=""></a>
 					<div class="joined-box4-text">
 						<p class="text-abb">
-							<a href="#">味之初 双层芝士蛋糕</a>
+							<a href="#/product/details.html?gid={{goods.gid}}">{{goods.name}}</a>
 						</p>
-						<span class="joined-price">￥10</span>
+						<span class="joined-price">￥{{goods.price}}</span>
 					</div>
 				</li>
-				<li>
+				<!-- <li>
 					<a href="#">
 						<img src="images/joined-group/info2.png" alt=""></a>
 					<div class="joined-box4-text">
@@ -111,7 +96,7 @@
 						</p>
 						<span class="joined-price">￥10</span>
 					</div>
-				</li>
+				</li> -->
 			</ul>
 		</div>
 	</div>

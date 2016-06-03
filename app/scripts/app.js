@@ -175,7 +175,7 @@ var wapApp = angular
     .state('joined-group', {
         templateUrl: 'views/index/joined-group.html',
         controller: '',
-        url:"/joined-group.html"
+        url:"/joined-group.html?groupid"
     })
     .state('joined-rankgroup', {
     	templateUrl: 'views/marketing/rankgroup/joined-rankgroup.html',
@@ -275,6 +275,6 @@ var wapApp = angular
      .state('group-over-details', {
         templateUrl: 'views/marketing/my-groups/group-over-details.html',
         controller: '',
-        url:"/group-over-details.html"
+        url:"/group-over-details.html?id"
       })
   });

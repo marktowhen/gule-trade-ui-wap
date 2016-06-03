@@ -17,6 +17,7 @@
  						
  						if(data1.body.status=="CONVENING"){
  							var grouping = data1.body;
+ 							alert(grouping.id);
  							TimeDown(grouping);
  							$scope.GroupList.push(data1.body);
  						}
@@ -62,7 +63,7 @@
 
 
 
-		$scope.inviteFriend = function(){
-			$state.go("joined-group");
+		$scope.inviteFriend = function(id){
+			$state.go("joined-group",{groupid:id});
 		}
   })

@@ -10,7 +10,8 @@
  wapApp.controller('JoinGroupController', 
 	function ($scope, $state,GroupBuyService, $stateParams,GoodsDetailsService,MerchantService,FlashSaleService,$interval,GoodsListService) {
 		//团购商品$stateParams.groupid="表示从付款成功时跳转到这个页面是传过来的团的id(在付款成功的页面通过oid查group_order表，查出对应的groupid来)"
-		var groupid = "BDtIdXVURUaH7T4EvtVJ3Q";//团购商品的团的id值
+		//邀请好友时也跳转这个页面啊穿过一个groupid
+		var groupid = $stateParams.groupid//团购商品的团的id值
 		//进来的用户的id   uid(关注了但是没有加入该团)
         var uid="Ma9ogkIXSW-y0uSrvfqVIQ";
 		$scope.user=[];
