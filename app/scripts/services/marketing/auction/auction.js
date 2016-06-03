@@ -19,6 +19,11 @@ wapApp.service('AuctionService', ['$http', 'ApiService', function($http, ApiServ
         return  $http.get(ApiService.api.marketing.auction.detail,
                     {'params': {'ID':ID}});
     };
+    //修改竞拍状态
+    this.update  = function (auctionGoodsID,status){
+    	return  $http.get(ApiService.api.marketing.auction.update,
+    			{'params': {'auctionGoodsID':auctionGoodsID,'status':status}});
+    };
     //查询单个
     this.single  = function (){
     	return  $http.get(ApiService.api.marketing.auction.single);

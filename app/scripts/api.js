@@ -90,6 +90,7 @@ wapApp.service('ApiService', function () {
                 'listWithCondition':'http://localhost:8888/api/marketing/auction/goods/list',
                 'detail':'http://localhost:8888/api/marketing/auction/goods/detail',
                 'single':'http://localhost:8888/api/marketing/auction/goods/single',
+                'update':'http://localhost:8888/api/marketing/auction/goods/update',
                 'count':'http://localhost:8888/api/marketing/auction/purchase/count',
                 'signUp':'http://localhost:8888/api/marketing/auction/purchase/signUp/:auctionid',
                 'bidding':'http://localhost:8888/api/marketing/auction/purchase/bidding/',
