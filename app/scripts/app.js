@@ -312,4 +312,9 @@ var wapApp = angular
           controller:  '',
           url:"/logistics-info.html"
       })
+       .state('auction-rules', {
+          templateUrl: 'views/user/auction-rules.html',
+          controller:  '',
+          url:"/auction-rules.html"
+      })
   });
