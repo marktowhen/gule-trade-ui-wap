@@ -132,6 +132,16 @@ var wapApp = angular
         controller: '',
         url:"/problem6.html"
       })
+    .state('problem7', {
+        templateUrl: 'views/user/problem7.html',
+        controller: '',
+        url:"/problem7.html"
+      })
+    .state('bid-agreement', {
+        templateUrl: 'views/user/bid-agreement.html',
+        controller: '',
+        url:"/bid-agreement.html"
+      })
     .state('partner', {
         templateUrl: 'views/user/partner.html',
         controller: '',
