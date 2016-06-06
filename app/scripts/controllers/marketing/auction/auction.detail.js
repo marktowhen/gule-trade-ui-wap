@@ -8,7 +8,7 @@
  * Controller of the jingyunshopApp
  */
 wapApp.controller('AuctionDetailController', 
-		 function ($scope, $state,GroupBuyService, $stateParams,GoodsDetailsService,MerchantService,AuctionService,$interval) {
+		 function ($scope,$cookies, $state,ConstantService,GroupBuyService, $stateParams,GoodsDetailsService,MerchantService,AuctionService,$interval) {
 	
 	//竞拍商品查询 (时间、状态)
 	$scope.ggoods = [];
@@ -151,4 +151,19 @@ wapApp.controller('AuctionDetailController',
           }
       });
     }
+    
+    //是否报名
+    var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
+	AuctionService.ifSign($stateParams.id,"")
+	.success(function(data){
+		if(data.ok){
+			$scope.ifSign=data.body;
+			if($scope.ifSign!=0){
+				$scope.ifSign=1;
+			}
+		}
+	}).error(function(data){
+		
+	});
+    
 });

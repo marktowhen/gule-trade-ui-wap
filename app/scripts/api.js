@@ -95,6 +95,7 @@ wapApp.service('ApiService', function () {
                 'signUp':'http://localhost:8888/api/marketing/auction/purchase/signUp/:auctionid',
                 'bidding':'http://localhost:8888/api/marketing/auction/purchase/bidding/',
                 'listMy':'http://localhost:8888/api/marketing/auction/my/list/',
+                'ifSign':'http://localhost:8888/api/marketing/auction/my/ifSign/',
                 'listPriceLog':'http://localhost:8888/api/marketing/auction/purchase/listPriceLog',
                 'join':'http://localhost:8888/api/marketing/auction/purchase/join/:id',
                 'auction':'http://localhost:8888/api/marketing/auction/purchase/:id',

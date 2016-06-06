@@ -53,5 +53,11 @@ wapApp.service('AuctionService', ['$http', 'ApiService', function($http, ApiServ
     	return  $http.get(ApiService.api.marketing.auction.listMy,
     			{'params': {'status':status}});
     };
+    //是否报名
+    this.ifSign  = function (auctionid,uid){
+    	return  $http.get(ApiService.api.marketing.auction.ifSign,
+    			 {'params': {'auctionid':auctionid,'uid':uid}});
+    	
+    };
   
 }]);
