@@ -59,10 +59,10 @@
         </section>
         <section class="index_activity over">
             <div class="index_groupbuy_body fl">
-                <a href="#/marketing/group/details.html?ggid={{groupGoods.id}}&gid={{groupGoods.gid}}"><img src="../../images/index/groupbuy1.png" alt=""></a>
+                <a href="#/marketing/group/details.html?ggid={{groupGoods.id}}&gid={{groupGoods.gid}}"><img src="{{groupGoods.goods.path}}" alt=""></a>
                 <!-- {{groupGoods.goods.path}} -->
                 <div class="index_groupbuy_title fs12">
-                    移动POS机刷卡器 无线0.38积分26封顶一清pos 实时到账pos刷卡机 
+                   {{groupGoods.goods.name+''+groupGoods.sku.propertiesValue}}
                 </div>
                 <div class="groupbuy_info">
                     <div class="index_people_num fs12">
@@ -75,7 +75,7 @@
             </div>
             <div class="index_hotsale fr" style="cursor:pointer" ng-click="godetail(flash.id)">
                 <!-- {{flash.goods.path}} -->
-                 <img src="../../images/index/hotsale.png" alt="">
+                 <img src="{{flash.goods.path}}" alt="">
             </div>
         </section>
         <section class="index_products clearfix">

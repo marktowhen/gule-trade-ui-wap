@@ -265,12 +265,17 @@ var wapApp = angular
      .state('order-details', {
         templateUrl: 'views/orders/order-details.html',
         controller: '',
-        url:"/order-details.html?id"
+        url:"/order-details.html?id&gid"
+      })
+     .state('group-order-detail', {
+        templateUrl: 'views/marketing/my-groups/group-order-detail.html',
+        controller: '',
+        url:"/group-order-detail.html?id"
       })
      .state('search', {
         templateUrl: 'views/index/search.html',
         controller: '',
-        url:"/search.html"
+        url:"/search.html?goodsname"
       })
      .state('group-over-details', {
         templateUrl: 'views/marketing/my-groups/group-over-details.html',

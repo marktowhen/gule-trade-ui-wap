@@ -49,7 +49,6 @@ wapApp.controller('IndexController',
                     }
                  }
                 $scope.flash=$scope.flashGoods[0];
-                console.log("ppppp"+$scope.flash);
 
             }
         })

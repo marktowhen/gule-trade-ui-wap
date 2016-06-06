@@ -1,5 +1,4 @@
-<div class="no-payment center-view" style="font-size:14px;" ng-controller="OrderDetailController">
-	
+<div class="no-payment center-view" style="font-size:14px;" ng-controller="GroupOrderDetailController">
 	<div class="pay-address">
 		<div class="pd-box1" style="border-bottom: none;">
 			<div class="consignee-info1 fs16" style="border-bottom: none;">
@@ -11,16 +10,16 @@
 		</div>
 	</div>
 	<div class="cl h10"></div>
-	<div class="pay-info" style="border-top:none;" ng-repeat="good in orders.goods">
+	<div class="pay-info" style="border-top:none;">
 		<div class="pi-box1">
 			<div class="pi1-pic fl">
-				<img src="{{goods.path}}" alt=""></div>
+				<img src="images/no-payment/p1.png" alt=""></div>
 			<div class="pi1-info fl">
-				<div class="pi1-text">{{goods.name}}</div>
+				<div class="pi1-text">{{group.gname + '' +group.propertyValue}}</div>
 				<div class="pi1-price">
 					<p class="fs12 fl" style="color:#808080;">
 						价格：
-						<span style="color:#ff473f;">{{good.payout}}元</span>
+						<span style="color:#ff473f;">{{group.goods.groupPrice}}元</span>
 					</p>
 				</div>
 			</div>
@@ -30,17 +29,16 @@
 		<p>
 			共计一件商品：
 			<span class="fs12">
-				<span class="fs18">{{orders.payout}}</span>
+				<span class="fs18">{{group.totalPrice}}</span>
 				元
 			</span>
-			（{{(orders.postage && orders.postage > 0)? (orders.order|currency:"￥") : "包邮"}}）
+			（{{(group.postage && group.postage > 0)? (group.group|currency:"￥") : "包邮"}}）
 		</p>
 	</div>
 	<div class="cl h10"></div>
 	<div class="pm-box1-hd" style="border:none;background-color: #fff;height:80px;line-height:20px;padding:10px 5%;">
-		<p>订单编号：{{orders.orderno}}</p>
+		<p>订单编号：{{group.orderno}}</p>
 		<p>支付方式：微信</p>
-		<p>下单时间：{{orders.addtime}}</p>
-	
-</div>
+		<p>下单时间：{{group.ordertime}}</p>
+	</div>
 </div>

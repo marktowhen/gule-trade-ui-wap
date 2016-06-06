@@ -11,7 +11,7 @@ wapApp.controller('HeaderController',
     function ($scope, $cookies,$state,ConstantService,$stateParams,MyNewService) {
 
   	$scope.toSearch =function(){
-  		$state.go('products',{goodsname:$scope.goodsname});		
+  		$state.go('search',{goodsname:$scope.goodsname});		
   	}
   	var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
 

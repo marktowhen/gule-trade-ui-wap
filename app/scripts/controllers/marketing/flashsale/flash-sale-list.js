@@ -12,17 +12,15 @@ wapApp.controller('FlashSaleListController', function ($scope, $cookies,$state,$
 	
 	$scope.flashsale = [];
 	var size = 4;
-	var more =true;
+	//滚动条标志位
+    var flag = false;
 	FlashSaleService.list(0,size).success(function(data){
 		if(data.ok){
 			for (var i = 0; i < data.body.length; i++) {
 				runTiming(data.body[i]);
 				$scope.flashsale.push(data.body[i]);
 			}
-			if(data.body.length<size){
-				more = false;
-			}
-			scrollBars();//调用瀑布流
+			flag = false;
 		}
 	});
 	//瀑布流的方法
@@ -33,20 +31,21 @@ wapApp.controller('FlashSaleListController', function ($scope, $cookies,$state,$
 					runTiming(data.body[i]);
 					$scope.flashsale.push(data.body[i]);
 				}
-				
+				flag=false;
 			}
 		});
 	};
-	//瀑布流的追加
-	var scrollBars = function(){
-		if($("#pageId").val()=='flashsale'){
-			$(window).scroll(function(){
-				if(more && ($(window).scrollTop() >= $(document).height()-$(window).height()-70)){//滚动条的距离底部不足70px时触发
-					falls();
-				}
-			})
-		}
-	}
+	 ////瀑布流追加
+        $(window).scroll(function(){
+          if($scope.flashsale.length < $scope.pagesize){
+
+          }else{
+           if (($(window).scrollTop() >= $(document).height()-$(window).height()-70) && !flag ){  //滚动条距离底部不足80px时触发
+                falls();
+                flag = true;
+              }
+          }
+       });
 	
 	var TimePromise;
 	  	var runTiming = function(fs){

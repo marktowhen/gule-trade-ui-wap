@@ -95,5 +95,46 @@
 			})
  		}
  	}
+ 	//取消订单
+ 	$scope.deleteOrder = function(order){
+ 		OrderService.cancel(order.id).success(function(data){
+	 		if(data.ok){
+	 			$state.go('orderhistory.topay');
+ 			}
+
+ 		})
+ 	}
+
+ 		//立即支付
+ 	
+ 	$scope.payment = function(order,goods){
+ 		var cartvo = {};
+    	cartvo.orders = [];
+    	var order0 = {};
+ 		order0.mid=order.mid;
+ 		order0.mname=order.mname;
+ 		order0.type = 'BASE';
+ 		order0.goods = [];
+ 		var goods0 = {};
+ 		goods0.gid = goods.gid;
+ 		goods0.skuid = goods.skuid;
+ 		goods0.gname = goods.gname;
+ 		goods0.mid = order.mid;
+        goods0.mname = order.mname;
+ 		goods0.price = goods.payout;
+ 		goods0.pprice = goods.payout;
+ 		goods0.count = goods.count;
+ 		order0.goods.push(goods0);
+ 		cartvo.orders.push(order0);
+
+ 		 CartService.submit(cartvo).success(function(data){
+ 		 	if(data.ok){
+              $state.go("orderconfirm.page");
+              return;
+          	}else{
+                alert(data.message);
+            }
+ 		 })
+ 	}
 
  })

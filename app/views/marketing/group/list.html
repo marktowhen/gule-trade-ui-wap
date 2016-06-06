@@ -1,14 +1,14 @@
 <div class="groupbuy_wrap clearfix" ng-controller="GroupListController">
         <input type="hidden" id='page_id' value="GroupGoodsList">
-        <header>
+       <!--  <header>
             <div class="sort"><span>默认排序</span><i></i>
                 <div class="sort_content hide">
                     <div class="sortbysales">最新<i class="icon-exchange"></i></div>
                     <div class="sortbyprice">猜你喜欢<i class="icon-exchange"></i></div>
                 </div>
             </div>
-        </header>
-        <section class="products clearfix">    
+        </header> -->
+        <section class="products clearfix">  
             <ul>
                 <li class="fs12" ng-repeat="group in ggoods">
                     <div class="groupbuy-poa1" ng-show="group.showhide">
@@ -18,7 +18,7 @@
                         <img src="images/index/new.png" alt="">
                     </div>
                     <div class="product_pic">
-                        <a href="#/marketing/group/details.html">
+                        <a href="#marketing/group/details.html?ggid={{group.id}}&gid={{group.gid}}">
                             <img src="{{group.goods.path}}" alt="">
                         </a>       
                     </div>
