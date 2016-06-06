@@ -40,6 +40,17 @@ wapApp.controller('MyAuctionOverController', function ($scope, AuctionService,Go
 							});
 
 						
+						/*AuctionService.depositStatus(data2.body.id,"").success(function(data){
+							if(data.ok){
+								
+								alert("秀给二哥")
+							}
+							}).error(function(data){
+								
+							});
+						*/
+						
+						
 						
 						$scope.auctionList.push(data2.body)
 					}

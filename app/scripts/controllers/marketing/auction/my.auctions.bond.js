@@ -38,6 +38,15 @@ wapApp.controller('MyAuctionBondController', function ($scope, AuctionService,$i
 									 data2.body.propertiesValue=dataSku.body.propertiesValue
 								};
 							});
+						
+						  AuctionService.depositStatus(data2.body.id,"").success(function(dataDeposit){
+							if(dataDeposit.ok){depositStatus
+								data2.body.depositStatus=dataDeposit.body.;
+							}
+							}).error(function(dataDeposit){
+								
+							});
+						
 
 						
 						

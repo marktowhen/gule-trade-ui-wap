@@ -64,5 +64,10 @@ wapApp.service('AuctionService', ['$http', 'ApiService', function($http, ApiServ
     			 {'params': {'auctionid':auctionid,'uid':uid}});
     	
     };
+  //定金状态
+    this.depositStatus  = function (auctionid,uid){
+    	return  $http.get(ApiService.api.marketing.auction.depositStatus,
+    			{'params': {'auctionid':auctionid,'uid':uid}});
+    };
   
 }]);
