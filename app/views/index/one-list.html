@@ -2,7 +2,9 @@
     <input type="hidden" id="pageId" value="flashsale"></input>
         <ul>
              <li ng-repeat="fs in flashsale">
-                <img src="images/one/tu1.png" alt="">
+                <a href="#one-details.html?id={{fs.id}}">
+                    <img src="{{fs.goods.path}}" alt="">
+                </a>
                 <div class="one-list-box1">
                     <div class="one-list-bg"></div>
                     <div class="one-list-text">
@@ -19,7 +21,7 @@
                 <div class={{fs.classes}}>
                     <div class="one-list-box2-left fl">
                         <div class="one-list-box2-left1 fl">
-                            <p>￥<a href="#">{{fs.currentPrice}}</a></p>
+                            <p>￥<a href="#one-details.html?id={{fs.id}}">{{fs.currentPrice}}</a></p>
                         </div>
                         <div class="one-list-box2-left2 fl">
                             <p>倒计时</p>

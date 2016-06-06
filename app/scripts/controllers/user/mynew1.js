@@ -14,7 +14,7 @@
  			$scope.message=data.body;
  			MyNewService.updatestatus($scope.message.id).success(function(data){
 				if(data.ok){
-					alert("修改状态成功");	
+					
 				}
 			})
  		}

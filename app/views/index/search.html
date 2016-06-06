@@ -1,9 +1,9 @@
-<div class="search center-view">
+<div class="search center-view" ng-controller="SearchController">
     <div class="cl h10"></div>
     <div class="header">
         <div class="search_wrap fl col-100"> <i class="icon-search fl col-7 fs20 mt10"  style="color:#999;"></i>
-            <input type="text" placeholder="柠檬" class="fl col-60">
-            <div class="gosearch fr">搜索</div>
+            <input type="text" class="fl col-60" ng-moble="name">
+            <div class="gosearch fr" ng-click="beginSearch(name)">搜索</div>
         </div>
     </div>
     <div class="cl"></div>
@@ -11,11 +11,11 @@
         <header class="sort" style="top:61px;background-color: #fff;color:#999;">
             <span>默认排序</span> <i></i>
             <div class="sort_content hide">
-                <div class="sortbysales">
+                <div class="sortbysales" ng-click="byOrder(2)">
                     按销量排序
                     <i class="icon-exchange"></i>
                 </div>
-                <div class="sortbyprice">
+                <div class="sortbyprice" ng-click="byOrder(1)">
                     按价格排序
                     <i class="icon-exchange"></i>
                 </div>
@@ -25,23 +25,23 @@
     <div class="cl"></div>
     <section class="products_products clearfix" style="margin-top:95px;">
         <ul>
-            <li>
+            <li  ng-repeat="goods in goodsList">
                 <a href="#/product/details.html">
                     <div class="product_pic">
                         <img src="images/index/product2.png" alt=""></div>
-                    <div class="product_name"> <b>拉卡拉收款宝 手机pos机移动刷卡...</b>
+                    <div class="product_name"> <b>{{goods.name}}</b>
                     </div>
                     <div class="price_info">
-                        <div class="price fl">￥199.00</div>
+                        <div class="price fl">￥{{goods.salePrice}}</div>
                         <div class="sales fr">
                             已售出
-                            <span>260</span>
+                            <span>{{goods.volume}}</span>
                             笔
                         </div>
                     </div>
                 </a>
             </li>
-            <li>
+           <!--  <li>
                 <a href="#/product/details.html">
                     <div class="product_pic">
                         <img src="images/index/product2.png" alt=""></div>
@@ -90,7 +90,7 @@
                         </div>
                     </div>
                 </a>
-            </li>
+            </li> -->
         </ul>
     </section>
 </div>

@@ -9,7 +9,7 @@
  */
  wapApp.controller('MyNewController',function ($scope,$state, $cookies, MyNewService,$stateParams,ConstantService) {
  	var size = 8;
-	var more =true;
+	var more =false;
 	$scope.newList = [];
 	//登陆时默认保存的uid
 	var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
@@ -25,16 +25,12 @@
  				$scope.newList.push(data.body[i]);
  				
  			}
- 			if(data.body.length<size){
- 				more = false;
- 			}
- 			scrollBars();//调用瀑布流
+ 			more=false;
  		};
  	});
  	
 	$scope.updateStatus=function(id){
 		$state.go('news1',{id:id});
-		alert(list.id);	
 	}
 
 	var falls = function(){
@@ -49,17 +45,21 @@
 				 	}
  					$scope.newList.push(data.body[i]);
  				}
+ 				more=false;
  			}
  		})
  	}
- 	var scrollBars = function(){
-		if($("#pageId").val()=='new'){
-			$(window).scroll(function(){
-				if(more && ($(window).scrollTop() >= $(document).height()-$(window).height()-70)){//滚动条的距离底部不足70px时触发
-					falls();
-				}
-			})
-		}
-	}
+ 	
+	////瀑布流追加
+        $(window).scroll(function(){
+          if($scope.newList.length < $scope.pagesize){
+
+          }else{
+           if (($(window).scrollTop() >= $(document).height()-$(window).height()-70) && !more ){  //滚动条距离底部不足80px时触发
+                falls();
+                more = true;
+              }
+          }
+       });
 
  })
