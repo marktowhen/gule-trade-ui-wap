@@ -27,3 +27,13 @@ wapApp.directive('auctionnav', ['$http' ,function ($http){
         };
     }
 ]);
+
+// orders  order_nav
+wapApp.directive('ordersnav', ['$http' ,function ($http){
+        return {
+            restrict: 'E',
+            replace: true,
+            templateUrl:'/views/orders/history/ordersnav.html'
+        };
+    }
+]);

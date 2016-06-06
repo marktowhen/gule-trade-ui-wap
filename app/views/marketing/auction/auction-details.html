@@ -180,14 +180,14 @@
 				</li>
 			</ul>
 		</div>
-		<div class="auction-fix-right fr into" ng-if="'detail'==auction.key">
+		<div class="auction-fix-right fr into" ng-if="0==ifSign">
 			<p class="ap2">
 				<!-- <a href="#/auction-signup.html?id={{auction.id}}&gid={{auction.id}}"> --><span class="fs18" ng-click="signUp()">去报名</span><!-- </a> -->
 				（保证金：{{auction.deposit}}元）
 			</p>
 			
 		</div>
-		<div class="auction-fix-right fr into" ng-if="'hall'==auction.key">
+		<div class="auction-fix-right fr into" ng-if="1==ifSign">
 			
 			<p class="ap2">
 			<a href="#/auction-hall.html?id={{auction.id}}&gid={{goodId}}">

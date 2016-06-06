@@ -132,6 +132,16 @@ var wapApp = angular
         controller: '',
         url:"/problem6.html"
       })
+    .state('problem7', {
+        templateUrl: 'views/user/problem7.html',
+        controller: '',
+        url:"/problem7.html"
+      })
+    .state('bid-agreement', {
+        templateUrl: 'views/user/bid-agreement.html',
+        controller: '',
+        url:"/bid-agreement.html"
+      })
     .state('partner', {
         templateUrl: 'views/user/partner.html',
         controller: '',
@@ -281,5 +291,35 @@ var wapApp = angular
         templateUrl: 'views/marketing/my-groups/group-over-details.html',
         controller: '',
         url:"/group-over-details.html?id"
+      })
+     .state('order-history-all', {
+          templateUrl: 'views/orders/history/order-history-all.html',
+          controller:  '',
+          url:"/order-history-all.html"
+      })
+      .state('order-history-topay', {
+          templateUrl: 'views/orders/history/order-history-topay.html',
+          controller:  '',
+          url:"/order-history-topay.html"
+      })
+       .state('order-history-paid', {
+          templateUrl: 'views/orders/history/order-history-paid.html',
+          controller:  '',
+          url:"/order-history-paid.html"
+      })
+       .state('order-history-delivered', {
+          templateUrl: 'views/orders/history/order-history-delivered.html',
+          controller:  '',
+          url:"/order-history-delivered.html"
+      })
+      .state('logistics-info', {
+          templateUrl: 'views/user/logistics-info.html',
+          controller:  '',
+          url:"/logistics-info.html"
+      })
+       .state('auction-rules', {
+          templateUrl: 'views/user/auction-rules.html',
+          controller:  '',
+          url:"/auction-rules.html"
       })
   });
