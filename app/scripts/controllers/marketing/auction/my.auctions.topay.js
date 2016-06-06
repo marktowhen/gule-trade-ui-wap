@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the jingyunshopApp
  */
-wapApp.controller('MyAuctionToPayController', function ($scope, AuctionService,$interval,GoodsDetailsService,FlashSaleService) {
+wapApp.controller('MyAuctionToPayController', function ($scope, $state,AuctionService,$interval,GoodsDetailsService,FlashSaleService) {
 		
 	//我的竞拍	
 	$scope.status="NEW";
@@ -21,14 +21,10 @@ wapApp.controller('MyAuctionToPayController', function ($scope, AuctionService,$
 				.success(function(data2){
 					if(data2.ok){
 						data2.body.myStatus=$scope.status
-						/*alert(data2.body.status+"dd");*/
-						//alert(data2.body.gid+"id")
 						GoodsDetailsService.detail(data2.body.gid)
 						.success(function(data3){
-								//$scope.goods = data3.body;
-								/*$scope.goodId = $stateParams.gid;*/
-							/*alert(data3.body.name)*/
 						        data2.body.gname=data3.body.name;
+						        data2.body.goods=data3.body;
 
 						})
 						
@@ -56,4 +52,48 @@ wapApp.controller('MyAuctionToPayController', function ($scope, AuctionService,$
 	}).error(function(data){
 		
 	});
+	
+	var creatCar = function(groupGoods, goods, price){
+    	var goodsInCar = [{'gid':goods.gid,'skuid':groupGoods.skuid,'gname':goods.name,'mid':goods.mid,'mname':goods.mName,'price':price,'count':1}];
+    	
+    	var orderInCar = [{'mid':goods.mid,'mname':goods.mName,'postage':0,'type':'GROUP','goods':goodsInCar}];
+    	return {'orders':orderInCar};
+	}
+	
+	$scope.getGoods = function(gid){
+		
+		GoodsDetailsService.detail(gid).success(function(data){
+			if(data.ok){
+				$scope.goods = data.body;
+				/*console.log($scope.goods);*/
+			};
+			
+		});
+			
+	};
+	
+	$scope.getAuction=function(auctionid){
+		
+		AuctionService.detail(auctionid)
+		.success(function(data){
+			if(data.ok){
+			$scope.auction=data.body;
+			$scope.auctionGoodID=$scope.auction.gid;
+			}
+		}).error(function(data){
+			
+		});
+	}
+	
+	$scope.topay = function(auctionid,gid,deposit,au,goods){
+  		AuctionService.payFinal(auctionid,creatCar(au,goods,deposit))
+			.success(function(data){
+				if(data.ok){
+					$state.go('orderconfirm.page');
+				}else{
+					alert(data.message);
+				}
+			});
+	}
+	
 });

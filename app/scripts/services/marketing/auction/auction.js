@@ -48,6 +48,11 @@ wapApp.service('AuctionService', ['$http', 'ApiService', function($http, ApiServ
         return  $http.get(ApiService.api.marketing.auction.bidding,
                     {'params': {'auctionid':auctionid,'price':price}});
     };
+    //支付
+    this.payFinal  = function (auctionid,cart){
+    	return $http.post(ApiService.api.marketing.auction.payFinal.replace(':auctionid',auctionid), cart)
+    };
+    
     //我的竞拍
     this.listMy  = function (status){
     	return  $http.get(ApiService.api.marketing.auction.listMy,
