@@ -307,4 +307,9 @@ var wapApp = angular
           controller:  '',
           url:"/order-history-delivered.html"
       })
+      .state('logistics-info', {
+          templateUrl: 'views/user/logistics-info.html',
+          controller:  '',
+          url:"/logistics-info.html"
+      })
   });
