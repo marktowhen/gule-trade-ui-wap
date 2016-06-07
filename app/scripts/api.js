@@ -98,6 +98,7 @@ wapApp.service('ApiService', function () {
                 'listMy':'http://localhost:8888/api/marketing/auction/my/list/',
                 'ifSign':'http://localhost:8888/api/marketing/auction/my/ifSign/',
                 'listPriceLog':'http://localhost:8888/api/marketing/auction/purchase/listPriceLog',
+                'depositStatus':'http://localhost:8888/api/marketing/auction/my/depositStatus/',
                 'join':'http://localhost:8888/api/marketing/auction/purchase/join/:id',
                 'auction':'http://localhost:8888/api/marketing/auction/purchase/:id',
                 'user':{

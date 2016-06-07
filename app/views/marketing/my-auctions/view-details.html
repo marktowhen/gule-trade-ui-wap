@@ -10,7 +10,18 @@
             <div class="view-hd-right fl col-40">金额</div>
         </div>
         <div class="cl"></div>
-        <div class="view-state-bd">
+        <div class="view-state-bd" ng-if="'lock'==deposit.depositStatus">
+            <ul>
+                <li>
+                    <div class="view-bd-left fl col-60">
+                        <p>锁定成功</p>
+                        <p class="fs12" style="color:#7F7F7F;">2016年05月25日 10:00</p>
+                    </div>
+                    <div class="view-bd-right fl col-40">10.00元</div>
+                </li>
+            </ul>
+        </div>
+        <div class="view-state-bd" ng-if="'release'==deposit.depositStatus">
             <ul>
                 <li>
                     <div class="view-bd-left fl col-60">
