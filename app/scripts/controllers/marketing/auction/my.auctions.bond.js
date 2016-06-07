@@ -40,8 +40,8 @@ wapApp.controller('MyAuctionBondController', function ($scope, AuctionService,$i
 							});
 						
 						  AuctionService.depositStatus(data2.body.id,"").success(function(dataDeposit){
-							if(dataDeposit.ok){depositStatus
-								data2.body.depositStatus=dataDeposit.body.;
+							if(dataDeposit.ok){
+								data2.body.depositStatus=dataDeposit.body.depositStatus;
 							}
 							}).error(function(dataDeposit){
 								

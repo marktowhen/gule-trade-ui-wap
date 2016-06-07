@@ -270,7 +270,7 @@ var wapApp = angular
      .state('view-details', {
         templateUrl: 'views/marketing/my-auctions/view-details.html',
         controller: '',
-        url:"/view-details.html"
+        url:"/view-details.html?id&gid"
       })
      .state('order-details', {
         templateUrl: 'views/orders/order-details.html',
