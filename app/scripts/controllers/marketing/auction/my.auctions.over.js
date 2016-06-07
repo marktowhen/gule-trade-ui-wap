@@ -32,25 +32,24 @@ wapApp.controller('MyAuctionOverController', function ($scope, AuctionService,Go
 
 						})
 						
-							FlashSaleService.getsku(data2.body.skuid).success(function(dataSku){
+							 //商品型号
+						  FlashSaleService.getsku(data2.body.skuid).success(function(dataSku){
 								if(dataSku.ok){
 									$scope.goodSku = dataSku.body;
 									 data2.body.propertiesValue=dataSku.body.propertiesValue
 								};
 							});
-
-						
-						/*AuctionService.depositStatus(data2.body.id,"").success(function(data){
-							if(data.ok){
+						   //定金状态
+						  AuctionService.depositStatus(data2.body.id,"").success(function(dataDeposit){
+							if(dataDeposit.ok){
+								data2.body.depositStatus=dataDeposit.body.depositStatus;
+								data2.body.lockTime=dataDeposit.body.lockTime;
+								data2.body.releaseTime=dataDeposit.body.releaseTime;
 								
-								alert("秀给二哥")
 							}
-							}).error(function(data){
+							}).error(function(dataDeposit){
 								
 							});
-						*/
-						
-						
 						
 						$scope.auctionList.push(data2.body)
 					}

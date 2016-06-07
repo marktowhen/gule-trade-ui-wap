@@ -21,27 +21,26 @@ wapApp.controller('MyAuctionBondController', function ($scope, AuctionService,$i
 				.success(function(data2){
 					if(data2.ok){
 						data2.body.myStatus=$scope.status
-						/*alert(data2.body.status+"dd");*/
-						//alert(data2.body.gid+"id")
+						//商品详情
 						GoodsDetailsService.detail(data2.body.gid)
 						.success(function(data3){
-								//$scope.goods = data3.body;
-								/*$scope.goodId = $stateParams.gid;*/
-							/*alert(data3.body.name)*/
 						        data2.body.gname=data3.body.name;
 
 						})
-						
-							FlashSaleService.getsku(data2.body.skuid).success(function(dataSku){
+						   //商品型号
+						 FlashSaleService.getsku(data2.body.skuid).success(function(dataSku){
 								if(dataSku.ok){
 									$scope.goodSku = dataSku.body;
 									 data2.body.propertiesValue=dataSku.body.propertiesValue
 								};
 							});
-						
+						   //定金状态
 						  AuctionService.depositStatus(data2.body.id,"").success(function(dataDeposit){
 							if(dataDeposit.ok){
 								data2.body.depositStatus=dataDeposit.body.depositStatus;
+								data2.body.lockTime=dataDeposit.body.lockTime;
+								data2.body.releaseTime=dataDeposit.body.releaseTime;
+								
 							}
 							}).error(function(dataDeposit){
 								
