@@ -1,7 +1,11 @@
 <div class="view-details" ng-controller="MyAuctionBondDetailController">
-    <div class="view-details-top">
+    <div class="view-details-top" ng-if="'lock'==deposit.depositStatus">
         <p class="fs16">您参与该拍品的报名保证金已锁定成功。</p>
         <p>锁定成功</p>
+    </div>
+    <div class="view-details-top" ng-if="'release'==deposit.depositStatus">
+        <p class="fs16">您参与该拍品的报名保证金已释放成功。</p>
+        <p>释放成功</p>
     </div>
     <div class="cl"></div>
     <div class="view-details-state">
@@ -15,9 +19,9 @@
                 <li>
                     <div class="view-bd-left fl col-60">
                         <p>锁定成功</p>
-                        <p class="fs12" style="color:#7F7F7F;">2016年05月25日 10:00</p>
+                        <p class="fs12" style="color:#7F7F7F;">{{deposit.lockTime| date:'yyyy年MM月dd日  HH:mm'}}</p>
                     </div>
-                    <div class="view-bd-right fl col-40">10.00元</div>
+                    <div class="view-bd-right fl col-40">{{auction.deposit}}元</div>
                 </li>
             </ul>
         </div>
@@ -26,16 +30,16 @@
                 <li>
                     <div class="view-bd-left fl col-60">
                         <p>释放成功</p>
-                        <p class="fs12" style="color:#7F7F7F;">2016年05月25日 10:00</p>
+                        <p class="fs12" style="color:#7F7F7F;">{{deposit.releaseTime| date:'yyyy年MM月dd日  HH:mm'}}</p>
                     </div>
-                    <div class="view-bd-right fl col-40">10.00元</div>
+                    <div class="view-bd-right fl col-40">{{auction.deposit}}元</div>
                 </li>
                 <li>
                     <div class="view-bd-left fl col-60">
                         <p>锁定成功</p>
-                        <p class="fs12" style="color:#7F7F7F;">2016年05月25日 10:00</p>
+                        <p class="fs12" style="color:#7F7F7F;">{{deposit.lockTime| date:'yyyy年MM月dd日  HH:mm'}}</p>
                     </div>
-                    <div class="view-bd-right fl col-40">10.00元</div>
+                    <div class="view-bd-right fl col-40">{{auction.deposit}}元</div>
                 </li>
             </ul>
         </div>
@@ -46,9 +50,9 @@
             <img style="width:100%;border: 1px solid rgb(204, 204, 204);" src="images/index/product2.png" alt=""></div>
         <div class="order_info_wrap col-67 fs12 fl">
             <div class="order_info_body" style="padding-top: 10px;">
-                <div class="order_title fs14 text-abb" style="width:100%;"  ui-sref="auction-bond">【直降3元】海南精选芒果5斤39.9元</div>
+                <div class="order_title fs14 text-abb" style="width:100%;"  ui-sref="auction-bond">{{goods.name+' '+goodSku.propertiesValue}}</div>
                 <div class="cl"></div>
-                <p style="color:#807E7E; margin-bottom: 5px; margin-top: 5px;">保证金：￥10.00</p>
+                <p style="color:#807E7E; margin-bottom: 5px; margin-top: 5px;">保证金：￥{{auction.deposit}}</p>
                 <p style="color:#807E7E;">微信账号：2653151122</p>
             </div>
         </div>

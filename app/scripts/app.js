@@ -98,42 +98,42 @@ var wapApp = angular
         url:"/shareproduct.html"
       })
     .state('problems', {
-        templateUrl: 'views/user/problems.html',
+        templateUrl: 'views/user/common-problem/problems.html',
         controller: '',
         url:"/problems.html"
       })
     .state('problem1', {
-        templateUrl: 'views/user/problem1.html',
+        templateUrl: 'views/user/common-problem/problem1.html',
         controller: '',
         url:"/problem1.html"
       })
     .state('problem2', {
-        templateUrl: 'views/user/problem2.html',
+        templateUrl: 'views/user/common-problem/problem2.html',
         controller: '',
         url:"/problem2.html"
       })
     .state('problem3', {
-        templateUrl: 'views/user/problem3.html',
+        templateUrl: 'views/user/common-problem/problem3.html',
         controller: '',
         url:"/problem3.html"
       })
     .state('problem4', {
-        templateUrl: 'views/user/problem4.html',
+        templateUrl: 'views/user/common-problem/problem4.html',
         controller: '',
         url:"/problem4.html"
       })
     .state('problem5', {
-        templateUrl: 'views/user/problem5.html',
+        templateUrl: 'views/user/common-problem/problem5.html',
         controller: '',
         url:"/problem5.html"
       })
     .state('problem6', {
-        templateUrl: 'views/user/problem6.html',
+        templateUrl: 'views/user/common-problem/problem6.html',
         controller: '',
         url:"/problem6.html"
       })
     .state('problem7', {
-        templateUrl: 'views/user/problem7.html',
+        templateUrl: 'views/user/common-problem/problem7.html',
         controller: '',
         url:"/problem7.html"
       })
@@ -270,7 +270,7 @@ var wapApp = angular
      .state('view-details', {
         templateUrl: 'views/marketing/my-auctions/view-details.html',
         controller: '',
-        url:"/view-details.html"
+        url:"/view-details.html?id&gid"
       })
      .state('order-details', {
         templateUrl: 'views/orders/order-details.html',
@@ -318,8 +318,13 @@ var wapApp = angular
           url:"/logistics-info.html"
       })
        .state('auction-rules', {
-          templateUrl: 'views/user/auction-rules.html',
+          templateUrl: 'views/user/common-problem/auction-rules.html',
           controller:  '',
           url:"/auction-rules.html"
+      })
+      .state('group-rules', {
+          templateUrl: 'views/user/common-problem/group-rules.html',
+          controller:  '',
+          url:"/group-rules.html"
       })
   });
