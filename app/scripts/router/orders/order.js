@@ -28,7 +28,7 @@ wapApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider){
     .state('orderconfirm.address.list', {
         templateUrl: 'views/user/address/address.list.html',
         controller: '',
-        url:"/list.html"
+        url:"/list.html?key"
       })
      .state('orderconfirm.address.edit', {
         templateUrl: 'views/user/address/address.edit.html',
