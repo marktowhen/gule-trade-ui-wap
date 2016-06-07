@@ -27,10 +27,11 @@ wapApp.controller('IndexController',
         IndexService.banner("index",0,4).success(function(data){
             if(data.ok){
                 $scope.imgList = data.body;
+                console.log($scope.imgList.length+"kkkkk");
             }
         });
          $scope.groupGoods={};
-        GroupBuyService.listWithCondition(0,1).success(function(data){
+        GroupBuyService.listWithCondition(0,4).success(function(data){
             if(data.ok){
                 for(var i=0;i<data.body.length;i++){
                      $scope.groupGoods=data.body[0];
@@ -44,7 +45,7 @@ wapApp.controller('IndexController',
             if(data.ok){
                  
                  for(var i=0;i<data.body.length;i++){
-                    if(new Date(data.body[i].activityTime)<= new Date() && data.body[i].stock>0){
+                    if(data.body[i].stock>0){
                        $scope.flashGoods.push(data.body[i]);
                     }
                  }

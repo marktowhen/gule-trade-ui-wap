@@ -21,5 +21,6 @@ wapApp.controller('GroupOrderDetailController', function ($scope,$state,GroupBuy
 			$scope.group = data.body;
 		}
 	})
+	
 
 })

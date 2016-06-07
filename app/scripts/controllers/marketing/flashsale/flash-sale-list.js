@@ -75,7 +75,7 @@ wapApp.controller('FlashSaleListController', function ($scope, $cookies,$state,$
 							var ofh=parseInt((oft%(3600*24))/3600);
 							var ofm=parseInt((oft%3600)/60);
 							var ofs=oft%60;
-							fs.dao=(ofd+' : ' +ofh+ ' : ' +ofm+ ' : ' +ofs);
+							fs.dao=(ofd+':' +ofh+ ':' +ofm+ ':' +ofs);
 			  		 	}
 						
 	  			
