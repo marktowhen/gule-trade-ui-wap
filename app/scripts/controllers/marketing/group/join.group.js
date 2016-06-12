@@ -14,6 +14,7 @@
 		var groupid = $stateParams.groupid//团购商品的团的id值
 		//进来的用户的id   uid(关注了但是没有加入该团)
         var uid="Ma9ogkIXSW-y0uSrvfqVIQ";
+        var userLength = 0;
 		$scope.user=[];
 		GroupBuyService.singlegroup(groupid).success(function(data){
 			if(data.ok){
@@ -26,7 +27,7 @@
 					}
 				})
 
-
+				userLength=$scope.group.buyers.length;
 				$scope.userss=$scope.group.buyers.slice(1,$scope.group.buyers.length);
 				for(var i=0;i<$scope.userss.length;i++){
 					GroupBuyService.singleUser(groupid,$scope.userss[i].uid).success(function(data2){
@@ -38,12 +39,21 @@
 				}
 			};
 		});
-		
+		$scope.peopleList=[];
+		var peopleone={};
 		$scope.peopleCount=0;
 		var getGroupGood = function(groupgoodid){
 			GroupBuyService.detail(groupgoodid)
 			.success(function(data){
 				if(data.ok){
+					if($scope.groupGoods.groupPeople-userLength>0){
+						for(var i=$scope.groupGoods.groupPeople-1-userLength;i>0;i--){
+								peopleone=i;
+								$scope.peopleList.push(peopleone);
+						}
+					}else{
+						$(".showhide").hide();
+					}
 					$scope.groupGoods = data.body;
 					getGoods($scope.groupGoods.gid);
 					goodsSku($scope.groupGoods.skuid);

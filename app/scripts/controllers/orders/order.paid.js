@@ -10,7 +10,7 @@
  //待发货的产品
  wapApp.controller('OrdersPaidController', function ($scope, ConstantService, OrderService, OrderStatusService, $state, $cookies, CartService) {
  	var size =3;
-	var more =true;
+	var more =false;
  	var statuscode = OrderStatusService.ACCEPT_CODE;
  	var anystatus = 1;
  	$scope.orders=[];
@@ -25,11 +25,9 @@
  			for(var i=0;i<data.body.length;i++){
  				$scope.orders.push(data.body[i]);
  			}
- 			if(data.body.length<size){
+ 			
  				more=false;
- 			}
-
- 			scrollBars();//调用瀑布流
+ 			
  		}
  	});
  	$scope.deleteOrder = function(order){
@@ -41,11 +39,9 @@
 				 			for(var i=0;i<data.body.length;i++){
 				 				$scope.orders.push(data.body[i]);
 				 			}
-				 			if(data.body.length<size){
+				 			
  								more=false;
- 							}
-
- 							scrollBars();//调用瀑布流
+ 							
 				 		}
 	 				})
  			}else{
@@ -62,17 +58,20 @@
  				for(var i=0;i<data.body.length;i++){
  					$scope.orders.push(data.body[i]);
  				}
+ 				more=false;
  			}
  		})
  	}
- 	var scrollBars = function(){
- 		if($("#pageId").val()=="paid"){
- 			$(window).scroll(function(){
-				if(more && ($(window).scrollTop() >= $(document).height()-$(window).height()-70)){//滚动条的距离底部不足70px时触发
-					falls();
-				}
-			})
- 		}
- 	}
+ 	////瀑布流追加
+        $(window).scroll(function(){
+          if($scope.orders.length < size){
+
+          }else{
+           if (($(window).scrollTop() >= $(document).height()-$(window).height()-70) && !more ){  //滚动条距离底部不足80px时触发
+                falls();
+                more = true;
+              }
+          }
+       });
 
 })
