@@ -24,8 +24,9 @@ wapApp.controller('AuctionSignUpController',
                         {'GID':'', 'gname':'', 'price':'', 'count':''}
                     ]}
                 ]};
+    $scope.auctionid="";
 
-
+//关注
     OrderService.listOrders2Clearing().success(function(data){
         $scope.transaction = data.body;
        
@@ -34,7 +35,9 @@ wapApp.controller('AuctionSignUpController',
             $scope.finalmoney = $scope.transaction.totalPrice;
             $scope.pureOriginMoney = $scope.transaction.totalPriceWithoutPostage;
             $scope.originpostage = $scope.finalmoney - $scope.pureOriginMoney;
-           
+            $scope.auctionid=$scope.transaction.orders[0].extradata;
+             //alert()
+            auctionDetail($scope.auctionid);
           
         }else{
             alert("订单信息不正确。");
@@ -44,11 +47,15 @@ wapApp.controller('AuctionSignUpController',
 
     });
 
+    
+    
     $scope.$watch('$viewContentLoaded', function() {
        listCashCoupon();
        listDiscountCoupon();
     });
 
+    
+    
     $scope.$on("activeCashCoupon",
           function (event, msg) {
             listCashCoupon();
@@ -76,11 +83,19 @@ wapApp.controller('AuctionSignUpController',
         });
     };
 
+    
+    
+    
+    
+    
+    
 
     $scope.pureOriginMoney = 0;//没有邮费的订单价格
     $scope.originpostage = 0;//总邮费
     $scope.finalmoney = 0;//包含邮费的订单总价
     $scope.finalpoint = 0;
+    
+    //监听 邮费变化  对包含邮费的订单总价影响   同步变化   
     $scope.$watch("finalmoney", function(oldv, newv){
         $scope.finalpoint = Math.floor($scope.finalmoney / 100);
     });
@@ -88,11 +103,25 @@ wapApp.controller('AuctionSignUpController',
         $scope.finalmoney = $scope.pureOriginMoney + $scope.originpostage;
     });
 
-
     OrderService.listPaytype().success(function(data){
         $scope.paytypes = data.body;
     });
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     $scope.submit = function(){
 
         if(!$scope.transaction || !$scope.transaction.orders){
@@ -107,6 +136,8 @@ wapApp.controller('AuctionSignUpController',
         $scope.confirmSubmit();
 
     };
+    
+    
 
     $scope.confirmSubmit = function(){
         $scope.purchaseVo.orders = $scope.transaction.orders;
@@ -231,19 +262,10 @@ wapApp.controller('AuctionSignUpController',
     };
  
     
-    
-    AuctionService.single()
-	.success(function(data){
-		if(data.ok){
-			$scope.auction = data.body;
-			$scope.deposit=$scope.auction.deposit;
-		}
-	}).error(function(data){
-		
-	});
+
     
     
-    
+    //跳转到支付成功页
     $scope.submits = function(){
     	$state.go("auction-success");
         if(!$scope.transaction || !$scope.transaction.orders){
@@ -258,4 +280,31 @@ wapApp.controller('AuctionSignUpController',
         
 
     };
+    
+    
+   var auctionDetail=function(auctionid){
+	   AuctionService.detail("VkkfDqkPR6upgaY_NA4WYA")
+		.success(function(data){
+			if(data.ok){
+				$scope.auction = data.body;
+				$scope.finalmoney=$scope.auction.deposit;
+			
+			}
+		}).error(function(data){
+			
+		});
+	   
+   } 
+    
+    
+    //查询订金 
+   /* AuctionService.single()
+	.success(function(data){
+		if(data.ok){
+			$scope.auction = data.body;
+			$scope.deposit=$scope.auction.deposit;
+		}
+	}).error(function(data){
+		
+	});*/
 });

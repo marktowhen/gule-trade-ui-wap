@@ -23,7 +23,7 @@ wapApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider){
     .state('address.list', {
         templateUrl: 'views/user/address/address.list.html',
         controller: '',
-        url:"/list.html"
+        url:"/list.html?key"
       })
      .state('address.edit', {
         templateUrl: 'views/user/address/address.edit.html',
