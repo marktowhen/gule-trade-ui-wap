@@ -59,5 +59,27 @@ wapApp.controller('GoodsDetailsController',
 				
 			};
 		};
-
+		/*$scope.favs = function(gid){
+			////判断有没有收藏ID 有时保存  没有时删除
+			if($scope.fav_ids==""){
+						GoodsDetailsService.fav(gid).success(function(data){
+							   if(data.code==200){
+									//alert("收藏成功!");
+									$scope.fav_ids = data.body;
+								}else{
+									alert("您还未登录!")
+								}
+							});
+			}else{
+				GoodsDetailsService.delfav($scope.fav_ids).success(function(data){
+					 if(data.code==200){
+						 //alert("删除收藏")
+					     $scope.fav_ids = "";
+					};
+					
+				});
+				
+			};
+		}
+*/
 });

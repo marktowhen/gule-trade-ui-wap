@@ -1,7 +1,7 @@
 <div class="product-details center-view" ng-controller="GoodsDetailsController">
 	<div class="pd-share">
-		<p>可得佣金：6.25</p>
-		<p>立即发送给朋友或分享到朋友圈</p>
+		<!-- <p>可得佣金：6.25</p>
+		<p>立即发送给朋友或分享到朋友圈</p> -->
 	</div>
 	<div class="swiper-container" id="product_swiper_container">
 		<div class="swiper-wrapper" >
@@ -18,8 +18,8 @@
 			<div class="pd1-right fl">
 
 				<div class="pd1-right-icon" ng-click="fav(goods.gid)">
-					<i class="icon-shouchang" ng-show="fav_id != ''"></i>
-					<i class="icon-shouchang-1" ng-show="fav_id == ''"></i>
+					<i class="icon-shouchang" ng-show="fav_id!=''"></i>
+					<i class="icon-shouchang-1" ng-show="fav_id==''"></i>
 				
 				</div>
 			</div>
@@ -153,17 +153,16 @@
 		</div>
 		<div class="pd5-info1 fr">
 			<ul>
-				<li style="border-right: 1px solid #ccc;">
-				<a target=blank href=http://wpa.qq.com/msgrd?V=3&uin={{goods.mQQ}}&Site=中华阿胶网&Menu=yes 	>
-					<i class=" icon-xiaoxi-home"></i>
-					
-				</a>
+				<li style="border-right: 1px solid #ccc;" ui-sref="customer-service">
+				<i class="icon-xiaoxi-home"></i>
 				<p>客服</p>
 				</li>
-				<li>
-					<i class=" icon-shouchang-1"></i>
-					<i style="display: none;" class="icon-shouchang"></i>
+				<li ng-click="fav(goods.gid)">
+					
+					<i class="icon-shouchang-1" ng-show="fav_id==''"></i>
+					<i ng-show="fav_id!=''" class="icon-shouchang"></i>
 					<p>收藏</p>
+				
 					<!-- <i class="icon-sp-1"></i>
 					<p ng-click="toMerchant(goods.mid)">店铺</p> -->
 				</li>

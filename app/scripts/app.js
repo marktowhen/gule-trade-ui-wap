@@ -315,7 +315,7 @@ var wapApp = angular
       .state('logistics-info', {
           templateUrl: 'views/user/logistics-info.html',
           controller:  '',
-          url:"/logistics-info.html"
+          url:"/logistics-info.html?oid"
       })
        .state('auction-rules', {
           templateUrl: 'views/user/common-problem/auction-rules.html',

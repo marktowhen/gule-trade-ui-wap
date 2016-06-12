@@ -27,7 +27,7 @@ wapApp.controller('IndexController',
         IndexService.banner("index",0,4).success(function(data){
             if(data.ok){
                 $scope.imgList = data.body;
-                console.log($scope.imgList.length+"kkkkk");
+                /*console.log($scope.imgList.length+"kkkkk");*/
             }
         });
          $scope.groupGoods={};

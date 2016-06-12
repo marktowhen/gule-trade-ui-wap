@@ -11,15 +11,42 @@ wapApp.controller('CartController', function ($scope, CartService, $cookies, $st
     
     /*var loginuid = $cookies.get(ConstantService.LOGIN_ID_KEY);*/
 
-
+    var size=5;
+    //滚动条标志位
+    var flag = false;
+    $scope.cartinorder = [];
     CartService.listCarts("Ma9ogkIXSW-y0uSrvfqVIQ").success(function(data){
         
         $scope.carts = data.body;
-       /* console.log($scope.carts);
-        console.log($scope.carts.orders);
-        console.log($scope.carts.orders.goods);*/
+       /* for(var i=0;i<$scope.carts.orders.length;i++){
+            $scope.cartinorder.push($scope.carts.orders[i]);
+        }
+        flag = false;*/
       
     });
+    //瀑布流的方法
+    /*var falls = function(){
+        CartService.listCarts("Ma9ogkIXSW-y0uSrvfqVIQ",$scope.cartinorder.length,size).success(function(data){
+        
+            $scope.carts = data.body;
+            for(var i=0;i<$scope.carts.orders.length;i++){
+                $scope.cartinorder.push($scope.carts.orders[i]);
+            }
+            flag = false;
+      
+        });
+    };*/
+     ////瀑布流追加
+        /*$(window).scroll(function(){
+          if($scope.cartinorder.length < size){
+
+          }else{
+           if (($(window).scrollTop() >= $(document).height()-$(window).height()-70) && !flag ){  //滚动条距离底部不足80px时触发
+                falls();
+                flag = true;
+              }
+          }
+       });*/
        $scope.settleAccounts = function(carts){
         var orders = carts.orders;
         var newCarts = {};

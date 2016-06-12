@@ -37,7 +37,7 @@
                         <a href="#order-details.html?id={{order.id}}&gid={{goods.gid}}" class="order_pay fs12 fr">查看订单</a>
                     </div>
                      <div class="order_btn fl" ng-show="isdelivered(order)">
-                        <button class="order_cancel fs12 fr" style="">查看物流</button>
+                        <button class="order_cancel fs12 fr" ng-click="gologistics(order.id)" style="">查看物流</button>
                         <a href="#confirm-receipt.html?id={{order.id}}" class="order_pay fs12 fr">确认收货</a>
                     </div>
                         </div>

@@ -1,8 +1,9 @@
 <div class="group-purchase-details center-view" ng-controller="GroupDetailController">
 	 	<div class="swiper-container">
-		<div class="swiper-wrapper">
-			<div class="swiper-slide" ng-repeat="img in goods.imgList">
-				<img src="{{img.path}}" alt="{{goods.name}}"></div>
+		<div class="swiper-wrapper" >
+			<div class="swiper-slide" ng-repeat="img in imgLists">
+				<img src="{{img.path}}">
+			</div>
 			<!-- <div class="swiper-slide">
 				<img src="images/product-details/p1.png" alt=""></div>
 			<div class="swiper-slide">
@@ -98,7 +99,7 @@
 	 	</div>
 	 	<div class="cl"></div>
 	 	<div class="pd-box5">
-	 		<div class="pd5-info1 fl">
+	 		<div class="pd5-info1 fl" ui-sref="index">
 	 			<i class="icon-home-1"></i>
 	 			<p>首页</p>
 	 		</div>

@@ -37,7 +37,7 @@ wapApp.controller('FlashSaleListController', function ($scope, $cookies,$state,$
 	};
 	 ////瀑布流追加
         $(window).scroll(function(){
-          if($scope.flashsale.length < $scope.pagesize){
+          if($scope.flashsale.length < size){
 
           }else{
            if (($(window).scrollTop() >= $(document).height()-$(window).height()-70) && !flag ){  //滚动条距离底部不足80px时触发

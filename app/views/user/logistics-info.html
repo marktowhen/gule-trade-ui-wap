@@ -1,4 +1,4 @@
-<div class="logistics-info">
+<div class="logistics-info" ng-controller="LogisticsController">
     <div class="pay-info" style="border-top:none;">
         <div class="pi-box1">
             <div class="pi1-pic fl">
@@ -28,7 +28,14 @@
                         <div class="time">&nbsp;2016-05-01 22 : 07 : 11</div>
                     </div>
                 </li>
-                <li>
+                <li ng-repeat="espress in expressinfo">
+                    <div class="logistics-left fl icon-r"></div>
+                    <div class="logistics-right fl">
+                        <div class="title">{{espress.content}}</div>
+                        <div class="time">&nbsp;{{espress.time}}</div>
+                    </div>
+                </li>
+                <!-- <li>
                     <div class="logistics-left fl icon-r"></div>
                     <div class="logistics-right fl">
                         <div class="title">【济南】泺源大街</div>
@@ -48,14 +55,7 @@
                         <div class="title">【济南】泺源大街</div>
                         <div class="time">&nbsp;2016-05-01 22 : 07 : 11</div>
                     </div>
-                </li>
-                <li>
-                    <div class="logistics-left fl icon-r"></div>
-                    <div class="logistics-right fl">
-                        <div class="title">【济南】泺源大街</div>
-                        <div class="time">&nbsp;2016-05-01 22 : 07 : 11</div>
-                    </div>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>

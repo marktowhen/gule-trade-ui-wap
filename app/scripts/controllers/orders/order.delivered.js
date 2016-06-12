@@ -9,7 +9,7 @@
  */
   wapApp.controller('OrdersDeliveredController', function ($scope, ConstantService, OrderService, OrderStatusService, $state, $cookies, CartService) {
   var size = 4;
-	var more =true;
+	var more =false;
  	var statuscode = OrderStatusService.DELIVERED_CODE;
   var anystatus = 1;
  	$scope.orders=[];
@@ -25,11 +25,9 @@
  			for(var i=0;i<data.body.length;i++){
  				$scope.orders.push(data.body[i]);
  			}
- 			if(data.body.length<size){
+ 			
  				more=false;
- 			}
 
- 			scrollBars();//调用瀑布流
  		}
  	});
  	//瀑布流的方法
@@ -39,18 +37,25 @@
  				for(var i=0;i<data.body.length;i++){
  					$scope.orders.push(data.body[i]);
  				}
+        more=false;
  			}
  		})
  	}
- 	var scrollBars = function(){
- 		if($("#pageId").val()=="delivered"){
- 			$(window).scroll(function(){
-				if(more && ($(window).scrollTop() >= $(document).height()-$(window).height()-70)){//滚动条的距离底部不足70px时触发
-					falls();
-				}
-			})
- 		}
- 	}
+ 	////瀑布流追加
+        $(window).scroll(function(){
+          if($scope.orders.length < size){
+
+          }else{
+           if (($(window).scrollTop() >= $(document).height()-$(window).height()-70) && !more ){  //滚动条距离底部不足80px时触发
+                falls();
+                more = true;
+              }
+          }
+       });
+
+        $scope.gologistics = function(id){
+            $state.go('logistics-info',{oid:id});
+        };
 
   /*对接确认收货
   order-receipt.js
@@ -82,6 +87,9 @@
   
   
   */
+
+
+  /* */
 
 
   })
