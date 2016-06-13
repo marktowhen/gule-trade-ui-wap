@@ -194,7 +194,6 @@ wapApp.controller('AuctionHallController',
   		
   		AuctionService.bidding($stateParams.id,$scope.auction.myPrice)
   		.success(function(data){
-  			alert(data.message)
   			if(data.ok){
   				$scope.reloadRoute();
   				//$state.go("auction-hall");
