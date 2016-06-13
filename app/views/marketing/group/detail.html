@@ -118,15 +118,15 @@
 	 	<now-buy-dialog id='now-buy-dialog'></now-buy-dialog>
 	 </div>
 	 <script type="text/javascript">
-	 var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 1,
-        slidesPerColumn: 1,
-        autoplay:5000,
-        loop:true,
-        pagination: '.swiper-pagination',
-		paginationClickable :true,
-    });
-    var img_hei=$('.swiper-container img').width()*0.8;
+	var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            slidesPerColumn: 1,
+            autoplay:5000,
+            loop:true,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev'
+        });
+    var img_hei=$('.swiper-container img').width()*0.7;
         $('.swiper-container img').height(img_hei)
 </script>
 

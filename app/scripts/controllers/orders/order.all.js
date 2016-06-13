@@ -104,7 +104,7 @@
  	$scope.deleteOrder = function(order){
  		OrderService.cancel(order.id).success(function(data){
 	 		if(data.ok){
-	 			$state.go('orderhistory.topay');
+	 			$state.go('order-history-topay');
  			}
 
  		})

@@ -30,7 +30,7 @@
  			
  		}
  	});
- 	$scope.deleteOrder = function(order){
+ /*	$scope.deleteOrder = function(order){
  		OrderService.cancel(order.id).success(function(data){
 	 		if(data.ok){
 	 		
@@ -49,7 +49,7 @@
  			}
 
  		})
- 	}
+ 	}*/
 
  	//瀑布流的方法
  	var falls = function(){

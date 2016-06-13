@@ -160,7 +160,7 @@
 				<li ng-click="fav(goods.gid)">
 					
 					<i class="icon-shouchang-1" ng-show="fav_id==''"></i>
-					<i ng-show="fav_id!=''" class="icon-shouchang"></i>
+					<i ng-show="fav_id!=''" style="color:#ff473f" class="icon-shouchang"></i>
 					<p>收藏</p>
 				
 					<!-- <i class="icon-sp-1"></i>
@@ -173,32 +173,18 @@
 	<add-cart-dialog id='add-cart-dialog'></add-cart-dialog>
 </div>
 <script type="text/javascript">
-// $(document).ready(function slide() {
-// 	var haha = document.getElementById('slide');
-// 		window.mySwipe = Swipe(
-// 			haha, 
-// 			{	
-// 				startSlide: 0,		
-// 				auto: 3000,         
-// 				continuous: true,   
-// 				disableScroll: true,  
-// 				stopPropagation: true,   
-// 				callback: function(index, element) {
-// 					$(".dot ul li").eq(index).addClass("cur").siblings().removeClass("cur");
-// 				}
-// 			}
-// 		);
 
-// 		$(document).on('click','.dot ul li',function(){
-// 			mySwipe.slide($(this).index(),1000);
-// 	});
-// });
-var swiper = new Swiper('#product_swiper_container', {
-        slidesPerView: 1,
-        slidesPerColumn: 1,
-        autoplay:5000,
-        loop:true,
-        pagination: '.swiper-pagination',
-		paginationClickable :true,
-    });
+        //banner滑动
+        var swiper = new Swiper('#product_swiper_container', {
+            slidesPerView: 1,
+            slidesPerColumn: 1,
+            autoplay:5000,
+            loop:true,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev'
+        });
+        //图片高度自适应
+        /*var img_hei=$('.index_products .product_pic img').width()*0.7;
+        $('.index_products .product_pic img').height(img_hei)*/
 </script>
+ <!-- <nav></nav> -->

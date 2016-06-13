@@ -3,7 +3,7 @@
         <div class="banner_wrap swiper-container" id="index_swiper_container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide banner banner1" ng-repeat="img in imgList">
-                    <a href="#/product/details.html"><img src="{{img.image}}" alt=""></a>
+                    <a href=""><img src="{{img.image}}" alt=""></a>
                 </div>
                 <!-- <div class="swiper-slide banner banner1">
                     <a href="#/product/details.html"><img src="../../images/index/banner1.png" alt=""></a>
@@ -60,7 +60,6 @@
         <section class="index_activity over">
             <div class="index_groupbuy_body fl">
                 <a href="#/marketing/group/details.html?ggid={{groupGoods.id}}&gid={{groupGoods.gid}}"><img src="{{groupGoods.goods.path}}" alt=""></a>
-                {{groupGoods.goods.path}} 
                 <div class="index_groupbuy_title fs12">
                    {{groupGoods.goods.name+''+groupGoods.sku.propertiesValue}}
                 </div>
