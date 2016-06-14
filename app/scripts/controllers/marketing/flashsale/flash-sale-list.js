@@ -49,6 +49,8 @@ wapApp.controller('FlashSaleListController', function ($scope, $cookies,$state,$
 	
 	var TimePromise;
 	  	var runTiming = function(fs){
+	  		fs.classes="one-list-box2 green";
+	  		fs.BtnValue="即将开始";
 	  		$scope.endtime=new Date(fs.activityTime);
 	  		$scope.showtime = new Date(fs.showTime);	
 	  		var oft=Math.round(($scope.endtime-new Date())/1000);

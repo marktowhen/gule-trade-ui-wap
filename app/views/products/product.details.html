@@ -1,8 +1,8 @@
 <div class="product-details center-view" ng-controller="GoodsDetailsController">
-	<div class="pd-share">
-		<p>可得佣金：6.25</p>
-		<p>立即发送给朋友或分享到朋友圈</p>
-	</div>
+	<!--<div class="pd-share">
+		 <p>可得佣金：6.25</p>
+		<p>立即发送给朋友或分享到朋友圈</p> 
+	</div>-->
 	<div class="swiper-container" id="product_swiper_container">
 		<div class="swiper-wrapper" >
 			<div class="swiper-slide"  ng-repeat="img in goods.imgList">
@@ -15,6 +15,7 @@
 	<div class="pd-box1">
 		<div class="pd1-top">
 			<div class="pd1-left fl">{{goods.name}}</div>
+			<!-- <p style="color:#b0b0b0">{{goods.about}}</p> -->
 			<div class="pd1-right fl">
 
 				<div class="pd1-right-icon" ng-click="fav(goods.gid)">
@@ -24,7 +25,9 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="cl"></div>
+		<p style="color:#b0b0b0;margin-bottom:5px;font-size:12px;">{{goods.about}}</p>
 		<div class="pd1-price" >
 			<span class="p1" ng-show="goods.sale">￥{{goods.salePrice}}</span>
 			<span class="p1" ng-show="!goods.sale">￥{{goods.price}}</span>

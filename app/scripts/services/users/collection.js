@@ -7,7 +7,7 @@
  */
 wapApp.service('CollectionService', function ($http, $location , ApiService) {
    
-    	 this.list = function(gid){
+    	 this.list = function(){
     		  return $http.get(ApiService.api.wapGoods.getFavorites,
     		   {headers:{'Content-Type':'application/json;charset=UTF-8'}});
     		};

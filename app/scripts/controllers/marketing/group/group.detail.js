@@ -123,4 +123,8 @@ wapApp.controller('GroupDetailController',
 		$scope.toCart  = function(gid){
 			$state.go('product-details',{cart:1});
 		}
+		//点击分享按钮的时候，分享列表显示出来
+		$scope.goshow = function(goods){
+			goods.detailDiv=!goods.detailDiv;
+		}
 });

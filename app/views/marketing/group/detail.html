@@ -15,17 +15,28 @@
 		<div class="swiper-pagination"></div>
 	</div>
 
-	 	<div class="pd-box1">
+	 	<div class="pd-box1" style="position:relative;">
 	 		<div class="pd1-top">
 	 			<div class="adm-left fl">
 	 				<p><a href="#">{{goods.name+''+goodSku.propertiesValue}}</a></p>
 	 			</div>
-	 			<div class="adm-right fl">
+	 			<div class="adm-right fl" ng-click="goshow(goods)" >
 	 				<i class="icon-share"></i>
 	 				<p class="b3">分享</p>
 
-					<!-- 分享代码 -->
-					<div class="jiathis_style">
+					
+	 			</div>	
+	 		</div>
+	 		<div class="cl"></div>
+	 		<p style="color: #B0B0B0;margin-bottom:5px;" class="fs12">{{goods.about}}</p>
+	 		<div class="group-nums">
+	 			<ul>
+	 				<li>快递：0.00</li>
+	 				<li>累计销量：{{goods.volume}}件</li>
+	 			</ul>
+	 		</div>
+	 		<!-- 分享代码 -->
+					<div class="jiathis_style" ng-class="{'on':goods.detailDiv}">
 						<a class="jiathis_button_qzone"></a>
 						<a class="jiathis_button_tsina"></a>
 						<a class="jiathis_button_tqq"></a>
@@ -38,16 +49,6 @@
 					<!-- JiaThis Button END -->
 					</div>
 	 			
-	 			</div>	
-	 		</div>
-	 		<div class="cl"></div>
-	 		<p style="color: #B0B0B0;margin-bottom:5px;" class="fs12">{{goods.about}}</p>
-	 		<div class="group-nums">
-	 			<ul>
-	 				<li>快递：0.00</li>
-	 				<li>累计销量：{{goods.volume}}件</li>
-	 			</ul>
-	 		</div>
 	 	</div>
 	 	<div class="cl"></div>
 	 	<div class="group-info1">开团并邀请2人开团，人数不足自动退款</div>
@@ -55,7 +56,7 @@
 	 	<div class="joined-group-box5">
 			<div class="joined-box5-hd">
 				<p class="fl fs16">拼团规则</p>
-				<p class="fr fs12"><a href="#problem6.html" style="color:#999;padding:1px 4px;border-radius:4px;">了解详情</a>
+				<p class="fr fs12"><a href="#group-rules.html" style="color:#999;padding:1px 4px;border-radius:4px;">了解详情</a>
 	</p>		</div>
 			<div class="cl"></div>
 			<div class="joined-box5-bd">

@@ -2,18 +2,18 @@
     <div class="mycollection_wrap" ng-controller="CollectionController">
         <section class="products clearfix fs12">
             <ul>
-                <li ng-repeat="fav in favList">
+                <li ng-repeat="fav in favList" style="height:100px;">
                     <div class="product_body over">
-                        <div class="product_body_main fl">
+                        <div class="product_body_main">
                             <a href="#/product/details.html?gid={{fav.gid}}">
                                 <div class="product_pic col-35 fl">
-                                    <img src="{{fav.path}}" alt="">
+                                    <img src="{{fav.path}}" style="height:87px" alt="">
                                 </div>
                             </a>  
                             <div class="product_content col-65 fl">
                                 <div class="p_c_body">
-                                    <a href="#/product/details.html">
-                                    <div class="product_name fs12">{{fav.name}}</div> 
+                                    <a href="#/product/details.html?gid={{fav.gid}}">
+                                    <div class="product_name fs12" style="height:16px;">{{fav.name}}</div> 
                                     </a>
                                     <div class="price">
                                         <div class="price_body" ng-show="{{fav.sale}}">
@@ -25,12 +25,9 @@
                                             <span class="currentprice fs14">￥{{fav.price}}</span>
                                         </div>
                                     </div>
-                                    <div class="operation over fs12">
+                                    <div class="operation over fs12" style="line-height:0px;">
                                         <div class="deselect fl" ng-click="cleanCollection(fav.favId)">
                                         <i class="icon-shouchang"></i>取消收藏
-                                        </div>
-                                        <div class="movetocart fl">
-                                        <i class="icon-share"></i>分享到
                                         </div>
                                     </div>
                                 </div>
