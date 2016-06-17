@@ -91,14 +91,14 @@
                     </div>
                     <div class="product_name">
                         <a href="#/product/details.html?gid={{goods.gid}}">
-                            <b>{{goods.name}}</b>
+                            <b style="font-weight: normal;">{{goods.name}}</b>
                         </a>
                     </div>
                     <div class="price_info clearfix">
                       
-                        <div class="price fl" ng-show="{{goods.sale}}">￥{{goods.salePrice}}</div>
-                        <div class="price fl del" ng-show="{{goods.sale}}" >￥{{goods.price}}</div>
-                         <div class="price fl" ng-show="{{!goods.sale}}">￥{{goods.price}}</div>
+                        <div class="price fl" ng-show="{{goods.sale}}"><span class="fs12">￥</span>{{goods.salePrice}}</div>
+                        <div class="price fl del fs12" ng-show="{{goods.sale}}">￥{{goods.price}}</div>
+                         <div class="price fl" ng-show="{{!goods.sale}}"><span class="fs12"></span>{{goods.price}}</div>
                         <div class="sales fr">已售<span>{{goods.volume}}</span>笔</div>
                     </div>
                 </li>
