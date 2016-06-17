@@ -109,9 +109,9 @@ wapApp.controller('AuctionDetailController',
 				$scope.ofm=ofm;  //分
 				$scope.ofs=ofs;  //秒				
 		  	}else if(zft==0){
-		  	  updateStatus($stateParams.id,"AUCTIONING");
+		  	  //updateStatus($stateParams.id,"AUCTIONING");
 		  	}else if(oft==0){
-		  	  updateStatus($stateParams.id,"OVER");
+		  	 // updateStatus($stateParams.id,"OVER");
 		  	}
   			
   		 	
@@ -126,7 +126,7 @@ wapApp.controller('AuctionDetailController',
   		AuctionService.signUp($scope.auctionid,creatCar($scope.auction, $scope.goods,$scope.auction.deposit))
 			.success(function(data){
 				if(data.ok){
-					$state.go('auction-signup');
+					$state.go('orderconfirm.page');
 				}else{
 					alert(data.message);
 				}
@@ -135,8 +135,8 @@ wapApp.controller('AuctionDetailController',
   	
   	var creatCar = function(groupGoods, goods, price){
     	var goodsInCar = [{'gid':goods.gid,'skuid':groupGoods.skuid,'gname':goods.name,'mid':goods.mid,'mname':goods.mName,'price':price,'count':1}];
-    	
-    	var orderInCar = [{'mid':goods.mid,'mname':goods.mName,'postage':0,'type':'GROUP','goods':goodsInCar}];
+    	//等待测试
+    	var orderInCar = [{'mid':goods.mid,'mname':goods.mName,'postage':0,'type':'AUCTION','goods':goodsInCar}];
     	return {'orders':orderInCar};
 	}
 	

@@ -124,10 +124,10 @@ wapApp.controller('AuctionListController', function ($scope, AuctionService,$int
 					auction.ofm=ofm;  //分
 					auction.ofs=ofs;  //秒		
 			  	}else if(zft==0){
-			  		updateStatus(auction.id,"AUCTIONING");
+			  		//updateStatus(auction.id,"AUCTIONING");
 			  		auction.status="AUCTIONING";
 			  	}else if(oft==0){
-			  		updateStatus(auction.id,"OVER");
+			  		//updateStatus(auction.id,"OVER");
 			  		auction.status="OVER";
 			  	}
 	  			

@@ -8,7 +8,7 @@
  * Controller of the jingyunshopApp
  */
 wapApp.controller('OrderConfirmationParantController',
-    function ($scope, $cookies, ConstantService, OrderService, $state, PayService,
+    function ($scope, $cookies, ConstantService, OrderService,AuctionService,$state, PayService,
         MyReceiveAddressService, CashCouponService, DiscountCouponService, CouponService, PostageService) {
     var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
 
@@ -33,6 +33,9 @@ wapApp.controller('OrderConfirmationParantController',
             $scope.finalmoney = $scope.transaction.totalPrice;
             $scope.pureOriginMoney = $scope.transaction.totalPriceWithoutPostage;
             $scope.originpostage = $scope.finalmoney - $scope.pureOriginMoney;
+            $scope.type=$scope.transaction.orders[0].type;
+            $scope.auctionid=$scope.transaction.orders[0].extradata;
+            auctionDetail($scope.auctionid);
         }else{
             alert("订单信息不正确。");
             //$state.go("cart");//should be go to illegal order page.
@@ -111,9 +114,18 @@ wapApp.controller('OrderConfirmationParantController',
             order.deliveryTypeCode = 'EXPRESS';
             order.deliveryTypeName = '普通快递';
         });
+        if($scope.type=="AUCTION"){
+        	 angular.forEach($scope.purchaseVo.orders, function(order, index){
+                 order.price = $scope.finalmoney;
+             });
+        }
         OrderService.submit($scope.purchaseVo)
             .success(function(data){
                 if(data.ok){
+                	if($scope.type=="AUCTION"){
+                		//alert("跳转到支付页面");
+                		$state.go("auction-success");
+                	}
                     var purchaseVo = data.body;
                     var orders = purchaseVo.orders;
                     var oids = [];
@@ -221,4 +233,24 @@ wapApp.controller('OrderConfirmationParantController',
     $scope.gobackCart = function(){
         $state.go("cart");
     };
+    
+    var auctionDetail=function(auctionid){
+ 	   AuctionService.detail(auctionid)
+ 		.success(function(data){
+ 			if(data.ok){
+ 				$scope.auction = data.body;
+ 				if($scope.type=="AUCTION"){
+ 					$scope.finalmoney=$scope.auction.deposit;
+ 					
+ 				}else{
+ 					$scope.goodPrice=$scope.auction.soldPrice-$scope.auction.deposit;
+ 				}
+ 			}
+ 		}).error(function(data){
+ 			
+ 		});
+ 	   
+    } 
+    
+    
 });
