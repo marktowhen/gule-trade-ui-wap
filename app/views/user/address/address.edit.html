@@ -4,11 +4,11 @@
 		<ul>
 			<li>
 				<p>姓名</p>
-				<input type="text" class="name1" ng-model="address.receiver" required>
+				<input placeholder="姓名" type="text" class="name1" ng-model="address.receiver" required>
 			</li>
 			<li>
 				<p>电话</p>
-				<input type="text" class="tel1" ng-model="address.mobile" required pattern="^((13)|(14)|(15)|(16)|(17)|(18))\d{9}$">
+				<input placeholder="电话" type="text" class="tel1" ng-model="address.mobile" required pattern="^((13)|(14)|(15)|(16)|(17)|(18))\d{9}$">
 			</li>
 			<li class="add-select">
 				<p>国家</p>
@@ -16,7 +16,7 @@
 				ng-options="c.countryID as c.countryName for c in countries" ng-change="getProvince();" required>
 				</select>
 				<div class="add-address-icons">
-					<i class="icon-xiala"></i>
+					<!-- <i class="icon-xiala"></i> -->
 				</div>
 			</li>
 			<li class="add-select">
@@ -25,7 +25,7 @@
 				ng-options="p.provinceID as p.provinceName for p in provinces" ng-change="getCity();" required>
 				</select>
 				<div class="add-address-icons">
-					<i class="icon-xiala"></i>
+					<!-- <i class="icon-xiala"></i> -->
 				</div>
 			</li>
 			<li class="add-select">
@@ -34,16 +34,16 @@
 				ng-options="c.cityID as c.cityName for c in cities" required>
 				</select>
 				<div class="add-address-icons">
-					<i class="icon-xiala"></i>
+					<!-- <i class="icon-xiala"></i> -->
 				</div>
 			</li>
 			<li>
 				<p>详细地址</p>
-				<input type="text" class="address1" ng-model="address.address" required>
+				<input placeholder="详细地址" type="text" class="address1" ng-model="address.address" required>
 			</li>
 			<li>
 				<p>邮政编码</p>
-				<input type="text" class="post1" ng-model="address.zipcode" required pattern="[0-9]{6}">
+				<input placeholder="邮政编码" type="text" class="post1" ng-model="address.zipcode" required pattern="[0-9]{6}">
 			</li>
 			<li class="add-set" ng-class="{'cur': address.defaulted}" ng-click="setdefault();">
 				<p>设置默认</p>
