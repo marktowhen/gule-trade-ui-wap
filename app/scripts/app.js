@@ -327,4 +327,9 @@ var wapApp = angular
           controller:  '',
           url:"/group-rules.html"
       })
+      .state('notices', {
+          templateUrl: 'views/index/notices.html',
+          controller:  '',
+          url:"/notices.html"
+      })
   });
