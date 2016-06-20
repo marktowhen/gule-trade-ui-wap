@@ -56,7 +56,7 @@ wapApp.controller('MyAuctionToPayController', function ($scope, $state,AuctionSe
 	var creatCar = function(groupGoods, goods, price){
     	var goodsInCar = [{'gid':goods.gid,'skuid':groupGoods.skuid,'gname':goods.name,'mid':goods.mid,'mname':goods.mName,'price':price,'count':1}];
     	
-    	var orderInCar = [{'mid':goods.mid,'mname':goods.mName,'postage':0,'type':'GROUP','goods':goodsInCar}];
+    	var orderInCar = [{'mid':goods.mid,'mname':goods.mName,'postage':0,'type':'AUCTIONFINAL','goods':goodsInCar}];
     	return {'orders':orderInCar};
 	}
 	

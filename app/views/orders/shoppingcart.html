@@ -20,7 +20,7 @@
                                    <!--  <div class="product_info">{{good.about}}</div> -->
                                     <div class="price" style="bottom:39px;">
                                         <div class="price_body">
-                                            <span class="currentprice">￥{{good.pprice}}</span>
+                                            <span class="currentprice"><span class="fs12">￥</span>{{good.pprice}}</span>
                                             <span class="originalprice">￥{{good.price}}</span>
                                             <span class="num fr">
                                                 <i class="reduce icon-jianhao fl" ng-class="{disabled: good.count <= 1 || good.stock <= 0}" ng-click="countdown(good, order)"></i>

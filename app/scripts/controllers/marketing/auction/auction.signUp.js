@@ -36,7 +36,9 @@ wapApp.controller('AuctionSignUpController',
             $scope.pureOriginMoney = $scope.transaction.totalPriceWithoutPostage;
             $scope.originpostage = $scope.finalmoney - $scope.pureOriginMoney;
             $scope.auctionid=$scope.transaction.orders[0].extradata;
-             //alert()
+            $scope.type=$scope.transaction.orders[0].type;
+             alert($scope.auctionid)
+             alert($scope.type)
             auctionDetail($scope.auctionid);
           
         }else{
@@ -283,7 +285,7 @@ wapApp.controller('AuctionSignUpController',
     
     
    var auctionDetail=function(auctionid){
-	   AuctionService.detail("VkkfDqkPR6upgaY_NA4WYA")
+	   AuctionService.detail(auctionid)
 		.success(function(data){
 			if(data.ok){
 				$scope.auction = data.body;

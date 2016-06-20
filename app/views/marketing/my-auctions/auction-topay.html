@@ -22,13 +22,13 @@
                             <div class="order-prices col-30 fr">
                                 <span style="color:#807E7E;">中标价</span>
                                 <div class="cl"></div>
-                                <div class="order_price">￥<span class="fs14">1.00</span></div>
+                                <div class="order_price">￥<span class="fs14">{{au.soldPrice}}</span></div>
                             </div>
                             <div class="cl"></div>
                             <p style="color:#807E7E;">保证金：￥{{au.deposit}}</p>
                             <div class="cl h10"></div>
                              <div class="order_btn fl">
-                                <button class="order_cancel fs12 fr red" ng-click="topay(au.id,au.gid,au.deposit,au,au.goods)">立即支付</button>
+                                <button class="order_cancel fs12 fr red" ng-click="topay(au.id,au.gid,au.soldPrice-au.deposit,au,au.goods)">立即支付</button>
                             </div>
 
                         </div>
