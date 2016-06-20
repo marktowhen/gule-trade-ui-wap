@@ -7,10 +7,10 @@
                 <div class="pi1-text">
                     <p class="fs16">
                         物流状态
-                        <span style="color:#ff473f;">运输中</span>
+                        <span style="color:#ff473f;">{{order.statusName}}</span>
                     </p>
-                    <p>乘运公司：申通快递</p>
-                    <p>运单编号：2000556625121</p>
+                    <p>乘运公司：{{order.expressName}}</p>
+                    <p>运单编号：{{order.orderno}}</p>
                 </div>
 
             </div>
@@ -24,11 +24,11 @@
                 <li class="cur">
                     <div class="logistics-left fl icon-r"></div>
                     <div class="logistics-right fl">
-                        <div class="title">【济南】泺源大街</div>
-                        <div class="time">&nbsp;2016-05-01 22 : 07 : 11</div>
+                        <div class="title">{{expressinfo1.content}}</div>
+                        <div class="time">&nbsp;{{expressinfo1.time}}</div>
                     </div>
                 </li>
-                <li ng-repeat="espress in expressinfo">
+                <li ng-repeat="espress in expressinfo2">
                     <div class="logistics-left fl icon-r"></div>
                     <div class="logistics-right fl">
                         <div class="title">{{espress.content}}</div>

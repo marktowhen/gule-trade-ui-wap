@@ -10,6 +10,10 @@
 
  wapApp.controller('LogisticsController', function ($scope,$stateParams, OrderService, $state, $cookies) {
  	var oid=$stateParams.oid;
+    OrderService.singleOrder(oid)
+        .success(function(data){
+            $scope.order = data.body;
+    });
  	OrderService.logistic(oid)
         .success(function(data){
             if(data.ok){
@@ -22,6 +26,9 @@
                     OrderService.logisticinfo(oid,$scope.logistic.expressCode.trim(),$scope.logistic.expressno.trim())
                     .success(function(data){
                                 $scope.expressinfo = data.body;
+                                $scope.expressinfo1=data.body[0];
+                                $scope.expressinfo2=$scope.expressinfo.slice(1,data.body.length);
+                                
                     });
 
 

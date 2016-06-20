@@ -35,13 +35,15 @@
  		}
  	});
  	//取消订单
- 	$scope.deleteOrder = function(order){
+ 	$scope.deleteOrder = function(order,goods){
  		OrderService.cancel(order.id).success(function(data){
 	 		if(data.ok){
-	 			$state.go('order-history-all');
+	 			order.goods.splice(order.goods.indexOf(goods),1);
  			}
 
- 		})
+ 		}).error(function(data){
+            alert("取消订单失败");
+    });
  	}
  	//立即支付
  	

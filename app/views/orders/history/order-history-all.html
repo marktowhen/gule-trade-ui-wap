@@ -29,7 +29,7 @@
                             </div>
                             <div class="cl h10"></div>
                             <div class="order_btn fl" ng-show="ispayment(order)">
-                        <button class="order_cancel fs12 fr" ng-click="deleteOrder(order)">取消订单</button>
+                        <button class="order_cancel fs12 fr" ng-click="deleteOrder(order,goods)">取消订单</button>
                         <a href="" class="order_pay fs12 fr" ng-click="payment(order,goods)">立即支付</a>
                     </div>
                     <div class="order_btn fl" ng-show="ispaid(order)">

@@ -104,10 +104,10 @@
           }
        });
  	//取消订单
- 	$scope.deleteOrder = function(order){
+ 	$scope.deleteOrder = function(order,goods){
  		OrderService.cancel(order.id).success(function(data){
 	 		if(data.ok){
-	 			$state.go('order-history-topay');
+	 			order.goods.splice(order.goods.indexOf(goods),1);
  			}
 
  		})
