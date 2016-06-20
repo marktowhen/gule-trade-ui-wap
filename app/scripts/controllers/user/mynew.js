@@ -12,8 +12,7 @@
 	var more =false;
 	$scope.newList = [];
 	//登陆时默认保存的uid
-	var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
- 	MyNewService.list("Ma9ogkIXSW-y0uSrvfqVIQ",0,size).success(function(data){
+ 	MyNewService.list(0,size).success(function(data){
  		if(data.ok){
  			for(var i=0;i<data.body.length;i++){
  				var list=data.body[i];
@@ -34,7 +33,7 @@
 	}
 
 	var falls = function(){
- 		MyNewService.list("Ma9ogkIXSW-y0uSrvfqVIQ",$scope.newList.length,size).success(function(data){
+ 		MyNewService.list($scope.newList.length,size).success(function(data){
  			if(data.ok){
  				for(var i=0;i<data.body.length;i++){
  					var list=data.body[i];

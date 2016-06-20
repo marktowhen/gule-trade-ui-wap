@@ -15,7 +15,8 @@
 			$scope.address  = data.body;
 		}
 	})
-	OrderService.singleorder(id).success(function(data){
+
+	OrderService.singleOrder(id).success(function(data){
 		if(data.ok){
 			$scope.orders = data.body;
 		}

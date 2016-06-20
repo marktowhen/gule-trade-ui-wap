@@ -22,7 +22,7 @@ wapApp.service('ApiService', function () {
             'imgList':'http://localhost:8888/api/statics/banner/list/:from/:size'
         },
         'message':{
-            'list':'http://localhost:8888/api/message/list/:uid/:from/:size',
+            'list':'http://localhost:8888/api/message/list/:from/:size',
             'updateStatus':'http://localhost:8888/api/message/:id',
             'notheadcount':'http://localhost:8888/api/message/unread/amount',
             'sigleMessage':'http://localhost:8888/api/message/single/:id'

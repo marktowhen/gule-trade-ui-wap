@@ -1,38 +1,39 @@
 
     <div class="shoppingcart_wrap clearfix" ng-controller="CartController">
         <section class="shoppingcart_products clearfix">
-            <ul ng-repeat="orders in carts.orders">
-                <li>
-                    <div class="product_body" ng-repeat="good in orders.goods">
+             <div ng-repeat="orders in carts.orders">
+            <ul>
+                <li ng-repeat="good in orders.goods">
+                    <div class="product_body" style="margin-bottom:4px;">
                         <div class="product_body_main fl">
                             <div class="choose fl">
                             <i class={{good.class}}>    
-                            <input type="checkbox" style="    position: absolute;top: 0px;left: 0px;opacity: 0;" ng-class="{disabled: good.stock == 0}" ng-disabled="good.stock==0" ng-change="selectOneGoods(good)" ng-model="good.selected" ng-true-value="true" ng-false-value="false"></i>
+                            <input type="checkbox" style="position: absolute;top: 0px;left: 0px;opacity: 0;" ng-class="{disabled: good.stock == 0}" ng-disabled="good.stock==0" ng-change="selectOneGoods(good)" ng-model="good.selected" ng-true-value="true" ng-false-value="false"></i>
                                 
                             
                             </div>
                             <div class="product_pic fl">
-                                <a href="#/product/details.html?gid={{good.gid}}"><img src="{{good.imgpath}}" style="width=90px;height:87px;" alt=""></a>
+                                <a href="#/product/details.html?gid={{good.gid}}"><img src="{{good.imgpath}}" style="width=90px;height:97px;margin-top:10px;" alt=""></a>
                             </div>
                             <div class="product_content fl">
-                                <div class="p_c_body">
+                                <div class="p_c_body" style="margin-top:15px;">
                                     <div class="product_name"><a href="#/product/details.html?gid={{good.gid}}">{{good.gname}}</a></div>
                                    <!--  <div class="product_info">{{good.about}}</div> -->
-                                    <div class="price" style="bottom:39px;">
+                                    <div class="price" style="bottom:30px;">
                                         <div class="price_body">
-                                            <span class="currentprice"><span class="fs12">￥</span>{{good.pprice}}</span>
+                                            <span class="currentprice">￥{{good.pprice}}</span>
                                             <span class="originalprice">￥{{good.price}}</span>
                                             <span class="num fr">
-                                                <i class="reduce icon-jianhao fl" ng-class="{disabled: good.count <= 1 || good.stock <= 0}" ng-click="countdown(good, order)"></i>
+                                                <i class="reduce icon-jianhao fl" ng-class="{disabled: good.count <= 1 || good.stock <= 0}" ng-click="countdown(good)"></i>
                                                 <i class="number fl">{{good.count}}</i>
-                                                <i ng-class="{disabled: (good.count == good.stock || good.stock == 0)}" class="add icon-jia fl" ng-click="countup(good, order)"></i>
+                                                <i ng-class="{disabled: (good.count == good.stock || good.stock == 0)}" class="add icon-jia fl" ng-click="countup(good)"></i>
                                             </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="product_delete fl">删除</div>
+                        <div class="product_delete fl" ng-click="delCartGs(good,orders)">删除</div>
                     </div> 
                 </li>
                <!--  <li>
@@ -129,6 +130,7 @@
                     </div> 
                 </li> -->
             </ul>
+            </div>
         </section>
         <section class="settle">
             <div class="check_all fl">

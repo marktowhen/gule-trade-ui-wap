@@ -15,9 +15,12 @@ wapApp.controller('CartController', function ($scope, CartService, $cookies, $st
     //滚动条标志位
     var flag = false;
     $scope.cartinorder = [];
+     var orders={};
     CartService.listCarts().success(function(data){
         
         $scope.carts = data.body;
+       
+       
        /* for(var i=0;i<$scope.carts.orders.length;i++){
             $scope.cartinorder.push($scope.carts.orders[i]);
         }
@@ -168,6 +171,14 @@ wapApp.controller('CartController', function ($scope, CartService, $cookies, $st
             alert("商品删除失败！");
         });
     };
+    var ifcartempty = function(){
+        return (($scope.carts)
+                        && ($scope.carts.orders)
+                        && ($scope.carts.orders.length > 0)
+                        && ($scope.carts.orders[0].goods)
+                        && ($scope.carts.orders[0].goods.length > 0));
+    };
+
     /**删除多个商品*/
     $scope.delCartGses = function(){
         if($scope.selectedGoods.length == 0) return;
@@ -218,7 +229,7 @@ wapApp.controller('CartController', function ($scope, CartService, $cookies, $st
         return price;
     }
 
-    $scope.countup = function(goods, cart){
+    $scope.countup = function(goods){
         if(goods.stock <= 0){
             return;
         }
@@ -229,7 +240,7 @@ wapApp.controller('CartController', function ($scope, CartService, $cookies, $st
         CartService.countupdate(goods.id, goods.count);
     };
 
-    $scope.countdown = function(goods, cart){
+    $scope.countdown = function(goods){
         if(goods.count <= 1) {
             //$scope.delCartGs(goods, cart);
             return;

@@ -20,12 +20,15 @@
         Dialog.alert($scope, "请先登录");
         return;
     }*/
+     $scope.notshow = false;
     OrderService.listWithCondition(statuscode,anystatus,0,size).success(function(data){
  		if(data.ok){
  			for(var i=0;i<data.body.length;i++){
  				$scope.orders.push(data.body[i]);
  			}
- 			
+ 			if(data.body.length==0){
+           $scope.notshow = true;
+      }
  				more=false;
  			
  		}
