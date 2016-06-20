@@ -12,7 +12,7 @@ wapApp.service('OrderService', function ($http, $location, ApiService, PayServic
     this.listOrders2Clearing = function(){
         return $http.get(ApiService.api.order.listClearing);
     };
-    this.listWithCondition = function(uid, statuscode,anystatus, from, size){
+    this.listWithCondition = function(statuscode,anystatus, from, size){
         return $http.get(
             ApiService.api.order.listWithCondition,
             {params:{'status':statuscode,'anystatus':anystatus,'from':from, 'size':size}});
@@ -62,7 +62,7 @@ wapApp.service('OrderService', function ($http, $location, ApiService, PayServic
     this.confirmDelivered = function(oid){
         return $http.put(ApiService.api.order.confirmDelivered.replace(':oid',oid));
     };
-    this.singleorder = function(oid){
+    /*this.singleorder = function(oid){
         return $http.get(ApiService.api.order.singleorder.replace(':oid',oid));
-    };
+    };*/
 });

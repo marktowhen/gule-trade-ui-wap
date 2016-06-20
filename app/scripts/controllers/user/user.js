@@ -9,7 +9,9 @@
  */
   wapApp.controller('UserController', 
 	function ($scope,UserService, $stateParams) {
-		UserService.getuser("Ma9ogkIXSW-y0uSrvfqVIQ").success(function(data){
+		/*var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
+		alert(uid+"lll");*/
+		UserService.getuser().success(function(data){
 			if(data.ok){
 				$scope.user=data.body;
 			}

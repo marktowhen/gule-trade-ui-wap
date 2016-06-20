@@ -8,8 +8,8 @@
  * Controller of the jingyunshopApp
  */
 wapApp.service('CartService', function ($http, ApiService, $cookies, ConstantService) {
-    this.listCarts = function(uid){
-        return $http.get(ApiService.api.cart.list.replace(':uid', uid));
+    this.listCarts = function(){
+        return $http.get(ApiService.api.cart.list);
     };
     this.submit = function(carts){
         return $http.post(ApiService.api.cart.submit, 

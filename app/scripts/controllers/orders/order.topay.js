@@ -20,7 +20,7 @@
         Dialog.alert($scope, "请先登录");
         return;
     }*/
- 	OrderService.listWithCondition("Ma9ogkIXSW-y0uSrvfqVIQ",statuscode,anystatus,0,size).success(function(data){
+ 	OrderService.listWithCondition(statuscode,anystatus,0,size).success(function(data){
  		if(data.ok){
  			for(var i=0;i<data.body.length;i++){
  				$scope.orders.push(data.body[i]);
@@ -72,7 +72,7 @@
  	}
  	//瀑布流的方法
  	var falls = function(){
- 		OrderService.listWithCondition("Ma9ogkIXSW-y0uSrvfqVIQ",statuscode,anystatus,$scope.orders.length,size).success(function(data){
+ 		OrderService.listWithCondition(statuscode,anystatus,$scope.orders.length,size).success(function(data){
  			if(data.ok){
  				for(var i=0;i<data.body.length;i++){
  					$scope.orders.push(data.body[i]);

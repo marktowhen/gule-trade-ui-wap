@@ -10,7 +10,7 @@
 wapApp.service('ApiService', function () {
     this.api = {
         'cart':{
-            'list':'http://localhost:8888/api/cart/goods/list/:uid',
+            'list':'http://localhost:8888/api/cart/goods/list',
             'submit':'http://localhost:8888/api/cart/clearing',
             'delete':'http://localhost:8888/api/cart/goods',
             'clear': 'http://localhost:8888/api/cart/goods/:uid',//清空用户购物车
@@ -24,7 +24,7 @@ wapApp.service('ApiService', function () {
         'message':{
             'list':'http://localhost:8888/api/message/list/:uid/:from/:size',
             'updateStatus':'http://localhost:8888/api/message/:id',
-            'notheadcount':'http://localhost:8888/api/message/unread/amount/:uid',
+            'notheadcount':'http://localhost:8888/api/message/unread/amount',
             'sigleMessage':'http://localhost:8888/api/message/single/:id'
         },
         'order':{
@@ -64,8 +64,8 @@ wapApp.service('ApiService', function () {
                     'count':'http://localhost:8888/api/marketing/group/user/count/:groupID',
                     'list':'http://localhost:8888/api/marketing/group/user/list/:groupID',
                     'single':'http://localhost:8888/api/marketing/group/user/single/:groupid/:uid',
-                    'getgroup':'http://localhost:8888/api/marketing/group/user/group/list/:uid',
-                    'getgroupgoods':'http://localhost:8888/api/marketing/group/user//group/single/:id'
+                    'getgroup':'http://localhost:8888/api/marketing/group/user/group/list',
+                    'getgroupgoods':'http://localhost:8888/api/marketing/group/user/group/single/:id'
                 }
             },
             'flashsale':{
@@ -116,7 +116,7 @@ wapApp.service('ApiService', function () {
         //用户
         'user':{
             'getLoginUser' :'http://localhost:8888/api/user/current',
-            'getSingleUser':'http://localhost:8888/api/get/user/name/:id'
+            'getSingleUser':'http://localhost:8888/api/get/user/name'
         },
         //卖家
         'seller':{

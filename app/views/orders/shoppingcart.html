@@ -1,8 +1,8 @@
 
     <div class="shoppingcart_wrap clearfix" ng-controller="CartController">
         <section class="shoppingcart_products clearfix">
-            <ul>
-                <li ng-repeat="orders in carts.orders">
+            <ul ng-repeat="orders in carts.orders">
+                <li>
                     <div class="product_body" ng-repeat="good in orders.goods">
                         <div class="product_body_main fl">
                             <div class="choose fl">

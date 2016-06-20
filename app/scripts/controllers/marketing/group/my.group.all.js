@@ -10,13 +10,11 @@
  wapApp.controller('MyGroupAllController', function ($scope,$interval,$state,GroupBuyService, $stateParams) {
 
  	$scope.GroupList = [];
- 	GroupBuyService.getgroup("Ma9ogkIXSW-y0uSrvfqVIQ").success(function(data){
+ 	GroupBuyService.getgroup().success(function(data){
  		if(data.ok){
  			for(var i=0;i<data.body.length;i++){
  				GroupBuyService.getgroupgoods(data.body[i].groupID).success(function(data1){
  					if(data1.ok){
- 						
- 						
  						var group = data1.body;
  						console.log("ooo"+data1.body.path);
  						group.showhide=false;

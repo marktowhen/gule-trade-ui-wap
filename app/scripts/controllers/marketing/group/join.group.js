@@ -11,9 +11,9 @@
 	function ($scope, $state,GroupBuyService, $stateParams,GoodsDetailsService,MerchantService,FlashSaleService,$interval,GoodsListService) {
 		//团购商品$stateParams.groupid="表示从付款成功时跳转到这个页面是传过来的团的id(在付款成功的页面通过oid查group_order表，查出对应的groupid来)"
 		//邀请好友时也跳转这个页面啊穿过一个groupid
-		var groupid = $stateParams.groupid//团购商品的团的id值
+		var groupid = $stateParams.groupid;//团购商品的团的id值
 		//进来的用户的id   uid(关注了但是没有加入该团)
-        var uid="Ma9ogkIXSW-y0uSrvfqVIQ";
+        var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
         var userLength = 0;
 		$scope.user=[];
 		GroupBuyService.singlegroup(groupid).success(function(data){
@@ -121,7 +121,7 @@
 		/*如果uid不存在的时候我们就将差几人的按钮换成参团按钮
 		如果该用户已经参团的情况下按钮显示差几个人的团
 		*/
-		/*GroupBuyService.singleUser(groupid,uid).success(function(data3){
+		GroupBuyService.singleUser(groupid,uid).success(function(data3){
 			if(data3.ok){
 				if(data3.body==null || data3.body==""){
 					groupGoods.Btnvalue="加入该团";
@@ -141,7 +141,7 @@
 					groupGoods.Btnvalue="还差parseInt($scope.count)人参团"
 				}
 			}
-		})*/
+		})
 		
 		$scope.mid=''; //商家id
         $scope.tid=''; //类型id
@@ -153,7 +153,7 @@
 		      .success(function(data){
          	if(data.code==200){
          		$scope.showlist = data.body;
-         		console.log($scope.showlist)
+         		/*console.log($scope.showlist);*/
          	}
 		});
 

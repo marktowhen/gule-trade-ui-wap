@@ -9,7 +9,7 @@
  */
   wapApp.controller('MyGroupSuccessController', function ($scope,$state,GroupBuyService, $stateParams) {
   		$scope.GroupList = [];
- 	GroupBuyService.getgroup("Ma9ogkIXSW-y0uSrvfqVIQ").success(function(data){
+ 	GroupBuyService.getgroup().success(function(data){
  		if(data.ok){
  			for(var i=0;i<data.body.length;i++){
  				GroupBuyService.getgroupgoods(data.body[i].groupID).success(function(data1){

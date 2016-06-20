@@ -17,7 +17,7 @@
         Dialog.alert($scope, "请先登录");
         return;
     }*/
-    OrderService.listWithCondition("Ma9ogkIXSW-y0uSrvfqVIQ",statuscode,anystatus,0,size).success(function(data){
+    OrderService.listWithCondition(statuscode,anystatus,0,size).success(function(data){
  		if(data.ok){
  			for(var i=0;i<data.body.length;i++){
  				var order = data.body[i];
@@ -37,10 +37,10 @@
  		}
  	})
 
- 	$scope.deleteOrder = function(order){
+/* 	$scope.deleteOrder = function(order){
  		OrderService.cancel(order.id).success(function(data){
  			if(data.ok){
- 				OrderService.listWithCondition("Ma9ogkIXSW-y0uSrvfqVIQ",statuscode,anystatus,0,size).success(function(data){
+ 				OrderService.listWithCondition(statuscode,anystatus,0,size).success(function(data){
 		 			if(data.ok){
 			 			for(var i=0;i<data.body.length;i++){
 			 				var order = data.body[i];
@@ -63,7 +63,7 @@
  			}
  		})
  	};
-
+*/
   $scope.gologistics = function(id){
         $state.go('logistics-info',{oid:id});
   };
@@ -80,7 +80,7 @@
 
  	//瀑布流的方法
  	var falls = function(){
- 		OrderService.listWithCondition("Ma9ogkIXSW-y0uSrvfqVIQ",statuscode,anystatus,$scope.orders.length,size).success(function(data){
+ 		OrderService.listWithCondition(statuscode,anystatus,$scope.orders.length,size).success(function(data){
  			if(data.ok){
  				for(var i=0;i<data.body.length;i++){
  					$scope.orders.push(data.body[i]);

@@ -15,7 +15,7 @@ wapApp.controller('CartController', function ($scope, CartService, $cookies, $st
     //滚动条标志位
     var flag = false;
     $scope.cartinorder = [];
-    CartService.listCarts("Ma9ogkIXSW-y0uSrvfqVIQ").success(function(data){
+    CartService.listCarts().success(function(data){
         
         $scope.carts = data.body;
        /* for(var i=0;i<$scope.carts.orders.length;i++){

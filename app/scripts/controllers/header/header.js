@@ -13,9 +13,8 @@ wapApp.controller('HeaderController',
   	$scope.toSearch =function(){
   		$state.go('search',{goodsname:$scope.goodsname});		
   	}
-  	var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
 
-  	MyNewService.notheadcount("Ma9ogkIXSW-y0uSrvfqVIQ").success(function(data){
+  	MyNewService.notheadcount().success(function(data){
   		if(data.ok){
   			$scope.unheadcount = data.body;
   		}
