@@ -50,7 +50,11 @@ wapApp.controller('FlashSaleDetailController', function ($scope, $cookies,$state
 	  		var oft=Math.round(($scope.endtime-new Date())/1000);
 	  					if(oft<=0&&flashsale.stock>0){
 	  						flashsale.classes = "ad1-right orange fr";
-	  					$scope.statrtFlash = function(){
+	  					
+			  		 		flashsale.BtnValue="立即秒杀";
+			  		 		flashsale.dao=('00:00:00:00');
+			  		 		flashsale.point="icon-arrow";
+			  		 		$scope.statrtFlash = function(){
 							FlashSaleService.startFlash($scope.flashsale.id,cart($scope.flashsale,$scope.goods)).success(function(data){
 								if(data.ok){		
 
@@ -66,9 +70,6 @@ wapApp.controller('FlashSaleDetailController', function ($scope, $cookies,$state
 								};
 							});
 						};
-			  		 		flashsale.BtnValue="立即秒杀";
-			  		 		flashsale.dao=('00:00:00:00');
-			  		 		flashsale.point="icon-arrow";
 			  		 		return TimePromise;
 			  		 	}else if(oft<=0&&flashsale.stock==0){
 			  		 		flashsale.classes = "ad1-right gray fr";

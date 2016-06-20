@@ -38,7 +38,7 @@ wapApp.controller('IndexController',
                 }
             }
         });
-        $scope.flashGoods =[];
+       /* $scope.flashGoods =[];
         $scope.flash={};
          var size=20;
         FlashSaleService.list(0,size).success(function(data){
@@ -56,6 +56,6 @@ wapApp.controller('IndexController',
 
         $scope.godetail = function(id){
         $state.go('one-details',{id:id});
-    };
+    };*/
 
 });
