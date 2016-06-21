@@ -4,12 +4,12 @@
 		</div>
 		<p class="fl">{{auction.startTime | date:'MM月dd日 HH:mm'}} 开始</p>
 	</div>
-	<div class="ad1-top over" ng-if="'AUCTIONING'==auction.status">
+	<div class="ad1-top ing" ng-if="'AUCTIONING'==auction.status">
 		<div class="ad1-circle fl"> <i class="icon-zb"></i>
 		</div>
 		<p class="fl">{{end}}</p>
 	</div>
-	<div class="ad1-top over" ng-if="'AUCTIONING'!=auction.status && 'NEW'!=auction.status">
+	<div class="ad1-top ing" ng-if="'AUCTIONING'!=auction.status && 'NEW'!=auction.status">
 		<div class="ad1-circle fl"> <i class="icon-zb"></i>
 		</div>
 		<p class="fl">{{end}}</p>
