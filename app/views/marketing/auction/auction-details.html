@@ -26,7 +26,7 @@
 		<div class="ad1-mid">
 			<div class="adm-left fl">
 				<p>
-					<a href="#">{{goods.name+' '+goods.sku.propertiesValue}}</a>
+					<a href="#">{{goods.name+' '+goodSku.propertiesValue}}</a>
 				</p>
 			</div>
 			<div class="adm-right fl"> <i class="icon-share"></i>
@@ -187,7 +187,9 @@
 		</div>
 		<div class="auction-fix-right fr into" ng-if="0==ifSign">
 			<p class="ap2">
-				<!-- <a href="#/auction-signup.html?id={{auction.id}}&gid={{auction.id}}"> --><span class="fs18" ng-click="signUp()">去报名</span><!-- </a> -->
+				<!-- <a href="#/auction-signup.html?id={{auction.id}}&gid={{auction.id}}"> -->
+				<span ng-if="'NEW'==auction.status" class="fs18" >去报名</span><!-- </a> -->
+				<span ng-if="'NEW'!=auction.status" class="fs18" ng-click="signUp()">去报名</span><!-- </a> -->
 				（保证金：{{auction.deposit}}元）
 			</p>
 			
