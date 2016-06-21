@@ -27,7 +27,7 @@
 					起拍价:
 					<span style="color:#ff473f;">
 						￥
-						<span class="fs30">{{auction.startPrice}}</span>
+						<span class="fs30">{{auction.startPrice|number:2}}</span>
 						<!-- <span class="fs30" >{{auction.myPrice}}d</span>
 						<span class="fs30" >{{currentPrice}}dd</span> -->
 					</span>
@@ -49,7 +49,7 @@
 			</div>
 			<div class="an-box2-prices fl">
 				<span class="fs30 ah-num" style="font-weight: bold;">{{auction.myPrice}}</span>
-				<p class="fs12" style="color:#B3B1B1;">您将出价{{auction.myPrice}}元</p>
+				<p class="fs12" style="color:#B3B1B1;">您将出价{{auction.myPrice|number:2}}元</p>
 			</div>
 			<div class="fl ah-add" ng-click="add()">
 				<div class="ah-circle">
@@ -81,7 +81,7 @@
 					<p class="">
 						<i class="icon-jp-king"></i>
 						158*******16 {{winner.addtime | date:'HH:mm:ss'}} 出价
-						<span>￥{{winner.price}}</span>
+						<span>￥{{winner.price|number:2}}</span>
 					</p>
 				</li>
 				<!-- <li class="cur" ng-if="" ng-if="size==0">
@@ -95,7 +95,7 @@
 					  <p class="">
 						<i class="icon-jp-i"></i>
 						138*******32 {{plog.addtime | date:'HH:mm:ss'}} 出价
-						<span>￥{{plog.price}}</span>
+						<span>￥{{plog.price|number:2}}</span>
 					</p>
 					 </li>
 					</ul>
