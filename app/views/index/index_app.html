@@ -60,7 +60,7 @@
         <section class="index_activity over">
             <div class="index_groupbuy_body fl">
                 <a href="#/marketing/group/details.html?ggid={{groupGoods.id}}&gid={{groupGoods.gid}}"><img src="{{groupGoods.goods.path}}" alt=""></a>
-                <div class="index_groupbuy_title fs12">
+                <div class="index_groupbuy_title fs14">
                    {{groupGoods.goods.name+''+groupGoods.sku.propertiesValue}}
                 </div>
                 <div class="groupbuy_info">
@@ -78,8 +78,7 @@
         </section>
         <section class="index_products clearfix">
             <div class="title">
-                <b class="fs12">热销商品</b>
-                <a href="" class="fr moreproduct"><b>...</b></a>
+                <div class="fs14">热销商品</div>
             </div>
             <ul class="cl">
                 <li ng-repeat=" goods in showlist">
@@ -96,7 +95,7 @@
                     <div class="price_info clearfix">
                       
                         <div class="price fl" ng-show="{{goods.sale}}"><span class="fs12">￥</span>{{goods.salePrice}}</div>
-                        <div class="price fl del fs12" ng-show="{{goods.sale}}">￥{{goods.price}}</div>
+                       <!--  <div class="price fl del fs12" ng-show="{{goods.sale}}">￥{{goods.price}}</div> -->
                          <div class="price fl" ng-show="{{!goods.sale}}"><span class="fs12"></span>{{goods.price}}</div>
                         <div class="sales fr">已售<span>{{goods.volume}}</span>笔</div>
                     </div>
