@@ -107,7 +107,7 @@ wapApp.controller('AuctionDetailController',
 	  		 	return TimePromise;
   		 	}else if(zft<0&&oft<0){
   		 		//已结束
-  		 		$scope.end=("距结束 00时00分00秒");
+  		 		$scope.end=("距结束 00日00时00分00秒");
 		  		return TimePromise;
   		 	}else if(zft<0&&oft>0){
 		  		 		//正在竞拍
@@ -115,7 +115,7 @@ wapApp.controller('AuctionDetailController',
 		  		var ofh=parseInt((oft%(3600*24))/3600);
 				var ofm=parseInt((oft%3600)/60);
 				var ofs=oft%60;
-				$scope.end=('距结束 '+ofh+ '时' +ofm+ '分' +ofs+'秒');
+				$scope.end=('距结束 '+ofd+'日'+ofh+ '时是' +ofm+ '分' +ofs+'秒');
 				$scope.ofd=ofd;  //日
 				$scope.ofh=ofh;  //时
 				$scope.ofm=ofm;  //分
