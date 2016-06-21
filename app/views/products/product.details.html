@@ -30,7 +30,7 @@
 		<p style="color:#b0b0b0;margin-bottom:5px;font-size:12px;margin-top: 14px;">{{goods.about}}</p>
 		<div class="pd1-price" >
 			<span class="p1" ng-show="goods.sale">￥{{goods.salePrice}}</span>
-			<span class="p1 fs18"  style="font-weight: bold;" ng-show="!goods.sale"><span class="fs12">￥</span>{{goods.price}}</span>
+			<span class="p1" ng-show="!goods.sale"><span class="fs12">￥</span>{{goods.price}}</span>
 			<span class="p2" ng-show="goods.sale">
 				价格：￥<del>{{goods.price}}</del>
 			</span>
@@ -156,7 +156,7 @@
 		</div>
 		<div class="pd5-info1 fr">
 			<ul>
-				<li style="border-right: 1px solid #ccc;" ui-sref="customer-service">
+				<li style="border-right: 1px solid #ccc;color:#b0b0b0;" ui-sref="customer-service">
 					<i class=" icon-xiaoxi-home"></i>
 					<p>客服</p>
 				</li>
