@@ -49,12 +49,9 @@
             </a> -->
         </section>
         <section class="notice clearfix">
-            <div class="title col-15 fl">
-                <img src="../images/index/notice.png" alt="">
-            </div>
-            <div class="content col-85 fl" ui-sref="notices">
+            <div class="content" ui-sref="notices">
                 <i class="fl icon-xiaoxi"></i>
-                <div class="content_words fl">一大波优惠来袭，快来抢购啦！购就送超级优惠券，<span>还有更多大礼等你拿！</span></div>
+                <div class="content_words fl">【优惠来袭】一大波优惠在路上，快来抢购啦！</div>
             </div>
         </section>
         <section class="index_activity over">
@@ -68,8 +65,8 @@
                     <div class="index_people_num fs12">
                         <i class="icon-renren"></i>
                         <span class="col-20">{{groupGoods.groupPeople}}人团</span>
-                        <span>￥{{groupGoods.groupPrice}}</span>
-                        <a href="#/marketing/group/details.html?ggid={{groupGoods.id}}&gid={{groupGoods.gid}}" class="index_groupstart fr col-35">去开团＞</a>
+                        <span>￥<span class="fs14"></span></span>
+                        <a href="#/marketing/group/details.html?ggid={{groupGoods.id}}&gid={{groupGoods.gid}}" class="index_groupstart fr col-35">去开团</a>
                     </div>
                 </div>
             </div>
@@ -77,9 +74,18 @@
                 <a href="#/one-list.html"><img src="../../images/index/hot.jpg" alt=""></a>
             </div>
         </section>
+        <div class="index_products">
+            <div class="title">
+                <div class="title-circle fl" style="">
+                    <i class="icon-sale-index"></i>
+                </div>
+                <p class="fl fs14">优选特惠</p>
+            </div>
+        </div>
+        <img style="width:100%;" src="images/index/p1.png" alt="">
         <section class="index_products clearfix">
             <div class="title">
-                <div class="fs14"><i class="icon-hot-index" style="color:#ff473f;"></i>热销商品</div>
+                <div class="fs14"><i class="icon-hot-index" style="color:#ff473f;font-size: 22px;"></i>热销商品</div>
             </div>
             <ul class="cl">
                 <li ng-repeat=" goods in showlist">
@@ -107,7 +113,7 @@
             </ul>
         </section>
         <div class="gotop">
-            <img src="images/gotop.png" alt="">
+            <i class="icon-top-index"></i>
         </div>
     </div>
     <nav></nav>

@@ -8,7 +8,7 @@ i{display: inline-block}
 .swiper-button-prev{transform:rotate(180deg)}*/
 
 /*主要服务*/
-.services{padding:10px 15px;border-bottom: 1px solid #efefef;background: #fff}
+.services{padding:10px 15px 9px 15px;border-bottom: 1px solid #efefef;background: #fff}
 .services .service_list{width:25%;text-align: center;}
 .services .service_list .service_pic{height: 30px;line-height: 30px;border-radius: 12px;margin: auto;font-size: 38px;text-align: center}
 .services .service_list .service_title{margin-top:4px;font-size: 14px;color: #5a5a5a} 
@@ -26,13 +26,13 @@ i{display: inline-block}
 .notice .title{height: 29px;text-align: center;border-right: 1px solid #efefef;box-sizing: border-box}
 .notice .title img{width: 21px;height: 21px;text-align: center;position: relative;top: 4px}
 .notice .content{line-height: 24px;}
-.notice .content i{text-align: center;line-height: 28px;width:12%;height: 20px;}
-.notice .content .content_words{width: 88%;font-size: 12px;line-height: 15px;margin-top: -2px}
+.notice .content i{text-align: center;width:12%;height: 20px;border-right: 1px solid #efefef;}
+.notice .content .content_words{width: 86%;font-size: 12px;line-height:20px;margin-top: -2px;margin-left: 2%;}
 .notice .content .content_words span{color: #FF473F}
 
 /*活动*/
 .index_activity{/*height: 173px;*/background: #f0f0f0;margin-top: 7px}  
-.index_activity .index_groupbuy_body{width: 57.5%;overflow: hidden;/*height: 100%;*/margin-right: 2.5%;background: #fff;/*position: relative*/} 
+.index_activity .index_groupbuy_body{width: 58%;overflow: hidden;/*height: 100%;*/margin-right: 2%;background: #fff;/*position: relative*/} 
 .index_activity .index_hotsale{width:40%;height: 100%}
 .index_activity .index_groupbuy_title{height: 32px;line-height: 18px;overflow: hidden;margin-left: 3px}   
 @media screen and (min-width:350px){
@@ -44,7 +44,7 @@ i{display: inline-block}
 @media screen and (min-width:435px){
     .index_activity{height:205px}
 }
-.index_activity .groupbuy_info{p/*osition:absolute;bottom: 0;*/width: 100%;height: 20px;background: #909090;line-height: 20px;color: #fff}  
+.index_activity .groupbuy_info{/*osition:absolute;bottom: 0;*/width: 100%;height: 20px;background: #909090;line-height: 20px;color: #fff}  
 .index_activity .index_people_num i{width: 14px;height: 20px;line-height: 20px;margin-left: 3px}
 .index_activity .index_groupbuy_body img,.index_activity .index_hotsale img{width: 100%}
 .index_groupstart{text-align: center;background: #FF473F}  
@@ -52,9 +52,19 @@ i{display: inline-block}
 
 /*热销商品*/  
 .index_products{background: #f0f0f0}
-.index_products .title{line-height: 28px;background-color: #fff;margin: 3px 0;text-align: center;font-weight: bold;}
-/*.index_products .title b{margin-left: 3%}*/
-/*.index_products .title a{color: #3e3e3e;margin-right: 3%}*/
+.index_products .title{display: flex;justify-content: center;align-items: center;line-height:40px;height:40px;background-color: #fff;margin: 3px 0;text-align: center;font-weight: bold;}
+.title-circle{
+	color:#ff473f;
+	width:20px;
+	height:20px;
+	line-height:20px;
+	text-align: center;
+	border-radius:20px;
+	background-color: #ff473f;
+	color:#fff;
+	font-size:12px;
+	margin-right: 3px;
+}
 .index_products ul{padding-bottom: 52px}
 .index_products ul li{width: 49.8%;min-height: 150px;margin-bottom: 2%;float: left;background: #fff;padding-bottom: 5px}
 .index_products ul li:nth-child(2n-1){margin-right: 0.4%}
