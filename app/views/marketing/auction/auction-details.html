@@ -12,12 +12,12 @@
 		</div>
 		<p class="fl">{{auction.startTime | date:'MM月dd日 HH:mm'}} 开始</p>
 	</div>
-	<div class="ad1-top over" ng-if="'AUCTIONING'==auction.status">
+	<div class="ad1-top ing" ng-if="'AUCTIONING'==auction.status">
 		<div class="ad1-circle fl"> <i class="icon-zb"></i>
 		</div>
 		<p class="fl">{{end}}</p>
 	</div>
-	<div class="ad1-top over" ng-if="'AUCTIONING'!=auction.status && 'NEW'!=auction.status">
+	<div class="ad1-top ing" ng-if="'AUCTIONING'!=auction.status && 'NEW'!=auction.status">
 		<div class="ad1-circle fl"> <i class="icon-zb"></i>
 		</div>
 		<p class="fl">{{end}}</p>
@@ -136,7 +136,7 @@
 						心仪商品
 					</div>
 				</li>
-				<li>
+				<li style="width:20%">
 					<div class="joined-rule-left fl">2</div>
 					<div class="joined-rule-right fl">
 						点击
@@ -144,7 +144,7 @@
 						去报名
 					</div>
 				</li>
-				<li style="width:20%">
+				<li style="width:24%">
 					<div class="joined-rule-left fl">3</div>
 					<div class="joined-rule-right fl">
 						进入竞拍
@@ -152,7 +152,7 @@
 						大厅出价
 					</div>
 				</li>
-				<li style="margin: none">
+				<li style="margin-right: 0px;width:24%;">
 					<div class="joined-rule-left fl">4</div>
 					<div class="joined-rule-right fl">
 						竞拍成功
