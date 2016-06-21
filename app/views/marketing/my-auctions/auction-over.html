@@ -29,7 +29,9 @@
                             <p style="color:#807E7E;">保证金已锁定：￥{{au.deposit}}</p>
                             <div class="cl h10"></div>
                             <div class="order_btn fl">
-                                <button class="order_cancel fs12 fr" style="color:#807E7E;" ui-sref="view-details">查看保证金</button>
+	                            <a href="#/view-details.html?id={{au.id}}&gid={{au.gid}}">
+	                                <button class="order_cancel fs12 fr" style="color:#807E7E;">查看保证金</button>
+	                            </a>
                             </div>
 
                         </div>
