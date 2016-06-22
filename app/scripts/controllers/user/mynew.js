@@ -11,6 +11,7 @@
  	var size = 9;
 	var more =false;
 	$scope.newList = [];
+	$scope.nowShow=false;
 	//登陆时默认保存的uid
  	MyNewService.list(0,size).success(function(data){
  		if(data.ok){
@@ -23,6 +24,9 @@
  				}
  				$scope.newList.push(data.body[i]);
  				
+ 			}
+ 			if(data.body.length==0){
+ 				$scope.nowShow=true;
  			}
  			more=false;
  		};

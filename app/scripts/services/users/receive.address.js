@@ -8,8 +8,8 @@
 wapApp.service('MyReceiveAddressService', function ($http, $location , ApiService) {
    
     //查询
-    this.list = function(uid, offset, size){
-        return $http.get(ApiService.api.myReceieveAddress.list.replace(':uid',uid).replace(':offset',offset).replace(':size',size));
+    this.list = function(offset, size){
+        return $http.get(ApiService.api.myReceieveAddress.list.replace(':offset',offset).replace(':size',size));
     };
 
     //查询

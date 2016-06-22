@@ -26,9 +26,9 @@
     <section class="products_products clearfix" style="margin-top:95px;">
         <ul>
             <li  ng-repeat="goods in goodsList">
-                <a href="#/product/details.html">
+                <a href="#/product/details.html?gid={{goods.gid}}">
                     <div class="product_pic">
-                        <img src="images/index/product2.png" alt=""></div>
+                        <img src="{{goods.path}}" alt=""></div>
                     <div class="product_name"> <b>{{goods.name}}</b>
                     </div>
                     <div class="price_info">

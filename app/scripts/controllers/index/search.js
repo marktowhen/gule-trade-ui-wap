@@ -17,7 +17,7 @@ wapApp.controller('SearchController',function ($scope, $cookies, $stateParams,Co
         $scope.order='0'; //排序
         $scope.name= ''; //商品名
         $scope.pagefrom = 0;
-        $scope.pagesize = 4;
+        $scope.pagesize = 6;
     var goodsname = $stateParams.goodsname;
 	if(goodsname!=null){
 		$scope.name = goodsname;

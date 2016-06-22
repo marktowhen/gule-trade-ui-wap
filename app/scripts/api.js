@@ -154,7 +154,7 @@ wapApp.service('ApiService', function () {
         // 收貨地址    
         'myReceieveAddress':{
             //用戶地址
-            'list' : 'http://localhost:8888/api/address/list/:uid/:offset/:size',
+            'list' : 'http://localhost:8888/api/address/list/:offset/:size',
             //all
             'listAll':'http://localhost:8888/api/address/all',
             //详情
