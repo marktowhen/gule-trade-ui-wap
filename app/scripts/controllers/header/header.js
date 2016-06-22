@@ -16,7 +16,11 @@ wapApp.controller('HeaderController',
 
   	MyNewService.notheadcount().success(function(data){
   		if(data.ok){
-  			$scope.unheadcount = data.body;
+        if(data.body>4){
+            $scope.unheadcount="...";
+        }else{
+            $scope.unheadcount=data.body;
+        }
   		}
   	})
   	
