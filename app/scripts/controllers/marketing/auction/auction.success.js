@@ -17,12 +17,10 @@ wapApp.controller('AuctionSuccessController',
         	$interval.cancel(timer);
         	$stateParams.key="hall";
         	//根据订单oid  查询auction_order表获得 商品id goodid 以及 竞拍商品auctionid
-        	$cookieStore.get("id");
+        	//cookieStore.get("id");
         	//alert($sessionStorage.SessionMessage.id)
         	var id=$cookieStore.get("id");
         	var gid=$cookieStore.get("gid");
-        	alert(id)
-        	alert(gid)
         	$cookieStore.remove("id");
         	$cookieStore.remove("gid");
         	window.location.href="#/auction-details.html?id="+id+"&gid="+gid+"&key=hall";
