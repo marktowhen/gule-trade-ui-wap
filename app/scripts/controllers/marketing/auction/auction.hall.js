@@ -8,7 +8,7 @@
  * Controller of the jingyunshopApp
  */
 wapApp.controller('AuctionHallController',
-    function ($scope,$interval,$state,$route,$window,GoodsDetailsService,$stateParams,$location,AuctionService,UserService) {
+    function ($scope,$interval,$state,$route,$window,GoodsDetailsService,$stateParams,$location,AuctionService,FlashSaleService,UserService) {
 	
 	//竞拍记录
 	$scope.priceLog = [];
@@ -74,6 +74,7 @@ wapApp.controller('AuctionHallController',
 			
 			if(data.ok){
 				$scope.auction = data.body;
+				getGoodSku($scope.auction.skuid);
 				if($scope.currentPrice==0){
 					$scope.auction.myPrice=$scope.auction.startPrice;
 					$scope.currentPrice=$scope.auction.startPrice;
@@ -110,10 +111,15 @@ wapApp.controller('AuctionHallController',
 
 	})
 	
-	var listPriceLog=function(){
-		
-		
-	}
+	//规格型号
+	var getGoodSku = function(skuid){
+		FlashSaleService.getsku(skuid).success(function(data){
+			if(data.ok){
+				$scope.goodSku = data.body;
+			};
+		});
+
+	};
 	
 	//竞拍时间格式处理
 	var TimePromise;
