@@ -9,42 +9,50 @@
                 </div>
                 <div class="cl"></div>
                 <div class="order-bd1">
-                    <div class="order_pic col-30 fl" ui-sref="auction-details">
+                    <div class="order_pic col-30 fl">
+                    <a href="#/auction-details.html?id={{au.id}}&gid={{au.gid}}&key=detail">
                         <img src="images/index/product2.png" alt="">
+                    </a>
                     </div>
                     <div class="order_info_wrap col-67 fs12 fl" ng-if="'lock'==au.depositStatus">
                         <div class="order_info_body">
-                            <div class="order_title col-70 fl" ui-sref="auction-details">
+                            <div class="order_title col-70 fl">
+                            <a href="#/auction-details.html?id={{au.id}}&gid={{au.gid}}&key=detail">
                                 {{au.gname+''+au.propertiesValue}}
+                            </a>
                             </div>
                             <div class="order-prices col-30 fr">
                                 <span style="color:#807E7E;">成交价</span>
                                 <div class="cl"></div>
                                 <div class="order_price">
                                     ￥
-                                    <span class="fs14">1.00</span>
+                                    <span class="fs14">{{au.soldPrice}}</span>
                                 </div>
                             </div>
                             <div class="cl"></div>
                             <p style="color:#807E7E;">保证金已锁定：￥{{au.deposit}}</p>
                             <div class="cl h10"></div>
                             <div class="order_btn fl">
-                                <button class="order_cancel fs12 fr" style="color:#807E7E;" ui-sref="view-details">查看保证金</button>
+	                            <a href="#/view-details.html?id={{au.id}}&gid={{au.gid}}">
+	                                <button class="order_cancel fs12 fr" style="color:#807E7E;">查看保证金</button>
+	                            </a>
                             </div>
 
                         </div>
                     </div>
                     <div class="order_info_wrap col-67 fs12 fl" ng-if="'release'==au.depositStatus">
                         <div class="order_info_body">
-                            <div class="order_title col-70 fl" ui-sref="auction-details">
+                            <div class="order_title col-70 fl" >
+                            <a href="#/auction-details.html?id={{au.id}}&gid={{au.gid}}&key=detail">
                                 {{au.gname+''+au.propertiesValue}}
+                            </a>
                             </div>
                             <div class="order-prices col-30 fr">
                                 <span style="color:#807E7E;">成交价</span>
                                 <div class="cl"></div>
                                 <div class="order_price">
                                     ￥
-                                    <span class="fs14">1.00</span>
+                                    <span class="fs14">{{au.soldPrice}}</span>
                                 </div>
                             </div>
                             <div class="cl"></div>

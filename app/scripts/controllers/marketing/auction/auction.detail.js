@@ -8,7 +8,7 @@
  * Controller of the jingyunshopApp
  */
 wapApp.controller('AuctionDetailController', 
-		 function ($scope,$cookies, $state,ConstantService,GroupBuyService, $stateParams,GoodsDetailsService,MerchantService,AuctionService,$interval) {
+		 function ($scope,$cookies, $state,ConstantService,GroupBuyService,FlashSaleService,$stateParams,GoodsDetailsService,MerchantService,AuctionService,$interval) {
 	
 	//竞拍商品查询 (时间、状态)
 	$scope.ggoods = [];
@@ -17,7 +17,7 @@ wapApp.controller('AuctionDetailController',
 				if(data.ok){
 					$scope.auction = data.body;
 					$scope.auction.key = $stateParams.key;
-					
+					getGoodSku($scope.auction.skuid);
 					$scope.endtime=$scope.auction.endTime;
 			  		$scope.starttime = $scope.auction.startTime;	
 					runTiming()
@@ -43,6 +43,18 @@ wapApp.controller('AuctionDetailController',
 	    });},200)
 
 	})
+	
+	//规格型号
+	var getGoodSku = function(skuid){
+		FlashSaleService.getsku(skuid).success(function(data){
+			if(data.ok){
+				$scope.goodSku = data.body;
+			};
+		});
+
+	};
+
+
 	
 	//竞拍记录
 	$scope.priceLog = [];
@@ -95,7 +107,7 @@ wapApp.controller('AuctionDetailController',
 	  		 	return TimePromise;
   		 	}else if(zft<0&&oft<0){
   		 		//已结束
-  		 		$scope.end=("距结束 00时00分00秒");
+  		 		$scope.end=("距结束 00日00时00分00秒");
 		  		return TimePromise;
   		 	}else if(zft<0&&oft>0){
 		  		 		//正在竞拍
@@ -103,7 +115,7 @@ wapApp.controller('AuctionDetailController',
 		  		var ofh=parseInt((oft%(3600*24))/3600);
 				var ofm=parseInt((oft%3600)/60);
 				var ofs=oft%60;
-				$scope.end=('距结束 '+ofh+ '时' +ofm+ '分' +ofs+'秒');
+				$scope.end=('距结束 '+ofd+'日'+ofh+ '时是' +ofm+ '分' +ofs+'秒');
 				$scope.ofd=ofd;  //日
 				$scope.ofh=ofh;  //时
 				$scope.ofm=ofm;  //分

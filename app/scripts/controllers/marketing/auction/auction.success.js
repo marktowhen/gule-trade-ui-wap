@@ -8,7 +8,7 @@
  * Controller of the jingyunshopApp
  */
 wapApp.controller('AuctionSuccessController',
-    function ($scope,$interval,$state,$stateParams,$location,AuctionService) {
+    function ($scope,$interval,$cookieStore,$state,$stateParams,$location,AuctionService) {
 	$scope.time=3;
 	var timer=null;
 	timer=$interval(function(){
@@ -17,8 +17,12 @@ wapApp.controller('AuctionSuccessController',
         	$interval.cancel(timer);
         	$stateParams.key="hall";
         	//根据订单oid  查询auction_order表获得 商品id goodid 以及 竞拍商品auctionid
-        	var id="VkkfDqkPR6upgaY_NA4WYA";
-        	var gid="6J5oe2uzTVuUCP-P3-sJbA";
+        	//cookieStore.get("id");
+        	//alert($sessionStorage.SessionMessage.id)
+        	var id=$cookieStore.get("id");
+        	var gid=$cookieStore.get("gid");
+        	$cookieStore.remove("id");
+        	$cookieStore.remove("gid");
         	window.location.href="#/auction-details.html?id="+id+"&gid="+gid+"&key=hall";
         	//$state.go("auction-details")
 

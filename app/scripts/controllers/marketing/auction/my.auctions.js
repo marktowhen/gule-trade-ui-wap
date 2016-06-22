@@ -38,6 +38,18 @@ wapApp.controller('MyAuctionController', function ($scope, AuctionService,$inter
 									 data2.body.propertiesValue=dataSku.body.propertiesValue
 								};
 							});
+						
+						  //定金状态
+						  AuctionService.depositStatus(data2.body.id,"").success(function(dataDeposit){
+							if(dataDeposit.ok){
+								data2.body.depositStatus=dataDeposit.body.depositStatus;
+								data2.body.lockTime=dataDeposit.body.lockTime;
+								data2.body.releaseTime=dataDeposit.body.releaseTime;
+								
+							}
+							}).error(function(dataDeposit){
+								
+							});
 
 						
 						

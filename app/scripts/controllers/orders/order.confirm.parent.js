@@ -8,7 +8,7 @@
  * Controller of the jingyunshopApp
  */
 wapApp.controller('OrderConfirmationParantController',
-    function ($scope, $cookies, ConstantService, OrderService,AuctionService,$state, PayService,
+    function ($scope, $cookies, ConstantService,$cookieStore,OrderService,AuctionService,$state, PayService,
         MyReceiveAddressService, CashCouponService, DiscountCouponService, CouponService, PostageService) {
     var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
 
@@ -124,6 +124,8 @@ wapApp.controller('OrderConfirmationParantController',
                 if(data.ok){
                 	if($scope.type=="AUCTION"){
                 		//alert("跳转到支付页面");
+                		$cookieStore.put("id",$scope.cookAuctionID);
+                		$cookieStore.put("gid",$scope.cookAuctionGoodID);
                 		$state.go("auction-success");
                 	}
                     var purchaseVo = data.body;
@@ -239,6 +241,9 @@ wapApp.controller('OrderConfirmationParantController',
  		.success(function(data){
  			if(data.ok){
  				$scope.auction = data.body;
+ 				$scope.cookAuctionID=$scope.auction.id;
+ 				$scope.cookAuctionGoodID=$scope.auction.gid;
+ 				
  				if($scope.type=="AUCTION"){
  					$scope.finalmoney=$scope.auction.deposit;
  					

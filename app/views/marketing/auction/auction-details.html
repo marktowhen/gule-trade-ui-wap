@@ -12,12 +12,12 @@
 		</div>
 		<p class="fl">{{auction.startTime | date:'MM月dd日 HH:mm'}} 开始</p>
 	</div>
-	<div class="ad1-top over" ng-if="'AUCTIONING'==auction.status">
+	<div class="ad1-top ing" ng-if="'AUCTIONING'==auction.status">
 		<div class="ad1-circle fl"> <i class="icon-zb"></i>
 		</div>
 		<p class="fl">{{end}}</p>
 	</div>
-	<div class="ad1-top over" ng-if="'AUCTIONING'!=auction.status && 'NEW'!=auction.status">
+	<div class="ad1-top ing" ng-if="'AUCTIONING'!=auction.status && 'NEW'!=auction.status">
 		<div class="ad1-circle fl"> <i class="icon-zb"></i>
 		</div>
 		<p class="fl">{{end}}</p>
@@ -26,7 +26,7 @@
 		<div class="ad1-mid">
 			<div class="adm-left fl">
 				<p>
-					<a href="#">{{goods.name+' '+goods.sku.propertiesValue}}</a>
+					<a href="#">{{goods.name+' '+goodSku.propertiesValue}}</a>
 				</p>
 			</div>
 			<div class="adm-right fl"> <i class="icon-share"></i>
@@ -37,7 +37,7 @@
 				起拍价:
 				<span>
 					￥
-					<span class="fs18">{{auction.startPrice}}</span>
+					<span class="fs18">{{auction.startPrice|number:2}}元</span>
 				</span>
 			</span>
 		</div>
@@ -136,7 +136,7 @@
 						心仪商品
 					</div>
 				</li>
-				<li>
+				<li style="width:20%">
 					<div class="joined-rule-left fl">2</div>
 					<div class="joined-rule-right fl">
 						点击
@@ -144,7 +144,7 @@
 						去报名
 					</div>
 				</li>
-				<li style="width:20%">
+				<li style="width:24%">
 					<div class="joined-rule-left fl">3</div>
 					<div class="joined-rule-right fl">
 						进入竞拍
@@ -152,7 +152,7 @@
 						大厅出价
 					</div>
 				</li>
-				<li style="margin: none">
+				<li style="margin-right: 0px;width:24%;">
 					<div class="joined-rule-left fl">4</div>
 					<div class="joined-rule-right fl">
 						竞拍成功
@@ -173,7 +173,7 @@
 	<div class="cl"></div>
 	
 	 <div class="gotop">
-            <img src="images/gotop.png" alt="">
+             <i class="icon-top-index"></i>
      </div>
 	
 	<div class="auction-details-fix">
@@ -187,7 +187,9 @@
 		</div>
 		<div class="auction-fix-right fr into" ng-if="0==ifSign">
 			<p class="ap2">
-				<!-- <a href="#/auction-signup.html?id={{auction.id}}&gid={{auction.id}}"> --><span class="fs18" ng-click="signUp()">去报名</span><!-- </a> -->
+				<!-- <a href="#/auction-signup.html?id={{auction.id}}&gid={{auction.id}}"> -->
+				<span ng-if="'NEW'==auction.status" class="fs18" >去报名</span><!-- </a> -->
+				<span ng-if="'NEW'!=auction.status" class="fs18" ng-click="signUp()">去报名</span><!-- </a> -->
 				（保证金：{{auction.deposit}}元）
 			</p>
 			
