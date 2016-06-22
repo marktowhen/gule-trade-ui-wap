@@ -8,7 +8,7 @@
  * Controller of the jingyunshopApp
  */
 wapApp.controller('AuctionHallController',
-    function ($scope,$interval,$state,$route,$window,GoodsDetailsService,$stateParams,$location,AuctionService) {
+    function ($scope,$interval,$state,$route,$window,GoodsDetailsService,$stateParams,$location,AuctionService,FlashSaleService,UserService) {
 	
 	//竞拍记录
 	$scope.priceLog = [];
@@ -74,6 +74,7 @@ wapApp.controller('AuctionHallController',
 			
 			if(data.ok){
 				$scope.auction = data.body;
+				getGoodSku($scope.auction.skuid);
 				if($scope.currentPrice==0){
 					$scope.auction.myPrice=$scope.auction.startPrice;
 					$scope.currentPrice=$scope.auction.startPrice;
@@ -110,10 +111,15 @@ wapApp.controller('AuctionHallController',
 
 	})
 	
-	var listPriceLog=function(){
-		
-		
-	}
+	//规格型号
+	var getGoodSku = function(skuid){
+		FlashSaleService.getsku(skuid).success(function(data){
+			if(data.ok){
+				$scope.goodSku = data.body;
+			};
+		});
+
+	};
 	
 	//竞拍时间格式处理
 	var TimePromise;
@@ -162,6 +168,14 @@ wapApp.controller('AuctionHallController',
 	return TimePromise;
 	
   	}
+  	//当前用户
+  	UserService.getuser().success(function(data){
+  		$scope.userid="Ma9ogkIXSW-y0uSrvfqVIQ";
+		if(data.ok){
+			$scope.user=data.body;
+			$scope.userid=$scope.user.id
+		}
+	})
   	
   	$scope.myPrice=$scope.currentPrice; //我的出价
   	//$scope.currentPrice=$scope.winner.price; //当前价格
