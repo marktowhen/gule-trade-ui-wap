@@ -62,11 +62,16 @@
 			<p>等待开拍</p>
 	   </div>
 		<div class="an-box2-bottom" ng-if="'AUCTIONING'==auction.status" >
-		 <div ng-if="auction.myPrice>currentPrice" ng-click="bidding()">
-			<p style="color:#790001;">立即出价</p>
+		 <div ng-if="userid==winner.uid">
+			<p style="color:#ccccc;">正在领先中</p>
 		 </div>
-		 <div ng-if="auction.myPrice<=currentPrice">
-			<p style="color:#ccccc;">立即出价</p>
+		 <div ng-if="userid!=winner.uid">
+			 <div ng-if="auction.myPrice>currentPrice" ng-click="bidding()">
+				<p style="color:#790001;">立即出价</p>
+			 </div>
+			 <div ng-if="auction.myPrice<=currentPrice">
+				<p style="color:#ccccc;">立即出价</p>
+			 </div>
 		 </div>
 	   </div>
 		<div class="an-box2-bottom" ng-if="'AUCTIONING'!=auction.status && 'NEW'!=auction.status">

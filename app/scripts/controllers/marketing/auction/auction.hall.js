@@ -8,7 +8,7 @@
  * Controller of the jingyunshopApp
  */
 wapApp.controller('AuctionHallController',
-    function ($scope,$interval,$state,$route,$window,GoodsDetailsService,$stateParams,$location,AuctionService) {
+    function ($scope,$interval,$state,$route,$window,GoodsDetailsService,$stateParams,$location,AuctionService,UserService) {
 	
 	//竞拍记录
 	$scope.priceLog = [];
@@ -162,6 +162,14 @@ wapApp.controller('AuctionHallController',
 	return TimePromise;
 	
   	}
+  	//当前用户
+  	UserService.getuser().success(function(data){
+  		$scope.userid="Ma9ogkIXSW-y0uSrvfqVIQ";
+		if(data.ok){
+			$scope.user=data.body;
+			$scope.userid=$scope.user.id
+		}
+	})
   	
   	$scope.myPrice=$scope.currentPrice; //我的出价
   	//$scope.currentPrice=$scope.winner.price; //当前价格
