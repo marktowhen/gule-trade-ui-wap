@@ -64,6 +64,7 @@ wapApp.controller('AuctionDetailController',
 					for (var i = 0; i < data.body.length; i++) {
 						if(i==0){
 							data.body[i].status="first"; //领先
+							$scope.currentPrice=data.body[i].price;
 						}else{
 							
 							data.body[i].status="out"  //出局
