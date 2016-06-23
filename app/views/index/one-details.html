@@ -17,7 +17,7 @@
 	 		<p>{{goods.name+''+goodSku.propertiesValue}}</p>
 	 		<p>{{goods.about}}</p>
 	 		<div class="od1-bottom">
-	 			<div class="od-box1-left fl">剩余：<span>{{flashsale.stock}}份</span></div>
+	 			<div class="od-box1-left fl fs14">剩余：<span>{{flashsale.stock}}份</span></div>
 	 			<div class="od-box1-right fr">距开始 {{flashsale.dao}}</div>
 	 		</div>
 	 	</div>
@@ -30,7 +30,7 @@
 	 		<div class="cl h10"></div>
 	 		<div class="od-box2-bd">
 	 			<ul>
-	 				<li class="cur">
+	 				<li>
 	 					<div class="od-box2-num fl">1</div>
 	 					<div class="od-box2-text fl">选择<br>心仪商品</div>
 	 				</li>
@@ -58,6 +58,10 @@
 	 	<div class="one-details-fix" style="border-top:1px solid #ccc;">
 	 		<div class="ad1-top">
 	 			<div class="ad1-left fl">
+	 				<div class="fl">
+	 					<i class="icon-home-1"></i>
+						<p>首页</p>
+	 				</div>
 	 				<p class="fl">￥<span class="ag">{{flashsale.currentPrice}}</span></p>
 	 				<p class="fl">原价：￥{{goodSku.price}}</p>
 	 			</div>
@@ -115,97 +119,3 @@
 
 
 
-
-<!-- <div class="one-details center-view" ng-controller="FlashSaleDetailController">
-	 	<div class="ad-img">
-	 		<img src="images/one/tu1.png" alt="">
-	 	</div>
-	 	<div class="cl"></div>
-	 	<div class="ad-box1">
-	 		<div class="cl"></div>
-	 		<div class="ad1-mid">
-	 			<div class="adm-left fl">
-	 				<p><a href="#">{{goods.name}}</a></p>
-	 			</div>
-	 			<div class="adm-right fl">
-	 				<div class="adm-right-icon"></div>
-	 				分享
-	 			</div>	 		
-	 		</div>
-	 		<div class="cl"></div>
-	 		<div class="pd1-info">
-	 			<ul>
-	 				<li>快递：0.00</li>
-	 				<li>评价：{{goods.comment}}条</li>
-	 				<li>剩余：<a href="#">{{flashsale.stock}}份</a></li>
-	 			</ul>
-	 		</div>
-	 	</div>
-	 	<div class="cl h10"></div>
-	 	<div class="pd-box2">
-	 		<div class="pd2-left fl">
-	 			<p>{{goods.mName}}</p>
-	 		</div>
-	 		<div class="pd2-right fr">
-	 			<p ng-click="toMerchant(goods.mid)">进入店铺</p>
-	 		</div>
-	 	</div>
-	 	<div class="cl h10"></div>
-	 	<div class="ad-box2">
-	 		<div class="ad2-hd">
-	 			<ul>
-	 				<li class="cur">
-	 					<a href="javascript:;">拍品详情</a>
-	 				</li>
-	 				<li>
-	 					<a href="javascript:;">活动规则</a>
-	 				</li>
-	 			</ul>
-	 		</div>
-	 		<div class="cl"></div>
-	 		<div class="ad2-bd">
-	 			<ul>
-	 				<li class="cur">
-	 					<div ng-repeat="img in goods.imgList">
-	 					<img src="{{img.path}}" alt="">
-	 					<div>
-	 				</li>
-	 				<li>
-	 					<div class="ad-detail-info">
-	 						<p>一、竞拍规则</p>
-	 						<p>第一条：竞拍分为正在热拍、下期预告、历史成交三类，会员只能在已经开始的竞拍中进行竞拍。 </p>
-	 						<p>第二条：每一个竞拍商品都设置竞拍时间，竞拍开始，可以参与竞拍，竞拍时间结束，则竞拍结束。 </p>
-	 						<p>第三条：参与竞拍时需要参缴保证金，参与竞拍出价时确保账户中有足够的保证金支付。</p>
-	 						<p>第四条：每个竞拍商品支付都设有拍币限制，在支付竞拍商品时，拍币数量不能超过该拍币限制。</p>
-	 						<p>第五条：会员参与商品竞拍，保证金转为冻结状态，竞拍结束后，竞拍失败者冻结保证金将在1个工作日内解冻，竞拍成功者，保证金将不会解冻，直接转为商品支付款。由于卖家的原因或者非买家造成的未付款，买家申诉取消交易成功，系统将会返还保证金。 </p>
-	 						<p>第六条：每一款商品设有起步价、加价幅度，起步价和加价幅度由商家自行设置。</p>
-	 						<p>第七条：出价是在当前的最高的出价的基础上加价，如一款手机的起步价是10元，加价是10元，第一位出价，则它的购买价格是20元，第二位加价，应是20加10,则它的购买价格是30元，以此类推。 </p>
-	 						<p>第八条：出价时需要填写资金密码，会员应保管好自己的资金密码。 </p>
-	 						<p>第九条：商品在竞拍模式下，只要竞拍没有结束，在竞拍过程中，可以选择多次出价。如果商品是在竞拍中奖模式下，只能出一次价，不能多次出价。</p> 
-	 						<p>第十条：首次出价10%中奖是指在竞拍中奖模式下，对任意一个商品首次出价，系统将随机发送一组六位数字的随机码到您绑定的手机上，随机码的个位若与上证指数收盘个位数字相同，您可以按你首次出价的价格获得商品。</p>
-	 						<p>第十一条：中奖者交易规则 </p>
-	 						<p>1、中奖者可以选择购买商品，也可以选择放弃购买，放弃购买不会扣保证金。</p>
-	 						<p>2、中奖者需要在一周内购买，以中奖日期为准，在第七天的16:00为领取有最后期限，逾期取消购买资格。例：2013.1.1中奖，则需要在2013.1.8 16:00之前购买。 </p>
-	 						<p>3、中奖者购买商品时，需要登录账号，进入活动领取，点击购买即可。</p>
-	 						<p>4、在竞拍未结束时，保证金未解冻，中奖者购买商品，需要另外支付商品款。</p>
-	 					</div>
-	 				</li>
-	 			</ul>
-	 		</div>
-	 	</div>
-	 	<div class="one-details-fix">
-	 		<div class="ad1-top">
-	 			<div class="ad1-left fl">
-	 				<p>秒杀价：￥<span class="ag">{{flashsale.currentPrice}}</span>元</p>
-	 				<p>原价：￥{{goods.price}}元</p>
-	 			</div>
-	 			<div class="ad1-right fl">
-	 				<p>距开始</p>
-	 				<span>{{flashsale.dao}}</span>	
-	 			</div>
-	 		</div>
-		 	<div class={{flashsale.classes}}>
-		 		<p ng-click="statrtFlash()">{{flashsale.BtnValue}}<i class={{flashsale.point}}></i></p>
-		 	</div>
-	 	</div>
-	 </div> -->
