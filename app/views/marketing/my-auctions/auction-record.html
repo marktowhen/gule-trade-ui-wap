@@ -9,7 +9,7 @@
                     <div class="order-hd1-right fr fs14" ng-if="'PAID'==au.myStatus">出价</div>
                     <div class="order-hd1-right fr fs14" ng-if="'AUCTIONING'==au.myStatus">出价</div>
                 </div>
-                <div class="order-hd1" style="background-color:#CCCCCC;" ng-if="'OVER'==au.status">
+                <div class="order-hd1" style="background-color:#CCCCCC;" ng-if="'OVER'==au.status||'TOPAY'==au.status">
                     <div class="order-hd1-right fl fs14">已结束</div>
                 </div>
                 <div class="cl"></div>
@@ -55,7 +55,7 @@
                         <img src="images/index/product2.png" alt="">
                     </a>
                     </div>
-                    <div class="order_info_wrap col-67 fs12 fl" ng-if="'lock'==au.depositStatus">
+                    <div class="order_info_wrap col-67 fs12 fl" ng-if="'release'!=au.depositStatus">
                         <div class="order_info_body">
                             <div class="order_title col-70 fl" >
                             <a href="#/auction-details.html?id={{au.id}}&gid={{au.gid}}&key=detail">

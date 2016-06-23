@@ -3,15 +3,15 @@
 	<div class="add-address-infos">
 		<ul>
 			<li>
-				<p>姓名</p>
-				<input placeholder="姓名" type="text" class="name1" ng-model="address.receiver" required>
+				<p>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</p>
+				<input type="text" class="name1" ng-model="address.receiver" required>
 			</li>
 			<li>
-				<p>电话</p>
-				<input placeholder="电话" type="text" class="tel1" ng-model="address.mobile" required pattern="^((13)|(14)|(15)|(16)|(17)|(18))\d{9}$">
+				<p>电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话</p>
+				<input type="text" class="tel1" ng-model="address.mobile" required pattern="^((13)|(14)|(15)|(16)|(17)|(18))\d{9}$">
 			</li>
 			<li class="add-select">
-				<p>国家</p>
+				<p>国&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;家</p>
 				<select class="add-address-sel2 fr" ng-model="address.country"
 				ng-options="c.countryID as c.countryName for c in countries" ng-change="getProvince();" required>
 				</select>
@@ -20,7 +20,7 @@
 				</div>
 			</li>
 			<li class="add-select">
-				<p>省份</p>
+				<p>省&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;份</p>
 				<select class="add-address-sel2 fr" ng-model="address.province" 
 				ng-options="p.provinceID as p.provinceName for p in provinces" ng-change="getCity();" required>
 				</select>
@@ -29,7 +29,7 @@
 				</div>
 			</li>
 			<li class="add-select">
-				<p>城市</p>
+				<p>城&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;市</p>
 				<select class="add-address-sel2 fr" ng-model="address.city"
 				ng-options="c.cityID as c.cityName for c in cities" required>
 				</select>
@@ -39,11 +39,11 @@
 			</li>
 			<li>
 				<p>详细地址</p>
-				<input placeholder="详细地址" type="text" class="address1" ng-model="address.address" required>
+				<input style="width:79%;" type="text" class="address1" ng-model="address.address" required>
 			</li>
 			<li>
 				<p>邮政编码</p>
-				<input placeholder="邮政编码" type="text" class="post1" ng-model="address.zipcode" required pattern="[0-9]{6}">
+				<input type="text" class="post1" ng-model="address.zipcode" required pattern="[0-9]{6}">
 			</li>
 			<li class="add-set" ng-class="{'cur': address.defaulted}" ng-click="setdefault();">
 				<p>设置默认</p>

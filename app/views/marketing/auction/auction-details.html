@@ -188,8 +188,8 @@
 		<div class="auction-fix-right fr into" ng-if="0==ifSign">
 			<p class="ap2">
 				<!-- <a href="#/auction-signup.html?id={{auction.id}}&gid={{auction.id}}"> -->
-				<span ng-if="'NEW'==auction.status" class="fs18" >去报名</span><!-- </a> -->
-				<span ng-if="'NEW'!=auction.status" class="fs18" ng-click="signUp()">去报名</span><!-- </a> -->
+				<span ng-if="'AUCTIONING'!=auction.status" class="fs18" >去报名</span><!-- </a> -->
+				<span ng-if="'AUCTIONING'==auction.status" class="fs18" ng-click="signUp()">去报名</span><!-- </a> -->
 				（保证金：{{auction.deposit}}元）
 			</p>
 			
