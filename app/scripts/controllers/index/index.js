@@ -15,15 +15,45 @@ wapApp.controller('IndexController',
          $scope.order='0'; //排序
          $scope.name= ''; //商品名
          $scope.pagefrom = 0;
-         $scope.pagesize = 4;
-
-
+         $scope.pagesize = 6;
+         //滚动条标志位
+        var flag = false;
+        $scope.showlist=[];
     	GoodsListService.allGoodsList($scope.mid,$scope.tid,$scope.order,$scope.name,$scope.pagefrom,$scope.pagesize)
 		      .success(function(data){
          	if(data.code==200){
-         		$scope.showlist = data.body;
+         		for(var i=0;i<data.body.length;i++){
+                    $scope.showlist.push(data.body[i]);
+                }
+                flag = false;
          	}
+          
 		});
+        //瀑布流的方法
+        var falls = function(){
+            GoodsListService.allGoodsList($scope.mid,$scope.tid,$scope.order,$scope.name,$scope.showlist.length,$scope.pagesize)
+                  .success(function(data){
+                if(data.code==200){
+                    for(var i=0;i<data.body.length;i++){
+                    $scope.showlist.push(data.body[i]);
+                    }
+                    flag = false;
+                 }
+               
+            });
+        }
+         ////瀑布流追加
+
+        $(window).scroll(function(){
+          if($scope.showlist.length < $scope.pagesize){
+
+          }else{
+           if (($(window).scrollTop() >= $(document).height()-$(window).height()-70) && !flag ){  //滚动条距离底部不足80px时触发
+                falls();
+                flag = true;
+              }
+          }
+       });
         IndexService.banner("index",0,4).success(function(data){
             if(data.ok){
                 $scope.imgList = data.body;

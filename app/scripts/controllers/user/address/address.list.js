@@ -68,7 +68,7 @@ wapApp.controller('OrderAddressListController',
     };
 
     $scope.editaddr = function(address){
-      if($scope.transaction && $scope.transaction.orders && $scope.transaction.orders.length > 0){
+     if($scope.transaction && $scope.transaction.orders && $scope.transaction.orders.length > 0){
         $state.go("orderconfirm.address.edit", {'id':address.id});
       }else {
         $state.go("address.edit", {'id':address.id});

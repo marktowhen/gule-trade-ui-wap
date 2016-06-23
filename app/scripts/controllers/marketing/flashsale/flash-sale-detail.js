@@ -37,8 +37,8 @@ wapApp.controller('FlashSaleDetailController', function ($scope, $cookies,$state
 
 	};
 
-	var cart = function(flashsale,goods){
-		var goodsInCart = [{'gid':flashsale.gid,'skuid':flashsale.skuId,'gname':goods.name,'mid':goods.mid,'mname':goods.mName,'price':flashsale.currentPrice,'count':1}];
+	var cart = function(flashsale,goods,goodSku){
+		var goodsInCart = [{'gid':flashsale.gid,'skuid':flashsale.skuId,'gname':goods.name,'mid':goods.mid,'mname':goods.mName,'price':flashsale.currentPrice,'count':1,'imgpath':goodSku.skuPath}];
 		var orderInCart = [{'mid':goods.mid,'mname':goods.mName,'postage':0,'type':'FLASHSALE','goods':goodsInCart}];
 		return {'orders':orderInCart};
 	};
@@ -55,7 +55,7 @@ wapApp.controller('FlashSaleDetailController', function ($scope, $cookies,$state
 			  		 		flashsale.dao=('00:00:00:00');
 			  		 		flashsale.point="icon-arrow";
 			  		 		$scope.statrtFlash = function(){
-							FlashSaleService.startFlash($scope.flashsale.id,cart($scope.flashsale,$scope.goods)).success(function(data){
+							FlashSaleService.startFlash($scope.flashsale.id,cart($scope.flashsale,$scope.goods,$scope.goodSku)).success(function(data){
 								if(data.ok){		
 
 									FlashSaleService.detail(data.body.flashId).success(function(data){

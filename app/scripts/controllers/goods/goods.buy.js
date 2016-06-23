@@ -132,6 +132,7 @@ wapApp.controller('BuyController',
                          $scope.condition.volume = data.body.volume;
                          $scope.condition.skuid = data.body.id;
                          $scope.condition.sale = data.body.sale;
+                        $scope.condition.path = data.body.skuPath;
                          $scope.condition.properties_values = data.body.propertiesValue;
                          $scope.numFlag = true;
                         console.log($scope.condition);
@@ -175,6 +176,7 @@ wapApp.controller('BuyController',
           goods0.mname = goods.mName;
           goods0.price = $scope.condition.price;
           goods0.pprice = $scope.condition.salePrice;
+          goods0.imgpath = $scope.condition.path;
           goods0.count = $scope.num;
           order0.goods.push(goods0);
           cartvo.orders.push(order0);

@@ -132,6 +132,7 @@
                          $scope.condition.volume = data.body.volume;
                          $scope.condition.skuid = data.body.id;
                          $scope.condition.sale = data.body.sale;
+                         $scope.condition.path = data.body.skuPath;
                          $scope.condition.properties_values = data.body.propertiesValue;
                          $scope.numFlag = true;
                         console.log($scope.condition);
@@ -197,7 +198,7 @@
 	        	if(response.code==200){
 	        		alert("添加购物车成功");
 	        	}else{
-	        		alert("添加购物车失败");
+	        		alert(response.message);
 	        	}
 	        }).error(function(response){
 	        	alert("网络异常，稍后重试");

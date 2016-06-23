@@ -83,7 +83,7 @@ wapApp.controller('GroupDetailController',
 		}*/
 
 		$scope.start = function(){
-			GroupBuyService.start($scope.groupGoods.id,creatCar($scope.groupGoods, $scope.goods))
+			GroupBuyService.start($scope.groupGoods.id,creatCar($scope.groupGoods, $scope.goods,$scope.goodSku))
 				.success(function(data){
 					if(data.ok){
 						$state.go('orderconfirm.page');
@@ -97,8 +97,8 @@ wapApp.controller('GroupDetailController',
 			
 		}
 
-		var creatCar = function(groupGoods, goods){
-	    	var goodsInCar = [{'gid':goods.gid,'skuid':groupGoods.skuid,'gname':goods.name,'mid':goods.mid,'mname':goods.mName,'price':groupGoods.groupPrice,'count':1}];
+		var creatCar = function(groupGoods, goods,goodSku){
+	    	var goodsInCar = [{'gid':goods.gid,'skuid':groupGoods.skuid,'gname':goods.name,'mid':goods.mid,'mname':goods.mName,'price':groupGoods.groupPrice,'count':1,'imgpath':goodSku.skuPath}];
 	    	
 	    	var orderInCar = [{'mid':goods.mid,'mname':goods.mName,'postage':0,'type':'GROUP','goods':goodsInCar}];
 	    	return {'orders':orderInCar};

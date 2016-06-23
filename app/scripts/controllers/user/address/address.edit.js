@@ -73,8 +73,8 @@ wapApp.controller('OrderAddressNewController',
         $scope.address.defaulted = !$scope.address.defaulted;
     };
 
-    $scope.submit = function(valid){
-        if(valid){
+    $scope.submit = function(){
+       /* if(valid){*/
             if($scope.address.id==null || $scope.address.id==''){
                 //add
                 MyReceiveAddressService.add($scope.address).success(function(data){
@@ -102,7 +102,7 @@ wapApp.controller('OrderAddressNewController',
                     }
                 })
             }
-        }
+       /* }*/
     };
 
 });
