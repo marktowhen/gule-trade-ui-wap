@@ -1,8 +1,14 @@
 <div class="search center-view" ng-controller="SearchController">
     <div class="cl h10"></div>
     <div class="header">
-        <div class="search_wrap fl col-100"> <i class="icon-search fl col-7 fs20 mt10"  style="color:#999;"></i>
+
+        <div class="col-10 fl">
+            <i class="icon-arrow2" style="font-size: 30px;color:#999;margin-top: 6px;"></i>
+        </div>
+        <div class="search_wrap fl col-90" style="position: relative;"> 
+            <i class="icon-search fl col-7 fs20 mt10"  style="color:#999;"></i>
             <input type="text" class="fl col-60" ng-model="name">
+           <i class="icon-close-shop" style="font-size: 20px;position: absolute;text-outline: 21px;right: 26%;color:#999;"></i>
             <div class="gosearch fr" ng-click="beginSearch(name)">搜索</div>
         </div>
     </div>

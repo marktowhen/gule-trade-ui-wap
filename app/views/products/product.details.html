@@ -27,7 +27,7 @@
 		</div>
 
 		<div class="cl"></div>
-		<p style="color:#b0b0b0;margin-bottom:5px;font-size:12px;margin-top: 14px;">{{goods.about}}</p>
+		<p style="color:#b0b0b0;margin-bottom:5px;font-size:12px;margin-top: 14px;line-height: 20px;">{{goods.about}}</p>
 		<div class="pd1-price" >
 			<span class="p1" ng-show="goods.sale">￥{{goods.salePrice}}</span>
 			<span class="p1" ng-show="!goods.sale"><span class="fs12">￥</span>{{goods.price}}</span>
@@ -156,19 +156,21 @@
 		</div>
 		<div class="pd5-info1 fr">
 			<ul>
+				<li style="" ui-sref="index">
+					<i class="icon-home-1"></i>
+					<p>首页</p>
+				</li>
 				<li style="" ui-sref="customer-service">
 					<i class=" icon-xiaoxi-home"></i>
 					<p>客服</p>
 				</li>
 
-				<li ng-click="fav(goods.gid)">
+				<!-- <li ng-click="fav(goods.gid)">
 					
 					<i class="icon-shouchang-1" ng-show="fav_id==''"></i>
 					<i ng-show="fav_id!=''" style="color:#ff473f" class="icon-shouchang"></i>
 					<p>收藏</p>
-					<!-- <i class="icon-sp-1"></i>
-					<p ng-click="toMerchant(goods.mid)">店铺</p> -->
-				</li>
+				</li> -->
 			</ul>
 		</div>
 	</div>
