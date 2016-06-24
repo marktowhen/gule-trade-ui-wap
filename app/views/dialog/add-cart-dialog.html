@@ -37,16 +37,16 @@
                 {{attr.name}}
                 <br/>
                 <!--cur-->
-                <button class="cd2-select "  ng-repeat="v in attr.valueList" ng-click="toConditionQuery(v.id,v.attrName)"  ng-class="{'cur': v.attrId==1}">
+                <button style="margin-right: 4%;" class="cd2-select "  ng-repeat="v in attr.valueList" ng-click="toConditionQuery(v.id,v.attrName)"  ng-class="{'cur': v.attrId==1}">
                   {{v.value}}
-                  <div style="margin-left: 4%;" class="cd2-select-icon"><i class="icon-jiaobiao"></i></div>
+                  <div class="cd2-select-icon"><i class="icon-jiaobiao"></i></div>
                 </button>
               </li>
               
    
             </ul>
             <!--数量li-->
-               <ul ng-show="numFlag">
+               <ul>
                     <li style="line-height: 80px;">
                       数量 &nbsp;&nbsp;(库存: {{condition.stock}})
                       
@@ -57,13 +57,13 @@
                             <i class="icon-jianhao"></i>
                           </div>
                         </span>
+                     
                         <div class="cd2-mid fl">{{num}}</div>
-                        <span class="cd2-right fl fs14" ng-click="upNum()">
+                        <span class="cd2-right fl fs14" ng-click="upNum(condition)">
                           <div class="" >
                             <i class="icon-jia"></i>
                           </div>
                         </span>
-                      </div>
                     </li>
                </ul>
           </div>

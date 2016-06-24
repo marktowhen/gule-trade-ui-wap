@@ -8,7 +8,7 @@
  * Controller of the jingyunshopApp
  */
  wapApp.controller('MyGroupAllController', function ($scope,$interval,$state,GroupBuyService, $stateParams) {
-
+ 	$scope.notshow = false;
  	$scope.GroupList = [];
  	GroupBuyService.getgroup().success(function(data){
  		if(data.ok){
@@ -16,7 +16,7 @@
  				GroupBuyService.getgroupgoods(data.body[i].groupID).success(function(data1){
  					if(data1.ok){
  						var group = data1.body;
- 						console.log("ooo"+data1.body.path);
+ 						/*console.log("ooo"+data1.body.path);*/
  						group.showhide=false;
  						if(data1.body.status=="CONVENING"){
  							
@@ -36,6 +36,9 @@
  				})
  				
  				
+ 			}
+ 			if(data.body.length==0){
+ 				$scope.notshow=true;
  			}
  		}
  		

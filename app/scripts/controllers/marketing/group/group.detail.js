@@ -97,7 +97,7 @@ wapApp.controller('GroupDetailController',
 			
 		}
 
-		var creatCar = function(groupGoods, goods,goodSku){
+		var creatCar = function(groupGoods,goods,goodSku){
 	    	var goodsInCar = [{'gid':goods.gid,'skuid':groupGoods.skuid,'gname':goods.name,'mid':goods.mid,'mname':goods.mName,'price':groupGoods.groupPrice,'count':1,'imgpath':goodSku.skuPath}];
 	    	
 	    	var orderInCar = [{'mid':goods.mid,'mname':goods.mName,'postage':0,'type':'GROUP','goods':goodsInCar}];

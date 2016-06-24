@@ -162,14 +162,17 @@ wapApp.controller('CartController', function ($scope, CartService, $cookies, $st
     $scope.delCartGs = function(goods, cart){
         var gs = [];
         gs.push(goods);
-        CartService.delCartGses(gs).success(function(data){
-            cart.goods.splice(cart.goods.indexOf(goods), 1);
-            $scope.selectedGoods.splice($scope.selectedGoods.indexOf(goods), 1);
-            var notEmpty = ifcartempty();
-            $scope.empty = !notEmpty;
-        }).error(function(data){
-            alert("商品删除失败！");
-        });
+        if(confirm("确定删除吗")){
+            CartService.delCartGses(gs).success(function(data){
+                cart.goods.splice(cart.goods.indexOf(goods), 1);
+                $scope.selectedGoods.splice($scope.selectedGoods.indexOf(goods), 1);
+                var notEmpty = ifcartempty();
+                $scope.empty = !notEmpty;
+            }).error(function(data){
+                    alert("商品删除失败！");
+            })
+        }
+       
     };
     var ifcartempty = function(){
         return (($scope.carts)
@@ -228,28 +231,25 @@ wapApp.controller('CartController', function ($scope, CartService, $cookies, $st
         };
         return price;
     }
-
+    // $scope.class="reduce icon-jianhao fl";
     $scope.countup = function(goods){
-        if(goods.stock <= 0){
-            return;
+        if(goods.stock > goods.count){
+            goods.count = Number(goods.count) + 1;
+            goods.classs=false;
+            CartService.countupdate(goods.id, goods.count);
         }
-        if(goods.stock == goods.count){
-            return;
-        }
-        goods.count = Number(goods.count) + 1;
-        CartService.countupdate(goods.id, goods.count);
+
+       
     };
 
     $scope.countdown = function(goods){
-        if(goods.count <= 1) {
-            //$scope.delCartGs(goods, cart);
-            return;
+        if(goods.count > 1) {
+            goods.count = Number(goods.count) - 1;
+            CartService.countupdate(goods.id, goods.count);
+        }else{
+            goods.classs=true;
         }
-        if(goods.stock <= 0){
-            return;
-        }
-        goods.count = Number(goods.count) - 1;
-        CartService.countupdate(goods.id, goods.count);
+       
     };
 
     $scope.countupdate = function(goods, cart){

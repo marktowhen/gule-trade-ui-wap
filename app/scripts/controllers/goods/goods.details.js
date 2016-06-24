@@ -49,13 +49,16 @@ wapApp.controller('GoodsDetailsController',
 								}
 							});
 			}else{
-				GoodsDetailsService.delfav($scope.fav_id).success(function(data){
-					 if(data.code==200){
+				if(confirm("确定取消收藏吗")){
+					GoodsDetailsService.delfav($scope.fav_id).success(function(data){
+					 	if(data.code==200){
 						 //alert("删除收藏")
 					     $scope.fav_id = "";
-					};
+						};
 					
-				});
+					});
+				}
+				
 				
 			};
 		};

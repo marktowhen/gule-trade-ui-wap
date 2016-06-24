@@ -9,6 +9,7 @@
  */
   wapApp.controller('MyGroupIngController', function ($scope,$interval,$state,GroupBuyService, $stateParams) {
   		$scope.GroupList = [];
+  		$scope.notshow = false;
  	GroupBuyService.getgroup().success(function(data){
  		if(data.ok){
  			for(var i=0;i<data.body.length;i++){
@@ -28,6 +29,9 @@
  				})
  				
  				
+ 			}
+ 			if(data.body.length==0){
+ 				$scope.notshow = true;
  			}
  		}
  		

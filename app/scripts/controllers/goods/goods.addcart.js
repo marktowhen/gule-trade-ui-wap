@@ -134,29 +134,48 @@
                          $scope.condition.sale = data.body.sale;
                          $scope.condition.path = data.body.skuPath;
                          $scope.condition.properties_values = data.body.propertiesValue;
-                         $scope.numFlag = true;
+                        /* $scope.numFlag = true;*/
+
                         console.log($scope.condition);
                    }else{
                          $scope.condition.skuid ="";
-                         $scope.numFlag = false;
+                        /* $scope.numFlag = false;*/
                    };
 
                  });
             };
     	};
+      if($scope.num<=1){
+        $("span.cd2-left i.icon-jianhao").addClass('bg-gray');
+        $("span.cd2-left").addClass('bg-gray');
+      }
 
    ///减少数量
         $scope.downNum = function(){
+         
             if($scope.num>1){
                  $scope.num = $scope.num - 1;
-            };
+            }else{
+              $("span.cd2-left i.icon-jianhao").addClass('bg-gray');
+              $("span.cd2-left").addClass('bg-gray');
+            }
         };
           ///增加数量
-         $scope.upNum = function(){
-            if($scope.num <  $scope.condition.stock ){
-                 $scope.num = $scope.num + 1;
+       
+             $scope.upNum = function(){
+                 if( $scope.condition.skuid ==""){
+                      alert("请选择属性值");
+                  }else{
+                    if($scope.num <  $scope.condition.stock ){
+                      $scope.num = $scope.num + 1;
+                      $("span.cd2-left i.icon-jianhao").removeClass('bg-gray');
+                      $("span.cd2-left").removeClass('bg-gray');
+                    };
+                  }
+                
             };
-        };
+       
+        
 
 
 

@@ -193,18 +193,31 @@ wapApp.controller('BuyController',
             alert("订单信息有误，请检查后重新提交");
           });
         };
-
+        if($scope.num<=1){
+            $("span.cd2-left i.icon-jianhao").addClass('bg-gray');
+            $("span.cd2-left").addClass('bg-gray');
+        }
         ///减少数量
         $scope.downNum = function(){
             if($scope.num>1){
                  $scope.num = $scope.num - 1;
+            }else{
+              $("span.cd2-left i.icon-jianhao").addClass('bg-gray');
+            $("span.cd2-left").addClass('bg-gray');
             }
         }
           ///增加数量
          $scope.upNum = function(){
-            if($scope.num <  $scope.condition.stock ){
+          if($scope.condition.skuid !=""){
+               if($scope.num <  $scope.condition.stock ){
                  $scope.num = $scope.num + 1;
-            }
+                  $("span.cd2-left i.icon-jianhao").removeClass('bg-gray');
+                  $("span.cd2-left").removeClass('bg-gray');
+                }
+          }else{
+              alert("请选择属性");
+          }
+           
         }
 
 

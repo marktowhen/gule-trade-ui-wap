@@ -33,10 +33,9 @@ wapApp.controller('SearchController',function ($scope, $cookies, $stateParams,Co
              flag=false;
           });
 
-     $scope.beginSearch = function(){
+     $scope.beginSearch = function(name){
          	$scope.goodsList=[];
-         	$scope.name=$scope.gname;
-         	GoodsListService.allGoodsList($scope.mid,$scope.tid,$scope.order,$scope.name,$scope.pagefrom,$scope.pagesize)
+         	GoodsListService.allGoodsList($scope.mid,$scope.tid,$scope.order,name,$scope.pagefrom,$scope.pagesize)
     		      .success(function(data){
                 for (var i = 0; i <data.body.length; i++) {
                     $scope.goodsList.push(data.body[i]);

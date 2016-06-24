@@ -24,9 +24,9 @@
                                             <span class="currentprice">￥{{good.pprice}}</span>
                                             <span class="originalprice">￥{{good.price}}</span>
                                             <span class="num fr">
-                                                <i class="reduce icon-jianhao fl" ng-class="{disabled: good.count <= 1 || good.stock <= 0}" ng-click="countdown(good)"></i>
+                                                <i class="reduce icon-jianhao fl" ng-class="{'bg-grey':good.classs}" ng-click="countdown(good)"></i>
                                                 <i class="number fl">{{good.count}}</i>
-                                                <i ng-class="{disabled: (good.count == good.stock || good.stock == 0)}" class="add icon-jia fl" ng-click="countup(good)"></i>
+                                                <i class="add icon-jia fl" ng-click="countup(good)"></i>
                                             </span>
                                         </div>
                                     </div>
