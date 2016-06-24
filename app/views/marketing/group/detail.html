@@ -17,10 +17,10 @@
 
 	 	<div class="pd-box1" style="position:relative;">
 	 		<div class="pd1-top" style="margin-bottom: 2px;">
-	 			<div class="adm-left fl" style="line-height: 22px;">
+	 			<div class="adm-left fl" style="line-height: 22px;padding-top: 0;">
 	 				<p><a href="#">{{goods.name+''+goodSku.propertiesValue}}</a></p>
 	 			</div>
-	 			<div class="adm-right fl" ng-click="goshow(goods)" >
+	 			<div class="adm-right fl" style="padding-top: 0;" ng-click="goshow(goods)" >
 	 				<i class="icon-share" style="font-size:24px;"></i>
 	 				<p class="b3 fs12">分享</p>
 
@@ -94,13 +94,13 @@
 	 			图文详情
 	 		</div>
 	 		<div class="cl"></div>
-	 		<div class="ad2-bd" ng-bind-html="goods.content">
+	 		<div style="padding-top: 10px;" class="ad2-bd" ng-bind-html="goods.content">
 	 			<!-- <img src="images/one/pics.png" alt=""> -->
 	 		</div>
 	 	</div>
 	 	<div class="cl"></div>
 	 	<div class="pd-box5">
-	 		<div class="pd5-info1 fl" ui-sref="index">
+	 		<div class="pd5-info1 fl" ui-sref="index" style="border-top: 1px solid #d3d3d3;">
 	 			<i class="icon-home-1"></i>
 	 			<p class="fs12">首页</p>
 	 		</div>
