@@ -37,11 +37,13 @@ wapApp.controller('OrderAddressListController',
     };
 
     $scope.select = function(address){
+    	
     	if($stateParams.key=="auction"){
     		$cookieStore.put("address",address)
     		$state.go("auction-signup");
     		
-    	}
+    	}else{
+    		
     		if($scope.transaction && $scope.transaction.orders && $scope.transaction.orders.length > 0){
     			$scope.transaction.addressid = address.id;
     			$scope.transaction.city = address.city;
@@ -57,6 +59,8 @@ wapApp.controller('OrderAddressListController',
     			$state.go("orderconfirm.page");
     			
     		}
+    		
+    	}
     	
     };
 
