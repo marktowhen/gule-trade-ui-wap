@@ -43,7 +43,9 @@ wapApp.controller('SearchController',function ($scope, $cookies, $stateParams,Co
                  	flag=false;
     		});
      }
-
+     $scope.delname=function(){
+        $scope.name="";
+     }
       ////瀑布流追加方法
      var pushContent = function (){
               GoodsListService.allGoodsList($scope.mid,$scope.tid,$scope.order,$scope.name,$scope.goodsList.length,$scope.pagesize)
