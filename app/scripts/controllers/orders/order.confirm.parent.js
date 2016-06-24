@@ -113,6 +113,8 @@ wapApp.controller('OrderConfirmationParantController',
         angular.forEach($scope.transaction.orders, function(order, index){
             order.deliveryTypeCode = 'EXPRESS';
             order.deliveryTypeName = '普通快递';
+            order.paytypeCode="ONLINE";
+            order.paytypeName="线上支付";
         });
         /*if($scope.type=="AUCTION"){
         	 angular.forEach($scope.purchaseVo.orders, function(order, index){
