@@ -32,15 +32,15 @@
 	 			<ul>
 	 				<li>
 	 					<div class="od-box2-num fl">1</div>
-	 					<div class="od-box2-text fl">选择<br>心仪商品</div>
+	 					<div class="od-box2-text fl">选择心仪商品</div>
 	 				</li>
 	 				<li>
 	 					<div class="od-box2-num fl">2</div>
-	 					<div class="od-box2-text fl">点击<br>立即秒杀</div>
+	 					<div class="od-box2-text fl">点击立即秒杀</div>
 	 				</li>
 	 				<li>
 	 					<div class="od-box2-num fl">3</div>
-	 					<div class="od-box2-text fl">付款<br>秒杀成功</div>
+	 					<div class="od-box2-text fl">付款秒杀成功</div>
 	 				</li>
 	 			</ul>
 	 		</div>
@@ -51,19 +51,19 @@
 	 			图文详情
 	 		</div>
 	 		<div class="cl"></div>
-	 		<div class="ad2-bd" ng-bind-html="goods.content">
+	 		<div style="padding-top: 10px;" class="ad2-bd" ng-bind-html="goods.content">
 	 			
 	 		</div>
 	 	</div>
 	 	<div class="one-details-fix" style="border-top:1px solid #ccc;">
 	 		<div class="ad1-top">
 	 			<div class="ad1-left fl">
-	 				<div class="fl" style="width: 14%;text-align: center;border-right: 1px solid #ccc;color: #999;">
+	 				<div class="fl" style="width: 30%;text-align: center;border-right: 1px solid #ccc;color: #999;" ui-sref="index">
 	 					<i class="icon-home-1" style="font-size:20px;"></i>
 						<p class="fs12" style="margin-top:-23px;">首页</p>
 	 				</div>
-	 				<p class="fl">￥<span class="ag">{{flashsale.currentPrice}}</span></p>
-	 				<p class="fl">原价：￥{{goodSku.price}}</p>
+	 				<p class="fl" style="color: #999;line-height:48px;margin-right: 3%;margin-left: 3%;">￥<span class="ag">{{flashsale.currentPrice}}</span></p>
+	 				<p class="fl del" style="color:#999;line-height: 53px;">￥{{goodSku.price}}</p>
 	 			</div>
 	 			<div class={{flashsale.classes}} ng-click="statrtFlash()">
 	 				{{flashsale.BtnValue}}<i class={{flashsale.point}}></i>
