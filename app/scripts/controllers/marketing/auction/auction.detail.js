@@ -139,7 +139,8 @@ wapApp.controller('AuctionDetailController',
   		AuctionService.signUp($scope.auctionid,creatCar($scope.auction, $scope.goods,$scope.auction.deposit))
 			.success(function(data){
 				if(data.ok){
-					$state.go('orderconfirm.page');
+					//$state.go('orderconfirm.page');
+					$state.go('auction-signup');
 				}else{
 					alert(data.message);
 				}
@@ -179,4 +180,9 @@ wapApp.controller('AuctionDetailController',
 		
 	});
     
+	
+	//点击分享按钮的时候，分享列表显示出来
+	$scope.goshow = function(goods){
+		goods.detailDiv=!goods.detailDiv;
+	}
 });

@@ -8,7 +8,7 @@
  * Controller of the jingyunshopApp
  */
 wapApp.controller('OrderAddressListController',
-    function ($scope,$stateParams, $cookies, ConstantService, OrderService, $state,
+    function ($scope,$stateParams, $cookies,$cookieStore,ConstantService, OrderService, $state,
         MyReceiveAddressService, CashCouponService, DiscountCouponService, CouponService, PostageService) {
     var uid = $cookies.get(ConstantService.LOGIN_ID_KEY);
 
@@ -37,7 +37,11 @@ wapApp.controller('OrderAddressListController',
     };
 
     $scope.select = function(address){
-    
+    	if($stateParams.key=="auction"){
+    		$cookieStore.put("address",address)
+    		$state.go("auction-signup");
+    		
+    	}
     		if($scope.transaction && $scope.transaction.orders && $scope.transaction.orders.length > 0){
     			$scope.transaction.addressid = address.id;
     			$scope.transaction.city = address.city;

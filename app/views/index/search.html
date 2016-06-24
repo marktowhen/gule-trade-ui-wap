@@ -8,9 +8,14 @@
         <div class="search_wrap fl col-90" style="position: relative;"> 
             <i class="icon-search fl col-7 fs20 mt10"  style="color:#999;"></i>
             <input type="text" class="fl col-60" ng-model="name">
-           <i class="icon-close-shop" ng-click="delname()" style="font-size: 20px;position: absolute;text-outline: 21px;right: 26%;color:#999;"></i>
+           <i class="icon-close-shop" ng-click="delname()" style="font-size: 20px;position: absolute;top:11px;right: 26%;color:#999;"></i>
             <div class="gosearch fr" ng-click="beginSearch(name)">搜索</div>
         </div>
+    </div>
+    <div class="cl"></div>
+    <div ng-show="notshow" style="padding-top:115px;text-align:center;padding-bottom: 20px;">
+        <i style="font-size: 56px;color:#d3d3d3;" class="icon-search"></i>
+        <p style="margin-top:14px;color:#999;">未找到与“青柠檬”相关的产品</p>
     </div>
     <div class="cl"></div>
     <div class="allproducts_wrap">
