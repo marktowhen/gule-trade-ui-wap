@@ -35,7 +35,7 @@ wapApp.controller('OrderConfirmationParantController',
             $scope.originpostage = $scope.finalmoney - $scope.pureOriginMoney;
             $scope.type=$scope.transaction.orders[0].type;
             $scope.auctionid=$scope.transaction.orders[0].extradata;
-            auctionDetail($scope.auctionid);
+           /* auctionDetail($scope.auctionid);*/
         }else{
             alert("订单信息不正确。");
             //$state.go("cart");//should be go to illegal order page.
@@ -100,34 +100,34 @@ wapApp.controller('OrderConfirmationParantController',
             return;
         }
 
-        if($scope.purchaseVo.couponID && $scope.transaction.orders.length > 1){
+        /*if($scope.purchaseVo.couponID && $scope.transaction.orders.length > 1){
             $("#confirm-dialog").modal("show");
             return;
-        }
+        }*/
         $scope.confirmSubmit();
 
     };
 
     $scope.confirmSubmit = function(){
-        $scope.purchaseVo.orders = $scope.transaction.orders;
-        angular.forEach($scope.purchaseVo.orders, function(order, index){
+       
+        angular.forEach($scope.transaction.orders, function(order, index){
             order.deliveryTypeCode = 'EXPRESS';
             order.deliveryTypeName = '普通快递';
         });
-        if($scope.type=="AUCTION"){
+        /*if($scope.type=="AUCTION"){
         	 angular.forEach($scope.purchaseVo.orders, function(order, index){
                  order.price = $scope.finalmoney;
              });
-        }
-        OrderService.submit($scope.purchaseVo)
+        }*/
+        OrderService.submit($scope.transaction)
             .success(function(data){
                 if(data.ok){
-                	if($scope.type=="AUCTION"){
+                	/*if($scope.type=="AUCTION"){
                 		//alert("跳转到支付页面");
                 		$cookieStore.put("id",$scope.cookAuctionID);
                 		$cookieStore.put("gid",$scope.cookAuctionGoodID);
                 		$state.go("auction-success");
-                	}
+                	}*/
                     var purchaseVo = data.body;
                     var orders = purchaseVo.orders;
                     var oids = [];
@@ -236,7 +236,7 @@ wapApp.controller('OrderConfirmationParantController',
         $state.go("cart");
     };
     
-    var auctionDetail=function(auctionid){
+    /*var auctionDetail=function(auctionid){
  	   AuctionService.detail(auctionid)
  		.success(function(data){
  			if(data.ok){
@@ -255,7 +255,7 @@ wapApp.controller('OrderConfirmationParantController',
  			
  		});
  	   
-    } 
+    } */
     
     
 });
