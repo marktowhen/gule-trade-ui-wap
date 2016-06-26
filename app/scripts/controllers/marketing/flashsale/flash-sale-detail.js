@@ -38,7 +38,7 @@ wapApp.controller('FlashSaleDetailController', function ($scope, $cookies,$state
 	};
 
 	var cart = function(flashsale,goods,goodSku){
-		var goodsInCart = [{'gid':flashsale.gid,'skuid':flashsale.skuId,'gname':goods.name,'mid':goods.mid,'mname':goods.mName,'price':flashsale.currentPrice,'count':1,'imgpath':goodSku.skuPath}];
+		var goodsInCart = [{'gid':flashsale.gid,'skuid':flashsale.skuId,'gname':goods.name,'mid':goods.mid,'mname':goods.mName,'price':flashsale.currentPrice,'pprice':flashsale.currentPrice,'count':1,'imgpath':goodSku.skuPath}];
 		var orderInCart = [{'mid':goods.mid,'mname':goods.mName,'postage':0,'type':'FLASHSALE','goods':goodsInCart}];
 		return {'orders':orderInCart};
 	};

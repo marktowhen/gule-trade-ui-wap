@@ -12,7 +12,7 @@
                 <div class="order-bd1">
                     <div class="order_pic col-30 fl">
                         <a href="#order-details.html?id={{order.id}}&gid={{goods.gid}}">
-                            <img src="{{goods.path}}" alt=""></a>
+                            <img src="{{goods.imgpath}}" alt=""></a>
                     </div>
                     <div class="order_info_wrap col-67 fs12 fl">
                         <div class="order_info_body">
@@ -22,7 +22,7 @@
                             <div class="order-prices col-30 fr">
                                 <div class="order_price">
                                     ￥
-                                    <span class="fs14">{{goods.payout}}</span>
+                                    <span class="fs14">{{order.payout}}</span>
                                 </div>
                                 <div class="cl"></div>
                                 <div class="order_num">×{{goods.count}}</div>

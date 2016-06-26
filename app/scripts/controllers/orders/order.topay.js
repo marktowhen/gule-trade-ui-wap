@@ -34,6 +34,7 @@
  			
  		}
  	});
+
  	//取消订单
  	$scope.deleteOrder = function(order,goods){
  		OrderService.cancel(order.id).success(function(data){
@@ -60,10 +61,11 @@
  		goods0.skuid = goods.skuid;
  		goods0.gname = goods.gname;
  		goods0.mid = order.mid;
-        goods0.mname = order.mname;
+    goods0.mname = order.mname;
  		goods0.price = goods.price;
  		goods0.pprice = goods.pprice;
  		goods0.count = goods.count;
+    goods0.imgpath=goods.imgpath;
  		order0.goods.push(goods0);
  		cartvo.orders.push(order0);
 

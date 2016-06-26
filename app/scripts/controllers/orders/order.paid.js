@@ -33,6 +33,14 @@
  			
  		}
  	});
+
+    /*var goodsSku = function(skuid){
+      FlashSaleService.getsku(skuid).success(function(data){
+        if(data.ok){
+          $scope.goodSku = data.body;
+        };
+      });
+    }*/
  /*	$scope.deleteOrder = function(order){
  		OrderService.cancel(order.id).success(function(data){
 	 		if(data.ok){

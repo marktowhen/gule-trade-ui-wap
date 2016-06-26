@@ -128,9 +128,10 @@
  		goods0.skuid = goods.skuid;
  		goods0.gname = goods.gname;
  		goods0.mid = order.mid;
-        goods0.mname = order.mname;
+    goods0.mname = order.mname;
  		goods0.price = goods.payout;
  		goods0.pprice = goods.payout;
+    goods0.imgpath=goods.imgpath;
  		goods0.count = goods.count;
  		order0.goods.push(goods0);
  		cartvo.orders.push(order0);
