@@ -13,11 +13,8 @@
         </div>
     </div>
     <div class="cl"></div>
-    <div ng-show="notshow" style="padding-top:115px;text-align:center;padding-bottom: 20px;">
-        <i style="font-size: 56px;color:#d3d3d3;" class="icon-search"></i>
-        <p style="margin-top:14px;color:#999;">未找到与“青柠檬”相关的产品</p>
-    </div>
-    <div class="cl"></div>
+    <!-- 搜索到 -->
+    <div class="search-success hide">
     <div class="allproducts_wrap">
         <header class="sort" style="top:61px;background-color: #fff;color:#999;">
             <span>默认排序</span> <i></i>
@@ -52,7 +49,7 @@
                     </div>
                 </a>
             </li>
-           <!--  <li>
+            <!-- <li>
                 <a href="#/product/details.html">
                     <div class="product_pic">
                         <img src="images/index/product2.png" alt=""></div>
@@ -85,7 +82,7 @@
                     </div>
                 </a>
             </li>
-            <li>
+           <!--  <li>
                 <a href="#/product/details.html">
                     <div class="product_pic">
                         <img src="images/index/product2.png" alt=""></div>
@@ -104,4 +101,57 @@
             </li> -->
         </ul>
     </section>
+    </div>
+    <!-- 未搜索到 -->
+    <div class="search-failed">
+        <div class="blank-tips" ng-show="" style="padding-top:115px;display: block !important;">
+            <i class="icon-search"></i>
+            <p>未找到与“青柠檬”相关的产品</p>
+        </div>
+        <div class="cl h10"></div>
+        <div class="search-titles">
+            <ul>
+                <li></li>
+                <li>热销商品</li>
+                <li></li>
+            </ul>
+        </div>
+        <section class="products_products clearfix" style="">
+        <ul>
+            <li>
+                <a href="#/product/details.html">
+                    <div class="product_pic">
+                        <img src="images/index/product2.png" alt=""></div>
+                    <div class="product_name"> <b>拉卡拉收款宝 手机pos机移动刷卡...</b>
+                    </div>
+                    <div class="price_info">
+                        <div class="price fl">￥199.00</div>
+                        <div class="sales fr">
+                            已售出
+                            <span>260</span>
+                            笔
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#/product/details.html">
+                    <div class="product_pic">
+                        <img src="images/index/product2.png" alt=""></div>
+                    <div class="product_name">
+                        <b>拉卡拉收款宝 手机pos机移动刷卡...</b>
+                    </div>
+                    <div class="price_info">
+                        <div class="price fl">￥199.00</div>
+                        <div class="sales fr">
+                            已售出
+                            <span>260</span>
+                            笔
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </section>
+    </div>
 </div>
