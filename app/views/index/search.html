@@ -14,7 +14,7 @@
     </div>
     <div class="cl"></div>
     <!-- 搜索到 -->
-    <div class="search-success hide">
+    <div class="search-success" ng-show="searchshow">
     <div class="allproducts_wrap">
         <header class="sort" style="top:61px;background-color: #fff;color:#999;">
             <span>默认排序</span> <i></i>
@@ -33,7 +33,7 @@
     <div class="cl"></div>
     <section class="products_products clearfix" style="margin-top:95px;">
         <ul>
-            <li  ng-repeat="goods in goodsList">
+            <li ng-repeat="goods in goodsList">
                 <a href="#/product/details.html?gid={{goods.gid}}">
                     <div class="product_pic">
                         <img src="{{goods.path}}" alt=""></div>
@@ -49,64 +49,14 @@
                     </div>
                 </a>
             </li>
-            <!-- <li>
-                <a href="#/product/details.html">
-                    <div class="product_pic">
-                        <img src="images/index/product2.png" alt=""></div>
-                    <div class="product_name"> <b>拉卡拉收款宝 手机pos机移动刷卡...</b>
-                    </div>
-                    <div class="price_info">
-                        <div class="price fl">￥199.00</div>
-                        <div class="sales fr">
-                            已售出
-                            <span>260</span>
-                            笔
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#/product/details.html">
-                    <div class="product_pic">
-                        <img src="images/index/product2.png" alt=""></div>
-                    <div class="product_name">
-                        <b>拉卡拉收款宝 手机pos机移动刷卡...</b>
-                    </div>
-                    <div class="price_info">
-                        <div class="price fl">￥199.00</div>
-                        <div class="sales fr">
-                            已售出
-                            <span>260</span>
-                            笔
-                        </div>
-                    </div>
-                </a>
-            </li>
-           <!--  <li>
-                <a href="#/product/details.html">
-                    <div class="product_pic">
-                        <img src="images/index/product2.png" alt=""></div>
-                    <div class="product_name">
-                        <b>拉卡拉收款宝 手机pos机移动刷卡...</b>
-                    </div>
-                    <div class="price_info">
-                        <div class="price fl">￥199.00</div>
-                        <div class="sales fr">
-                            已售出
-                            <span>260</span>
-                            笔
-                        </div>
-                    </div>
-                </a>
-            </li> -->
         </ul>
     </section>
     </div>
     <!-- 未搜索到 -->
-    <div class="search-failed">
-        <div class="blank-tips" ng-show="" style="padding-top:115px;display: block !important;">
+    <div class="search-failed" ng-show="notsearch">
+        <div class="blank-tips"  style="padding-top:115px;display: block !important;">
             <i class="icon-search"></i>
-            <p>未找到与“青柠檬”相关的产品</p>
+            <p>未找到与“{{name}}”相关的产品</p>
         </div>
         <div class="cl h10"></div>
         <div class="search-titles">
@@ -118,39 +68,23 @@
         </div>
         <section class="products_products clearfix" style="">
         <ul>
-            <li>
-                <a href="#/product/details.html">
+            <li ng-repeat="goods in showlist">
+                <a href="#/product/details.html?gid={{goods.gid}}">
                     <div class="product_pic">
-                        <img src="images/index/product2.png" alt=""></div>
-                    <div class="product_name"> <b>拉卡拉收款宝 手机pos机移动刷卡...</b>
+                        <img src="{{goods.path}}" alt=""></div>
+                    <div class="product_name"> <b>{{goods.name}}</b>
                     </div>
                     <div class="price_info">
-                        <div class="price fl">￥199.00</div>
+                        <div class="price fl">￥{{goods.price}}</div>
                         <div class="sales fr">
                             已售出
-                            <span>260</span>
+                            <span>{{goods.volume}}</span>
                             笔
                         </div>
                     </div>
                 </a>
             </li>
-            <li>
-                <a href="#/product/details.html">
-                    <div class="product_pic">
-                        <img src="images/index/product2.png" alt=""></div>
-                    <div class="product_name">
-                        <b>拉卡拉收款宝 手机pos机移动刷卡...</b>
-                    </div>
-                    <div class="price_info">
-                        <div class="price fl">￥199.00</div>
-                        <div class="sales fr">
-                            已售出
-                            <span>260</span>
-                            笔
-                        </div>
-                    </div>
-                </a>
-            </li>
+           
         </ul>
     </section>
     </div>

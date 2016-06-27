@@ -29,7 +29,14 @@ wapApp.controller('SearchController',function ($scope, $cookies, $stateParams,Co
           .success(function(data){
              for (var i = 0; i <data.body.length; i++) {
                 $scope.goodsList.push(data.body[i]);
-              }     
+              } 
+              if(data.body.length==0){
+                 $scope.searchshow=false;
+                 $scope.notsearch=true;
+              }else{
+                $scope.searchshow=true;
+                $scope.notsearch=false;
+              }    
              flag=false;
           });
 
@@ -39,7 +46,14 @@ wapApp.controller('SearchController',function ($scope, $cookies, $stateParams,Co
     		      .success(function(data){
                 for (var i = 0; i <data.body.length; i++) {
                     $scope.goodsList.push(data.body[i]);
-                }     
+                }
+                if(data.body.length==0){
+                   $scope.searchshow=false;
+                    $scope.notsearch=true;
+                 }else{
+                  $scope.searchshow=true;
+                   $scope.notsearch=false;
+                 }     
                  	flag=false;
     		});
      }
@@ -52,7 +66,14 @@ wapApp.controller('SearchController',function ($scope, $cookies, $stateParams,Co
                 .success(function(data){
                    for (var i = 0; i <data.body.length; i++) {
                       $scope.goodsList.push(data.body[i]);
-                    }     
+                    }   
+                  if(data.body.length==0){
+                    $scope.searchshow=false;
+                    $scope.notsearch=true;
+                 }else{
+                    $scope.searchshow=true;
+                    $scope.notsearch=false;
+                 }       
                    flag=false;
                 });
 
@@ -78,9 +99,47 @@ wapApp.controller('SearchController',function ($scope, $cookies, $stateParams,Co
              for (var i = 0; i <data.body.length; i++) {
                 $scope.goodsList.push(data.body[i]);
               }     
+               if(data.body.length==0){
+                    $scope.searchshow=false;
+                    $scope.notsearch=true;
+                 }else{
+                    $scope.searchshow=true;
+                    $scope.notsearch=false;
+                 }       
              flag=false;
           });
        };
+  var more = false;
+   $scope.nameh="";
+    GoodsListService.allGoodsList($scope.mid,$scope.tid,$scope.order,$scope.nameh,$scope.pagefrom,$scope.pagesize)
+          .success(function(data){
+          if(data.code==200){
+            $scope.showlist = data.body;
+          }
+          more=false;
+    });
+      ////瀑布流追加方法
+     var pushContents = function (){
+              GoodsListService.allGoodsList($scope.mid,$scope.tid,$scope.order,$scope.nameh,$scope.showlist.length,$scope.pagesize)
+                .success(function(data){
+                   if(data.ok){
+                      $scope.showlist = data.body;
+                   } 
+                   more=false;
+                });
 
+      };
+
+      ////瀑布流追加
+        $(window).scroll(function(){
+          if($scope.showlist.length < $scope.pagesize){
+
+          }else{
+           if (($(window).scrollTop() >= $(document).height()-$(window).height()-70) && !more ){  //滚动条距离底部不足80px时触发
+                pushContents();
+                more = true;
+              }
+          }
+       });        
 
 })
