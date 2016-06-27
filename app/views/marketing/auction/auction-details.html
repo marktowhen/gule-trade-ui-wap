@@ -29,12 +29,12 @@
 					<a href="#">{{goods.name+' '+goodSku.propertiesValue}}</a>
 				</p>
 			</div>
-			    <div class="adm-right fl" ng-click="goshow(goods)" >
+			    <div class="adm-right fl" style="padding-top: 0;" ng-click="goshow(goods)" >
 	 				<i class="icon-share" style="font-size:24px;"></i>
 	 				<p class="b3 fs12">分享</p>
 	 			</div>
-	 			<!-- 分享代码 -->
-					<div class="jiathis_style" ng-class="{'on':goods.detailDiv}">
+				<!-- 分享代码 -->
+					<div class="jiathis_style" ng-class="{'bg-gray':goods.detailDiv}">
 						<a class="jiathis_button_qzone"></a>
 						<a class="jiathis_button_tsina"></a>
 						<a class="jiathis_button_tqq"></a>
