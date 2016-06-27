@@ -89,7 +89,7 @@ wapApp.controller('MyAuctionToPayController', function ($scope, $state,AuctionSe
   		AuctionService.payFinal(auctionid,creatCar(au,goods,deposit))
 			.success(function(data){
 				if(data.ok){
-					$state.go('orderconfirm.page');
+					$state.go('auction-finalmoney');
 				}else{
 					alert(data.message);
 				}

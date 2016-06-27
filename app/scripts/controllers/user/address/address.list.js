@@ -42,6 +42,9 @@ wapApp.controller('OrderAddressListController',
     		$cookieStore.put("address",address)
     		$state.go("auction-signup");
     		
+    	}else if($stateParams.key=="auctionFinal"){
+    		$cookieStore.put("address",address)
+    		$state.go("auction-finalmoney");
     	}else{
     		
     		if($scope.transaction && $scope.transaction.orders && $scope.transaction.orders.length > 0){
