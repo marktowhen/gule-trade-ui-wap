@@ -65,7 +65,7 @@ var wapApp = angular
     .state('auction', {
         templateUrl: 'views/marketing/auction/auction.html',
         controller: '',
-        url:"/index/auction.html"
+        url:"/marketing/auction/auction.html"
       })
      .state('auction-hall', {
         templateUrl: 'views/marketing/auction/auction-hall.html',
@@ -85,7 +85,7 @@ var wapApp = angular
     .state('auction-details', {
         templateUrl: 'views/marketing/auction/auction-details.html',
         controller: '',
-        url:"/auction-details.html?id&gid&key"
+        url:"/marketing/auction/auction-details.html?id&gid&key"
       })
     .state('auction-signup', {
           templateUrl: 'views/marketing/auction/signup.html',

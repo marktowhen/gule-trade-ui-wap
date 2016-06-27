@@ -3,14 +3,14 @@
         <ul ng-repeat="au in ggoods">
             <li class="fs12 conducting" ng-if="'AUCTIONING'==au.status" >
                 <div class="product_pic">
-                    <a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}&key=detail">
+                    <a href="#/marketing/auction/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">
                         <img src="images/index/product1.png" alt=""></a>
                         <!-- <img src="{{au.goods.path}}" alt="{{au.goods.name+' '+au.sku.propertiesValue}}"> -->
                 </div>
                 <div class="groupbuy_info">
                     <div class="fl col-80">
                         <div class="groupbuy_title text-abb" style="width:92%;">
-                            <a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}&key=detail">{{au.goods.name+' '+au.sku.propertiesValue}}</a>
+                            <a href="#/marketing/auction/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">{{au.goods.name+' '+au.sku.propertiesValue}}</a>
                         </div>
                         <div class="groupbuy_sale fs12">
                             <span class="sp1">
@@ -49,13 +49,13 @@
             </li>
             <li class="fs12 willbegin"  ng-if="'NEW'==au.status">
                 <div class="product_pic">
-                    <a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}&key=detail">
+                    <a href="#/marketing/auction/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">
                         <img src="images/index/product1.png" alt=""></a>
                 </div>
                 <div class="groupbuy_info">
                     <div class="fl col-80">
                         <div class="groupbuy_title text-abb" style="width:92%;">
-                            <a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}&key=detail">{{au.goods.name+' '+au.sku.propertiesValue}}</a>
+                            <a href="#/marketing/auction/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">{{au.goods.name+' '+au.sku.propertiesValue}}</a>
                         </div>
                         <div class="groupbuy_sale fs12 over">
                             <span class="sp1">
@@ -92,13 +92,13 @@
             </li>
             <li class="fs12 over" ng-if="'AUCTIONING'!=au.status && 'NEW'!=au.status">
                 <div class="product_pic">
-                    <a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}&key=detail">
+                    <a href="#/marketing/auction/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">
                         <img src="images/index/product1.png" alt=""></a>
                 </div>
                 <div class="groupbuy_info">
                     <div class="fl col-80">
                         <div class="groupbuy_title text-abb" style="width:92%;">
-                            <a href="#/auction-details.html?id={{au.id}}&gid={{au.goods.id}}&key=detail">{{au.goods.name+' '+au.sku.propertiesValue}}</a>
+                            <a href="#/marketing/auction/auction-details.html?id={{au.id}}&gid={{au.goods.id}}">{{au.goods.name+' '+au.sku.propertiesValue}}</a>
                         </div>
                         <div class="groupbuy_sale fs12 over">
                             <span class="sp1">
